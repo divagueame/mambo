@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mambo Spanish - A complete Spanish course - 100% free and with no ads</title>
+        <meta name="description" content="Mambo Spanish - A complete Spanish course - 100% free and with no ads">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+
+
+
+    <!-- Page Layout here -->
+    <div class="row">
+
+        <div class="col s2 #ffecb3 amber lighten-5">
+          <!-- Grey navigation panel -->
+          <ul>
+            <li>Level A1</li>
+            <li>Level A2</li>
+            <li>Level B1</li>
+            <li>Level B2</li>
+            <li>Level C1</li>
+            <li>Level C2</li>
+          </ul>
+        </div>
+  
+        <div class="col s10">
+          
+          <div class="container">
+              <h3>Mambo Spanish</h3>
+                  <form id="signup-form">
+                      <div class="input-field">
+                        <input type="text" placeholder="email" id="login-email">
+                      </div>
+                      <div class="input-field">
+                        <input type="password" placeholder="" id="login-password">    
+                      </div>
+                      <button type="submit" value="Log in" class="btn waves-effect waves-light">Log in</button>
+                  </form>
+          </div>
+        </div>
+        <button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
+      </div>
+
+      <div class="container">
+        <form id="addDropForm">
+            <div class="input-field">
+                <textarea id="dropText" class="materialize-textarea"></textarea>
+                <label for="textarea1">Leave a drop</label>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light">Drop it</button>
+        </form>
+    </div>
+
+    
+    <div id="getDropButton" class="center-align btn waves-effect waves-light">Give me a drop!</div>
+    <div class="card blue" id="dropCard">This is a drop</div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCdh7HCtomFvVSKbj2EhjmEP54NncBh9YI",
+    authDomain: "mambospanish.firebaseapp.com",
+    projectId: "mambospanish",
+    storageBucket: "mambospanish.appspot.com",
+    messagingSenderId: "262089028158",
+    appId: "1:262089028158:web:047ce2ea589382b1ba176f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="js/java.js" async defer></script>
+    </body>
+</html>
