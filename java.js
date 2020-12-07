@@ -1,9 +1,5 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js'
 
-missingWordSentencesExercise("LOLAS", "NO") // 3
-
-
-
 // const auth = firebase.auth();
 // const db = firebase.firestore();
 
@@ -98,182 +94,13 @@ let exerciseSentences = [
     {
         text: "El perro corre muy rapido.",
         hiddenWord: "corre",
-        labelText: "verbo cantar",
+        labelText: "verbo correr",
         helperText: "The dog runs very fast."
     }
 ]
 
-
-let activeSentence = 0;
-let userAnswers = [];
-let userRightAnswers = [];
-
-function exerciseInit(sentences){
-    activeSentence = 0;
-    const exerciseContainer = document.querySelector("#exerciseContainer");
-    console.log("Active sentence: ", activeSentence);
-    displayExerciseCard(sentences[activeSentence]);
-};
-
-
-function findPreText(sentenceObj){
-    let expression = `.*${sentenceObj.hiddenWord}`
-    let preText = (sentenceObj.text).match(expression);
-    preText = preText[0].replace(sentenceObj.hiddenWord,"");
-    return preText
-}
-function findPosText(sentenceObj){
-    let expression = `${sentenceObj.hiddenWord}.*`;
-    let posText = (sentenceObj.text).match(expression);
-    posText = posText[0].replace(sentenceObj.hiddenWord,"")
-    return posText
-}
-
-function displayExerciseCard(sentenceObj){
-    
-    let preText = findPreText(sentenceObj);
-    let postText =findPosText(sentenceObj);
-    let hiddenText = sentenceObj.hiddenWord;
-    let labelText = sentenceObj.labelText;
-    let helperText = sentenceObj.helperText;
-
-    let htmlCard = 
-        `<div class="row blue-grey lighten-5">
-            <div class="col s8 offset-s2">
-                <div class="card-panel blue-grey lighten-3">
-                    <form id="wordForm"  autocomplete="off" >
-                    <span class="black-text">${preText}
-                    <div class="input-field inline">
-                    <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem" autofocus>
-                    <label for="missingWordInput" class="">${labelText}</label>
-                    </div>
-                    ${postText}
-                    </span>
-                    <br>
-                   <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
-                  <br>
-                    <button class="btn waves-effect waves-light" type="submit" name="submitAnswer">
-                    <i class="material-icons" id="submitButton">thumb_up</i>
-                    </button>
-                </form>
-                </div>
-            </div>
-        </div>
-        `
-        exerciseContainer.innerHTML = htmlCard;
-        document.querySelector("#missingWordInput").focus();
-        const wordForm = document.querySelector("#wordForm");
-        wordForm.addEventListener('submit', function(e){
-            e.preventDefault();
-            
-            const userAnswer = document.querySelector("#missingWordInput").value;
-            if(isCorrectAnswer(hiddenText,userAnswer)){
-                userAnswers.push(userAnswer);
-                userRightAnswers.push(true)
-                answerIsCorrect();
-            } else {
-                userAnswers.push(userAnswer);
-                userRightAnswers.push(false);
-                answerIsWrong();
-                setTimeout(function(){
-                    document.querySelector("#missingWordInput").value = (hiddenText);
-                },750);
-            }
-        })
-
-}
-
-
-function isCorrectAnswer(hiddenText,userAnswer){
-    if(hiddenText==userAnswer){
-        console.log("Correct answer");
-        return true
-    } else {
-        console.log("Wrong answer")
-        return false
-    }
-}
-
-function answerIsCorrect(){
-    // Change Html
-    const submitButton = document.querySelector("#submitButton");
-    submitButton.innerHTML = "check";
-
-    setTimeout(function(){
-        console.log(activeSentence)
-        activeSentence++;
-        console.log(activeSentence);
-        if(activeSentence<exerciseSentences.length){
-            displayExerciseCard(exerciseSentences[activeSentence]);
-
-        } else {
-            //Show all answers and corrections
-            console.log(userAnswers);
-            console.log(userRightAnswers);
-            displayAnswersCard();
-        }
-    },500)
-
-}
-
-function answerIsWrong(){
-    const submitButton = document.querySelector("#submitButton");
-    submitButton.innerHTML = "error";
-    submitButton.parentElement.classList.add("red");
-
-    setTimeout(function(){
-        submitButton.parentElement.classList.remove("red");
-        submitButton.innerHTML = "thumb_up";
-    },3000);
-
-    setTimeout(function(){
-        activeSentence++;
-        
-        if(activeSentence<exerciseSentences.length){
-            displayExerciseCard(exerciseSentences[activeSentence]);
-
-        } else {
-            //Show all answers and corrections
-            console.log(userAnswers);
-            console.log(userRightAnswers);
-
-            displayAnswersCard();
-        }
-    },3000)
+const exerciseContainer = document.querySelector("#exerciseContainer");
+missingWordSentencesExercise(exerciseContainer, exerciseSentences);
 
 
 
-
-}
-
-function displayAnswersCard(){
-
-    let html = `
-    <table class="striped">
-    <tbody>
-      <tr>
-        <td class="valign-wrapper">
-        <i class="material-icons green-text lighten-3" id="submitButton">done</i>
-        Jellybean
-        </td>
-      </tr>
-
-      <tr>
-      <td class="valign-wrapper">
-      <i class="material-icons orange-text darken-4" id="submitButton">priority_high</i>
-      Jellybean
-      </td>
-      
-    </tr>
-
-    </tbody>
-  </table>
-
-  
-        `
-    exerciseContainer.innerHTML = html;
-};
-
-// displayAnswersCard()
-
-exerciseInit(exerciseSentences)
