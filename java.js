@@ -1,6 +1,6 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js'
 
-missingWordSentencesExercise("SI", "NO") // 3
+missingWordSentencesExercise("LOLAS", "NO") // 3
 
 
 
