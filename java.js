@@ -1,7 +1,6 @@
+import missingWordSentencesExercise from './missingWordSentencesExercise.js'
 
-import sum from './module.js'
-
-sum(1, 2) // 3
+missingWordSentencesExercise("SI", "NO") // 3
 
 
 

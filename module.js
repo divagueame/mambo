@@ -1,4 +1,4 @@
-export default function sum(x, y) {
-  console.log("SIIigit")
+export default function missingWordSentencesExercise(x, y) {
+  console.log("asd")
   return x + y
 }
