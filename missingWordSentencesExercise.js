@@ -4,9 +4,6 @@ let activeSentence = 0;
 let userAnswers = [];
 let userRightAnswers = [];
 
-function exerciseInit(sentences){
-    displayExerciseCard(sentences[activeSentence]);
-};
 
 
 function findPreText(sentenceObj){
@@ -31,9 +28,9 @@ function displayExerciseCard(sentenceObj){
     let helperText = sentenceObj.helperText;
 
     let htmlCard = 
-        `<div class="row blue-grey lighten-5">
-            <div class="col s8 offset-s2">
-                <div class="card-panel blue-grey lighten-3">
+        `
+            <div class="row">
+                <div class="col s12 card-panel blue-grey lighten-3">
                     <form id="wordForm"  autocomplete="off" >
                     <span class="black-text">${preText}
                     <div class="input-field inline">
@@ -45,33 +42,69 @@ function displayExerciseCard(sentenceObj){
                     <br>
                    <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
                   <br>
-                    <button class="btn waves-effect waves-light" type="submit" name="submitAnswer">
+                    <button class="btn waves-effect waves-light" type="submit" onclick="this.disabled = true"  name="submitAnswer">
                     <i class="material-icons" id="submitButton">thumb_up</i>
                     </button>
                 </form>
                 </div>
             </div>
-        </div>
+
         `
+
+
+
+
+
+        //////////////////////
+
+    // let htmlCard = 
+    // `<div class="row blue-grey lighten-5">
+    //     <div class="col s8 offset-s2">
+    //         <div class="card-panel blue-grey lighten-3">
+    //             <form id="wordForm"  autocomplete="off" >
+    //             <span class="black-text">${preText}
+    //             <div class="input-field inline">
+    //             <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem" autofocus>
+    //             <label for="missingWordInput" class="">${labelText}</label>
+    //             </div>
+    //             ${postText}
+    //             </span>
+    //             <br>
+    //            <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
+    //           <br>
+    //             <button class="btn waves-effect waves-light" type="submit" onclick="this.disabled = true"  name="submitAnswer">
+    //             <i class="material-icons" id="submitButton">thumb_up</i>
+    //             </button>
+    //         </form>
+    //         </div>
+    //     </div>
+    // </div>
+    // `
+        //////////////////////
+
         targetDom.innerHTML = htmlCard;
         document.querySelector("#missingWordInput").focus();
         const wordForm = document.querySelector("#wordForm");
+
         wordForm.addEventListener('submit', function(e){
             e.preventDefault();
-            
-            const userAnswer = document.querySelector("#missingWordInput").value;
+            let userAnswer = document.querySelector("#missingWordInput").value;
             if(userAnswer!=""){
+                let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
+                
+                userAnswers.push(userAnswerWithSentence);
+                    // userAnswers.push(userAnswer);
                 if(isCorrectAnswer(hiddenText,userAnswer)){
-                    userAnswers.push(userAnswer);
+                    userAnswer = "";
                     userRightAnswers.push(true)
                     answerIsCorrect();
                 } else {
-                    userAnswers.push(userAnswer);
+                    userAnswer = "";
                     userRightAnswers.push(false);
                     answerIsWrong();
                     setTimeout(function(){
                         document.querySelector("#missingWordInput").value = (hiddenText);
-                    },75);
+                    },750);
                 }
             }
         })
@@ -90,25 +123,17 @@ function isCorrectAnswer(hiddenText,userAnswer){
 }
 
 function answerIsCorrect(){
-    // Change Html
     const submitButton = document.querySelector("#submitButton");
     submitButton.innerHTML = "check";
     
-
     setTimeout(function(){
-
-        console.log(activeSentence)
         activeSentence++;
-        console.log(activeSentence);
         if(activeSentence<exerciseObj.length){
             displayExerciseCard(exerciseObj[activeSentence]);
         } else {
-            //Show all answers and corrections
-            console.log(userAnswers);
-            console.log(userRightAnswers);
             displayAnswersCard(exerciseObj,userAnswers,userRightAnswers);
         }
-    },5)
+    },2000)
 
 }
 
@@ -120,7 +145,7 @@ function answerIsWrong(){
     setTimeout(function(){
         submitButton.parentElement.classList.remove("red");
         submitButton.innerHTML = "thumb_up";
-    },3); //3000
+    },3000); 
 
     setTimeout(function(){
         activeSentence++;
@@ -128,18 +153,30 @@ function answerIsWrong(){
             displayExerciseCard(exerciseObj[activeSentence]);
 
         } else {
-            //Show all answers and corrections
-            console.log(userAnswers);
-            console.log(userRightAnswers);
-
             displayAnswersCard(exerciseObj,userAnswers,userRightAnswers);
         }
-    },3);
+    },3000);
 }
 
 function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     let sentences= '';
-    
+    function howManyTrue(array){
+        let num = 0;
+        array.forEach((x)=>{
+
+            if(x==true){
+                console.log("x is true ", x)
+                num++
+            }
+        });
+        return num
+    }
+
+    let toastText = `${howManyTrue(userRightAnswers)}/${sentencesObj.length}`
+    M.toast({html: 'Ejercicio completado!'});
+    M.toast({html: `Respuestas correctas: ${toastText}`});
+
+
     sentencesObj.forEach(
         function answerList(item, index, arr) {
 
@@ -158,7 +195,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
             `
             <tr>
                 <td class="valign-wrapper">
-                <i class="material-icons ${iconColor} id="submitButton">${icon}</i>
+                <i class="material-icons ${iconColor}" id="submitButton">${icon}</i>
                 ${sentencesObj[index].text}
                 </td>
             </tr>
@@ -167,8 +204,9 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
                 sentences +=
                  `
                 <tr>
-                    <td class="valign-wrapper center">
-                        ${thisUserAnswer}
+                    <td class="valign-wrapper center" style="padding-left: 42px">
+                    <i class="material-icons red-text" id="submitButton">fiber_manual_record</i>
+                        Your answer: ${thisUserAnswer}
                     </td>
                 </tr>
             `;
@@ -178,7 +216,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
   
     let html = `
-    <table class="striped">
+    <table class="striped centered">
     <tbody>${sentences}
     </tbody>
     </table>
@@ -186,8 +224,5 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
         targetDom.innerHTML = html;
 };
 
-// displayAnswersCard()
-
-exerciseInit(exerciseObj)
-
+displayExerciseCard(exerciseObj[activeSentence]);
 }
