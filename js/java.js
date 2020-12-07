@@ -1,4 +1,4 @@
-import {sayHi} from './module.js';
+import { sayHi } from 'module.js';
 
 sayHi();
 

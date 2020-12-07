@@ -1,5 +1,3 @@
-function sayHi(){
-    console.log("SI")
-}
-
-export {sayHi as default};
+export default function sayHi() {
+    console.log("FUNCIONA");
+  }
