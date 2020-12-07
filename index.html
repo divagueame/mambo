@@ -23,50 +23,42 @@
     </head>
     <body>
 
-      
-          <div class="container center-align">
-            <h3>Mambo Spanish</h3>
-            <!-- If logged out, show divs with loggedOut Class -->
-            <div class="loggedOut" style="display: none">
-              <form id="signup-form">
-                      <div class="input-field">
-                        <input type="text" placeholder="email" id="login-email">
-                      </div>
-                      <div class="input-field">
-                        <input type="password" placeholder="" id="login-password">    
-                      </div>
-                      <button type="submit" value="Log in" class="btn waves-effect waves-light">Log in</button>
-              </form>
-            </div>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+      <li><a href="#!">1. </a></li>
+      <div class="divider"></div>
+      <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        
 
-            <!-- If logged in, show divs with loggedIn Class -->
-            <div class="loggedIn blue-grey lighten-5 style="display: none">
-              <button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
-              </div>
+<main>
 
-              <div class="divider"></div>
-              <br> 
-              <div id="exerciseContainer" class="container row"></div>
+<div class="container center-align">
+<!-- If logged out, show divs with loggedOut Class -->
+<div class="loggedOut" style="display: none">
+<form id="signup-form">
+  <div class="input-field">
+    <input type="text" placeholder="email" id="login-email">
+  </div>
+  <div class="input-field">
+    <input type="password" placeholder="" id="login-password">    
+  </div>
+  <button type="submit" value="Log in" class="btn waves-effect waves-light">Log in</button>
+</form>
+</div>
 
-              <div class="divider"></div>
-<!-- 
-              <div class="row blue-grey lighten-5">
-                <div class="col s8 offset-s2">
-                  <div class="card-panel blue-grey lighten-3">
-                    <form action="#" id="wordForm">
-                      <span class="black-text">El gato de mi madre
-                        <div class="input-field inline">
-                        <input id="missingWordInput" type="email" class="validate" size="1">
-                        <label for="email_inline">ser</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Helper</span>
-                      </div>
-                      </form>
-                      es precioso.
-                    </span>
-                  </div>
-                </div>
-            </div>
-      </div> -->
+
+<!-- If logged in, show divs with loggedIn Class -->
+<div class="loggedIn lighten-5 style="display: none">
+<button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
+</div>
+
+<br> 
+<div id="exerciseContainer" class="container row"></div>
+
+  <div class="divider"></div>
+</main>
+
 
    
 
