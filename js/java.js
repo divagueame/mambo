@@ -1,3 +1,7 @@
+import {sayHi} from './module.js';
+
+sayHi();
+
 // const auth = firebase.auth();
 // const db = firebase.firestore();
 
@@ -230,7 +234,7 @@ function answerIsWrong(){
             //Show all answers and corrections
             console.log(userAnswers);
             console.log(userRightAnswers);
-            
+
             displayAnswersCard();
         }
     },3000)
