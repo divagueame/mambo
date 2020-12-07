@@ -70,7 +70,7 @@ lessons.forEach(function(item,i,array){
     
     
     if((i!=0)&&(level>array[i-1].level)){
-        console.log(level, "YES");
+        // console.log(level, "YES");
         html+= `</li>
         <div class="divider"></div>
         <li>
