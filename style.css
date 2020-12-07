@@ -73,6 +73,11 @@ input {
     transform: translateY(-2px);
 }
 
+.lessonLinkNavbar {
+    padding-left: 5rem;
+    
+}
+
     /* header, main, footer {
       padding-left: 220px;
     }
