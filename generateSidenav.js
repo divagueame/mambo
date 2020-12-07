@@ -69,15 +69,15 @@ lessons.forEach(function(item,i,array){
 
     
     
-    if((i!=0)&&(level>array[i-1].level)){
+    // if((i!=0)&&(level>array[i-1].level)){
         
-        html+= `</li>
-        <div class="divider"></div>
-        <li>
-        <div class="collapsible-header red lighten-5"><i class="material-icons">filter_drama</i>
-        Nivel ${item.level}
-        </div>`
-    } 
+    //     html+= `</li>
+    //     <div class="divider"></div>
+    //     <li>
+    //     <div class="collapsible-header red lighten-5"><i class="material-icons">filter_drama</i>
+    //     Nivel ${item.level}
+    //     </div>`
+    // } 
     html += `<div class="collapsible-body"><span class="valign-wrapper"><i class="material-icons tiny">chevron_right</i>${title}</span></div>`;
 
     
