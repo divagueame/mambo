@@ -1,6 +1,8 @@
-import { sayHi } from 'module.js';
+import sum from './module.js'
 
-sayHi();
+sum(1, 2) // 3
+
+
 
 // const auth = firebase.auth();
 // const db = firebase.firestore();
