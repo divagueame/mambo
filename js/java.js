@@ -1,4 +1,5 @@
-import sum from './module.js'
+
+import sum from './js/module.js'
 
 sum(1, 2) // 3
 
