@@ -86,7 +86,7 @@ lessons.forEach(function(item,i,array){
 
 let html1 = `
 <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-<li><a href="#!">SIN CONO Link</a></li>
+<li><a href="#!">BUENA VIDA CONO Link</a></li>
 <li><div class="divider"></div></li>
 <li><a class="subheader">Subheader</a></li>
 <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>`
