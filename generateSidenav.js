@@ -90,5 +90,5 @@ let html1 = `
 <li><div class="divider"></div></li>
 <li><a class="subheader">Subheader</a></li>
 <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>`
-slideOut.innerHTML  = html1;
+slideOut.innerHTML  = html;
 }

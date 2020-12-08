@@ -65,6 +65,11 @@ input {
     margin: .2rem
 }
 
+
+.userWrongAnswer:hover {
+    background-color: salmon;
+}
+
 #signOutButton:hover {
     background-color: rgb(21, 136, 121);
     transform: translateY(-2px);
@@ -87,3 +92,8 @@ header, main, footer {
         display: none
     }
   }
+
+
+
+
+  missingWordSentencesExercise(exerciseContainer, exerciseSentences);

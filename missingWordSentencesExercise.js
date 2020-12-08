@@ -30,8 +30,8 @@ function displayExerciseCard(sentenceObj){
 
     let htmlCard = 
         `
-            <div class="row">
-                <div class="col s12 card-panel blue-grey lighten-3">
+            <div class="row center">
+                <div class="col s8 offset-s2 card-panel blue-grey lighten-3">
                     <form id="wordForm"  autocomplete="off" >
                     <span class="black-text">${preText}
                     <div class="input-field inline">
@@ -154,12 +154,14 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
             let rightAnswer = true;
             let icon = 'done';
-            let iconColor = "green-text lighten-3";
+            let iconColor = "green-text lighten-3 ";
+            let bgcolor = 'white'
             // console.log(userRightAnswers[index])
             if(userRightAnswers[index]==false){
                 rightAnswer = false;
                 icon = 'priority_high';
                 iconColor = "red-text lighten-3";
+                bgcolor = 'accent-2'
             };
             let thisUserAnswer = userAnswer[index];
             
@@ -176,7 +178,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
                 sentences +=
                  `
                 <tr>
-                    <td class="valign-wrapper center" style="padding-left: 42px">
+                    <td class="valign-wrapper center red lighten-5 userWrongAnswer" style="padding-left: 42px">
                     <i class="material-icons red-text" id="submitButton">fiber_manual_record</i>
                         Your answer: ${thisUserAnswer}
                     </td>
@@ -188,7 +190,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
   
     let html = `
-    <table class="striped centered">
+    <table class="centered">
     <tbody>${sentences}
     </tbody>
     </table>
