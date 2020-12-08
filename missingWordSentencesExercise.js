@@ -58,7 +58,9 @@ function displayExerciseCard(sentenceObj){
         wordForm.addEventListener('submit', function(e){
             e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
+            console.log("YES", userAnswer)
             if(userAnswer!=""){
+               
                 let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
                 
                 userAnswers.push(userAnswerWithSentence);
