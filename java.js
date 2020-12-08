@@ -102,7 +102,7 @@ let exerciseSentences = [
 ]
 
 const exerciseContainer = document.querySelector("#exerciseContainer");
-missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+// missingWordSentencesExercise(exerciseContainer, exerciseSentences);
 
 
 
