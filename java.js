@@ -1,7 +1,7 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 
-generateSidenav();
+// generateSidenav();
 
 
 
