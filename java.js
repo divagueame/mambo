@@ -117,10 +117,8 @@ let exerciseSentences = [
 
 
 
-  
+
 
 
 
 missingWordSentencesExercise(exerciseContainer, exerciseSentences);
-
-

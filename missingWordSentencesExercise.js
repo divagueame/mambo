@@ -57,7 +57,7 @@ function displayExerciseCard(sentenceObj){
         console.log("AQUi")
         wordForm.addEventListener('submit', function(e){
             console.log("YES");
-            // e.preventDefault();
+            e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
      
             if(userAnswer!=""){
