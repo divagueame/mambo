@@ -84,6 +84,6 @@ lessons.forEach(function(item,i,array){
 });
 
 
-
-slideOut.innerHTML  = html;
+let html1 = ``
+slideOut.innerHTML  = html1;
 }
