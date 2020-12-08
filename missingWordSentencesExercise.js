@@ -34,7 +34,7 @@ function displayExerciseCard(sentenceObj){
                     <form id="wordForm"  autocomplete="off" >
                     <span class="black-text">${preText}
                     <div class="input-field inline">
-                    <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem" autofocus>
+                    <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
                     <label for="missingWordInput" class="">${labelText}</label>
                     </div>
                     ${postText}
@@ -55,31 +55,6 @@ function displayExerciseCard(sentenceObj){
 
 
 
-        //////////////////////
-
-    // let htmlCard = 
-    // `<div class="row blue-grey lighten-5">
-    //     <div class="col s8 offset-s2">
-    //         <div class="card-panel blue-grey lighten-3">
-    //             <form id="wordForm"  autocomplete="off" >
-    //             <span class="black-text">${preText}
-    //             <div class="input-field inline">
-    //             <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem" autofocus>
-    //             <label for="missingWordInput" class="">${labelText}</label>
-    //             </div>
-    //             ${postText}
-    //             </span>
-    //             <br>
-    //            <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
-    //           <br>
-    //             <button class="btn waves-effect waves-light" type="submit" onclick="this.disabled = true"  name="submitAnswer">
-    //             <i class="material-icons" id="submitButton">thumb_up</i>
-    //             </button>
-    //         </form>
-    //         </div>
-    //     </div>
-    // </div>
-    // `
         //////////////////////
 
         targetDom.innerHTML = htmlCard;
