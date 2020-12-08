@@ -7,7 +7,9 @@ import generateSidenav from './generateSidenav.js';
 document.addEventListener('DOMContentLoaded', function() {
      
     var myNav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(myNav, {});
+    M.Sidenav.init(myNav, {
+        draggable: true
+    });
    
   });
    
