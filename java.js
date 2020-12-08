@@ -12,10 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
    
 
-
-
-
-
 const exerciseContainer = document.querySelector("#exerciseContainer");
 
 

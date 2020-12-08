@@ -5,8 +5,6 @@ let userAnswers = [];
 let userRightAnswers = [];
 
 
-const submitButton = document.querySelector("#submitButton");
-
 function findPreText(sentenceObj){
     let expression = `.*${sentenceObj.hiddenWord}`
     let preText = (sentenceObj.text).match(expression);
@@ -53,6 +51,9 @@ function displayExerciseCard(sentenceObj){
 
         //////////////////////
         targetDom.innerHTML = htmlCard;
+
+const submitButton = document.querySelector("#submitButton");
+
         // document.querySelector("#missingWordInput").focus();
 
 const wordForm = document.querySelector("#wordForm");
@@ -167,9 +168,9 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
             
             sentences +=
             `
-            <tr>
+            <tr class="${bgcolor}">
                 <td class="valign-wrapper">
-                <i class="material-icons ${iconColor}" id="submitButton">${icon}</i>
+                <i class="tiny material-icons ${iconColor}" id="submitButton">${icon}</i>
                 ${sentencesObj[index].text}
                 </td>
             </tr>
@@ -177,9 +178,9 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
             if(userRightAnswers[index]==false){
                 sentences +=
                  `
-                <tr>
+                <tr  class="${bgcolor}">
                     <td class="valign-wrapper center red lighten-5 userWrongAnswer" style="padding-left: 42px">
-                    <i class="material-icons red-text" id="submitButton">fiber_manual_record</i>
+                    <i class="material-icons tiny red-text" id="submitButton">fiber_manual_record</i>
                         Your answer: ${thisUserAnswer}
                     </td>
                 </tr>
