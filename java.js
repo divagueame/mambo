@@ -1,8 +1,6 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 
-// generateSidenav();
-
 
 
 
@@ -102,8 +100,6 @@ let exerciseSentences = [
 ]
 
 const exerciseContainer = document.querySelector("#exerciseContainer");
-// missingWordSentencesExercise(exerciseContainer, exerciseSentences);
-
 
 
 ///Side navigation bar
@@ -117,3 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(elems);
   });
+
+
+
+
+  missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+
+// generateSidenav();
+
