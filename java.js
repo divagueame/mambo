@@ -2,6 +2,8 @@ import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 
 
+const exerciseContainer = document.querySelector("#exerciseContainer");
+
 
 
 
@@ -99,8 +101,6 @@ let exerciseSentences = [
     }
 ]
 
-const exerciseContainer = document.querySelector("#exerciseContainer");
-
 
 ///Side navigation bar
 document.addEventListener('DOMContentLoaded', function() {
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+//   missingWordSentencesExercise(exerciseContainer, exerciseSentences);
 
 // generateSidenav();
 
