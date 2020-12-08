@@ -2,7 +2,21 @@ import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 
 
-const exerciseContainer = document.querySelector("#exerciseContainer");
+
+    	
+document.addEventListener('DOMContentLoaded', function() {
+     
+    var myNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(myNav, {});
+   
+  });
+   
+
+
+
+
+
+// const exerciseContainer = document.querySelector("#exerciseContainer");
 
 
 
@@ -101,13 +115,6 @@ let exerciseSentences = [
     }
 ]
 
-
-///Side navigation bar
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-
-    var instances = M.Sidenav.init(elems);
-  });
 
 
   
