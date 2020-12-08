@@ -84,6 +84,11 @@ lessons.forEach(function(item,i,array){
 });
 
 
-let html1 = ``
+let html1 = `
+<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+<li><a href="#!">POLLAS Link</a></li>
+<li><div class="divider"></div></li>
+<li><a class="subheader">Subheader</a></li>
+<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>`
 slideOut.innerHTML  = html1;
 }

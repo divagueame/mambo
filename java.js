@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(myNav, {
         draggable: true
     });
-   
+    generateSidenav()
   });
    
 
