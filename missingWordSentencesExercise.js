@@ -54,7 +54,8 @@ function displayExerciseCard(sentenceObj){
         targetDom.innerHTML = htmlCard;
         // document.querySelector("#missingWordInput").focus();
         const wordForm = document.querySelector("#wordForm");
-        console.log("AQUi")
+        console.log(wordForm)
+        console.log("ANDA YA")
         wordForm.addEventListener('submit', function(e){
             console.log("YES");
             e.preventDefault();
