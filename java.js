@@ -2,15 +2,6 @@ import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 generateSidenav();
 
-const sidenavTrigger = document.querySelector(".sidenav-trigger");
-sidenavTrigger.addEventListener('click',function(){
-    const slideOut = document.querySelector("#slide-out");
-    
-    console.log("Es", slideOut.childNodes)
-    if(slideOut.childNodes==0){
-// generateSidenav();
-    }
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     var myNav = document.querySelectorAll('.sidenav');
