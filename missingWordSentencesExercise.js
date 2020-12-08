@@ -1,5 +1,5 @@
 export default function missingWordSentencesExercise(targetDom, exerciseObj) {
-console.log("YES")
+
 let activeSentence = 0;
 let userAnswers = [];
 let userRightAnswers = [];
@@ -48,17 +48,11 @@ function displayExerciseCard(sentenceObj){
                 </form>
                 </div>
             </div>
-
         `
 
-
-
-
-
         //////////////////////
-
         targetDom.innerHTML = htmlCard;
-        document.querySelector("#missingWordInput").focus();
+        // document.querySelector("#missingWordInput").focus();
         const wordForm = document.querySelector("#wordForm");
 
         wordForm.addEventListener('submit', function(e){
