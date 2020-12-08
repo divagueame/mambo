@@ -5,7 +5,7 @@ let userAnswers = [];
 let userRightAnswers = [];
 
 
-console.log("INICIO ")
+console.log(targetDom, "sd");
 function findPreText(sentenceObj){
     let expression = `.*${sentenceObj.hiddenWord}`
     let preText = (sentenceObj.text).match(expression);
