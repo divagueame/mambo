@@ -2,8 +2,20 @@
 *{
     font-family: 'Comfortaa', cursive;
 }
+.activator {
+    background-size: cover !important;
+}
 
+.lessonHeaderText {
+    font-size: 2rem !important;
+}
 
+.bosdy {
+    background-color: seagreen;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./img/bg.jpg');
+}
 /* label color */
 .input-field label {
     color: rgb(179, 179, 179);

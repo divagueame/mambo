@@ -19,7 +19,7 @@ function findPosText(sentenceObj){
 }
 
 function displayExerciseCard(sentenceObj){
-    console.log("HOLAS")
+    
     let preText = findPreText(sentenceObj);
     let postText =findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
@@ -57,8 +57,6 @@ const submitButton = document.querySelector("#submitButton");
         // document.querySelector("#missingWordInput").focus();
 
 const wordForm = document.querySelector("#wordForm");
-        console.log("es",wordForm)
-        console.log("ANDA YA")
         wordForm.addEventListener('submit', function(e){
             e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
@@ -138,7 +136,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
         array.forEach((x)=>{
 
             if(x==true){
-                console.log("x is true ", x)
+                
                 num++
             }
         });
@@ -157,7 +155,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
             let icon = 'done';
             let iconColor = "green-text lighten-3 ";
             let bgcolor = 'white'
-            // console.log(userRightAnswers[index])
+            
             if(userRightAnswers[index]==false){
                 rightAnswer = false;
                 icon = 'priority_high';

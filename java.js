@@ -1,7 +1,7 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
+import introConcept from './introConcept.js';
 generateSidenav();
-
 
 document.addEventListener('DOMContentLoaded', function() {
     var myNav = document.querySelectorAll('.sidenav');
@@ -114,7 +114,8 @@ let exerciseSentences = [
 
 
 
+// introConcept(exerciseContainer);
 
 
 
-missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+// missingWordSentencesExercise(exerciseContainer, exerciseSentences);
