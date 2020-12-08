@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// const exerciseContainer = document.querySelector("#exerciseContainer");
+const exerciseContainer = document.querySelector("#exerciseContainer");
 
 
 
@@ -123,5 +123,4 @@ let exerciseSentences = [
 
 missingWordSentencesExercise(exerciseContainer, exerciseSentences);
 
-// generateSidenav();
 
