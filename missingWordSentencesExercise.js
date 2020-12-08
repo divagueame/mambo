@@ -5,7 +5,7 @@ let userAnswers = [];
 let userRightAnswers = [];
 
 
-
+console.log("INICIO ")
 function findPreText(sentenceObj){
     let expression = `.*${sentenceObj.hiddenWord}`
     let preText = (sentenceObj.text).match(expression);
@@ -54,11 +54,12 @@ function displayExerciseCard(sentenceObj){
         targetDom.innerHTML = htmlCard;
         // document.querySelector("#missingWordInput").focus();
         const wordForm = document.querySelector("#wordForm");
-
+        console.log("AQUi")
         wordForm.addEventListener('submit', function(e){
-            e.preventDefault();
+            console.log("YES");
+            // e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
-            console.log("YES", userAnswer)
+     
             if(userAnswer!=""){
                
                 let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
