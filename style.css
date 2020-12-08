@@ -9,7 +9,15 @@
 .lessonHeaderText {
     font-size: 2rem !important;
 }
+.underlined {
+    text-decoration: underline;
+    font-weight: bolder;
+}
 
+.justified {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 .bosdy {
     background-color: seagreen;
     background-size: cover;
