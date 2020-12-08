@@ -5,7 +5,8 @@ let userAnswers = [];
 let userRightAnswers = [];
 
 
-console.log(targetDom, "sd");
+const submitButton = document.querySelector("#submitButton");
+
 function findPreText(sentenceObj){
     let expression = `.*${sentenceObj.hiddenWord}`
     let preText = (sentenceObj.text).match(expression);
@@ -20,7 +21,7 @@ function findPosText(sentenceObj){
 }
 
 function displayExerciseCard(sentenceObj){
-    
+    console.log("HOLAS")
     let preText = findPreText(sentenceObj);
     let postText =findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
@@ -42,7 +43,7 @@ function displayExerciseCard(sentenceObj){
                     <br>
                    <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
                   <br>
-                    <button class="btn waves-effect waves-light" type="submit" onclick="this.disabled = true"  name="submitAnswer">
+                    <button class="btn waves-effect waves-light" type="submit" name="submitAnswer">
                     <i class="material-icons" id="submitButton">thumb_up</i>
                     </button>
                 </form>
@@ -53,16 +54,15 @@ function displayExerciseCard(sentenceObj){
         //////////////////////
         targetDom.innerHTML = htmlCard;
         // document.querySelector("#missingWordInput").focus();
-        const wordForm = document.querySelector("#wordForm");
-        console.log(wordForm)
+
+const wordForm = document.querySelector("#wordForm");
+        console.log("es",wordForm)
         console.log("ANDA YA")
         wordForm.addEventListener('submit', function(e){
-            console.log("YES");
             e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
      
             if(userAnswer!=""){
-               
                 let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
                 
                 userAnswers.push(userAnswerWithSentence);
@@ -96,7 +96,6 @@ function isCorrectAnswer(hiddenText,userAnswer){
 }
 
 function answerIsCorrect(){
-    const submitButton = document.querySelector("#submitButton");
     submitButton.innerHTML = "check";
     
     setTimeout(function(){
