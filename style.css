@@ -61,7 +61,7 @@ input {
 }
 #logo-img {
     width: 50px;
-    height: auto;
+    /* height: auto; */
     margin: .2rem
 }
 
