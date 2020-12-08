@@ -8,9 +8,10 @@ sidenavTrigger.addEventListener('click',function(){
     
     console.log("Es", slideOut.childNodes)
     if(slideOut.childNodes==0){
-generateSidenav();
+// generateSidenav();
     }
-})
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     var myNav = document.querySelectorAll('.sidenav');
     M.Sidenav.init(myNav, {
