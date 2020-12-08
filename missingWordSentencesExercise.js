@@ -1,5 +1,5 @@
 export default function missingWordSentencesExercise(targetDom, exerciseObj) {
-
+console.log("YES")
 let activeSentence = 0;
 let userAnswers = [];
 let userRightAnswers = [];

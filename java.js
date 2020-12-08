@@ -121,7 +121,7 @@ let exerciseSentences = [
 
 
 
-  missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+missingWordSentencesExercise(exerciseContainer, exerciseSentences);
 
 // generateSidenav();
 
