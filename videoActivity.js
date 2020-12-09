@@ -12,7 +12,7 @@ let youtubeIframe = `<iframe width="560" height="315" src="https://www.youtube.c
     </div>
   </div>
   <div class="col s4 red">
-    <p>adsfds</p>
+    <p>Video activity</p>
   </div>
 </div>
 

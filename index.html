@@ -26,10 +26,11 @@
     <body>
 
 
+
     	
     <nav>
       <div class="nav-wrapper blue-grey">
-          <div class="container">
+          <div class="">
           <div class="brand-logo">
             <img src="./img/forest.svg" id="logo-img" class="left"><span id="logoText">Mam Spanish</span></div>
           </div> 
@@ -37,225 +38,115 @@
       <ul class="right hide-on-med-and-down">
       <li> <a href="#">s</a></li>
       <li> <a href="#">ca</a></li>
-      <li></li>
+      <li><a href="#"><i class="material-icons tiny white-text">assignment_ind</i></a></li>  
+      <li><a href="#"  class="btn-floating blue-text"><i class="material-icons tiny white-text">person_pin</i></a></li>  
+
       
-
-
-
-        
-
-      <li> <a href="#">C </a></li>
+      <li><a href="#"><i class="material-icons tiny">input</i></a></li>
 
       
       </ul>
       </div>
      
     </nav>
+
+
+
+
+<!-- LOGGED IN STUFF -->
+<div class="loggedOut container"  style="display: none">
+  <!-- If logged out, show divs with loggedOut Class -->
+  <div class="row ">
+    <div class="col s6 offset-s3">
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="text" placeholder="email" id="login-email">
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="" id="login-password">    
+        </div>
+        <div  class="center">
+          <button type="submit" value="Log in" class=" btn waves-effect waves-light">Log in</button>
+        </div>
+
+      </form>
+      </div>
+  </div>
+</div>     
+</div>
+
+
+<!-- LOGGED OUT STUFF -->
+<div class="loggedIn container">
+<main>
+
+
     
 <!-- Side Nav -->
     <ul id="slide-out" class="sidenav collapsible collapsible-accordion"></ul>
     
-              <!-- If logged in, show divs with loggedIn Class -->
-              <!-- <div class="loggedIn lighten-5" style="display: hidden">
-              <button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
-              </div> -->
-              
-<main>
-  
-  
-  <div class="container row hide">
-    <div class="col s12 center-align"><h2>Aprende español con Martin</h2></div>
-    <br>
-    <div class="col s12 center-align">
-      <i class="material-icons tiny brown-text">fiber_manual_record</i>
-      Conoce, experimenta y vive la lengua y cultura española conmigo</div>
+<!-- Side Nav trigger -->
+<a href="#" data-target="slide-out" class="sidenav-trigger btn">+</a>
+
+
+<!-- Intro Card -->
+<!-- <div class="row">
+  <div class="col s12 center-align">
+    <h2>Aprende español con Martin</h2>
   </div>
+  <br>
+  <div class="col s12 center-align">
+  <i class="material-icons tiny brown-text">fiber_manual_record</i>
+  Conoce, experimenta y vive la lengua y cultura española conmigo
+  </div>
+</div> -->
+
+<div class="row center">
+              <!-- If logged in, show divs with loggedIn Class -->
+              <div class="lighten-5" style="display: block">
+                <button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
+                </div>
+<br>
 
 
-<div class="container row">
-  
-  <!-- If logged out, show divs with loggedOut Class -->
-  <!-- <div class="loggedOut col s6 offset-s3" style="display: none">
-    <form id="signup-form">
-      <div class="input-field">
-        <input type="text" placeholder="email" id="login-email">
-      </div>
-      <div class="input-field">
-        <input type="password" placeholder="" id="login-password">    
-      </div>
-      <button type="submit" value="Log in" class="btn waves-effect waves-light">Log in</button>
-    </form>
-    </div> -->
-</div>
-
-
-<div class="container center-align">
-  <a href="#" data-target="slide-out" class="sidenav-trigger btn">Lecciones</a>
+<div class="lessonCheck btn">
+  Lesson complete: <span class="lessonCheckResult">Yes<span>
 </div>
 
 
 
  <!-- lesson header -->
- <div class="row container blue">
+ <!-- <div class="row blue">
   <div class="col s12 blue-grey darken-1 center-align">
-    <div class="">
+    <div>
       <div class="white-text">
         <span class="card-title lessonHeaderText">1.1 Masculino o femenino</span>
       </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-
-
-
-
-<!-- <div class="videoActivityContainer"></div> -->
-
+  </div> -->
 
 
 <!-- lesson content -->
-<div class="row container">
-  
-<div id="exerciseContainer" class="container row">
-  
-</div>
+<div class="row">
+    <!-- Modules containers -->
+<div id="exerciseContainer" class="row"></div>
+<div class="videoActivityContainer"></div>
+<div id="footerContainer"></div>
 
-
-
-
-  
-  <div class="col s8 ligthen-5 offset-s1">
+<!-- Blockquoe template -->
+  <!-- <div class="col s8 ligthen-5 offset-s1">
     <blockquote class="justified">
       Como regla general, las palabras que significan cosas, conceptos o ideas tienen siempre un genero: <span class="underlined">masculino</span> o <span class="underlined">femenino</span>.
       <br><br>Las palabras que terminan en <span class="underlined">-o</span> (boligrafo, edificio, amigo) son masculinas, y las palabras que terminan en <span class="underlined">-a</span> (casa, mesa, amiga) son femeninas. 
       <i class="orange-text text-darken-4 tiny material-icons">translate</i>
     </blockquote>
-<!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam explicabo corporis dolor alias iure est quasi! Porro itaque mollitia beatae asperiores libero magni optio quia cupiditate natus fuga? Eius suscipit porro eos necessitatibus? -->
-  </div>
+  </div> -->
 </div>
-
-<div class="row container">
-<div class="col s12">
-
-</div>
-<div class="section">
-  <h5>Por ejemplo...</h5>
-  
-  <div class="row">
-  
-    <!-- FIRST CARD -->
-    <div class="col s3 offset-s1">
-      <div class="card">
-        <div class="card-image">
-          <a class="activator btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-          <img  class="activator" src="./img/lesson1.1/boy.jpg">
-         
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">El niñ<span class="red-text">o</span></span>
-          <p><a href="#">El niñ<span class="red-text">o</span></a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Ejemplo:<i class="material-icons right">close</i></span>
-          <p>El niño tiene un juguete.</p>
-          <p class="lighten-5">The boy has a toy</p>
-        </div>
-      </div>
-    </div>
-      <!-- Second CARD -->
-      <div class="col s3 offset-s1">
-        <div class="card">
-          <div class="card-image">
-            <a class="activator btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            <img  class="activator" src="./img/lesson1.1/boy.jpg">
-           
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">El niñ<span class="red-text">o</span></span>
-            <p><a href="#">El niñ<span class="red-text">o</span></a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Ejemplo:<i class="material-icons right">close</i></span>
-            <p>El niño tiene un juguete.</p>
-            <p class="lighten-5">The boy has a toy</p>
-          </div>
-        </div>
-      </div>
-        <!-- Third CARD -->
-        <div class="col s3 offset-s1">
-          <div class="card">
-            <div class="card-image">
-              <a class="activator btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-              <img  class="activator" src="./img/lesson1.1/boy.jpg">
-             
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">El niñ<span class="red-text">o</span></span>
-              <p><a href="#">El niñ<span class="red-text">o</span></a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Ejemplo:<i class="material-icons right">close</i></span>
-              <p>El niño tiene un juguete.</p>
-              <p class="lighten-5">The boy has a toy</p>
-            </div>
-          </div>
-        </div>
-        
-            <!-- Fourth CARD -->
-    <div class="col s3 offset-s1">
-      <div class="card">
-        <div class="card-image">
-          <a class="activator btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-          <img  class="activator" src="./img/lesson1.1/boy.jpg">
-         
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">El niñ<span class="red-text">o</span></span>
-          <p><a href="#">El niñ<span class="red-text">o</span></a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Ejemplo:<i class="material-icons right">close</i></span>
-          <p>El niño tiene un juguete.</p>
-          <p class="lighten-5">The boy has a toy</p>
-        </div>
-      </div>
-    </div>
-    
-        
-    
-</div>
-          
-
-
-<div class="divider"></div>
-</div>
-
-
-<!-- New section -->
-<div class="section">
-  <h5>SFem</h5>
-  <p>Stuff</p>
-</div>
-<div class="divider"></div>
-<div class="section">
-  <h5>Section 3</h5>
-  <p>Stuff</p>
-</div>
-
-</div>
-        
-
-<br>
-
-
-
-  </div>
-</div>
-
 </main>
+</div>
+</div>
+
 
 
    

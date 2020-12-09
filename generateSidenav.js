@@ -1,6 +1,7 @@
 export default function generateSidebarList() {
 const slideOut = document.querySelector("#slide-out");
-console.log(slideOut)
+
+
 let levels = 3;
 let lessons = [
     {
@@ -95,11 +96,11 @@ let lessons = [
 
 
 function deployLessonsInsideHeaders(lessons){
-console.log(lessons[0]);
+
 let level = lessons[0].level;
 let selector = '.levelHeader' + level;
 selector = document.querySelector(selector);
-// selector.innerHTML = `<li>POLLAS<li>`
+
     lessons.forEach(function(item,i,array){
         let level = item.level;
         let levelSelector = '.levelHeader' + level;
