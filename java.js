@@ -1,6 +1,7 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 import introConcept from './introConcept.js';
+import videoActivity from './videoActivity.js';
 generateSidenav();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,7 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
    
 
+  document.addEventListener('DOMContentLoaded', function() {
+
+var collapsibleElem = document.querySelector('.collapsible');
+M.Collapsible.init(collapsibleElem, {});
+
+  });
+
 const exerciseContainer = document.querySelector("#exerciseContainer");
+const videoActivityContainer = document.querySelector(".videoActivityContainer");
 
 
 
@@ -112,10 +121,8 @@ let exerciseSentences = [
 ]
 
 
-
-
 // introConcept(exerciseContainer);
-
+// videoActivity(videoActivityContainer);
 
 
 // missingWordSentencesExercise(exerciseContainer, exerciseSentences);
