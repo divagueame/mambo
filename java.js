@@ -10,16 +10,15 @@ const exerciseContainer = document.querySelector("#exerciseContainer");
 const videoActivityContainer = document.querySelector(".videoActivityContainer");
 
 function displayAvatarsToChoose(){
-
+    let chosenAvatar = 0;
 
     let avatars = ''
 
     for(let i=0;i<12;i++){
-        console.log(i+1)
 
         avatars += `
-        <div class="col s2">
-        <img class="responsive-img" src="./img/avatars/${i+1}.png">
+        <div class="col s2   clickable">
+        <img class="responsive-img circle avatarContainer"  id="avatarOption${i+1}" src="./img/avatars/${i+1}.png">
         </div>`
 
     }
@@ -31,91 +30,61 @@ let html = `
 <div id="avatarsModal" class="modal">
   <div class="modal-content">
     <h5>Bienvenido a Mambo Spanish</h5>
-
 <div class="row">
 ${avatars}
-
 </div>
-
-
 `
 
-
-
-
-
-let html1 = `
-
-<div id="avatarsModal" class="modal">
-  <div class="modal-content">
-    <h4>Bienvenido a Mambo Spanish</h4>
-
-
-<div class="row">
-<div class="col s2 offset-s2">
-  <img class="responsive-img" src="./img/avatars/1.png">
-</div>
-<div class="col s2">
-  <img class="responsive-img" src="./img/avatars/2.png">
-</div>
-<div class="col s2">
-<img class="responsive-img" src="./img/avatars/3.png">
-</div>
-<div class="col s2">
-<img class="responsive-img" src="./img/avatars/4.png">
-</div>
-</div>
-<div class="row">
-<div class="col s2 offset-s2">
-  <img class="responsive-img" src="./img/avatars/5.png">
-</div>
-<div class="col s2">
-  <img class="responsive-img" src="./img/avatars/6.png">
-</div>
-<div class="col s2">
-<img class="responsive-img" src="./img/avatars/7.png">
-</div>
-<div class="col s2">
-<img class="responsive-img" src="./img/avatars/8.png">
-</div>
-</div>
-<div class="row">
-<div class="col s2 offset-s2">
-  <img class="responsive-img" src="./img/avatars/9.png">
-</div>
-<div class="col s2">
-  <img class="responsive-img" src="./img/avatars/10.png">
-</div>
-<div class="col s2">
-<img class="responsive-img" src="./img/avatars/11.png">
-</div>
-<div class="col s2">
-<img class="responsive-img" src="./img/avatars/12.png">
-</div>
-</div>
-
-  </div>
-
-
-`
 
 
 html += `
-
-<form class="row">
-  <div class="col col s4 offset-s4">
+<form class="row valign-wrapper" id="avatarNameInputForm">
+  <div class="col s3 offset-s4">
     <div class="input-field">
-      <i class="material-icons prefix">account_circle</i>
       <input id="icon_prefix" type="text" class="validate">
       <label for="icon_prefix">Tu nombre</label>
     </div>
   </div>
+  <div class="col">
+  <button class="btn waves-effect waves-light red lighten-2" type="submit" name="action">
+    <i class="material-icons">thumb_up</i>
+  </button>
+    </div>
 </form>
-    <div class="btn">Listo</div>
+    
 
 </div>
     `
-avatarsModal.innerHTML = html
+avatarsModal.innerHTML = html;
+
+const avatarsId = document.querySelectorAll(".avatarContainer");
+
+avatarsId.forEach((avatar)=>{
+    avatar.addEventListener("click", function(){
+        let previousAvatarId = chosenAvatar;
+        let previousAvatarSelector = document.querySelector(`#avatarOption${chosenAvatar}`);
+
+        chosenAvatar = (avatar.id).substring(12);
+
+        if(chosenAvatar!=previousAvatarId){
+            
+            avatar.classList.add("z-depth-2");
+            avatar.classList.add("avatarActive");
+
+            if(previousAvatarSelector){
+
+                previousAvatarSelector.classList.remove("z-depth-4");
+                previousAvatarSelector.classList.remove("avatarActive");
+            }
+
+        }
+        
+
+        }
+        
+)
+})
+console.log(avatarsId)
 }
 
 displayAvatarsToChoose();
