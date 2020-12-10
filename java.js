@@ -6,9 +6,141 @@ import videoActivity from './videoActivity.js';
 import examplesCard from './examplesCard.js';
 let activeLessonId = 'Verbos' 
 
-
 const exerciseContainer = document.querySelector("#exerciseContainer");
 const videoActivityContainer = document.querySelector(".videoActivityContainer");
+
+function displayAvatarsToChoose(){
+
+
+    let avatars = ''
+
+    for(let i=0;i<12;i++){
+        console.log(i+1)
+
+        avatars += `
+        <div class="col s2">
+        <img class="responsive-img" src="./img/avatars/${i+1}.png">
+        </div>`
+
+    }
+
+const avatarsModal = document.querySelector(".avatarsModal");
+
+let html = `
+
+<div id="avatarsModal" class="modal">
+  <div class="modal-content">
+    <h5>Bienvenido a Mambo Spanish</h5>
+
+<div class="row">
+${avatars}
+
+</div>
+
+
+`
+
+
+
+
+
+let html1 = `
+
+<div id="avatarsModal" class="modal">
+  <div class="modal-content">
+    <h4>Bienvenido a Mambo Spanish</h4>
+
+
+<div class="row">
+<div class="col s2 offset-s2">
+  <img class="responsive-img" src="./img/avatars/1.png">
+</div>
+<div class="col s2">
+  <img class="responsive-img" src="./img/avatars/2.png">
+</div>
+<div class="col s2">
+<img class="responsive-img" src="./img/avatars/3.png">
+</div>
+<div class="col s2">
+<img class="responsive-img" src="./img/avatars/4.png">
+</div>
+</div>
+<div class="row">
+<div class="col s2 offset-s2">
+  <img class="responsive-img" src="./img/avatars/5.png">
+</div>
+<div class="col s2">
+  <img class="responsive-img" src="./img/avatars/6.png">
+</div>
+<div class="col s2">
+<img class="responsive-img" src="./img/avatars/7.png">
+</div>
+<div class="col s2">
+<img class="responsive-img" src="./img/avatars/8.png">
+</div>
+</div>
+<div class="row">
+<div class="col s2 offset-s2">
+  <img class="responsive-img" src="./img/avatars/9.png">
+</div>
+<div class="col s2">
+  <img class="responsive-img" src="./img/avatars/10.png">
+</div>
+<div class="col s2">
+<img class="responsive-img" src="./img/avatars/11.png">
+</div>
+<div class="col s2">
+<img class="responsive-img" src="./img/avatars/12.png">
+</div>
+</div>
+
+  </div>
+
+
+`
+
+
+html += `
+
+<form class="row">
+  <div class="col col s4 offset-s4">
+    <div class="input-field">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="icon_prefix" type="text" class="validate">
+      <label for="icon_prefix">Tu nombre</label>
+    </div>
+  </div>
+</form>
+    <div class="btn">Listo</div>
+
+</div>
+    `
+avatarsModal.innerHTML = html
+}
+
+displayAvatarsToChoose();
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems, {
+        inDuration: 100,
+        opacity: .551, 
+        dismissible: false,
+        preventScrolling: true
+    });
+    let elem = document.querySelector("#avatarsModal")
+    var instance = M.Modal.getInstance(elem);
+    instance.open();
+  });
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
