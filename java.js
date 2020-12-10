@@ -4,7 +4,7 @@ import generateFooter from './generateFooter.js';
 import introConcept from './introConcept.js';
 import videoActivity from './videoActivity.js';
 import examplesCard from './examplesCard.js';
-let activeLessonId = 'lesson1.1Sustantivos'
+let activeLessonId = 'Adjectivos'
 
 
 const exerciseContainer = document.querySelector("#exerciseContainer");
