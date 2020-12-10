@@ -4,7 +4,7 @@ import generateFooter from './generateFooter.js';
 import introConcept from './introConcept.js';
 import videoActivity from './videoActivity.js';
 import examplesCard from './examplesCard.js';
-let activeLessonId = 'Adjectivos'
+let activeLessonId = 'Verbos' 
 
 
 const exerciseContainer = document.querySelector("#exerciseContainer");
@@ -13,14 +13,6 @@ const videoActivityContainer = document.querySelector(".videoActivityContainer")
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    generateSidenav();
-// examplesCard(exerciseContainer)
-
-
-}
-)
-
-document.addEventListener('DOMContentLoaded', function() {
     var myNav = document.querySelectorAll('.sidenav');
     M.Sidenav.init(myNav, {
         draggable: true
@@ -29,11 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Tooltip.init(elems);
     var collapsibleElem = document.querySelector('.collapsible');
     M.Collapsible.init(collapsibleElem, {});
-  });
-   
+        
+    }
+    )
+    
 const auth = firebase.auth();
 const db = firebase.firestore();
-
 
 
 function getUserId(){
@@ -61,7 +54,6 @@ signUpForm.addEventListener('submit', function(e){
 });
 
 
-
 // Log out
 const signOutButton = document.querySelector("#signOutButton");
 signOutButton.addEventListener('click', function(){
@@ -81,11 +73,9 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             document.querySelectorAll(".loggedOut").forEach((e)=>{
                 e.style.display = ("none");
             })
-            // console.log("You're logged in")
+            console.log("You're logged in")
+            initModules()
 
-    generateFooter();
-
-            
 
         } else {
             console.log("You're NOT logged in");
@@ -100,6 +90,15 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     });
 });
 
+
+function initModules(){
+    // examplesCard(exerciseContainer);
+    generateSidenav()
+    generateFooter()
+// introConcept(exerciseContainer);
+// videoActivity(videoActivityContainer)
+// missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+}
 
 
 let exerciseSentences = [
@@ -130,9 +129,6 @@ let exerciseSentences = [
 ]
 
 
-// introConcept(exerciseContainer);
-// videoActivity(videoActivityContainer)
-// missingWordSentencesExercise(exerciseContainer, exerciseSentences);
 
 
 export {activeLessonId, db};
