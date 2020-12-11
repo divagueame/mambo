@@ -1,8 +1,9 @@
 import {activeLessonId, db} from './java.js';
 
-export default function generateFooter() {
+export default function generateFooter(targetDom) {
 console.log("Footer generate init");
-const footerContainer = document.querySelector("#footerContainer");
+
+// const footerContainer = document.querySelector(targetDom);
 
 let userId =  firebase.auth().currentUser.uid;
 
@@ -30,7 +31,7 @@ let basicHtmlFooter = `
 <a class="btn-floating white  waves-effect waves-light waves-teal" data-position="top" data-tooltip="Siguiente"><i class="material-icons black-text">chevron_right</i></a>
 </div>  
 `
-footerContainer.innerHTML = basicHtmlFooter;
+targetDom.innerHTML = basicHtmlFooter;
 const taskUpdateBtn = document.querySelector("#taskUpdateBtn");
 
 
@@ -68,8 +69,8 @@ userDBLessonsRef.get().then((doc)=>{
             dbMarkActiveLessonAsNotcompleted();
             toggleButtonImg()
 
-        // var elems = document.querySelectorAll('.tooltipped');
-        // M.Tooltip.init(elems, {});
+        var elems = document.querySelectorAll('.tooltipped');
+        M.Tooltip.init(elems, {});
     }
 }) 
 

@@ -6,10 +6,44 @@ import videoActivity from './videoActivity.js';
 import examplesCard from './examplesCard.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
-let activeLessonId = 'Verbos' 
+let activeLessonId = 'adverbios' 
 
-const exerciseContainer = document.querySelector("#exerciseContainer");
-const videoActivityContainer = document.querySelector(".videoActivityContainer");
+// const exerciseContainer = document.querySelector("#exerciseContainer");
+// const videoActivityContainer = document.querySelector(".videoActivityContainer");
+const lessonContainer = document.querySelector('.lessonContainer'); 
+let lesson1Obj = {
+    'title': 's'
+};
+
+
+function renderLessonTitle(targetDom){
+
+    // <!-- lesson header -->
+    targetDom.innerHTML +=
+`    <div class="row blue">
+     <div class="col s12 blue-grey darken-1 center-align">
+       <div>
+         <div class="white-text">
+           <span class="card-title lessonHeaderText">1.1 Masculino o femenino</span>
+         </div>
+         </div>
+       </div>
+     </div>`
+   
+}
+function renderLesson(lesson1Obj){
+
+    // renderLessonTitle(lessonContainer);
+
+// examplesCard(lessonContainer);
+// introConcept(lessonContainer);
+// videoActivity(lessonContainer)
+// missingWordSentencesExercise(lessonContainer, exerciseSentences);
+
+
+
+// generateFooter(lessonContainer);
+}
 
 
 
@@ -126,16 +160,13 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             })
         // No user is signed in.
         }
-    });
+    });    generateSidenav()
 });
 
 function initModules(){
-    // examplesCard(exerciseContainer);
     generateSidenav()
-    generateFooter();
-// introConcept(exerciseContainer);
-// videoActivity(videoActivityContainer)
-// missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+    renderLesson(activeLessonId);
+
 }
 
 
