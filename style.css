@@ -36,10 +36,17 @@
     background-color: rgba(117, 172, 96, 0.9) !important;
     transform:rotate(360deg) scale(1.4)  !important;
     
-    border: rgb(255, 255, 255) 2px solid;
+    border: rgb(0, 0, 0) 2px solid;
 
 }
 
+
+.fixed-widthImg{
+    width: 1.5rem;
+    height: auto;
+    object-fit: cover;
+
+}
 .icon {
     width: 33px;
     height: auto;
