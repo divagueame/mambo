@@ -5,6 +5,7 @@ import examplesCard from './examplesCard.js';
 import generateBlockquote from './generateBlockquote.js';
 import introConcept from './introConcept.js';
 import generateSidenav from './generateSidenav.js';
+import generateDivider from './generateDivider.js';
 
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateFooter from './generateFooter.js';
@@ -17,21 +18,23 @@ export default function renderLesson(lesson1Obj) {
 console.log("Render lesson init")
     const lessonContainer = document.querySelector('.lessonContainer'); 
 
-    generateBlockquote(lessonContainer)
-    generateSidenav();
 
     renderLessonTitle(lessonContainer);
-    missingWordSentencesExercise(lessonContainer, exerciseSentences);
+    generateDivider(lessonContainer)
+    generateBlockquote(lessonContainer)
+    generateSidenav();
+    generateDivider(lessonContainer)
+    introConcept(lessonContainer)
+
+    // missingWordSentencesExercise(lessonContainer, exerciseSentences);
+    
 
     examplesCard(lessonContainer);
     introConcept(lessonContainer)
 
-    generateBlockquote(lessonContainer)
     videoActivity(lessonContainer)
-    // missingWordSentencesExercise(lessonContainer, exerciseSentences);
-    introConcept(lessonContainer)
-    // examplesCard(lessonContainer);
-    // generateFooter(lessonContainer);
+    
+    generateFooter(lessonContainer);
 }
 
 

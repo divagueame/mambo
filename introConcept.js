@@ -18,9 +18,9 @@ const informationBits = [
 ];
 
     let html = `    
-    <div class="row blue lighten-2">
-    <div class="col s8 m6 offset-s2">
-      <div class="card blue-grey darken-1">
+    <div class="row">
+    <div class="col  center-align">
+      <div class="card blue-grey">
         <div class="card-content white-text">
           <span class="card-title">Card Title</span>
           <p>I am a very simple card. I am good at containing small bits of information.

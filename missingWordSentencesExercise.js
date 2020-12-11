@@ -4,7 +4,6 @@ let activeSentence = 0;
 let userAnswers = [];
 let userRightAnswers = [];
 
-
 function findPreText(sentenceObj){
     let expression = `.*${sentenceObj.hiddenWord}`
     let preText = (sentenceObj.text).match(expression);
@@ -30,7 +29,7 @@ function displayExerciseCard(sentenceObj){
         `
             <div class="row center">
                 <div class="col s8 offset-s2 card-panel blue-grey lighten-3">
-                    <form id="wordForm"  autocomplete="off" >
+                    <form id="wordForm"  autocomplete="off">
                     <span class="black-text">${preText}
                     <div class="input-field inline">
                     <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
@@ -134,9 +133,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     function howManyTrue(array){
         let num = 0;
         array.forEach((x)=>{
-
             if(x==true){
-                
                 num++
             }
         });
@@ -194,7 +191,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     </tbody>
     </table>
         `
-        targetDom.innerHTML = html;
+        targetDom.innerHTML += html;
 };
 
 displayExerciseCard(exerciseObj[activeSentence]);

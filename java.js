@@ -3,8 +3,7 @@ import renderLesson from './renderLesson.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 let activeLessonId = 'adverbios' 
-
-
+const lessonContainer = document.querySelector(".lessonContainer")
 
 document.addEventListener('DOMContentLoaded', function() {
     var modals = document.querySelectorAll('.modal');
@@ -56,7 +55,8 @@ signUpForm.addEventListener('submit', function(e){
 const signOutButton = document.querySelector("#signOutButton");
 signOutButton.addEventListener('click', function(){
     auth.signOut();
-    console.log("User has signed out")
+    console.log("User has signed out");
+    lessonContainer.innerHTML =``
 });
 
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             console.log("You're NOT logged in");
             document.querySelector('#navBarbuttons').innerHTML = ``;
             document.querySelector('#slide-out').innerHTML = ``;
-            
+
             
             document.querySelectorAll(".loggedOut").forEach((e)=>{
                 e.style.display = ("block");
@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 e.style.display = ("none");
             })
         // No user is signed in.
+        lessonContainer.innerHTML =``
         }
     });   
 
