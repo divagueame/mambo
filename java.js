@@ -1,32 +1,8 @@
-import missingWordSentencesExercise from './missingWordSentencesExercise.js';
-import generateSidenav from './generateSidenav.js';
-import generateFooter from './generateFooter.js';
-import generateBlockquote from './generateBlockquote.js';
-import introConcept from './introConcept.js';
-import videoActivity from './videoActivity.js';
-import renderLessonTitle from './renderLessonTitle.js';
-import examplesCard from './examplesCard.js';
+
+import renderLesson from './renderLesson.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 let activeLessonId = 'adverbios' 
-
-const lessonContainer = document.querySelector('.lessonContainer'); 
-let lesson1Obj = {
-    'title': 's'
-};
-
-
-
-function renderLesson(lesson1Obj){
-
-// renderLessonTitle(lessonContainer);
-// generateBlockquote(lessonContainer)
-// examplesCard(lessonContainer);
-// introConcept(lessonContainer);
-// videoActivity(lessonContainer)
-// missingWordSentencesExercise(lessonContainer, exerciseSentences);
-generateFooter(lessonContainer);
-}
 
 
 
@@ -38,13 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         dismissible: false,
         preventScrolling: true
     });
-
-  });
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
 
     var myNav = document.querySelectorAll('.sidenav');
     M.Sidenav.init(myNav, {
@@ -109,7 +78,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             } else {
                 console.log("User already has settings")
                 renderUserNavBarButtons()
-
+                renderLesson()
             }
             document.querySelectorAll(".loggedIn").forEach((e)=>{
                 e.style.display = ("block");
@@ -119,15 +88,14 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             })
             console.log("You're logged in now");
 
-            initModules()
+
         })
-
-
-
 
         } else {
             console.log("You're NOT logged in");
-            document.querySelector('#navBarbuttons').innerHTML = ``
+            document.querySelector('#navBarbuttons').innerHTML = ``;
+            document.querySelector('#slide-out').innerHTML = ``;
+            
             
             document.querySelectorAll(".loggedOut").forEach((e)=>{
                 e.style.display = ("block");
@@ -137,42 +105,12 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             })
         // No user is signed in.
         }
-    });    generateSidenav()
+    });   
+
 });
 
-function initModules(){
-    generateSidenav()
-    renderLesson(activeLessonId);
-
-}
 
 
-let exerciseSentences = [
-    {
-        text: "El gato de mi madre es muy bonito.",
-        hiddenWord: "es",
-        labelText: "verbo ser",
-        helperText: "My mother's cat is very beautiful."
-    },
-    {
-        text: "El padre come muchas galletas.",
-        hiddenWord: "come",
-        labelText: "verbo comer",
-        helperText: "The father eats many cookies."
-    },
-    {
-        text: "El profesor canta muy bien.",
-        hiddenWord: "canta",
-        labelText: "verbo cantar",
-        helperText: "The teacher sings very well."
-    },
-    {
-        text: "El perro corre muy rapido.",
-        hiddenWord: "corre",
-        labelText: "verbo correr",
-        helperText: "The dog runs very fast."
-    }
-]
 
 
 
