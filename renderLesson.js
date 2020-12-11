@@ -1,33 +1,36 @@
-import missingWordSentencesExercise from './missingWordSentencesExercise.js';
-import generateFooter from './generateFooter.js';
+
+import renderLessonTitle from './renderLessonTitle.js';
+import videoActivity from './videoActivity.js';
+import examplesCard from './examplesCard.js';
 import generateBlockquote from './generateBlockquote.js';
 import introConcept from './introConcept.js';
-import videoActivity from './videoActivity.js';
-import renderLessonTitle from './renderLessonTitle.js';
-import examplesCard from './examplesCard.js';
-
 import generateSidenav from './generateSidenav.js';
+
+import missingWordSentencesExercise from './missingWordSentencesExercise.js';
+import generateFooter from './generateFooter.js';
 
 
 
 
 
 export default function renderLesson(lesson1Obj) {
-
 console.log("Render lesson init")
     const lessonContainer = document.querySelector('.lessonContainer'); 
 
-
-
-    // renderLessonTitle(lessonContainer);
-    // generateBlockquote(lessonContainer)
-    // examplesCard(lessonContainer);
-    // introConcept(lessonContainer);
-    // videoActivity(lessonContainer)
-    missingWordSentencesExercise(lessonContainer, exerciseSentences);
-    
-
+    generateBlockquote(lessonContainer)
     generateSidenav();
+
+    renderLessonTitle(lessonContainer);
+    missingWordSentencesExercise(lessonContainer, exerciseSentences);
+
+    examplesCard(lessonContainer);
+    introConcept(lessonContainer)
+
+    generateBlockquote(lessonContainer)
+    videoActivity(lessonContainer)
+    // missingWordSentencesExercise(lessonContainer, exerciseSentences);
+    introConcept(lessonContainer)
+    // examplesCard(lessonContainer);
     // generateFooter(lessonContainer);
 }
 

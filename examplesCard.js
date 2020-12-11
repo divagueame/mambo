@@ -5,9 +5,10 @@ export default function examplesCard(targetDom) {
 
 let html = `
 
-<h5>Por ejemplo...</h5>
-  
+
+
 <div class="row">
+<h5>Por ejemplo...</h5>
   <!-- FIRST CARD -->
   <div class="col s3 offset-s1">
     <div class="card">

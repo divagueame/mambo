@@ -2,7 +2,7 @@ export default function generateBlockquote(targetDom) {
 
 
     // <!-- lesson header -->
-    targetDom.innerHTML =
+    targetDom.innerHTML +=
 `    <div class="row blue">
      <div class="col s12 blue-grey darken-1 center-align">
        <div>
