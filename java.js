@@ -1,48 +1,31 @@
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateSidenav from './generateSidenav.js';
 import generateFooter from './generateFooter.js';
+import generateBlockquote from './generateBlockquote.js';
 import introConcept from './introConcept.js';
 import videoActivity from './videoActivity.js';
+import renderLessonTitle from './renderLessonTitle.js';
 import examplesCard from './examplesCard.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 let activeLessonId = 'adverbios' 
 
-// const exerciseContainer = document.querySelector("#exerciseContainer");
-// const videoActivityContainer = document.querySelector(".videoActivityContainer");
 const lessonContainer = document.querySelector('.lessonContainer'); 
 let lesson1Obj = {
     'title': 's'
 };
 
 
-function renderLessonTitle(targetDom){
 
-    // <!-- lesson header -->
-    targetDom.innerHTML +=
-`    <div class="row blue">
-     <div class="col s12 blue-grey darken-1 center-align">
-       <div>
-         <div class="white-text">
-           <span class="card-title lessonHeaderText">1.1 Masculino o femenino</span>
-         </div>
-         </div>
-       </div>
-     </div>`
-   
-}
 function renderLesson(lesson1Obj){
 
-    // renderLessonTitle(lessonContainer);
-
+// renderLessonTitle(lessonContainer);
+// generateBlockquote(lessonContainer)
 // examplesCard(lessonContainer);
 // introConcept(lessonContainer);
 // videoActivity(lessonContainer)
 // missingWordSentencesExercise(lessonContainer, exerciseSentences);
-
-
-
-// generateFooter(lessonContainer);
+generateFooter(lessonContainer);
 }
 
 
@@ -77,12 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 const auth = firebase.auth();
 const db = firebase.firestore();
-
-
-function getUserId(){
-    return firebase.auth().currentUser
-}
-
+ 
 // Sign up form
 const signUpForm = document.querySelector("#signup-form");
 signUpForm.addEventListener('submit', function(e){
@@ -109,7 +87,6 @@ signUpForm.addEventListener('submit', function(e){
 const signOutButton = document.querySelector("#signOutButton");
 signOutButton.addEventListener('click', function(){
     auth.signOut();
-
     console.log("User has signed out")
 });
 

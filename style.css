@@ -52,8 +52,9 @@ body {
 
 
 .fixed-widthImg{
-    width: 1.5rem;
-    height: auto;
+    width: 2.4rem;
+    margin-top: .641em;
+    /* height: auto; */
     object-fit: cover;
 
 }
