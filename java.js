@@ -2,9 +2,14 @@
 import renderLesson from './renderLesson.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
+import lessonActivitiesDb from './lessonActivitiesDb.js';
 let activeLessonId = 'adverbios' 
 const lessonContainer = document.querySelector(".lessonContainer")
+ 
+setTimeout(lessonActivitiesDb,6000)
 
+ 
+//Materializa init
 document.addEventListener('DOMContentLoaded', function() {
     var modals = document.querySelectorAll('.modal');
     M.Modal.init(modals, {
@@ -18,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(myNav, {
         draggable: true
     });
+
     var elems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(elems);
     var collapsibleElem = document.querySelector('.collapsible');
@@ -60,7 +66,7 @@ signOutButton.addEventListener('click', function(){
 });
 
 
-
+//Authentication state listener
 document.addEventListener('DOMContentLoaded', (e)=>{
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -69,16 +75,16 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            
+            renderLesson();
+            renderUserNavBarButtons()
             if(!doc.exists){
                 console.log("User has no initial settings")
                 displayAvatarsToChoose();
-                renderUserNavBarButtons()
+                
 
             } else {
                 console.log("User already has settings")
-                renderUserNavBarButtons()
-                renderLesson()
+                
             }
             document.querySelectorAll(".loggedIn").forEach((e)=>{
                 e.style.display = ("block");
@@ -109,9 +115,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     });   
 
 });
-
-
-
 
 
 

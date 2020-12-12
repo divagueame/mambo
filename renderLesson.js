@@ -1,4 +1,5 @@
 
+// LESSON MODULES
 import renderLessonTitle from './renderLessonTitle.js';
 import videoActivity from './videoActivity.js';
 import examplesCard from './examplesCard.js';
@@ -9,8 +10,6 @@ import generateDivider from './generateDivider.js';
 
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateFooter from './generateFooter.js';
-
-
 
 
 
