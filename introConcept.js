@@ -1,5 +1,6 @@
-export default function introConcept(targetDom) {
+export default function introConcept(targetDom, objToRender) {
     
+  console.log("Intro concept Obj: ", objToRender);
 
 const informationBits = [
     {

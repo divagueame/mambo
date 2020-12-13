@@ -1,6 +1,6 @@
-export default function generateBlockquote(targetDom) {
+export default function generateBlockquote(targetDom, objToRender) {
 
-
+  console.log(objToRender)
     // <!-- lesson header -->
     targetDom.innerHTML +=
 `    <div class="row blue">

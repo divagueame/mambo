@@ -10,30 +10,41 @@ import generateDivider from './generateDivider.js';
 
 import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import generateFooter from './generateFooter.js';
+import readLessonActivitiesFromDb from './readLessonActivitiesFromDb.js';
 
 
 
-export default function renderLesson(lesson1Obj) {
-console.log("Render lesson init")
+export default function renderLesson(level, lesson) {
+// console.log("Render lesson init")
     const lessonContainer = document.querySelector('.lessonContainer'); 
 
+    //This is an async function. It returns a promise
+    const getActivitiesFromDb = readLessonActivitiesFromDb(level,lesson)
 
-    renderLessonTitle(lessonContainer);
-    generateDivider(lessonContainer)
-    generateBlockquote(lessonContainer)
-    generateSidenav();
-    generateDivider(lessonContainer)
-    introConcept(lessonContainer)
+    getActivitiesFromDb.then((activitiesArray)=>{
+        // console.log("sd",activitiesArray);
+        activitiesArray.forEach(activity => {
+            // console.log(activity)
+        });
+
+    })
+
+    // renderLessonTitle(lessonContainer);
+    
+    // generateBlockquote(lessonContainer)
+    // generateSidenav();
+    // generateDivider(lessonContainer)
+    // introConcept(lessonContainer)
 
     // missingWordSentencesExercise(lessonContainer, exerciseSentences);
     
 
-    examplesCard(lessonContainer);
-    introConcept(lessonContainer)
-
-    videoActivity(lessonContainer)
+    // examplesCard(lessonContainer);
     
-    generateFooter(lessonContainer);
+
+    // videoActivity(lessonContainer)
+    
+    // generateFooter(lessonContainer);
 }
 
 
