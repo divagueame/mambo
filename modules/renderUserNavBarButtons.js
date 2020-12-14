@@ -1,4 +1,4 @@
-import {activeLessonId, db} from './java.js';
+import {activeLessonId, db} from '../java.js';
 
 
 

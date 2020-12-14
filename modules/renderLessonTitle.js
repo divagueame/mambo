@@ -1,8 +1,12 @@
-export default function generateBlockquote(targetDom, objToRender) {
+export default function generateBlockquote(obj, targetDom) {
 
-  console.log(objToRender)
+  let targetDomDefault = document.querySelector('.lessonContainer');
+  if(targetDom){
+      targetDomDefault = document.querySelector(targetDom);
+  }
+  
     // <!-- lesson header -->
-    targetDom.innerHTML +=
+    targetDomDefault.innerHTML +=
 `    <div class="row blue">
      <div class="col s12 blue-grey darken-1 center-align">
        <div>

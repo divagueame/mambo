@@ -1,6 +1,12 @@
-export default function introConcept(targetDom, objToRender) {
+export default function introConcept(obj, targetDom) {
+
+  let targetDomDefault = document.querySelector('.lessonContainer');
+  if(targetDom){
+      targetDomDefault = document.querySelector(targetDom);
+  }
+  
     
-  console.log("Intro concept Obj: ", objToRender);
+  console.log("Intro concept Obj: ", obj);
 
 const informationBits = [
     {
@@ -35,7 +41,7 @@ const informationBits = [
     </div>
   </div>`;
 
-  targetDom.innerHTML += html;
+  targetDomDefault.innerHTML += html;
 
 
     informationBits.forEach((x)=>{

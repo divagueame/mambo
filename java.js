@@ -1,24 +1,16 @@
 
+// import activitiesModule from './modules/activitiesModule.js'
 import renderLesson from './renderLesson.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
-import renderUserNavBarButtons from './renderUserNavBarButtons.js';
-import lessonActivitiesDb from './lessonActivitiesDb.js';
+// import renderUserNavBarButtons from './renderUserNavBarButtons.js';
+// import lessonActivitiesDb from './lessonActivitiesDb.js';
 let activeLessonId = 'adverbios' 
 const lessonContainer = document.querySelector(".lessonContainer")
  
 // setTimeout(lessonActivitiesDb,3000)
-const activitiesModule = (function() {
-    'use strict';
-    // let obj = 'POLLAS'
-    const displayHeader = function (targetDom,obj) {
-        console.log(obj)
-        targetDom.innerHTML += obj;
-    }
-    return {displayHeader}
 
-  })();
+
   
-
   
  
 //Materializa init
@@ -87,8 +79,9 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            activitiesModule.displayHeader(lessonContainer, "POLLAS")
-            // renderLesson(1,1);
+            
+            renderLesson(1,1);
+            // activitiesModule.displayHeader(lessonContainer,3);
             // renderUserNavBarButtons()
             if(!doc.exists){
                 console.log("User has no initial settings")

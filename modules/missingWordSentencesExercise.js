@@ -1,4 +1,12 @@
-export default function missingWordSentencesExercise(targetDom, exerciseObj) {
+export default function missingWordSentencesExercise(obj, targetDom) {
+
+    
+  let targetDomDefault = document.querySelector('.lessonContainer');
+  if(targetDom){
+      targetDomDefault = document.querySelector(targetDom);
+  }
+  
+
 //USE ONLY ONCE PER LESSON
 let activeSentence = 0;
 let userAnswers = [];
@@ -49,7 +57,7 @@ function displayExerciseCard(sentenceObj){
         `
 
         //////////////////////
-        targetDom.innerHTML = htmlCard;
+        targetDomDefault.innerHTML = htmlCard;
 
 const submitButton = document.querySelector("#submitButton");
 
@@ -98,10 +106,10 @@ function answerIsCorrect(){
     
     setTimeout(function(){
         activeSentence++;
-        if(activeSentence<exerciseObj.length){
-            displayExerciseCard(exerciseObj[activeSentence]);
+        if(activeSentence<obj.length){
+            displayExerciseCard(obj[activeSentence]);
         } else {
-            displayAnswersCard(exerciseObj,userAnswers,userRightAnswers);
+            displayAnswersCard(obj,userAnswers,userRightAnswers);
         }
     },2000)
 
@@ -119,11 +127,11 @@ function answerIsWrong(){
 
     setTimeout(function(){
         activeSentence++;
-        if(activeSentence<exerciseObj.length){
-            displayExerciseCard(exerciseObj[activeSentence]);
+        if(activeSentence<obj.length){
+            displayExerciseCard(obj[activeSentence]);
 
         } else {
-            displayAnswersCard(exerciseObj,userAnswers,userRightAnswers);
+            displayAnswersCard(obj,userAnswers,userRightAnswers);
         }
     },3000);
 }
@@ -191,8 +199,8 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     </tbody>
     </table>
         `
-        targetDom.innerHTML += html;
+        targetDomDefault.innerHTML += html;
 };
 
-displayExerciseCard(exerciseObj[activeSentence]);
+displayExerciseCard(obj[activeSentence]);
 }

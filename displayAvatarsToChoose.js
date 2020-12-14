@@ -1,6 +1,6 @@
 import {activeLessonId, db} from './java.js';
 
-import renderUserNavBarButtons from './renderUserNavBarButtons.js';
+import renderUserNavBarButtons from './modules/renderUserNavBarButtons.js';
 export default function displayAvatarsToChoose() {
 
 

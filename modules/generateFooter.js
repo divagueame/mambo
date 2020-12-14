@@ -1,10 +1,18 @@
-import {activeLessonId, db} from './java.js';
+import {activeLessonId, db} from '../java.js';
 
 export default function generateFooter(targetDom) {
+    let targetDomDefault = document.querySelector('.lessonContainer');
+    if(targetDom){
+        targetDomDefault = document.querySelector(targetDom);
+    }
+    
+    
 console.log("Footer generate init");
 
-let userId =  firebase.auth().currentUser.uid;
 
+console.log("YES")
+let userId =  firebase.auth().currentUser.uid;
+console.log(userId)
 let thisColor1 = 'orange lighten-2';
 let pulse1 = 'pulse';
 let tooltipText1 = 'Marca la leccion como completada!';
@@ -29,7 +37,7 @@ let basicHtmlFooter = `
 <a class="btn-floating white  waves-effect waves-light waves-teal" data-position="top" data-tooltip="Siguiente"><i class="material-icons black-text">chevron_right</i></a>
 </div>  
 `
-targetDom.innerHTML += basicHtmlFooter;
+targetDomDefault.innerHTML += basicHtmlFooter;
 const taskUpdateBtn = document.querySelector("#taskUpdateBtn");
 
 

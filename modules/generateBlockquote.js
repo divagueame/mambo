@@ -1,5 +1,9 @@
-export default function generateBlockquote(targetDom) {
-
+export default function generateBlockquote(obj, targetDom) {
+  let targetDomDefault = document.querySelector('.lessonContainer');
+  if(targetDom){
+      targetDomDefault = document.querySelector(targetDom);
+  }
+  
 
   let text1 = `
   Como regla general, las palabras que significan cosas, conceptos o ideas tienen siempre un genero: <span class="underlined">masculino</span> o <span class="underlined">femenino</span>.
@@ -18,6 +22,6 @@ let html = `
 `
  
 
-targetDom.innerHTML += html
+targetDomDefault.innerHTML += html
 
 }

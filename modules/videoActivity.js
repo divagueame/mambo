@@ -1,6 +1,10 @@
-export default function videoActivity(targetDom) {
-    console.log("Video activity initiating...", targetDom);
-
+export default function videoActivity(obj, targetDom) {
+    console.log("Video activity initiating...");
+    let targetDomDefault = document.querySelector('.lessonContainer');
+    if(targetDom){
+        targetDomDefault = document.querySelector(targetDom);
+    }
+    
 
 let youtubeIframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/joNX1WcXUck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
@@ -19,5 +23,5 @@ let youtubeIframe = `<iframe width="560" height="315" src="https://www.youtube.c
     `
 
 
-    targetDom.innerHTML += html
+    targetDomDefault.innerHTML += html
 }

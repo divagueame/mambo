@@ -8,6 +8,9 @@ body {
     flex-direction: column;
   }
 
+body {
+    background-color: grey;
+}
   main {
     flex: 1 0 auto;
   }

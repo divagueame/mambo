@@ -1,17 +1,17 @@
 
 // LESSON MODULES
-import renderLessonTitle from './renderLessonTitle.js';
-import videoActivity from './videoActivity.js';
-import examplesCard from './examplesCard.js';
-import generateBlockquote from './generateBlockquote.js';
-import introConcept from './introConcept.js';
-import generateSidenav from './generateSidenav.js';
-import generateDivider from './generateDivider.js';
-
-import missingWordSentencesExercise from './missingWordSentencesExercise.js';
-import generateFooter from './generateFooter.js';
+import renderLessonTitle from './modules/renderLessonTitle.js';
+import videoActivity from './modules/videoActivity.js';
+import examplesCard from './modules/examplesCard.js';
+import generateBlockquote from './modules/generateBlockquote.js';
+import introConcept from './modules/introConcept.js';
+import generateSidenav from './modules/generateSidenav.js';
+import generateDivider from './modules/generateDivider.js';
+import missingWordSentencesExercise from './modules/missingWordSentencesExercise.js';
+import generateFooter from './modules/generateFooter.js';
 import readLessonActivitiesFromDb from './readLessonActivitiesFromDb.js';
-
+import activitiesModule from './modules/activitiesModule.js'
+import renderUserNavBarButtons from './modules/renderUserNavBarButtons.js';
 
 
 export default function renderLesson(level, lesson) {
@@ -24,27 +24,27 @@ export default function renderLesson(level, lesson) {
     getActivitiesFromDb.then((activitiesArray)=>{
         // console.log("sd",activitiesArray);
         activitiesArray.forEach(activity => {
-            // console.log(activity)
+            console.log("A",activity)
         });
 
     })
-
-    // renderLessonTitle(lessonContainer);
     
-    // generateBlockquote(lessonContainer)
-    // generateSidenav();
-    // generateDivider(lessonContainer)
-    // introConcept(lessonContainer)
+activitiesModule.displayHeader("INSIDE");
 
-    // missingWordSentencesExercise(lessonContainer, exerciseSentences);
+activitiesModule.examplesCard("sd");
+activitiesModule.generateBlockquote("block!")
+activitiesModule.generateFooter();
+renderUserNavBarButtons()
+activitiesModule.generateSidenav()
+activitiesModule.introConcept("Tgs ib")
+renderLessonTitle("sdfa");
+generateDivider()
+videoActivity("obj");
+// missingWordSentencesExercise(exerciseSentences);
     
 
-    // examplesCard(lessonContainer);
-    
 
-    // videoActivity(lessonContainer)
     
-    // generateFooter(lessonContainer);
 }
 
 
