@@ -2,13 +2,18 @@
 // import activitiesModule from './modules/activitiesModule.js'
 import renderLesson from './renderLesson.js';
 import displayAvatarsToChoose from './displayAvatarsToChoose.js';
-// import renderUserNavBarButtons from './renderUserNavBarButtons.js';
-// import lessonActivitiesDb from './lessonActivitiesDb.js';
-let activeLessonId = 'adverbios' 
+import renderUserNavBarButtons from './renderUserNavBarButtons.js';
+import lessonActivitiesDb from './lessonActivitiesDb.js';
+import generateSideNav from './modules/generateSidenav.js';
+let activeLessonId = [1,1];
+
+function updateCurrentLessonId(level,lesson){
+    activeLessonId[0] = level;
+    activeLessonId[1] = lesson
+}
 const lessonContainer = document.querySelector(".lessonContainer")
  
 // setTimeout(lessonActivitiesDb,3000)
-
 
   
   
@@ -80,13 +85,16 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
             
-            renderLesson(1,1);
-            // activitiesModule.displayHeader(lessonContainer,3);
-            // renderUserNavBarButtons()
+            generateSideNav();
+            renderLesson(activeLessonId[0],activeLessonId[1]);
+            renderUserNavBarButtons();
+
+         
+
+
             if(!doc.exists){
                 console.log("User has no initial settings")
                 displayAvatarsToChoose();
-                
 
             } else {
                 console.log("User already has settings")
@@ -125,4 +133,4 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 
 
-export {activeLessonId, db};
+export {activeLessonId, updateCurrentLessonId, db};

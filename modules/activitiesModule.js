@@ -4,6 +4,8 @@ import generateBlockquote from './generateBlockquote.js';
 import generateFooter from './generateFooter.js';
 import generateSidenav from './generateSidenav.js';
 import introConcept from './introConcept.js';
+import renderLessonTitle from './renderLessonTitle.js';
+import missingWordsParagraph from './missingWordsParagraph.js';
 
 
 
@@ -19,10 +21,9 @@ console.log("Activities module")
       generateBlockquote,
       generateFooter,
       generateSidenav,
-      introConcept
-
-
-
+      introConcept,
+      renderLessonTitle,
+      missingWordsParagraph
     };
   })();
 

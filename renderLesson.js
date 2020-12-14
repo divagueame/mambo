@@ -1,3 +1,4 @@
+import {updateCurrentLessonId} from './java.js'
 
 // LESSON MODULES
 import renderLessonTitle from './modules/renderLessonTitle.js';
@@ -11,35 +12,42 @@ import missingWordSentencesExercise from './modules/missingWordSentencesExercise
 import generateFooter from './modules/generateFooter.js';
 import readLessonActivitiesFromDb from './readLessonActivitiesFromDb.js';
 import activitiesModule from './modules/activitiesModule.js'
-import renderUserNavBarButtons from './modules/renderUserNavBarButtons.js';
+import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 
 
 export default function renderLesson(level, lesson) {
 // console.log("Render lesson init")
     const lessonContainer = document.querySelector('.lessonContainer'); 
-
+    lessonContainer.innerHTML = '';
     //This is an async function. It returns a promise
     const getActivitiesFromDb = readLessonActivitiesFromDb(level,lesson)
 
     getActivitiesFromDb.then((activitiesArray)=>{
-        // console.log("sd",activitiesArray);
+        //Check each activity module type and invoque with that object
         activitiesArray.forEach(activity => {
-            console.log("A",activity)
+            // console.log("Activity: ",activity)
+            if(activity.activityModuleType=="renderLessonTitle"){
+                activitiesModule.renderLessonTitle(activity.activityObj)
+            }
+            if(activity.activityModuleType=="introConcept"){
+                activitiesModule.introConcept(activity.activityObj)
+            }
         });
-
+        
+        updateCurrentLessonId(level,lesson)
+        activitiesModule.generateFooter();
     })
-    
-activitiesModule.displayHeader("INSIDE");
 
-activitiesModule.examplesCard("sd");
-activitiesModule.generateBlockquote("block!")
-activitiesModule.generateFooter();
-renderUserNavBarButtons()
-activitiesModule.generateSidenav()
-activitiesModule.introConcept("Tgs ib")
-renderLessonTitle("sdfa");
-generateDivider()
-videoActivity("obj");
+// activitiesModule.displayHeader("INSIDE");
+// activitiesModule.examplesCard("sd");
+// activitiesModule.generateBlockquote("block!")
+
+// renderUserNavBarButtons()
+// activitiesModule.generateSidenav()
+// activitiesModule.introConcept("Tgs ib")
+// renderLessonTitle("sdfa");
+// generateDivider()
+// videoActivity("obj");
 // missingWordSentencesExercise(exerciseSentences);
     
 

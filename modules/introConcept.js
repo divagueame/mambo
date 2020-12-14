@@ -6,7 +6,7 @@ export default function introConcept(obj, targetDom) {
   }
   
     
-  console.log("Intro concept Obj: ", obj);
+  // console.log("Intro concept Obj: ", obj);
 
 const informationBits = [
     {
@@ -29,9 +29,8 @@ const informationBits = [
     <div class="col  center-align">
       <div class="card blue-grey">
         <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <span class="card-title">${obj.cardTitle}</span>
+          <p>${obj.cardContent}</p>
         </div>
         <div class="card-action">
           <a href="#"><i class="tiny material-icons">translate</i></a>

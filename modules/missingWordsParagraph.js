@@ -1,20 +1,16 @@
 
-function displayHeader(obj, targetDom) {
+function missingWordsParagraph(obj, targetDom) {
     
     let targetDomDefault = document.querySelector('.lessonContainer');
     if(targetDom){
         targetDomDefault = document.querySelector(targetDom);
     }
 
-// console.log('displayHeader', targetDom, obj)
+// console.log('missingWordParagrah', obj)
 
     let html = `
-<div class="center">
-    <h1>${obj}</h1>
-</div>
-
     `
     targetDomDefault.innerHTML += html;
 }
 
-export default displayHeader
+export default missingWordsParagraph
