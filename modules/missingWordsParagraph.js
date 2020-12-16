@@ -7,10 +7,13 @@ function missingWordsParagraph(obj, targetDom) {
     //Initial opening tags and activity header
     let html = `
     <blockquote class="activityHeader valign-wrapper">
+        <i class="material-icons black-text">create</i> 
         ${obj.activityHeaderText}
     </blockquote>`
   
-    html += `<div id="helptags">HELPER</div>
+    html += `<div id="helptags">
+
+    </div>
         <div class="row justified">
         <div class="col s8 offset-s2 teal lighten-5 z-depth-1">
         <form id="missingwordsform"><p>`
@@ -27,7 +30,11 @@ function missingWordsParagraph(obj, targetDom) {
 
         //Add the submit button
         html += `
+
         <div class="row justified">
+
+        <div id="helptagsTrigger" class="clickable valign-wrapper"><i class="material-icons small">help_outline</i></div>
+
         <div class="col s8 offset-s2 white">
         <button class="btn waves-effect waves-light right" type="submit" name="answersSubmit">Corregir
         <i class="material-icons right">send</i>
@@ -52,6 +59,12 @@ function missingWordsParagraph(obj, targetDom) {
       // Set word crosser helper
       if(obj['helptags']==true){
         //Open container
+        let helptagsTrigger = document.getElementById("helptagsTrigger");
+        helptagsTrigger.addEventListener('click', function(){
+            deployHelpTags();
+            helptagsTrigger.innerHTML = "";
+        })
+        function deployHelpTags(){
         let theseHelptags = `<div class="white center">`;
 
         //Function to shuffle the answers
@@ -92,7 +105,7 @@ function missingWordsParagraph(obj, targetDom) {
                 selectChip.classList.toggle('chipCrossedOut')
             })
         })
-
+        }
     }
 
     //When submit, check the correct answers
