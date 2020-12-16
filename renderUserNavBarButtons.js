@@ -1,12 +1,7 @@
 import {activeLessonId, db} from './java.js';
 
-
-
 export default function renderUserNavBarButtons() {
-
-
-    
-    console.log('renderUserNavBarButtons initiated')
+    // console.log('renderUserNavBarButtons initiated')
     db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{

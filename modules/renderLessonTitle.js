@@ -4,7 +4,7 @@ export default function renderLessonTitle(obj, targetDom) {
   if(targetDom){
       targetDomDefault = document.querySelector(targetDom);
   }
-  console.log("aqui", obj)
+  // console.log("aqui", obj)
     // <!-- lesson header -->
     targetDomDefault.innerHTML +=
 `    <div class="row blue">

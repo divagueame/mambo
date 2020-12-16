@@ -1,41 +1,15 @@
-import {db,activeLessonId} from '../java.js';
-
-function getActiveLessonId(){
-    let stringedId = "" +  activeLessonId[0] + "." +  activeLessonId[1];
-    return stringedId
-}
-
-
-function isCurrentLessonCompleted(){
-    let userId =  firebase.auth().currentUser;
-    console.log(userId)
+import {db,activeLessonId} from '../java.js'; 
+import renderLesson from '../renderLesson.js';
     
-    
-// let currentId = getActiveLessonId()
-
-//     const userDBLessonsRef = db.collection('users').doc(userId)
-//     .collection("completedLessons").doc(currentId);
-//     userDBLessonsRef.get().then((doc)=>{
-//         console.log("A",doc.data())
-//         if((!doc.exists)) {console.log("This lesson is NOT completed by the user.",doc.data())
-//         return true } else{
-//             console.log("This lesson is completed by the user.",doc.data()
-//             )
-//             return false
-//         }
-//     }) 
-}
-
-console.log(isCurrentLessonCompleted(), 'CUR');
-
 export default function generateSideNav() {
-    console.log("YES")
+
 const slideOut = document.querySelector("#slide-out");
 
-let levels = 1;
+
 
 //Read headings from db and check how many levels
 const sideInfo = db.collection("lessons").orderBy("level").orderBy("lessonNumber").get().then((snap)=>{
+    let levels = 1;
     snap.forEach((activity)=>{
         if(activity.data().level>levels){
             levels= activity.data().level
@@ -47,14 +21,10 @@ const sideInfo = db.collection("lessons").orderBy("level").orderBy("lessonNumber
     snap.forEach((activity)=>{
         lessons.push(activity.data())
     })
-
     deployLessonsInsideHeaders(lessons)
 
 
-
 })
-
-
     
     function deployLevelHeaders(levels){
         let html = ``
@@ -82,31 +52,64 @@ const sideInfo = db.collection("lessons").orderBy("level").orderBy("lessonNumber
 
 
 function deployLessonsInsideHeaders(lessons){
-// console.log("Deploying sidebar lessons")
-    lessons.forEach(function(item,i,array){
-        let selector = '';
-        let title = '';
-        if(item.activityOrder==1){
-            // console.log("  ")
-            // console.log("level", item.level);
-            // console.log("Lesson number", item.lessonNumber);
-            // console.log("Lesson title", item.lessonTitle);
 
-        selector = '.levelHeader' + item.level;
+    lessons.forEach(function(lesson,i,array){
+        let selector = '';
+        selector = '.levelHeader' + lesson.level;
         selector = document.querySelector(selector);
-        // console.log(selector)
-        
-        title = item.lessonTitle;
-        // console.log(title)
+
+        let linkId = `sideBarLink${lesson.level}-${lesson.lessonNumber}`
         var html = `
-        <li><a href="#!"> <span class="valign-wrapper"><i class="material-icons tiny">chevron_right</i>${item.lessonTitle}</span></div></a></li>`;
+        <li><a href="#!" class="${linkId}"><span class="valign-wrapper"><i class="material-icons tiny">chevron_right</i><i class="material-icons green-text tiny lessonCompletedMark"></i> ${lesson.lessonTitle}  </span></div></a></li>`;
         selector.innerHTML += html;
-        }
-    
+        
     })
+
+    lessons.forEach((lesson)=>{
+        let linkId = "sideBarLink" + lesson.level + "-" + lesson.lessonNumber ;
+        document.querySelector(`.${linkId}`).addEventListener('click', function(e){
+            e.preventDefault();
+            renderLesson(lesson.level,lesson.lessonNumber)})
+        });
+
+        getUserCompletedLessons()
 }
 
-    
+function getUserCompletedLessons(){
+    let returnedArray = [];
+    let userId =  firebase.auth().currentUser.uid;
+    db.collection('users').doc(userId).get().then((doc)=>{
+        if(doc.exists){
+            let userData =  Object.entries(doc.data());
+            userData.forEach((e)=>{
+                if(e[1]==true){ returnedArray.push(e[0]) }
+            })
+        }
+    returnedArray = returnedArray.map((e)=>{
+        e = e.replace(/\./,'-')
+        return "sideBarLink" + "" + e 
+    })
+    // console.log("AS ",returnedArray);
+    returnedArray.forEach((e)=>{
+        let selector = `.${e}`
+        let selectThis = document.querySelector(selector).getElementsByTagName("i");
+        selectThis = Array.from(selectThis);
+        selectThis.forEach((e)=>{
+            if(e.classList.contains("lessonCompletedMark")){
+                // e.innerHTML = "assignment_turned_in";
+                e.innerHTML = "check"
+            } else {
+                e.innerHTML = ""
+            }
+            
+        })
+    })
+
+    })
+
+    return returnedArray
+}
+
 
 }
 

@@ -1,4 +1,4 @@
-import {updateCurrentLessonId} from './java.js'
+import {activeLessonId} from './java.js'
 
 // LESSON MODULES
 import renderLessonTitle from './modules/renderLessonTitle.js';
@@ -10,33 +10,37 @@ import generateSidenav from './modules/generateSidenav.js';
 import generateDivider from './modules/generateDivider.js';
 import missingWordSentencesExercise from './modules/missingWordSentencesExercise.js';
 import generateFooter from './modules/generateFooter.js';
-import readLessonActivitiesFromDb from './readLessonActivitiesFromDb.js';
+import readLessonsFromDb from './readLessonsFromDb.js';
 import activitiesModule from './modules/activitiesModule.js'
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 
 
 export default function renderLesson(level, lesson) {
-// console.log("Render lesson init")
+// console.log("Render lesson init", level, lesson)
     const lessonContainer = document.querySelector('.lessonContainer'); 
     lessonContainer.innerHTML = '';
     //This is an async function. It returns a promise
-    const getActivitiesFromDb = readLessonActivitiesFromDb(level,lesson)
+    const getActivitiesFromDb = readLessonsFromDb(level,lesson)
 
-    getActivitiesFromDb.then((activitiesArray)=>{
-        //Check each activity module type and invoque with that object
-        activitiesArray.forEach(activity => {
-            // console.log("Activity: ",activity)
-            if(activity.activityModuleType=="renderLessonTitle"){
-                activitiesModule.renderLessonTitle(activity.activityObj)
+    getActivitiesFromDb.then((lessons)=>{
+        
+        lessons.activitiesArray.forEach(activityObj => {
+            console.log("Es", activityObj.activityModuleType);    
+            if(activityObj.activityModuleType=="renderLessonTitle"){
+                activitiesModule.renderLessonTitle(activityObj)
             }
-            if(activity.activityModuleType=="introConcept"){
-                activitiesModule.introConcept(activity.activityObj)
+            if(activityObj.activityModuleType=="introConcept"){
+                activitiesModule.introConcept(activityObj)
             }
+
+        });
+        activitiesModule.generateFooter();
         });
         
-        updateCurrentLessonId(level,lesson)
-        activitiesModule.generateFooter();
-    })
+        // updateCurrentLessonId(level,lesson)
+        activeLessonId[0]= level;
+        activeLessonId[1]= lesson
+    }
 
 // activitiesModule.displayHeader("INSIDE");
 // activitiesModule.examplesCard("sd");
@@ -53,8 +57,6 @@ export default function renderLesson(level, lesson) {
 
 
     
-}
-
 
 
 

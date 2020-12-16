@@ -6,17 +6,102 @@ import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 import lessonActivitiesDb from './lessonActivitiesDb.js';
 import generateSideNav from './modules/generateSidenav.js';
 let activeLessonId = [1,1];
-
-function updateCurrentLessonId(level,lesson){
-    activeLessonId[0] = level;
-    activeLessonId[1] = lesson
-}
 const lessonContainer = document.querySelector(".lessonContainer")
  
-// setTimeout(lessonActivitiesDb,3000)
+// setTimeout(lessonActivitiesDb,800)
 
+// setInterval(function(){
+//     console.log(activeLessonId)
+// },8000)
   
+  function renderInitialPage(){
+    // const lessonContainer = document.querySelector('.lessonContainer'); 
+    
+    lessonContainer.innerHTML = '';
+    let html = `
+        <h1 class="center">Mambo!</h1>
+        
+        <div class="row center">
+            <div class="col s4">
+                <div>POLLAS</div>
+                <div class="initButton scale-transition scale-out btn-floating btn-large white">POS</div>
+            </div>
+            <div class="col s4">
+                <div>POLLAS</div>
+                <div class="initButton scale-transition  scale-out btn-floating btn-large white">POS</div>
+            </div>
+            <div class="col s4">
+                <div>POLLAS</div>
+                <div class="initButton scale-transition  scale-out  btn-floating btn-large white">POS</div>    
+            </div>
+        </div>
+    `
+    lessonContainer.innerHTML = html;
+    showLastUpdates()
+
+function showLastUpdates(){
+    let html = `
+    <ul class="collection">
+    <li class="collection-item avatar">
+      <img src="images/yuna.jpg" alt="" class="circle">
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle">folder</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle green">insert_chart</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle red">play_arrow</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+  </ul>
+  `
+
+  lessonContainer.innerHTML += html
+
+}
+
+
+
+    function toggleScaleTransition(selector){
+        let selec = `.${selector}`
+        let initButtons = document.querySelectorAll(selec);
+        let initTime = 200;
+        initButtons.forEach((e)=>{
+            setTimeout(() => {
+                e.classList.toggle("scale-in");
+                e.classList.toggle("scale-out")
+            }, initTime);
+            initTime += 100;
+            console.log("TRIGGER",e)
+        })
+    }
+    
   
+        toggleScaleTransition('initButton')
+  
+
+  }
  
 //Materializa init
 document.addEventListener('DOMContentLoaded', function() {
@@ -77,20 +162,17 @@ signOutButton.addEventListener('click', function(){
 
 //Authentication state listener
 document.addEventListener('DOMContentLoaded', (e)=>{
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged((user)=> {
         if (user) {
         // User is signed in.
         
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            
-            generateSideNav();
-            renderLesson(activeLessonId[0],activeLessonId[1]);
+            // renderLesson(activeLessonId[0],activeLessonId[1]);
+            renderInitialPage()
             renderUserNavBarButtons();
-
-         
-
+            generateSideNav();
 
             if(!doc.exists){
                 console.log("User has no initial settings")
@@ -133,4 +215,4 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 
 
-export {activeLessonId, updateCurrentLessonId, db};
+export {activeLessonId, db};
