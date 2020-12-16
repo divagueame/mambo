@@ -13,7 +13,10 @@ import missingWordsParagraph from './missingWordsParagraph.js';
 
 
 const activitiesModule = (() => {
-console.log("Activities module")
+console.log("Activities module");
+
+
+
 
     return {
       displayHeader,

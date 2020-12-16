@@ -106,8 +106,35 @@ body {
 .input-field .prefix.active {
     color: #000;
 }
-
-
+.input-field-corrected-wrong{
+    background-color: crimson;
+    color: crimson;
+}
+.clickable {
+    cursor: pointer;
+}
+.chip {
+    /* background-color: rgb(141, 138, 138); */
+    background-color: white;
+}
+.chip:hover {
+    /* background-color: rgb(141, 138, 138); */
+    background-color: rgba(192, 219, 181, 0.2)
+}
+.chipCrossedOut {
+    text-decoration: line-through;
+    opacity: 0.7;
+    background-color: rgba(211, 223, 206, 0.2);
+    color: rgb(214, 213, 213);
+}
+.activityHeader {
+    padding: 2rem;
+    font-size: 1.3rem;
+    /* border-bottom: rgb(187, 89, 89) 2px solid;
+    border-left: rgb(187, 89, 89) 2px solid; */
+    border: rgb(19, 92, 92) 2px solid;
+    /* background-color: rgb(166, 237, 240); */
+}
 
 input {
     /* color: chartreuse; */

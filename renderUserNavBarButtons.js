@@ -1,4 +1,4 @@
-import {activeLessonId, db} from './java.js';
+import {activeLessonId, db, auth} from './java.js';
 
 export default function renderUserNavBarButtons() {
     // console.log('renderUserNavBarButtons initiated')
@@ -26,26 +26,30 @@ export default function renderUserNavBarButtons() {
                     </i>
                 </a>
             </li>
-            `;
-            // <li  class="row">
-            //     <a href="#">
-            //         <i class="material-icons tiny white-text">assignment_ind</i>
-            //     </a>
-            // </li>  
-            // <li>
-            //     <a href="#" class="btn-floating blue-text">
-            //         <i class="material-icons tiny white-text">person_pin</i>
-            //     </a>
-            // </li>  
-        
-            // <li>
-            //     <a href="#">
-            //         <i class="material-icons tiny">input</i>
-            //     </a>
-            // </li>
+
+            <li>
+                
+                <button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
+                
+            </li>  
+          `
+
 
         
             navBarbuttons.innerHTML = html
+
+
+            
+
+// Log out
+const signOutButton = document.querySelector("#signOutButton");
+signOutButton.addEventListener('click', function(){
+    auth.signOut();
+    console.log("User has signed out");
+    lessonContainer.innerHTML =``
+});
+
+
 
             const elem = document.getElementById('modalUserProgressInfo');
             const instance = M.Modal.init(elem, {
