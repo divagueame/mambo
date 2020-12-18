@@ -120,23 +120,28 @@ body {
     /* background-color: cadetblue; */
 
 }
+.guessWordRight, .guessWordWrong{
+    border: solid white 0px !important
+}
+
 .guessWordRight{
-    background-color: rgb(255, 250, 205) !important;
+    background-color: rgb(241, 255, 218) !important;
 }
 .guessWordWrong{
-    background-color: rgb(255, 38, 0) !important ;
+    background-color: rgb(255, 169, 154) !important ;
+    padding-left: .1212em !important;
+    padding-right: .1212em !important;
+    padding-bottom: 0 !important;
+    /* padding-top: .040 !important; */
+    border-radius: .3rem !important;
 }
 
 .inputTextinParagraphExerciseContainer{
     margin: 0px !important;
-    /* width: auto !important; */
     height: auto !important;
-    /* line-height: 0px; */
-    /* border: 21px rgb(156, 192, 56) dotted; */
 }
 
 .inputTextinParagraph {
-    /* width: 5rem !important; */
     color: rgb(12, 27, 14);
     height: auto !important;
     font-size:1.19em  !important;
@@ -144,12 +149,12 @@ body {
     padding:0em;
     margin-bottom: 0 !important;
     border-bottom: 0px !important;
-    border-bottom: 1px rgb(116, 177, 101) solid !important;
+    border-bottom: 1px rgb(0, 0, 0) solid !important;
 }
 .inputTextinParagraph:focus{
     border-bottom: none!important;
     box-shadow: none!important;
-    border-bottom: 2px rgb(56, 138, 97) solid !important;
+    border-bottom: 2px rgb(0, 0, 0) solid !important;
 }
 .clickable {
     cursor: pointer;
@@ -204,12 +209,11 @@ input {
 #logoText {
     font-size: 1.1rem !important;
     text-decoration: underline;
-    
     transform: rotateZ(12deg);
 }
 
 .moduleDiv {
-    margin-top: 2rem;
+    /* margin-bottom: .81rem; */
 }
 .no-shadows {
     box-shadow: none!important;
@@ -218,18 +222,35 @@ input {
     width: 2.3rem;
     height: 100%;
     margin: .2rem;
-    padding-top: 0.3rem;
+    margin-left: 1rem !important;
+    padding-top: .7rem;
     /* margin-right: 1rem; */
-    transform: rotateZ(12deg);
+    transform: rotateZ(16deg);
     /* filter: invert(100%); */
+}
+
+.mamboBtn {
+    background-color: cornsilk;
 }
 
 #signOutButton:hover {
     background-color: rgb(21, 136, 121);
     transform: translateY(-2px);
 }
+.addRightMargin {
+    margin-right: 1rem;
+}
 .removeRightPadding{
     padding-right: 0 !important
+}
+.removeLeftPadding{
+    padding-left: 0 !important
+}
+.removeBottomPadding{
+    padding-bottom: 0 !important;
+}
+.removeBottomMargin{
+    margin-bottom: 0 !important;
 }
 
 .lessonLinkNavbar {

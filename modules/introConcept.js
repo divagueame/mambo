@@ -11,8 +11,8 @@ moduleDiv.classList.add("moduleDiv");
 moduleDiv.innerHTML = `    
     <div class="row">
     <div class="col  center-align">
-      <div class="card blue-grey">
-        <div class="card-content white-text">
+      <div class="card">
+        <div class="card-content black-text">
           <span class="card-title">${obj.cardTitle}</span>
           <p>${obj.cardContent}</p>
         </div>

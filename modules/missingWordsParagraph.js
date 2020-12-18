@@ -14,17 +14,15 @@ function missingWordsParagraph(obj, targetDom) {
         ${obj.activityHeaderText}
     </blockquote>`
 //   //Add helptags container
-    html += `
-    <div class="row center" id="helptagsTriggerContainer"><div class=" valign-wrapper col s2 offset-s8"><i id="helptagsTrigger" class="clickable material-icons small z-depth-0 hoverable">help_outline</i></div></div>
-    <div id="helptags"></div>
-                <form id="missingwordsform" autocomplete="off">   
-            <div class="row justified valign-wrapper">
+    html += `<div id="helptags" class="row removeBottomMargin"></div>
+            <form id="missingwordsform" autocomplete="off">   
+            <div class=" row ">
             
-            <div class="col s4">
+            <div class="col s4 removeLeftPadding">
             <img class="responsive-img z-depth-1" src="${obj.sideImgLocation}">
             </div>
-            <div class="col s7 teal lighten-5 z-depth-1">
-            <p class="paragraphExerciseTextP">`
+            <div class="col s8 teal lighten-5 z-depth-1">
+            <p class="paragraphExerciseTextP justified">`
 //     //Create the text and deploy textboxes
     let text = obj.paragraphText;
     html += text;
@@ -32,19 +30,16 @@ function missingWordsParagraph(obj, targetDom) {
 //     // Closing the tags and Add the submit button
     html += `</div></div>
        </p>
+       
     <div class="row">
-    <div class="col s12 white removeRightPadding">
-        <button class="btn waves-effect waves-light right " type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
+    <div class="col s12 removeRightPadding">
+        <button class="btn waves-effect waves-light right blue-grey darken-2" type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
         </button>
-
+         <div class="right addRightMargin btn" id="helptagsTriggerContainer"><span id='helptagsTrigger'>Ayuda</span></div>        
         </div>
     </div> 
-        
         <div class="row" id="answersContainer"></div></form>`;
  moduleDiv.innerHTML = html
- 
-
-// targetDomDefault.insertAdjacentHTML("afterend", html);
 
 targetDomDefault.appendChild(moduleDiv);
 
@@ -76,22 +71,13 @@ targetDomDefault.appendChild(moduleDiv);
         inputDivToAdd.innerHTML =` 
                 <input id="correctAnswer${e.innerHTML}${i}" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: ${thisWidth}rem">
             `   
-    // console.log("e es",inputDivToAdd);
-    // e.appendChild(inputDivToAdd);
-    // parentDiv.insertBefore(sp1, sp2)
-    // e.insertAdjacentHTML('afterend', inputDivToAdd);
-        // e.textContent = '';
-        // console.log(e)
 
-      
-        
+
 // Get the parent element
 let parentDiv = e.parentNode
-
 // Insert the new element into before sp2
 parentDiv.insertBefore(inputDivToAdd, e)
 e.innerHTML = ``
-
 
     });
 
@@ -103,11 +89,16 @@ e.innerHTML = ``
         })
       }
 
+        function deployHelpTags(){
+        let theseHelptags = document.createElement("div");
+        theseHelptags.classList.add('col');
+        theseHelptags.classList.add('s8');
+        theseHelptags.classList.add('offset-s4');
+        let centerDiv = document.createElement("div");
+        centerDiv.classList.add('center');
+        theseHelptags.appendChild(centerDiv)
 
         
-        function deployHelpTags(){
-        let theseHelptags = `<div class="row center"><div class="col s7 offset-s5 center">`;
-
         // //Function to shuffle the answers
         function shuffleArray(array) {
             for (var i = array.length - 1; i > 0; i--) {
@@ -125,19 +116,20 @@ e.innerHTML = ``
         // //Shuffling answers and adding divs
         shuffleArray(shuffledAnswers)
         shuffledAnswers.forEach(function(answer,i,a){
-            let divText = 
-                `<div class="chip clickable" id="chipNumber${i}">
-                    ${answer}
-                </div>`;
-                theseHelptags += divText 
+
+            let divTag = document.createElement("div");
+            divTag.id = `chipNumber${i}`;
+            divTag.classList.add("chip")
+            divTag.classList.add("clickable")
+            divTag.innerHTML = `${answer}`;
+            centerDiv.appendChild(divTag)
         });
-        theseHelptags += `</div></div>`
-    
-        let helptagsContainer = document.getElementById("helptags");
-        helptagsContainer.insertAdjacentHTML("afterend", theseHelptags);
-        let triggercontainer = document.getElementById('helptagsTriggerContainer');
-        triggercontainer.innerHTML= '';
         
+        let helptagsContainer = document.getElementById("helptags");
+        helptagsContainer.appendChild(theseHelptags)
+
+        let triggercontainer = document.getElementById('helptagsTriggerContainer');
+        triggercontainer.classList.add('disabled');
 
 
 
@@ -156,17 +148,23 @@ e.innerHTML = ``
 
 //     //When submit, check the correct answers
     const thisForm = document.getElementById('missingwordsform');
-    let userAnswers = []
+    let userIsRight = [];
+    let userAnswersText = [];
+
     thisForm.addEventListener('submit',function(e){
         e.preventDefault();
+        let counterRight = 0;
+        let counterWrong = 0;
 
         for (let i = 0; i < (thisForm.length-1); i++) {
         if((thisForm.elements[i].value).toLowerCase()==correctAnswersArray[i].toLowerCase()){
             // console.log("RIGHT ANSWER")
-            userAnswers.push(true)
+            userIsRight.push(true);
+            userAnswersText.push(correctAnswersArray[i]);
         }else{
             // console.log("Wrong ANSWER")
-            userAnswers.push(false);
+            userIsRight.push(false);
+            userAnswersText.push(thisForm.elements[i].value);
         }
         }
 
@@ -174,26 +172,48 @@ e.innerHTML = ``
 
         inputTextinParagraphSelectors.forEach((hiddenWord,i,a)=>{
         // console.log("USER ", spanSelectors[i])
-            if(userAnswers[i]==true){
+            if(userIsRight[i]==true){
                 hiddenWord.classList.add("guessWordRight");
+                selectAll[i].classList.add("guessWordRight");
+                counterRight++
             // console.log("YESSSS")
             } else {
-                hiddenWord.classList.add("guessWordWrong")
+                hiddenWord.classList.add("guessWordWrong");
+                selectAll[i].classList.add("guessWordWrong");
+                counterWrong++
                 // console.log("NOOOO")
             }
 
+    });
+
+
+    // console.log(userAnswers,"USER")
+        
+    let result = (counterRight + "/" + (counterRight+counterWrong))
+    let correctionMessage = `Has acertado: ${result}`
+    M.toast({html: correctionMessage, displayLength: 5000 ,classes: 'rounded'});
+
+        
+        //////////Restore the values of inputo to the right answer
+    correctAnswersArray.forEach(function(e,i,a){
+        let selectInput = `correctAnswer${e}${i}`
+        selectInput = document.querySelector(`#${selectInput}`);
+        selectInput.innerHTML =  e;
+        selectInput.classList.add("hide");
+        selectAll[i].innerHTML = e;
+        if(!userIsRight[i]){
+            selectAll[i].classList.add("tooltipped");
+            selectAll[i].setAttribute('data-position', 'top');
+            selectAll[i].setAttribute('data-tooltip', `${userAnswersText[i]}`);
+        }
+
+        
+        
     })
 
-//         let paragraphExerciseTextP = document.querySelector(".paragraphExerciseTextP")
-//         paragraphExerciseTextP.innerHTML = obj.paragraphText;
+    var elems = document.querySelectorAll('.tooltipped');
+    M.Tooltip.init(elems, {});
 
-
-//         })
-
-
-
-        // let answersSummary = document.querySelector('#answersContainer');
-        // answersSummary.innerHTML = `<div class="col s12 grey">CORRECTED</div>`
     })
 
     
