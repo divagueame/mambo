@@ -2,18 +2,16 @@ import {activeLessonId, db} from '../java.js';
 import renderLesson from '../renderLesson.js';
 
 import generateSidenav from './generateSidenav.js';
-export default function generateFooter(targetDom) {
-    
-//     let thisLevel = activeLessonId[0];
-// let thisLesson = activeLessonId[1];
-// let lessonRef = "" + thisLevel + "." + thisLesson;
-// console.log("GENERATE FOOTER. Active lesson is: " )
+export default function generateFooter() {
+    //THIS MODULE TAKES NO ARGUMENTS
     let targetDomDefault = document.querySelector('.lessonContainer');
-    if(targetDom){
-        targetDomDefault = document.querySelector(targetDom);
-    }
+    // if(targetDom){
+    //     targetDomDefault = document.querySelector(targetDom);
+    // }
     
-
+// Create the new element
+var moduleDiv = document.createElement('div');
+moduleDiv.classList.add("moduleDiv");
 
     (function isTheLastLessonOfCurrentLevel(){
         db.collection('lessons')
@@ -24,7 +22,7 @@ export default function generateFooter(targetDom) {
 
             //IF THIS LEVEL IS COMPLETED, DO NOT SHOW NEXT LESSON BTN
             let nextBtn = document.querySelector("#nextBtn");
-            nextBtn.innerHTML = ``
+            // nextBtn.innerHTML = ``
             
             doc.forEach((e)=>{
                 // THE LEVEL IS NOT COMPLETED
@@ -42,7 +40,6 @@ export default function generateFooter(targetDom) {
 })()
 
 let userId =  firebase.auth().currentUser.uid;
-// console.log(userId)
 let thisColor1 = 'orange lighten-2';
 let pulse1 = 'pulse';
 let tooltipText1 = 'Marca la leccion como completada!';
@@ -53,25 +50,19 @@ let pulse2 = '';
 let tooltipText2 = '';
 let iconAssignment2 = 'assignment_turned_in';
 
-let basicHtmlFooter = `
-<div class="row">
+let basicHtmlFooter = `<div class="row">
 <div class="col s2 offset-s3 center">
     <a href="#"  class="btn-floating white waves-effect waves-light sidenav-trigger btn" data-target="slide-out" ><i class="material-icons black-text">library_books</i></a>
-    
 </div>  
 
 <div class="col s2 center" id="taskUpdateBtn">
-<a class="btn tooltipped btn-floating ${thisColor1} waves-effect waves-light accent-bigger ${pulse1}" data-position="bottom" data-tooltip="${tooltipText1}"><i class="material-icons black-text ">${iconAssignment1}</i></a>
-</div>
-`
+    
+</div><div class="col s2 center" id="nextBtn"></div>`
 
-let thirdButtonHtml = `
-<div class="col s2 center" id="nextBtn">
+moduleDiv.innerHTML = basicHtmlFooter;
 
-</div> `
+targetDomDefault.appendChild(moduleDiv);
 
-basicHtmlFooter += thirdButtonHtml;
-targetDomDefault.innerHTML += basicHtmlFooter;
 const taskUpdateBtn = document.querySelector("#taskUpdateBtn");
 
 
@@ -86,6 +77,9 @@ db.collection('users').doc(userId)
             if(((activeLessonId[0]+"."+activeLessonId[1])==userCompletedLessons[i])&&(userCompletedLessonsTrueFalse[i]==true)){
                 // console.log("FOUND BITCH! ");
                  toggleButtonImg()
+            }else {
+                toggleButtonImg()
+                toggleButtonImg()
             }
         };
     }
@@ -96,7 +90,7 @@ taskUpdateBtn.addEventListener('click', function(){
     
     const userDBLessonsRef = db.collection('users').doc(userId);
     userDBLessonsRef.get().then((doc)=>{
-
+        console.log("YESSS")
         if(!doc.exists){
             dbMarkActiveLessonAsCompleted();
             toggleButtonImg()
@@ -127,6 +121,7 @@ taskUpdateBtn.addEventListener('click', function(){
 
 //Next button functionality. Read current lesson and render next one
 nextBtn.addEventListener('click',function(){
+    console.log("NEXT")
     db.collection('lessons')
     .where('level','==',activeLessonId[0])
     .where('lessonNumber','>',activeLessonId[1])

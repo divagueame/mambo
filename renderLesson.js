@@ -32,6 +32,9 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="introConcept"){
                 activitiesModule.introConcept(activityObj)
             }
+            if(activityObj.activityModuleType=="missingWordsParagraph"){
+                activitiesModule.missingWordsParagraph(activityObj)
+            }
 
         });
         activitiesModule.generateFooter();

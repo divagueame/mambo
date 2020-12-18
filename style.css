@@ -55,10 +55,12 @@ body {
 
 
 .fixed-widthImg{
-    width: 2.4rem;
-    margin-top: .641em;
+    /* width: 2.4rem; */
+    height: 100%;
+    padding: .7rem
+    /* margin-top: .641em; */
     /* height: auto; */
-    object-fit: cover;
+    /* object-fit: cover; */
 
 }
 .icon {
@@ -89,29 +91,72 @@ body {
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    border-bottom: 0 solid #000;
+    box-shadow: 0 0px 0 0 #000;
 }
 /* valid color */
 .input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    border-bottom: 0px solid #000;
+    box-shadow: 0 0px 0 0 #000;
 }
 /* invalid color */
 .input-field input[type=text].invalid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    border-bottom: 0px solid #000;
+    box-shadow: 0 0px 0 0 #000;
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: #000;
+    color: rgb(233, 116, 116);
 }
 .input-field-corrected-wrong{
     background-color: crimson;
     color: crimson;
 }
+.paragraphExerciseTextP {
+    line-height: 2 !important;
+    font-size: 1.15em;
+}
+.guessWord {
+    /* background-color: cadetblue; */
+
+}
+.guessWordRight{
+    background-color: rgb(255, 250, 205) !important;
+}
+.guessWordWrong{
+    background-color: rgb(255, 38, 0) !important ;
+}
+
+.inputTextinParagraphExerciseContainer{
+    margin: 0px !important;
+    /* width: auto !important; */
+    height: auto !important;
+    /* line-height: 0px; */
+    /* border: 21px rgb(156, 192, 56) dotted; */
+}
+
+.inputTextinParagraph {
+    /* width: 5rem !important; */
+    color: rgb(12, 27, 14);
+    height: auto !important;
+    font-size:1.19em  !important;
+    font-weight: 550;
+    padding:0em;
+    margin-bottom: 0 !important;
+    border-bottom: 0px !important;
+    border-bottom: 1px rgb(116, 177, 101) solid !important;
+}
+.inputTextinParagraph:focus{
+    border-bottom: none!important;
+    box-shadow: none!important;
+    border-bottom: 2px rgb(56, 138, 97) solid !important;
+}
 .clickable {
     cursor: pointer;
+}
+.hoverable:hover{
+    transition: all .31s ease-in-out;
+    transform: scale(1.1);
 }
 .chip {
     /* background-color: rgb(141, 138, 138); */
@@ -132,7 +177,7 @@ body {
     font-size: 1.3rem;
     /* border-bottom: rgb(187, 89, 89) 2px solid;
     border-left: rgb(187, 89, 89) 2px solid; */
-    border: rgb(19, 92, 92) 2px solid;
+    border: #607d8b 2px solid;
     /* background-color: rgb(166, 237, 240); */
 }
 
@@ -156,21 +201,36 @@ input {
 #menu-side {
     background-color: darkslategrey;
 }
+#logoText {
+    font-size: 1.1rem !important;
+    text-decoration: underline;
+    
+    transform: rotateZ(12deg);
+}
 
+.moduleDiv {
+    margin-top: 2rem;
+}
 .no-shadows {
     box-shadow: none!important;
 }
 #logo-img {
-    width: 50px;
-    /* height: auto; */
-    margin: .2rem
+    width: 2.3rem;
+    height: 100%;
+    margin: .2rem;
+    padding-top: 0.3rem;
+    /* margin-right: 1rem; */
+    transform: rotateZ(12deg);
+    /* filter: invert(100%); */
 }
 
 #signOutButton:hover {
     background-color: rgb(21, 136, 121);
     transform: translateY(-2px);
 }
-
+.removeRightPadding{
+    padding-right: 0 !important
+}
 
 .lessonLinkNavbar {
     padding-left: 5rem;

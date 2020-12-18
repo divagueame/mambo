@@ -71,13 +71,15 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            // renderLesson(activeLessonId[0],activeLessonId[1]);
-            // renderInitialPage()'
-            activitiesModule.missingWordsParagraph({
-                'paragraphText': '<span class="guessWord">La</span>casa es bonita. <span class="guessWord">La</span> es pequeña y ventana es grande. <span class="guessWord">El</span> perro es negro. La cabeza es pequena. <span class="guessWord">El</span> pelo es bonito. ',
-                'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
-                'helptags': true
-            })
+            renderLesson(activeLessonId[0],activeLessonId[1]);
+            // renderInitialPage()
+            // activitiesModule.missingWordsParagraph({
+            //     'paragraphText': '<span class="guessWord">La</span> casa es bonita. <span class="guessWord">La</span> puerta es pequeña y ventana es grande. <span class="guessWord">El</span> perro es negro. La cabeza es pequeña. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. ', 
+            //     'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
+            //     'helptags': true,
+            //     'autoShowHelptags': false,
+            //     'sideImgLocation': 'img/lesson1.1/chair.jpg'
+            // })
             renderUserNavBarButtons();
             generateSideNav();
 

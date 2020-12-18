@@ -9,7 +9,6 @@ export default function renderUserNavBarButtons() {
 
             const navBarbuttons = document.querySelector("#navBarbuttons");
             let html = `
-            
 
 <div id="modalUserProgressInfo" class="modal bottom-sheet black-text">
   <div class="modal-content">
@@ -27,15 +26,13 @@ export default function renderUserNavBarButtons() {
                 </a>
             </li>
 
-            <li>
-                
-                <button id="signOutButton" class="btn waves-effect waves-light">Log out</button>
-                
+            <li>                
+                <button id="signOutButton" class="btn-small waves-effect waves-light grey">
+                Log out
+                </button>
             </li>  
           `
-
-
-        
+          
             navBarbuttons.innerHTML = html
 
 

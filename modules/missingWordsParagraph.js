@@ -1,73 +1,114 @@
-
 function missingWordsParagraph(obj, targetDom) {
     let targetDomDefault = document.querySelector('.lessonContainer');
     if(targetDom){
         targetDomDefault = document.querySelector(targetDom);
     }
-    //Initial opening tags and activity header
+
+
+    var moduleDiv = document.createElement('div');
+    moduleDiv.classList.add("moduleDiv");
+//     //Initial opening tags and activity header
     let html = `
     <blockquote class="activityHeader valign-wrapper">
         <i class="material-icons black-text">create</i> 
         ${obj.activityHeaderText}
     </blockquote>`
-  
-    html += `<div id="helptags">
-
-    </div>
-        <div class="row justified">
-        <div class="col s8 offset-s2 teal lighten-5 z-depth-1">
-        <form id="missingwordsform"><p>`
-
-    //Create the text and deploy textboxes
+//   //Add helptags container
+    html += `
+    <div class="row center" id="helptagsTriggerContainer"><div class=" valign-wrapper col s2 offset-s8"><i id="helptagsTrigger" class="clickable material-icons small z-depth-0 hoverable">help_outline</i></div></div>
+    <div id="helptags"></div>
+                <form id="missingwordsform" autocomplete="off">   
+            <div class="row justified valign-wrapper">
+            
+            <div class="col s4">
+            <img class="responsive-img z-depth-1" src="${obj.sideImgLocation}">
+            </div>
+            <div class="col s7 teal lighten-5 z-depth-1">
+            <p class="paragraphExerciseTextP">`
+//     //Create the text and deploy textboxes
     let text = obj.paragraphText;
-
     html += text;
 
+//     // Closing the tags and Add the submit button
+    html += `</div></div>
+       </p>
+    <div class="row">
+    <div class="col s12 white removeRightPadding">
+        <button class="btn waves-effect waves-light right " type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
+        </button>
+
+        </div>
+    </div> 
+        
+        <div class="row" id="answersContainer"></div></form>`;
+ moduleDiv.innerHTML = html
+ 
+
+// targetDomDefault.insertAdjacentHTML("afterend", html);
+
+targetDomDefault.appendChild(moduleDiv);
 
 
-    //Closing the tags
-    html += `</p></div></div>`
+// //     //Subtitute answers for input forms and get the right answers in an array
+    let selectAll = document.querySelectorAll(".guessWord")
+    let correctAnswersArray = [];
+    let widthPerLetter = 0.9;
 
-        //Add the submit button
-        html += `
+    selectAll.forEach(function(e,i,a){
+        
+    let widthPerLetter = .802
+    let thisWidth = selectAll[i].innerHTML.length * widthPerLetter * getRandom();
 
-        <div class="row justified">
+    function getRandom(){
+        for(let i=0;i<1000;i++){
+            let ran = Math.random();
+            if(ran>0.68){
+                return 0.16 + ran
+            }
+        }
+    }
 
-        <div id="helptagsTrigger" class="clickable valign-wrapper"><i class="material-icons small">help_outline</i></div>
+        correctAnswersArray.push(e.innerHTML);
+        let inputDivToAdd =  document.createElement('div');
+        inputDivToAdd.classList.add('input-field')
+        inputDivToAdd.classList.add('inline')
+        inputDivToAdd.classList.add('inputTextinParagraphExerciseContainer')  
+        inputDivToAdd.innerHTML =` 
+                <input id="correctAnswer${e.innerHTML}${i}" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: ${thisWidth}rem">
+            `   
+    // console.log("e es",inputDivToAdd);
+    // e.appendChild(inputDivToAdd);
+    // parentDiv.insertBefore(sp1, sp2)
+    // e.insertAdjacentHTML('afterend', inputDivToAdd);
+        // e.textContent = '';
+        // console.log(e)
 
-        <div class="col s8 offset-s2 white">
-        <button class="btn waves-effect waves-light right" type="submit" name="answersSubmit">Corregir
-        <i class="material-icons right">send</i>
-        </button></form>
-        </div></div>`;
+      
+        
+// Get the parent element
+let parentDiv = e.parentNode
+
+// Insert the new element into before sp2
+parentDiv.insertBefore(inputDivToAdd, e)
+e.innerHTML = ``
+
+
+    });
+
+/// Set word crosser helper
+      if(obj['helptags']==true){
+        let triggerDom = document.getElementById('helptagsTrigger');
+        triggerDom.addEventListener('click', function(){
+          deployHelpTags()
+        })
+      }
+
 
         
-        targetDomDefault.innerHTML += html;
-    
-    
-    //Subtitute answers for input forms and get the right answers in an array
-    let selectAll = document.querySelectorAll(".guessWord")
-    let correctAnswersArray = []
-    selectAll.forEach(function(e,a, i){
-        correctAnswersArray.push(e.innerHTML)
-        e.innerHTML = `
-            <div class="input-field inline">
-                <input id="correctAnswer${e.innerHTML}" type="text" required  size="5" class="input-field-corrected-wrong">
-            </div>`
-    })
-    
-      // Set word crosser helper
-      if(obj['helptags']==true){
-        //Open container
-        let helptagsTrigger = document.getElementById("helptagsTrigger");
-        helptagsTrigger.addEventListener('click', function(){
-            deployHelpTags();
-            helptagsTrigger.innerHTML = "";
-        })
         function deployHelpTags(){
-        let theseHelptags = `<div class="white center">`;
+        let theseHelptags = `<div class="row center"><div class="col s7 offset-s5 center">`;
 
-        //Function to shuffle the answers
+        // //Function to shuffle the answers
         function shuffleArray(array) {
             for (var i = array.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
@@ -76,12 +117,12 @@ function missingWordsParagraph(obj, targetDom) {
                 array[j] = temp;
             }
         }
-        // Copy answers to a new array
+        // // Copy answers to a new array
         let shuffledAnswers = [];
         correctAnswersArray.forEach(e=>{
             shuffledAnswers.push(e)
         })
-        //Shuffling answers and adding divs
+        // //Shuffling answers and adding divs
         shuffleArray(shuffledAnswers)
         shuffledAnswers.forEach(function(answer,i,a){
             let divText = 
@@ -89,48 +130,74 @@ function missingWordsParagraph(obj, targetDom) {
                     ${answer}
                 </div>`;
                 theseHelptags += divText 
-        })
-        
-        theseHelptags += `</div>`
+        });
+        theseHelptags += `</div></div>`
     
         let helptagsContainer = document.getElementById("helptags");
-        helptagsContainer.innerHTML = theseHelptags;
-        //Add eventlisteners for the chips to toggle class .chipCrossedOut
-        correctAnswersArray.forEach(function(answer,i,a){
+        helptagsContainer.insertAdjacentHTML("afterend", theseHelptags);
+        let triggercontainer = document.getElementById('helptagsTriggerContainer');
+        triggercontainer.innerHTML= '';
+        
 
-            console.log("S")
+
+
+        // //Add eventlisteners for the chips to toggle class .chipCrossedOut
+        correctAnswersArray.forEach(function(answer,i,a){
             let thisId = `chipNumber${i}`;
             let selectChip = document.getElementById(thisId);
             selectChip.addEventListener('click',(e)=>{
                 selectChip.classList.toggle('chipCrossedOut')
             })
-        })
-        }
-    }
+        // })
+        // }
+    })
 
-    //When submit, check the correct answers
+}
+
+//     //When submit, check the correct answers
     const thisForm = document.getElementById('missingwordsform');
+    let userAnswers = []
     thisForm.addEventListener('submit',function(e){
         e.preventDefault();
-        console.log("CORECT ",correctAnswersArray)
-           
+
         for (let i = 0; i < (thisForm.length-1); i++) {
-        
         if((thisForm.elements[i].value).toLowerCase()==correctAnswersArray[i].toLowerCase()){
-            console.log("RIGHT ANSWER")
-            // console.log("Right answer is: ", correctAnswersArray[i])
+            // console.log("RIGHT ANSWER")
+            userAnswers.push(true)
         }else{
-            console.log("Wrong ANSWER")
-            // console.log("User wrote: ",i, thisForm.elements[i].value);
-            // console.log("Right answer is: ", correctAnswersArray[i])
+            // console.log("Wrong ANSWER")
+            userAnswers.push(false);
+        }
         }
 
-        }
+        let inputTextinParagraphSelectors = document.querySelectorAll(".inputTextinParagraph");
 
-
+        inputTextinParagraphSelectors.forEach((hiddenWord,i,a)=>{
+        // console.log("USER ", spanSelectors[i])
+            if(userAnswers[i]==true){
+                hiddenWord.classList.add("guessWordRight");
+            // console.log("YESSSS")
+            } else {
+                hiddenWord.classList.add("guessWordWrong")
+                // console.log("NOOOO")
+            }
 
     })
 
+//         let paragraphExerciseTextP = document.querySelector(".paragraphExerciseTextP")
+//         paragraphExerciseTextP.innerHTML = obj.paragraphText;
+
+
+//         })
+
+
+
+        // let answersSummary = document.querySelector('#answersContainer');
+        // answersSummary.innerHTML = `<div class="col s12 grey">CORRECTED</div>`
+    })
+
+    
+    
 }
 
 export default missingWordsParagraph

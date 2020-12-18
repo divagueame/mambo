@@ -206,6 +206,7 @@ console.log("Add lesson activies init")
     
 let lessonsArray = [
     //LEVEL 1
+        //LESSON 1.1
     {
         'level': 1,
         'lessonNumber': 1,
@@ -218,9 +219,18 @@ let lessonsArray = [
             },
             {
                 'activityModuleType': 'introConcept',
-                'activitx`yOrder': 2,
+                'activityOrder': 2,
                 'cardTitle': '1This is cardtitle',
                 'cardContent': "1I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+            },
+            {
+                'activityModuleType': 'missingWordsParagraph',
+                'activityOrder': 3,
+                'paragraphText': '<span class="guessWord">La</span> casa es bonita. <span class="guessWord">La</span> puerta es pequeña y ventana es grande. <span class="guessWord">El</span> perro es negro. La cabeza es pequeña. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. La cabeza es pequena. es negro. ', 
+                'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
+                'helptags': true,
+                'autoShowHelptags': false,
+                'sideImgLocation': 'img/lesson1.1/chair.jpg'
             }
         ]
     },

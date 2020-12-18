@@ -24,12 +24,12 @@
       <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-    <nav>
-      <div class="nav-wrapper blue-grey">
+    <nav class="z-depth-0">
+      <div class="nav-wrapper blue-grey white z-depth-0">
           <div class="">
-          <div class="brand-logo">
-            <img src="./img/forest.svg" id="logo-img" class="left">
-            <span id="logoText">Mambo Spanish</span></div>
+          <div class="brand-logo valign-wrapper">
+            <img src="./img/icons/singles/sangria.png" id="logo-img" class="left img-responsive">
+            <span id="logoText" class="black-text">Mambo Spanish</span></div>
           </div> 
       <ul class="right hide-on-med-and-down" id="navBarbuttons"></ul>
       </div>
@@ -71,7 +71,11 @@
 <div class="loggedIn container">
 
   <!-- Lesson container -->
-  <div class="lessonContainer"></div>
+  <div class="lessonContainer">
+
+    <!-- <div class="lessonContainerBottom"></div> -->
+    <!-- <div class="lessonContainerTop"></div> -->
+  </div>
 
 <!-- Intro Card -->
 <!-- <div class="row">
@@ -85,7 +89,7 @@
   </div>
 </div> -->
 
-<div class="row left">
+<div class="row left" id="bottom-limit">
 <!-- AVATAR MODAL -->
 <div class="avatarsModal"></div>
 </div>

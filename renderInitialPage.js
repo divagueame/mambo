@@ -32,17 +32,25 @@ function showLastUpdates(){
 
     let updatesDb = [
         {
-        'avatarUrl': 'img/icons/updates/001-girl.png',
-        'title': 'Update section',
-        'text': "I added this update section and improved the usability of the website.",
-        'date': "12/16/2020"
-        },
+            'avatarUrl': 'img/icons/updates/029-website.png',
+            'title': 'Developped the paragraph exercise module',
+            'text': "I had to develop and debug this module as there were many problems with it and its implementation.",
+            'date': "12/17/2020"
+            },
+            {
+                'avatarUrl': 'img/icons/updates/001-girl.png',
+                'title': 'Update section',
+                'text': "I added this update section and improved the usability of the website.",
+                'date': "12/16/2020"
+                },
+
         {
             'avatarUrl': 'img/icons/updates/034-website.png',
             'title': 'Lessons database',
             'text': "Changed the database structure and made the side bar navigation for the lessons.",
             'date': "11/16/2020"
         }
+        
     ]
     let liTags = '';
     updatesDb.forEach((e)=>{

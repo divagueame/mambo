@@ -4,27 +4,11 @@ export default function introConcept(obj, targetDom) {
   if(targetDom){
       targetDomDefault = document.querySelector(targetDom);
   }
-  
-    
-  // console.log("Intro concept Obj: ", obj);
+  // Create the new element
+var moduleDiv = document.createElement('div');
+moduleDiv.classList.add("moduleDiv");
 
-const informationBits = [
-    {
-        type: "card",
-    cardTitle: "Regla general",
-    cardTitleTranslated: "",
-    cardText: "lorem adsfsda fasdf asdf sdf sd sd",
-    cardTextTranslated: "asasdfasdfasd",
-    img: "guitar.jpg"
-    },    {
-        type: "card",
-    cardTitle: "Regla general",
-    cardText: "lorem adsfsda fasdf asdf sdf sd sd",
-    img: "piano.jpg"
-    }
-];
-
-    let html = `    
+moduleDiv.innerHTML = `    
     <div class="row">
     <div class="col  center-align">
       <div class="card blue-grey">
@@ -40,13 +24,8 @@ const informationBits = [
     </div>
   </div>`;
 
-  targetDomDefault.innerHTML += html;
+// Insert the element after our target element
+// targetDomDefault.parentNode.insertBefore( moduleDiv, targetDomDefault );
 
-
-    informationBits.forEach((x)=>{
- 
-    })
-
- 
-
+targetDomDefault.appendChild(moduleDiv);
 }

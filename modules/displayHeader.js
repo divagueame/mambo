@@ -1,7 +1,7 @@
 
 function displayHeader(obj, targetDom) {
     
-    let targetDomDefault = document.querySelector('.lessonContainer');
+    let targetDomDefault = document.querySelector('.lessonContainerBottom');
     if(targetDom){
         targetDomDefault = document.querySelector(targetDom);
     }
