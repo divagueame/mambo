@@ -1,7 +1,6 @@
 import displayAudio from './displayAudio.js';
 
 export default function generateBasicText(obj, targetDom) {
-  console.log("GENERATE BASIC")
 
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
@@ -10,17 +9,14 @@ export default function generateBasicText(obj, targetDom) {
   // Create the new element
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
+moduleDiv.classList.add("section");
 // moduleDiv.classList.add("container");
 moduleDiv.innerHTML = `
-<h3 class="valign-wrapper"><i class="material-icons">star</i><span> 1.1 section setionc sdf asd fasd</span></h3>
-
-  <p class="justified">Bloremrema e loremlorem dsfa sdfasdfasdfdsf asd fasd f loremlLOremn lorem lLOremnlor emlLO remn loremlLOr emnloremlLOre m  nas
-
-  POllas
+<h3 class="valign-wrapper"><i class="material-icons">star</i><span> 1.1 Male and female nouns. El vs. La</span></h3>
+<p class="justified">As a general rule, male nouns end by -o and female nouns end by -a. Male nouns:  el edificio, el boligrafo, el dinero, el vaso... Female nouns: la casa, la mesa, la taza, la ventana... It's important to remember the gender of the words as other elements related to them will agree accordingly. 
 </p>
+<br>
 <div class="divider"></div>
-
-
 `; 
 
 

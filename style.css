@@ -10,22 +10,27 @@
     font-family: 'Comfortaa', cursive;
 }
 html {
-    font-size: 100%;
-    color: var(--black2)
+    font-size: 18px;
+    color: var(--black2);
+    line-height: 140%;
 }
+
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 
   }
-
+  
 
   main {
     flex: 1 0 auto;
   }
   h1 {
     font-size: 1.62rem !important;
+    text-decoration: underline;
+    font-weight: 800 !important;
     /* color: var(--black2); */
   }
   h2 {
@@ -48,11 +53,18 @@ body {
   }
   
   p {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     line-height: 1.9rem !important;
   }
 
-  
+  .moduleDiv {
+      /* background-color: var(--white1); */
+      width: 70%;    
+      margin-left: auto;
+      margin-right: auto;
+      
+      
+  }
 footer.page-footer {
     color:  var(--white1);
     background-color: var(--black2);
@@ -347,6 +359,9 @@ input {
 }
 .removeBottomMargin{
     margin-bottom: 0 !important;
+}
+.removeTopMargin{
+    margin-top: 0 !important;
 }
 
 .lessonLinkNavbar {

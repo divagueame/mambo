@@ -6,7 +6,7 @@ export default function missingWordSentencesExercise(obj, targetDom) {
   }
   var moduleDiv = document.createElement('div');
   moduleDiv.classList.add("moduleDiv");
-//   moduleDiv.classList.add('row')
+  moduleDiv.classList.add('section')
 //   moduleDiv.classList.add('center')
 //   moduleDiv.classList.add('grey')
 //   moduleDiv.classList.add('z-depth-1')
@@ -39,7 +39,6 @@ function displayExerciseCard(sentenceObj){
   exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
   exerciseContainer.classList.add("col")
   exerciseContainer.classList.add("s12")
-  exerciseContainer.classList.add("section")
     let preText = findPreText(sentenceObj);
     let postText = findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
@@ -47,8 +46,8 @@ function displayExerciseCard(sentenceObj){
     let helperText = sentenceObj.helperText;
 
     exerciseContainer.innerHTML = `
-            <br>
-                    <form id="wordForm" autocomplete="off">
+    <h3 class="valign-wrapper"><i class="material-icons brown-text">widgets</i><span> 1.2 Completa el siguiente ejercicio con el/la</span></h3>
+                    <form id="wordForm" autocomplete="off" class="">
                     <span>${preText}
                     <div class="input-field inline">
                     <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
@@ -63,6 +62,8 @@ function displayExerciseCard(sentenceObj){
                     <i class="material-icons" id="submitButton">thumb_up</i>
                     </button>
                 </form>
+                <br>
+                <div class="divider"></div>
                 `
     
 
