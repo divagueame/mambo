@@ -28,9 +28,7 @@ moduleDiv.innerHTML = `
 
 <figure>
     <figcaption>sdListen to the T-Rex:</figcaption>
-    <audio
-        controls
-        src="audio/lesson1/1.mp3">
+    <audio controls src="audio/lesson1/1.mp3">
             Your browser does not support the
             <code>audio</code> element.
     </audio>
