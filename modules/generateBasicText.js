@@ -25,16 +25,10 @@ moduleDiv.innerHTML = `
 POLLAS
 
 
-              <audio  preload="auto" class="audio" controls>
-                <source id="src-target" src="audio/lesson1/1.mp3" type="audio/mpeg"> Your browser does not support the audio element.
-              </audio>
+<div id="audioContainer1"></div>
+<div id="audioContainer2"></div>
 
-              megas
 
-              <audio  preload="auto" class="audio" controls>
-                <source id="src-target2" src="audio/lesson1/2.mp3" type="audio/mpeg"> Your browser does not support the audio element.
-              </audio>
- 
               
 
 
@@ -44,11 +38,29 @@ POLLAS
 `; 
 
 
+targetDomDefault.appendChild(moduleDiv);
+
+let audio1 = `audio/lesson1/1.mp3`;
+let audio2 = `audio/lesson1/2.mp3`;
+let audioContainer1 = document.querySelector("#audioContainer1")
+let audioContainer2 = document.querySelector("#audioContainer2")
+
+function displayAudio(src){
+  let container = document.createElement('div');
+  container.innerHTML = 
+`  <audio  preload="auto" class="audio" controls>
+  <source id="src-target${src}" src="${src}" type="audio/mpeg"> Your browser does not support the audio element.
+</audio>`
+return container
+}
+audioContainer1.appendChild(displayAudio(audio1))
+audioContainer2.appendChild(displayAudio(audio2))
+
+
 
 // Insert the element after our target element
 // targetDomDefault.parentNode.insertBefore( moduleDiv, targetDomDefault );
 
-targetDomDefault.appendChild(moduleDiv);
 
 
 
