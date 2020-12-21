@@ -28,6 +28,9 @@ moduleDiv.innerHTML = `
 
 
 <audio src="audio/lesson1/1.mp3" controls preload="auto" />
+asdfasd
+<p>as</p>
+<audio src="audio/lesson1/2.mp3" controls preload="auto" />
 
 <br>
 <br>
