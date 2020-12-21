@@ -7,6 +7,9 @@ import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 import lessonActivitiesDb from './lessonActivitiesDb.js';
 import generateSideNav from './modules/generateSidenav.js';
 import activitiesModule from './modules/activitiesModule.js';
+import generateFrecuencyList from './generateFrecuencyList.js';
+
+
 let activeLessonId = [1,1];
 const lessonContainer = document.querySelector(".lessonContainer")
  
@@ -73,7 +76,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         .then((doc)=>{
             renderLesson(activeLessonId[0],activeLessonId[1]);
             // renderInitialPage()
-
+            // generateFrecuencyList()
             
             renderUserNavBarButtons();
             generateSideNav();

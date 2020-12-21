@@ -1,16 +1,21 @@
 export default function missingWordSentencesExercise(obj, targetDom) {
 
-    
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
-      targetDomDefault = document.querySelector(targetDom);
+    targetDomDefault = document.querySelector(targetDom);
   }
-  
+  var moduleDiv = document.createElement('div');
+  moduleDiv.classList.add("moduleDiv");
+  moduleDiv.classList.add('row')
+  moduleDiv.classList.add('center')
+  targetDomDefault.appendChild(moduleDiv)
 
 //USE ONLY ONCE PER LESSON
 let activeSentence = 0;
 let userAnswers = [];
 let userRightAnswers = [];
+
+
 
 function findPreText(sentenceObj){
     let expression = `.*${sentenceObj.hiddenWord}`
@@ -27,18 +32,20 @@ function findPosText(sentenceObj){
 
 function displayExerciseCard(sentenceObj){
     
+  var exerciseContainer = document.createElement("div");
+  exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
+  exerciseContainer.classList.add("col")
+  exerciseContainer.classList.add("s12")
+  exerciseContainer.classList.add("white")
     let preText = findPreText(sentenceObj);
-    let postText =findPosText(sentenceObj);
+    let postText = findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
     let labelText = sentenceObj.labelText;
     let helperText = sentenceObj.helperText;
 
-    let htmlCard = 
-        `
-            <div class="row center">
-                <div class="col s8 offset-s2 card-panel blue-grey lighten-3">
-                    <form id="wordForm"  autocomplete="off">
-                    <span class="black-text">${preText}
+    exerciseContainer.innerHTML = `
+                    <form id="wordForm" autocomplete="off">
+                    <span>${preText}
                     <div class="input-field inline">
                     <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
                     <label for="missingWordInput" class="">${labelText}</label>
@@ -52,25 +59,20 @@ function displayExerciseCard(sentenceObj){
                     <i class="material-icons" id="submitButton">thumb_up</i>
                     </button>
                 </form>
-                </div>
-            </div>
-        `
+                `
+    
 
-        //////////////////////
-        targetDomDefault.innerHTML = htmlCard;
+            moduleDiv.appendChild(exerciseContainer);
+            const submitButton = document.querySelector("#submitButton");
+            document.querySelector("#missingWordInput").focus();
 
-const submitButton = document.querySelector("#submitButton");
-
-        // document.querySelector("#missingWordInput").focus();
-
-const wordForm = document.querySelector("#wordForm");
-        wordForm.addEventListener('submit', function(e){
+            const wordForm = document.querySelector("#wordForm");
+            wordForm.addEventListener('submit', function(e){
             e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
      
             if(userAnswer!=""){
                 let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
-                
                 userAnswers.push(userAnswerWithSentence);
                     // userAnswers.push(userAnswer);
                 if(isCorrectAnswer(hiddenText,userAnswer)){
@@ -102,20 +104,27 @@ function isCorrectAnswer(hiddenText,userAnswer){
 }
 
 function answerIsCorrect(){
+    activeSentence++;
     submitButton.innerHTML = "check";
-    
+    const wordForm = document.querySelector('#wordForm')
     setTimeout(function(){
-        activeSentence++;
-        if(activeSentence<obj.length){
-            displayExerciseCard(obj[activeSentence]);
+
+        if(activeSentence<obj.exerciseSentences.length){
+            console.log("Right answer. Another exercise");
+            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            displayExerciseCard(obj.exerciseSentences[activeSentence]);
+            
         } else {
-            displayAnswersCard(obj,userAnswers,userRightAnswers);
+            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            displayAnswersCard(obj.exerciseSentences,userAnswers,userRightAnswers);
+            console.log("Right answer. AExercise finished. Show answers")
         }
     },2000)
 
 }
 
 function answerIsWrong(){
+    activeSentence++;
     const submitButton = document.querySelector("#submitButton");
     submitButton.innerHTML = "error";
     submitButton.parentElement.classList.add("red");
@@ -126,18 +135,22 @@ function answerIsWrong(){
     },3000); 
 
     setTimeout(function(){
-        activeSentence++;
-        if(activeSentence<obj.length){
-            displayExerciseCard(obj[activeSentence]);
+
+        if(activeSentence<obj.exerciseSentences.length){
+            
+            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            displayExerciseCard(obj.exerciseSentences[activeSentence]);
 
         } else {
-            displayAnswersCard(obj,userAnswers,userRightAnswers);
+            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            displayAnswersCard(obj.exerciseSentences,userAnswers,userRightAnswers);
         }
     },3000);
 }
 
 function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     let sentences= '';
+    // console.log("DIsplay Answers card")
     function howManyTrue(array){
         let num = 0;
         array.forEach((x)=>{
@@ -151,6 +164,11 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     let toastText = `${howManyTrue(userRightAnswers)}/${sentencesObj.length}`
     M.toast({html: 'Ejercicio completado!'});
     M.toast({html: `Respuestas correctas: ${toastText}`});
+
+
+    var exerciseContainer = document.createElement("div");
+    exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
+
 
 
     sentencesObj.forEach(
@@ -193,14 +211,56 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     );
 
   
-    let html = `
+    exerciseContainer.innerHTML = `
     <table class="centered">
     <tbody>${sentences}
     </tbody>
     </table>
         `
-        targetDomDefault.innerHTML += html;
+        // targetDomDefault.innerHTML += html;
+        moduleDiv.appendChild(exerciseContainer)
 };
 
-displayExerciseCard(obj[activeSentence]);
+displayExerciseCard(obj.exerciseSentences[0]);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let exerciseSentences = [
+//     {
+//         text: "El gato de mi madre es muy bonito.",
+//         hiddenWord: "es",
+//         labelText: "verbo ser",
+//         helperText: "My mother's cat is very beautiful."
+//     },
+//     {
+//         text: "El padre come muchas galletas.",
+//         hiddenWord: "come",
+//         labelText: "verbo comer",
+//         helperText: "The father eats many cookies."
+//     },
+//     {
+//         text: "El profesor canta muy bien.",
+//         hiddenWord: "canta",
+//         labelText: "verbo cantar",
+//         helperText: "The teacher sings very well."
+//     },
+//     {
+//         text: "El perro corre muy rapido.",
+//         hiddenWord: "corre",
+//         labelText: "verbo correr",
+//         helperText: "The dog runs very fast."
+//     }
+// ]
+

@@ -19,8 +19,42 @@ let lessonsArray = [
                 'title': "Masculino o femenino"
             },
             {
-                'activityModuleType': 'tutorWritingActivity',
+                'activityModuleType': 'missingWordSentencesExercise',
                 'activityOrder': 3,
+                'exerciseSentences': 
+                [
+                    {
+                        'text': "El gato de mi madre es muy bonito.",
+                        'hiddenWord': "es",
+                        'labelText': "verbo ser",
+                        'helperText': "My mother's cat is very beautiful."
+                    },
+                    {
+                        'text': "El padre come muchas galletas.",
+                        'hiddenWord': "come",
+                        'labelText': "verbo comer",
+                        'helperText': "The father eats many cookies."
+                    },
+                    {
+                        'text': "El profesor canta muy bien.",
+                        'hiddenWord': "canta",
+                        'labelText': "verbo cantar",
+                        'helperText': "The teacher sings very well."
+                    },
+                    {
+                        'text': "El perro corre muy rapido.",
+                        'hiddenWord': "corre",
+                        'labelText': "verbo correr",
+                        'helperText': "The dog runs very fast."
+                    }
+                ]
+                
+            },
+            ///////////////////////
+            
+            {
+                'activityModuleType': 'tutorWritingActivity',
+                'activityOrder': 4,
                 'activityId': 'anIdToRecognizeInTheDbas',
                 'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
                 'promptsArray': [
@@ -46,7 +80,7 @@ let lessonsArray = [
             },
             {
                 'activityModuleType': 'missingWordsParagraph',
-                'activityOrder': 4,
+                'activityOrder': 5,
                 'paragraphText': '¿Tienes la suerte de tener un <span class="guessWord">amigo</span> fiel que permanece a tu lado pase lo que pase? Ese amigo que realmente es un <span class="guessWord">tesoro</span>, que está a las duras y a las maduras, que sabe cuándo estás bien o cuándo estás mal, que sabe cómo animarte sin que tengas que decirle u ofrecerle nada a cambio. <span class="guessWord">Probablemente</span>, pocos podáis decir que tenéis a alguien que os muestre ese amor tan <span class="guessWord">incondicional</span>, pero los que lo tenéis, probablemente ese amigo tendrá forma de perro, gato o canario. A lo mejor deberíamos de cambiar el dicho por ”quien tiene una mascota, tiene un tesoro”, porque solo aquellos que cuentan con una saben del tipo de <span class="guessWord">amor</span> que estamos hablando.', 
                 'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
                 'helptags': true,

@@ -1,3 +1,5 @@
+import displayAudio from './displayAudio.js';
+
 export default function generateBasicText(obj, targetDom) {
   console.log("GENERATE BASIC")
 
@@ -20,16 +22,11 @@ moduleDiv.innerHTML = `
 <br>
 <br>
 <br>
+<div class="row">
+<div id="audioContainer1" class="col s4 grey"></div>
+</div>
 <br>
-
-POLLAS
-
-
-<div id="audioContainer1"></div>
-<div id="audioContainer2"></div>
-
-
-              
+<div id="audioContainer2" class="blue"></div>
 
 
 <br>
@@ -45,29 +42,8 @@ let audio2 = `audio/lesson1/2.mp3`;
 let audioContainer1 = document.querySelector("#audioContainer1")
 let audioContainer2 = document.querySelector("#audioContainer2")
 
-function displayAudio(src){
-  let container = document.createElement('div');
-  container.innerHTML = 
-`  <audio  preload="auto" class="audio" controls>
-  <source id="src-target${src}" src="${src}" type="audio/mpeg"> Your browser does not support the audio element.
-</audio>`
-return container
-}
-audioContainer1.appendChild(displayAudio(audio1))
-audioContainer2.appendChild(displayAudio(audio2))
-
-
-
-// Insert the element after our target element
-// targetDomDefault.parentNode.insertBefore( moduleDiv, targetDomDefault );
-
-
-
-
-{/* <audio src="audio/lesson1/1.mp3" controls preload="auto" /> */}
-
-
-
+displayAudio(audio1,audioContainer1)
+displayAudio(audio2,audioContainer2)
 
 
 

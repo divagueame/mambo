@@ -35,6 +35,10 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="missingWordsParagraph"){
                 activitiesModule.missingWordsParagraph(activityObj)
             }
+            if(activityObj.activityModuleType=="missingWordSentencesExercise"){
+                activitiesModule.missingWordSentencesExercise(activityObj)
+            }
+            
             if(activityObj.activityModuleType=="tutorWritingActivity"){
                 activitiesModule.tutorWritingActivity(activityObj)
             }
@@ -66,34 +70,3 @@ export default function renderLesson(level, lesson) {
 
 
     
-
-
-
-let exerciseSentences = [
-    {
-        text: "El gato de mi madre es muy bonito.",
-        hiddenWord: "es",
-        labelText: "verbo ser",
-        helperText: "My mother's cat is very beautiful."
-    },
-    {
-        text: "El padre come muchas galletas.",
-        hiddenWord: "come",
-        labelText: "verbo comer",
-        helperText: "The father eats many cookies."
-    },
-    {
-        text: "El profesor canta muy bien.",
-        hiddenWord: "canta",
-        labelText: "verbo cantar",
-        helperText: "The teacher sings very well."
-    },
-    {
-        text: "El perro corre muy rapido.",
-        hiddenWord: "corre",
-        labelText: "verbo correr",
-        helperText: "The dog runs very fast."
-    }
-]
-
-

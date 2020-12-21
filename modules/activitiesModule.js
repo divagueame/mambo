@@ -6,6 +6,7 @@ import generateSidenav from './generateSidenav.js';
 import introConcept from './introConcept.js';
 import renderLessonTitle from './renderLessonTitle.js';
 import missingWordsParagraph from './missingWordsParagraph.js';
+import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import tutorWritingActivity from './tutorWritingActivity.js';
 import generateBasicText from './generateBasicText.js';
 
@@ -21,6 +22,7 @@ const activitiesModule = (() => {
       introConcept,
       renderLessonTitle,
       missingWordsParagraph,
+      missingWordSentencesExercise,
       tutorWritingActivity,
       generateBasicText
     };
