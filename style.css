@@ -1,9 +1,17 @@
 
+:root {
+    --white1: #e8eddf;
+    --white2: #CFDBD5;
+    --yellow1: #f5cb5c;
+    --black1: #242423;
+    --black2: #333533;
+  }
 *{
     font-family: 'Comfortaa', cursive;
 }
 html {
     font-size: 100%;
+    color: var(--black2)
 }
 body {
     display: flex;
@@ -18,6 +26,7 @@ body {
   }
   h1 {
     font-size: 1.62rem !important;
+    /* color: var(--black2); */
   }
   h2 {
     font-size: 1.5rem  !important;
@@ -41,6 +50,12 @@ body {
   p {
     font-size: 1rem !important;
     line-height: 1.9rem !important;
+  }
+  
+footer.page-footer {
+    color:  var(--white1);
+    background-color: var(--black2);
+
   }
 .activator {
     background-size: cover !important;

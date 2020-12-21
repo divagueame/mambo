@@ -19,9 +19,9 @@ function missingWordsParagraph(obj, targetDom) {
             <div class="row ">
             
             <div class="col s12 m4 removeLeftPadding">
-            <img class="responsive-img z-depth-1" src="${obj.sideImgLocation}">
+            <img class="responsive-img" src="${obj.sideImgLocation}">
             </div>
-            <div class="col s12 m8 lighten-5 z-depth-1">
+            <div class="col s12 m8 lighten-5">
             <p class="paragraphExerciseTextP justified flow-text">`
 //     //Create the text and deploy textboxes
     let text = obj.paragraphText;
