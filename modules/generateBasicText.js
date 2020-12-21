@@ -51,7 +51,7 @@ moduleDiv.innerHTML = `
 targetDomDefault.appendChild(moduleDiv);
 
 
-var myaudio = new Audio('/audio/lesson1.1/1.mp3');
+var myaudio = new Audio('/audio/lesson1/1.mp3');
 
 myaudio.onended = function(){
   player1.firstElementChild.innerHTML = 'play_circle_filled'
