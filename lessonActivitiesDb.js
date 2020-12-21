@@ -14,15 +14,40 @@ let lessonsArray = [
                 'title': "Masculino o femenino"
             },
             {
-                'activityModuleType': 'introConcept',
+                'activityModuleType': 'generateBasicText',
                 'activityOrder': 2,
-                'cardTitle': '1This is cardtitle',
-                'cardContent': "1I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+                'title': "Masculino o femenino"
+            },
+            {
+                'activityModuleType': 'tutorWritingActivity',
+                'activityOrder': 3,
+                'activityId': 'anIdToRecognizeInTheDbas',
+                'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
+                'promptsArray': [
+                    {
+                        'word': 'gato',
+                        'imgSrc': ''
+                    },
+                    {
+                        'word': 'perro',
+                        'imgSrc': ''
+                    },
+                    
+                    {
+                        'word': 'guitarra',
+                        'imgSrc': './img/lesson1.1/guitar.jpg'
+                    },
+                    
+                    {
+                        'word': 'piano',
+                        'imgSrc': './img/lesson1.1/piano.jpg'
+                    }
+                ]
             },
             {
                 'activityModuleType': 'missingWordsParagraph',
-                'activityOrder': 3,
-                'paragraphText': '¿Tienes la suerte de tener un <span class="guessWord">amigo</span> fiel que permanece a tu lado pase lo que pase? Ese amigo que realmente es un <span class="guessWord">tesoro</span>, que está a las duras y a las maduras, que sabe cuándo estás bien o cuándo estás mal, que sabe cómo animarte sin que tengas que decirle u ofrecerle nada a cambio. <span class="guessWord">Probablemente</span>, pocos podáis decir que tenéis a alguien que os muestre ese amor tan <span class="guessWord">incondicional</span>, pero los que lo tenéis, probablemente ese amigo tendrá forma de perro, gato o canario. A lo mejor deberíamos de cambiar el dicho por ”quien tiene una mascota, tiene un tesoro”, porque solo aquellos que cuentan con una saben del tipo de <span class="guessWord"></span>amor que estamos hablando.', 
+                'activityOrder': 4,
+                'paragraphText': '¿Tienes la suerte de tener un <span class="guessWord">amigo</span> fiel que permanece a tu lado pase lo que pase? Ese amigo que realmente es un <span class="guessWord">tesoro</span>, que está a las duras y a las maduras, que sabe cuándo estás bien o cuándo estás mal, que sabe cómo animarte sin que tengas que decirle u ofrecerle nada a cambio. <span class="guessWord">Probablemente</span>, pocos podáis decir que tenéis a alguien que os muestre ese amor tan <span class="guessWord">incondicional</span>, pero los que lo tenéis, probablemente ese amigo tendrá forma de perro, gato o canario. A lo mejor deberíamos de cambiar el dicho por ”quien tiene una mascota, tiene un tesoro”, porque solo aquellos que cuentan con una saben del tipo de <span class="guessWord">amor</span> que estamos hablando.', 
                 'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
                 'helptags': true,
                 'autoShowHelptags': false,

@@ -6,17 +6,11 @@ import generateSidenav from './generateSidenav.js';
 import introConcept from './introConcept.js';
 import renderLessonTitle from './renderLessonTitle.js';
 import missingWordsParagraph from './missingWordsParagraph.js';
-
-
-
-
+import tutorWritingActivity from './tutorWritingActivity.js';
+import generateBasicText from './generateBasicText.js';
 
 
 const activitiesModule = (() => {
-console.log("Activities module");
-
-
-
 
     return {
       displayHeader,
@@ -26,11 +20,11 @@ console.log("Activities module");
       generateSidenav,
       introConcept,
       renderLessonTitle,
-      missingWordsParagraph
+      missingWordsParagraph,
+      tutorWritingActivity,
+      generateBasicText
     };
   })();
 
-
-  
 
 export default activitiesModule

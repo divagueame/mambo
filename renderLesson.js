@@ -16,7 +16,7 @@ import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 
 
 export default function renderLesson(level, lesson) {
-// console.log("Render lesson init", level, lesson)
+    
     const lessonContainer = document.querySelector('.lessonContainer'); 
     lessonContainer.innerHTML = '';
     //This is an async function. It returns a promise
@@ -34,6 +34,12 @@ export default function renderLesson(level, lesson) {
             }
             if(activityObj.activityModuleType=="missingWordsParagraph"){
                 activitiesModule.missingWordsParagraph(activityObj)
+            }
+            if(activityObj.activityModuleType=="tutorWritingActivity"){
+                activitiesModule.tutorWritingActivity(activityObj)
+            }
+            if(activityObj.activityModuleType=="generateBasicText"){
+                activitiesModule.generateBasicText(activityObj)
             }
 
         });

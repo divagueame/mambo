@@ -9,20 +9,20 @@ function missingWordsParagraph(obj, targetDom) {
     moduleDiv.classList.add("moduleDiv");
 //     //Initial opening tags and activity header
     let html = `
-    <blockquote class="activityHeader valign-wrapper">
-        <i class="material-icons black-text">create</i> 
+    <div class="activityHeader valign-wrapper">
+        <i class="material-icons small">create</i> 
         ${obj.activityHeaderText}
-    </blockquote>`
+    </div>`
 //   //Add helptags container
     html += `<div id="helptags" class="row removeBottomMargin"></div>
             <form id="missingwordsform" autocomplete="off">   
-            <div class=" row ">
+            <div class="row ">
             
-            <div class="col s4 removeLeftPadding">
+            <div class="col s12 m4 removeLeftPadding">
             <img class="responsive-img z-depth-1" src="${obj.sideImgLocation}">
             </div>
-            <div class="col s8 teal lighten-5 z-depth-1">
-            <p class="paragraphExerciseTextP justified">`
+            <div class="col s12 m8 lighten-5 z-depth-1">
+            <p class="paragraphExerciseTextP justified flow-text">`
 //     //Create the text and deploy textboxes
     let text = obj.paragraphText;
     html += text;
@@ -30,27 +30,24 @@ function missingWordsParagraph(obj, targetDom) {
 //     // Closing the tags and Add the submit button
     html += `</div></div>
        </p>
-       
     <div class="row">
     <div class="col s12 removeRightPadding">
-        <button class="btn waves-effect waves-light right blue-grey darken-2" type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
+        <button id='submitButtonMissingWordsParagraph' class="btn waves-effect waves-light right blue-grey darken-2" type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
         </button>
          <div class="right addRightMargin btn" id="helptagsTriggerContainer"><span id='helptagsTrigger'>Ayuda</span></div>        
         </div>
     </div> 
         <div class="row" id="answersContainer"></div></form>`;
- moduleDiv.innerHTML = html
-
+moduleDiv.innerHTML = html
 targetDomDefault.appendChild(moduleDiv);
+
 
 
 // //     //Subtitute answers for input forms and get the right answers in an array
     let selectAll = document.querySelectorAll(".guessWord")
     let correctAnswersArray = [];
-    let widthPerLetter = 0.9;
 
     selectAll.forEach(function(e,i,a){
-        
     let widthPerLetter = .802
     let thisWidth = selectAll[i].innerHTML.length * widthPerLetter * getRandom();
 
@@ -131,31 +128,31 @@ e.innerHTML = ``
         let triggercontainer = document.getElementById('helptagsTriggerContainer');
         triggercontainer.classList.add('disabled');
 
-
-
         // //Add eventlisteners for the chips to toggle class .chipCrossedOut
         correctAnswersArray.forEach(function(answer,i,a){
             let thisId = `chipNumber${i}`;
             let selectChip = document.getElementById(thisId);
             selectChip.addEventListener('click',(e)=>{
                 selectChip.classList.toggle('chipCrossedOut')
-            })
-        // })
-        // }
+            });
     })
-
 }
 
 //     //When submit, check the correct answers
     const thisForm = document.getElementById('missingwordsform');
     let userIsRight = [];
     let userAnswersText = [];
-
-    thisForm.addEventListener('submit',function(e){
+    const submitButtonMissingWordsParagraph = document.getElementById('submitButtonMissingWordsParagraph');
+    // const buttonSelector = document.getElementById('submitButtonMissingWordsParagraph')
+    thisForm.addEventListener('submit', function(e){
         e.preventDefault();
+        submitButtonMissingWordsParagraph.classList.add('disabled');
+        let helptagsTriggerContainer = document.querySelector('#helptagsTriggerContainer')
+        helptagsTriggerContainer.classList.add('disabled');
+        
         let counterRight = 0;
         let counterWrong = 0;
-
+        console.log("YES    ")
         for (let i = 0; i < (thisForm.length-1); i++) {
         if((thisForm.elements[i].value).toLowerCase()==correctAnswersArray[i].toLowerCase()){
             // console.log("RIGHT ANSWER")
@@ -183,12 +180,7 @@ e.innerHTML = ``
                 counterWrong++
                 // console.log("NOOOO")
             }
-
     });
-
-
-    // console.log(userAnswers,"USER")
-        
     let result = (counterRight + "/" + (counterRight+counterWrong))
     let correctionMessage = `Has acertado: ${result}`
     M.toast({html: correctionMessage, displayLength: 5000 ,classes: 'rounded'});

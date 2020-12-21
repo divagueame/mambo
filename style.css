@@ -2,19 +2,46 @@
 *{
     font-family: 'Comfortaa', cursive;
 }
+html {
+    font-size: 100%;
+}
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
   }
 
-body {
-    /* background-color: grey; */
-}
+
   main {
     flex: 1 0 auto;
   }
-
+  h1 {
+    font-size: 1.62rem !important;
+  }
+  h2 {
+    font-size: 1.5rem  !important;
+  }
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  h4 {
+    font-size: 1.3rem !important;
+  }
+  
+  h5 {
+    font-size: 1.25rem !important;
+  }
+  
+  h6 {
+    font-size: 1.11rem !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+    line-height: 1.9rem !important;
+  }
 .activator {
     background-size: cover !important;
 }
@@ -113,13 +140,10 @@ body {
     color: crimson;
 }
 .paragraphExerciseTextP {
-    line-height: 2 !important;
-    font-size: 1.15em;
+    /* line-height: 2 !important; */
+    /* font-size: 1.15em; */
 }
-.guessWord {
-    /* background-color: cadetblue; */
 
-}
 .guessWordRight, .guessWordWrong{
     border: solid white 0px !important
 }
@@ -144,9 +168,9 @@ body {
 .inputTextinParagraph {
     color: rgb(12, 27, 14);
     height: auto !important;
-    font-size:1.19em  !important;
-    font-weight: 550;
+    font-size:1.15em  !important;
     padding:0em;
+
     margin-bottom: 0 !important;
     border-bottom: 0px !important;
     border-bottom: 1px rgb(0, 0, 0) solid !important;
@@ -177,14 +201,36 @@ body {
     background-color: rgba(211, 223, 206, 0.2);
     color: rgb(214, 213, 213);
 }
+
+.borderaround {
+    border: 2px black solid
+}
+#textarea2 {
+    font-size: 1.2rem;
+}
+
+.toastie-container{
+    /* background-color: #eeeeee !important */
+    border: 2px solid black;
+}
+
+.hint-toast-img {
+    width: 10rem;
+    padding: 0 !important;
+    height: auto;
+}
 .activityHeader {
     padding: 2rem;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
+    /* background-color:  #616161 !important; */
+    /* color: white; */
     /* border-bottom: rgb(187, 89, 89) 2px solid;
     border-left: rgb(187, 89, 89) 2px solid; */
-    border: #607d8b 2px solid;
+    /* border: #607d8b 2px solid; */
     /* background-color: rgb(166, 237, 240); */
 }
+
+
 
 input {
     /* color: chartreuse; */
