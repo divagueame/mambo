@@ -24,10 +24,10 @@ moduleDiv.innerHTML = `
 
 
 
-<br></br>AS
+<br></br>as
 
 <figure>
-    <figcaption>Listen to the T-Rex:</figcaption>
+    <figcaption>sdListen to the T-Rex:</figcaption>
     <audio
         controls
         src="audio/lesson1/1.mp3">
