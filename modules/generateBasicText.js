@@ -29,6 +29,11 @@ POLLAS
                 <source id="src-target" src="audio/lesson1/1.mp3" type="audio/mpeg"> Your browser does not support the audio element.
               </audio>
 
+              asdf
+
+              <audio  preload="auto" class="audio" controls>
+                <source id="src-target2" src="audio/lesson1/2.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+              </audio>
  
               
 
