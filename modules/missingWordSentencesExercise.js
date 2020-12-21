@@ -6,9 +6,12 @@ export default function missingWordSentencesExercise(obj, targetDom) {
   }
   var moduleDiv = document.createElement('div');
   moduleDiv.classList.add("moduleDiv");
-  moduleDiv.classList.add('row')
-  moduleDiv.classList.add('center')
+//   moduleDiv.classList.add('row')
+//   moduleDiv.classList.add('center')
+//   moduleDiv.classList.add('grey')
+//   moduleDiv.classList.add('z-depth-1')
   targetDomDefault.appendChild(moduleDiv)
+
 
 //USE ONLY ONCE PER LESSON
 let activeSentence = 0;
@@ -36,7 +39,7 @@ function displayExerciseCard(sentenceObj){
   exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
   exerciseContainer.classList.add("col")
   exerciseContainer.classList.add("s12")
-  exerciseContainer.classList.add("white")
+  exerciseContainer.classList.add("section")
     let preText = findPreText(sentenceObj);
     let postText = findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
@@ -44,6 +47,7 @@ function displayExerciseCard(sentenceObj){
     let helperText = sentenceObj.helperText;
 
     exerciseContainer.innerHTML = `
+            <br>
                     <form id="wordForm" autocomplete="off">
                     <span>${preText}
                     <div class="input-field inline">
@@ -54,7 +58,7 @@ function displayExerciseCard(sentenceObj){
                     </span>
                     <br>
                    <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
-                  <br>
+                    <br>
                     <button class="btn waves-effect waves-light" type="submit" name="submitAnswer">
                     <i class="material-icons" id="submitButton">thumb_up</i>
                     </button>
@@ -73,7 +77,8 @@ function displayExerciseCard(sentenceObj){
      
             if(userAnswer!=""){
                 let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
-                userAnswers.push(userAnswerWithSentence);
+                // userAnswers.push(userAnswerWithSentence);
+                userAnswers.push(`${preText}${userAnswer}${postText}`);
                     // userAnswers.push(userAnswer);
                 if(isCorrectAnswer(hiddenText,userAnswer)){
                     userAnswer = "";
@@ -85,7 +90,7 @@ function displayExerciseCard(sentenceObj){
                     answerIsWrong();
                     setTimeout(function(){
                         document.querySelector("#missingWordInput").value = (hiddenText);
-                    },750);
+                    },75);
                 }
             }
         })
@@ -119,7 +124,7 @@ function answerIsCorrect(){
             displayAnswersCard(obj.exerciseSentences,userAnswers,userRightAnswers);
             console.log("Right answer. AExercise finished. Show answers")
         }
-    },2000)
+    },200)
 
 }
 
@@ -132,7 +137,7 @@ function answerIsWrong(){
     setTimeout(function(){
         submitButton.parentElement.classList.remove("red");
         submitButton.innerHTML = "thumb_up";
-    },3000); 
+    },300); 
 
     setTimeout(function(){
 
@@ -145,7 +150,7 @@ function answerIsWrong(){
             moduleDiv.removeChild(moduleDiv.childNodes[0]);
             displayAnswersCard(obj.exerciseSentences,userAnswers,userRightAnswers);
         }
-    },3000);
+    },300);
 }
 
 function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
@@ -167,7 +172,8 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
 
     var exerciseContainer = document.createElement("div");
-    exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
+    // exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
+    // exerciseContainer.classList.add("row")
 
 
 
@@ -180,44 +186,41 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
             let bgcolor = 'white'
             
             if(userRightAnswers[index]==false){
-                rightAnswer = false;
-                icon = 'priority_high';
-                iconColor = "red-text lighten-3";
-                bgcolor = 'accent-2'
+                // rightAnswer = false;
+                // icon = 'priority_high';
+                // iconColor = "red-text lighten-3";
+                // bgcolor = 'accent-2'
             };
             let thisUserAnswer = userAnswer[index];
-            
+            let correction = '';
+            if(userRightAnswers[index]==false){
+                correction +=
+                 `
+                <div class="${bgcolor} row"><div class="col s12">
+                    <i class="material-icons tiny red-text" id="submitButton">fiber_manual_record</i>
+                    ${thisUserAnswer} </div>
+                </div>
+            `;
+
+
             sentences +=
             `
-            <tr class="${bgcolor}">
-                <td class="valign-wrapper">
+            <div class="${bgcolor} row pink"><div class="col s12">
                 <i class="tiny material-icons ${iconColor}" id="submitButton">${icon}</i>
                 ${sentencesObj[index].text}
-                </td>
-            </tr>
+                ${correction}
+                </div></div>
             `;
-            if(userRightAnswers[index]==false){
-                sentences +=
-                 `
-                <tr  class="${bgcolor}">
-                    <td class="valign-wrapper center red lighten-5 userWrongAnswer" style="padding-left: 42px">
-                    <i class="material-icons tiny red-text" id="submitButton">fiber_manual_record</i>
-                        Your answer: ${thisUserAnswer}
-                    </td>
-                </tr>
-            `;
+
             }
         }
     );
 
   
     exerciseContainer.innerHTML = `
-    <table class="centered">
-    <tbody>${sentences}
-    </tbody>
-    </table>
+    ${sentences}
         `
-        // targetDomDefault.innerHTML += html;
+
         moduleDiv.appendChild(exerciseContainer)
 };
 

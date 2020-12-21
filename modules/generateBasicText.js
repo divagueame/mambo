@@ -16,34 +16,25 @@ moduleDiv.innerHTML = `
 
   <p class="justified">Bloremrema e loremlorem dsfa sdfasdfasdfdsf asd fasd f loremlLOremn lorem lLOremnlor emlLO remn loremlLOr emnloremlLOre m  nas
 
-  
+  POllas
 </p>
-<br>
-<br>
-<br>
-<br>
-<div class="row">
-<div id="audioContainer1" class="col s4 grey"></div>
-</div>
-<br>
-<div id="audioContainer2" class="blue"></div>
+<div class="divider"></div>
 
 
-<br>
-<br>
-</br></br>
 `; 
 
 
 targetDomDefault.appendChild(moduleDiv);
+//* <div id="audioContainer1" class="col s4 grey"></div> */
 
+// <div id="audioContainer2" class="blue"></div>
 let audio1 = `audio/lesson1/1.mp3`;
 let audio2 = `audio/lesson1/2.mp3`;
 let audioContainer1 = document.querySelector("#audioContainer1")
 let audioContainer2 = document.querySelector("#audioContainer2")
 
-displayAudio(audio1,audioContainer1)
-displayAudio(audio2,audioContainer2)
+// displayAudio(audio1,audioContainer1)
+// displayAudio(audio2,audioContainer2)
 
 
 
