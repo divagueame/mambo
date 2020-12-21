@@ -22,15 +22,16 @@ moduleDiv.innerHTML = `
 <br>
 <br>
 
+POLLAS
 
 
-<br></br>as
+              <audio  preload="auto" class="audio" controls>
+                <source id="src-target" src="audio/lesson1/1.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+              </audio>
 
+ 
+              
 
-<audio src="audio/lesson1/1.mp3" controls preload="auto" />
-asdfasd
-<p>as</p>
-<audio src="audio/lesson1/2.mp3" controls preload="auto" />
 
 <br>
 <br>
@@ -38,10 +39,20 @@ asdfasd
 `; 
 
 
+
 // Insert the element after our target element
 // targetDomDefault.parentNode.insertBefore( moduleDiv, targetDomDefault );
 
 targetDomDefault.appendChild(moduleDiv);
+
+
+
+{/* <audio src="audio/lesson1/1.mp3" controls preload="auto" /> */}
+
+
+
+
+
 
 
 
