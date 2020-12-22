@@ -368,7 +368,7 @@ header, main, footer {
 
   @media only screen and (max-width : 992px) {
     html{
-font-size: 20px;
+font-size: 18px;
       }
     .moduleDiv {
         width: 90%;    
@@ -382,7 +382,7 @@ font-size: 20px;
         display: none
     }
   }
-  
+
   @media only screen and (min-width:992px) {
     .moduleDiv {
         /* background-color: var(--white1); */
@@ -391,7 +391,6 @@ font-size: 20px;
         margin-right: auto;
     }
   }
-
 
 
 
