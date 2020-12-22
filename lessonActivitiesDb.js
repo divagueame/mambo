@@ -60,8 +60,8 @@ let lessonsArray = [
                 
             }, 
             {
-                'activityModuleType': '2blankSentences',
-                'activityOrder': 4,
+                'activityModuleType': 'blankSentences',
+                'activityOrder': 5,
                 'moduleHeaderText' : 'Blank el siguiente ejercicio con el/la',
                 'moduleHeaderIcon': 'airplay',
                 'moduleBasicText': '',
@@ -95,42 +95,6 @@ let lessonsArray = [
                 ]
                 
             }, 
-            {
-                'activityModuleType': '3missingWordSentencesExercise',
-                'activityOrder': 5,
-                'moduleHeaderText' : 'Completa el siguiente ejercicio con el/la',
-                'moduleHeaderIcon': 'menu',
-                'moduleBasicText': '',
-                'showTranslation': true,
-                'exerciseSentences': 
-                [
-                    {
-                        'text': "El gato de mi madre es muy bonito.",
-                        'hiddenWord': "es",
-                        'labelText': "verbo ser",
-                        'helperText': "My mother's cat is very beautiful."
-                    },
-                    {
-                        'text': "El padre come muchas galletas.",
-                        'hiddenWord': "come",
-                        'labelText': "verbo comer",
-                        'helperText': "The father eats many cookies."
-                    },
-                    {
-                        'text': "El profesor canta muy bien.",
-                        'hiddenWord': "canta",
-                        'labelText': "verbo cantar",
-                        'helperText': "The teacher sings very well."
-                    },
-                    {
-                        'text': "El perro corre muy rapido.",
-                        'hiddenWord': "corre",
-                        'labelText': "verbo correr",
-                        'helperText': "The dog runs very fast."
-                    }
-                ]
-                
-            },
             {
                 'activityModuleType': 'exampleCards',
                 'activityOrder': 4,
@@ -175,7 +139,7 @@ let lessonsArray = [
             
             {
                 'activityModuleType': 'missingWordsParagraph',
-                'activityOrder': 5,
+                'activityOrder': 3,
                 'moduleHeaderText' : 'casdas sdaf sdfs con el/la',
                 'moduleHeaderIcon': 'link',
                 'moduleBasicText': '',
@@ -184,7 +148,44 @@ let lessonsArray = [
                 'helptags': true,
                 'autoShowHelptags': false,
                 'sideImgLocation': 'img/lesson1.1/kitty.jpg'
-            }
+            },
+            
+            {
+                'activityModuleType': '2missingWordSentencesExercise',
+                'activityOrder': 4,
+                'moduleHeaderText' : 'Completa el siguiente ejercicio con el/la',
+                'moduleHeaderIcon': 'menu',
+                'moduleBasicText': '',
+                'showTranslation': true,
+                'exerciseSentences': 
+                [
+                    {
+                        'text': "El gato de mi madre es muy bonito.",
+                        'hiddenWord': "es",
+                        'labelText': "verbo ser",
+                        'helperText': "My mother's cat is very beautiful."
+                    },
+                    {
+                        'text': "El padre come muchas galletas.",
+                        'hiddenWord': "come",
+                        'labelText': "verbo comer",
+                        'helperText': "The father eats many cookies."
+                    },
+                    {
+                        'text': "El profesor canta muy bien.",
+                        'hiddenWord': "canta",
+                        'labelText': "verbo cantar",
+                        'helperText': "The teacher sings very well."
+                    },
+                    {
+                        'text': "El perro corre muy rapido.",
+                        'hiddenWord': "corre",
+                        'labelText': "verbo correr",
+                        'helperText': "The dog runs very fast."
+                    }
+                ]
+                
+            },
         ]
     },
     {
