@@ -9,9 +9,11 @@ export default function missingWordSentencesExercise(obj, targetDom) {
   moduleDiv.classList.add('section')
 //   moduleDiv.classList.add('center')
 //   moduleDiv.classList.add('grey')
-//   moduleDiv.classList.add('z-depth-1')
-  targetDomDefault.appendChild(moduleDiv)
 
+  targetDomDefault.appendChild(moduleDiv)
+  var moduleHeader = document.createElement('div');
+  moduleHeader.innerHTML = `<h3 class="valign-wrapper"><i class="material-icons brown-text">widgets</i><span> 1.2 Completa el siguiente ejercicio con el/la</span></h3>`
+  moduleDiv.appendChild(moduleHeader)
 
 //USE ONLY ONCE PER LESSON
 let activeSentence = 0;
@@ -32,13 +34,14 @@ function findPosText(sentenceObj){
     posText = posText[0].replace(sentenceObj.hiddenWord,"")
     return posText
 }
+var exerciseContainer = document.createElement("div");
+
+exerciseContainer.classList.add("missingWordSentencesExerciseContainer");
+//   exerciseContainer.classList.add("col")
+//   exerciseContainer.classList.add("s12")
+exerciseContainer.classList.add('z-depth-1')
 
 function displayExerciseCard(sentenceObj){
-    
-  var exerciseContainer = document.createElement("div");
-  exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
-  exerciseContainer.classList.add("col")
-  exerciseContainer.classList.add("s12")
     let preText = findPreText(sentenceObj);
     let postText = findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
@@ -46,25 +49,40 @@ function displayExerciseCard(sentenceObj){
     let helperText = sentenceObj.helperText;
 
     exerciseContainer.innerHTML = `
-    <h3 class="valign-wrapper"><i class="material-icons brown-text">widgets</i><span> 1.2 Completa el siguiente ejercicio con el/la</span></h3>
                     <form id="wordForm" autocomplete="off" class="">
-                    <span>${preText}
-                    <div class="input-field inline">
-                    <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
-                    <label for="missingWordInput" class="">${labelText}</label>
-                    </div>
-                    ${postText}
-                    </span>
-                    <br>
-                   <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
-                    <br>
-                    <button class="btn waves-effect waves-light" type="submit" name="submitAnswer">
-                    <i class="material-icons" id="submitButton">thumb_up</i>
-                    </button>
-                </form>
-                <br>
-                <div class="divider"></div>
-                `
+                        <div class="row">
+                            <div class="col s12 firstLine center blue">
+                                ${preText}
+                                <input id="missingWordInput" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: 2rem">
+                                ${postText}
+                            </div>
+                            <div class="col s12 SecondLine grey-text text-lighten-1 center">
+                                ${helperText}
+                            </div>
+                            <div class="thirdLine grey right">
+                            <button class="btn waves-effect waves-light blue lighten-4" type="submit" name="submitAnswer">
+                            <i class="material-icons" id="submitButton">thumb_up</i>
+                            </button>
+                            </div>
+                        </div>`
+
+                        
+                //     let a = `<span class="blue">${preText}
+                //     <div class="input-field inline red">
+                //     <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
+                //     <label for="missingWordInput" class="">${labelText}</label>
+                //     </div>
+                //     ${postText}
+                //     </span>
+                    
+                //    <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
+                   
+                //     <button class="btn waves-effect waves-light blue lighten-4" type="submit" name="submitAnswer">
+                //     <i class="material-icons" id="submitButton">thumb_up</i>
+                //     </button>
+                // </form>
+
+                // `
     
 
             moduleDiv.appendChild(exerciseContainer);
@@ -75,9 +93,9 @@ function displayExerciseCard(sentenceObj){
             wordForm.addEventListener('submit', function(e){
             e.preventDefault();
             let userAnswer = document.querySelector("#missingWordInput").value;
-     
+                console.log("Escribe",userAnswer)
             if(userAnswer!=""){
-                let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
+                // let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
                 // userAnswers.push(userAnswerWithSentence);
                 userAnswers.push(`${preText}${userAnswer}${postText}`);
                     // userAnswers.push(userAnswer);
@@ -117,11 +135,11 @@ function answerIsCorrect(){
 
         if(activeSentence<obj.exerciseSentences.length){
             console.log("Right answer. Another exercise");
-            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            exerciseContainer.removeChild(exerciseContainer.childNodes[0]);
             displayExerciseCard(obj.exerciseSentences[activeSentence]);
             
         } else {
-            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            exerciseContainer.removeChild(exerciseContainer.childNodes[0]);
             displayAnswersCard(obj.exerciseSentences,userAnswers,userRightAnswers);
             console.log("Right answer. AExercise finished. Show answers")
         }
@@ -144,17 +162,18 @@ function answerIsWrong(){
 
         if(activeSentence<obj.exerciseSentences.length){
             
-            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            exerciseContainer.removeChild(exerciseContainer.childNodes[0]);
             displayExerciseCard(obj.exerciseSentences[activeSentence]);
 
         } else {
-            moduleDiv.removeChild(moduleDiv.childNodes[0]);
+            exerciseContainer.removeChild(exerciseContainer.childNodes[0]);
             displayAnswersCard(obj.exerciseSentences,userAnswers,userRightAnswers);
         }
     },300);
 }
 
 function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
+    var answersContainerDiv = document.createElement('div');
     let sentences= '';
     // console.log("DIsplay Answers card")
     function howManyTrue(array){
@@ -180,7 +199,6 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
     sentencesObj.forEach(
         function answerList(item, index, arr) {
-
             let rightAnswer = true;
             let icon = 'done';
             let iconColor = "green-text lighten-3 ";
@@ -218,11 +236,11 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     );
 
   
-    exerciseContainer.innerHTML = `
-    ${sentences}
-        `
+    answersContainerDiv.innerHTML = `${sentences}`
+        console.log("A",answersContainerDiv)
+        wordForm.parentElement.appendChild(answersContainerDiv)
+        wordForm.parentElement.removeChild(wordForm);
 
-        moduleDiv.appendChild(exerciseContainer)
 };
 
 displayExerciseCard(obj.exerciseSentences[0]);

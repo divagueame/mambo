@@ -16,8 +16,8 @@ moduleDiv.innerHTML = `
 <p class="justified">As a general rule, male nouns end by -o and female nouns end by -a.
 
 <p class="examples"><span class="heavyText">Male nouns:</span>  el edificio, el boligrafo, el dinero, el vaso...</p>
-<p  class="examples"><span class="heavyText">Female nouns: </span>la casa, la mesa, la taza, la ventana... It's important to remember the gender of the words as other elements related to them will agree accordingly.
-</p>
+<p  class="examples"><span class="heavyText">Female nouns: </span>la casa, la mesa, la taza, la ventana... </p>
+<p class="">It's important to remember the gender of the words as other elements related to them will agree accordingly.</p>
 <div class="divider"></div>
 `; 
 
