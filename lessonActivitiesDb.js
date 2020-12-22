@@ -60,7 +60,7 @@ let lessonsArray = [
                 
             }, 
             {
-                'activityModuleType': 'blankSentences',
+                'activityModuleType': '1blankSentences',
                 'activityOrder': 5,
                 'moduleHeaderText' : 'Blank el siguiente ejercicio con el/la',
                 'moduleHeaderIcon': 'airplay',
@@ -96,7 +96,7 @@ let lessonsArray = [
                 
             }, 
             {
-                'activityModuleType': 'exampleCards',
+                'activityModuleType': '1exampleCards',
                 'activityOrder': 4,
                 'moduleHeaderText': "Let's have  a look at some examples...",
                 'moduleHeaderIcon': 'create',
