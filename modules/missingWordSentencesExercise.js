@@ -12,7 +12,7 @@ export default function missingWordSentencesExercise(obj, targetDom) {
 
   targetDomDefault.appendChild(moduleDiv)
   var moduleHeader = document.createElement('div');
-  moduleHeader.innerHTML = `<h3 class="valign-wrapper"><i class="material-icons brown-text">widgets</i><span> 1.2 Completa el siguiente ejercicio con el/la</span></h3>`
+  moduleHeader.innerHTML = `<h3 class="valign-wrapper"><i class="material-icons">widgets</i><span> 1.2 Completa el siguiente ejercicio con el/la</span></h3>`
   moduleDiv.appendChild(moduleHeader)
 
 //USE ONLY ONCE PER LESSON
@@ -51,7 +51,7 @@ function displayExerciseCard(sentenceObj){
     exerciseContainer.innerHTML = `
                     <form id="wordForm" autocomplete="off" class="">
                         <div class="row">
-                            <div class="col s12 firstLine center blue">
+                            <div class="col s12 firstLine center">
                                 ${preText}
                                 <input id="missingWordInput" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: 2rem">
                                 ${postText}
