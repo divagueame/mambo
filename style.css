@@ -28,14 +28,15 @@ body {
     flex: 1 0 auto;
   }
   h1 {
-    font-size: 1.62rem !important;
+    font-size: 1.8rem !important;
     text-decoration: underline;
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     /* color: var(--black2); */
   }
   h2 {
     font-size: 1.5rem  !important;
   }
+    
   h3 {
     font-size: 1.4rem !important;
   }
@@ -57,7 +58,14 @@ body {
     line-height: 1.9rem !important;
   }
 
- 
+  .examples{
+      background-color: #f5cb5c;
+      padding: 1rem;
+  }
+  span.heavyText{
+    font-weight: 700;
+    text-decoration: underline;
+  }
 footer.page-footer {
     color:  var(--white1);
     background-color: var(--black2);
