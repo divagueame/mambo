@@ -35,6 +35,7 @@ function displayExerciseCard(sentenceObj){
   let counterDisplay = `${activeCounter}/${obj.exerciseSentences.length}`;
   let formDiv = document.createElement('form');
   formDiv.id = `blankSentencesForm${randomId}`;
+  formDiv.setAttribute('name',`blankSentencesForm${randomId}`);
   formDiv.setAttribute('autocomplete','off');
   formDiv.classList.add("padding2212");
   formDiv.innerHTML = `
