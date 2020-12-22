@@ -199,35 +199,25 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
     sentencesObj.forEach(
         function answerList(item, index, arr) {
-            let rightAnswer = true;
+            // let rightAnswer = true;
             let icon = 'done';
             let iconColor = "green-text lighten-3 ";
-            let bgcolor = 'white'
-            
+            console.log("POLLAS", item)
             if(userRightAnswers[index]==false){
                 // rightAnswer = false;
-                // icon = 'priority_high';
-                // iconColor = "red-text lighten-3";
+                icon = 'priority_high';
+                iconColor = "red-text lighten-3";
                 // bgcolor = 'accent-2'
             };
             let thisUserAnswer = userAnswer[index];
-            let correction = '';
+            
             if(userRightAnswers[index]==false){
-                correction +=
-                 `
-                <div class="${bgcolor} row"><div class="col s12">
-                    <i class="material-icons tiny red-text" id="submitButton">fiber_manual_record</i>
-                    ${thisUserAnswer} </div>
-                </div>
-            `;
-
 
             sentences +=
             `
-            <div class="${bgcolor} row pink"><div class="col s12">
+            <div class="row"><div class="col s12">
                 <i class="tiny material-icons ${iconColor}" id="submitButton">${icon}</i>
                 ${sentencesObj[index].text}
-                ${correction}
                 </div></div>
             `;
 
@@ -236,8 +226,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     );
 
   
-    answersContainerDiv.innerHTML = `${sentences}`
-        console.log("A",answersContainerDiv)
+    answersContainerDiv.innerHTML = `${sentences}`;
         wordForm.parentElement.appendChild(answersContainerDiv)
         wordForm.parentElement.removeChild(wordForm);
 

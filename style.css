@@ -76,7 +76,10 @@ footer.page-footer {
 }
 
 .missingWordSentencesExerciseContainer {
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: .1rem;
 }
 
 .lessonHeaderText {
@@ -373,4 +376,4 @@ line-height: 155%;
 
 
 
-  missingWordSentencesExercise(exerciseContainer, exerciseSentences);
+  
