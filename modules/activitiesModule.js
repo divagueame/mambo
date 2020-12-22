@@ -1,5 +1,5 @@
 import displayHeader from './displayHeader.js';
-import examplesCard from './examplesCard.js';
+import exampleCards from './exampleCards.js';
 import generateBlockquote from './generateBlockquote.js';
 import generateFooter from './generateFooter.js';
 import generateSidenav from './generateSidenav.js';
@@ -10,12 +10,13 @@ import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import tutorWritingActivity from './tutorWritingActivity.js';
 import generateBasicText from './generateBasicText.js';
 
+import blankSentences from './blankSentences.js';
 
 const activitiesModule = (() => {
 
     return {
       displayHeader,
-      examplesCard,
+      exampleCards,
       generateBlockquote,
       generateFooter,
       generateSidenav,
@@ -23,6 +24,7 @@ const activitiesModule = (() => {
       renderLessonTitle,
       missingWordsParagraph,
       missingWordSentencesExercise,
+      blankSentences,
       tutorWritingActivity,
       generateBasicText
     };

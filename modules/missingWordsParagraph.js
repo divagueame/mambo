@@ -1,23 +1,18 @@
+import moduleHeader from './moduleHeader.js'
 function missingWordsParagraph(obj, targetDom) {
     let targetDomDefault = document.querySelector('.lessonContainer');
     if(targetDom){
         targetDomDefault = document.querySelector(targetDom);
     }
 
-
     var moduleDiv = document.createElement('div');
     moduleDiv.classList.add("moduleDiv");
+    let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon']);
+    let moduleContainer = document.createElement('div');
 //     //Initial opening tags and activity header
-    let html = `
-    <div class="activityHeader valign-wrapper">
-        <i class="material-icons small">create</i> 
-        ${obj.activityHeaderText}
-    </div>`
-//   //Add helptags container
-    html += `<div id="helptags" class="row removeBottomMargin"></div>
+    let html = `<div id="helptags" class="row removeBottomMargin"></div>
             <form id="missingwordsform" autocomplete="off">   
             <div class="row ">
-            
             <div class="col s12 m4 removeLeftPadding">
             <img class="responsive-img" src="${obj.sideImgLocation}">
             </div>
@@ -38,7 +33,10 @@ function missingWordsParagraph(obj, targetDom) {
         </div>
     </div> 
         <div class="row" id="answersContainer"></div></form>`;
-moduleDiv.innerHTML = html
+        moduleContainer.innerHTML = html
+
+moduleDiv.appendChild(moduleHeaderDiv);
+moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
 
 
@@ -68,7 +66,6 @@ targetDomDefault.appendChild(moduleDiv);
         inputDivToAdd.innerHTML =` 
                 <input id="correctAnswer${e.innerHTML}${i}" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: ${thisWidth}rem">
             `   
-
 
 // Get the parent element
 let parentDiv = e.parentNode

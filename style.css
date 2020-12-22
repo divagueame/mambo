@@ -74,13 +74,18 @@ footer.page-footer {
 .activator {
     background-size: cover !important;
 }
-
-.missingWordSentencesExerciseContainer {
+.padding2212{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: .1rem; 
+}
+/* .missingWordSentencesExerciseContainer {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 2rem;
     padding-bottom: .1rem;
-}
+} */
 
 .lessonHeaderText {
     font-size: 2rem !important;

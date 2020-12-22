@@ -13,7 +13,7 @@ import generateFrecuencyList from './generateFrecuencyList.js';
 let activeLessonId = [1,1];
 const lessonContainer = document.querySelector(".lessonContainer")
  
-// setTimeout(lessonActivitiesDb,800)
+setTimeout(lessonActivitiesDb,800)
 
   
  

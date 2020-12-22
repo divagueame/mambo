@@ -3,12 +3,13 @@ import {activeLessonId} from './java.js'
 // LESSON MODULES
 import renderLessonTitle from './modules/renderLessonTitle.js';
 import videoActivity from './modules/videoActivity.js';
-import examplesCard from './modules/examplesCard.js';
+import exampleCards from './modules/exampleCards.js';
 import generateBlockquote from './modules/generateBlockquote.js';
 import introConcept from './modules/introConcept.js';
 import generateSidenav from './modules/generateSidenav.js';
 import generateDivider from './modules/generateDivider.js';
 import missingWordSentencesExercise from './modules/missingWordSentencesExercise.js';
+import blankSentences from './modules/blankSentences.js';
 import generateFooter from './modules/generateFooter.js';
 import readLessonsFromDb from './readLessonsFromDb.js';
 import activitiesModule from './modules/activitiesModule.js'
@@ -42,8 +43,14 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="tutorWritingActivity"){
                 activitiesModule.tutorWritingActivity(activityObj)
             }
+            if(activityObj.activityModuleType=="exampleCards"){
+                activitiesModule.exampleCards(activityObj)
+            }
             if(activityObj.activityModuleType=="generateBasicText"){
                 activitiesModule.generateBasicText(activityObj)
+            }
+            if(activityObj.activityModuleType=="blankSentences"){
+                activitiesModule.blankSentences(activityObj)
             }
 
         });

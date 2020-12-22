@@ -6,11 +6,14 @@ function tutorWritingActivity(obj, targetDom) {
 
     var moduleDiv = document.createElement('div');
     moduleDiv.classList.add("moduleDiv");
+    moduleDiv.classList.add('section')
     
-    let moduleTitle = document.createElement('div');
+    targetDomDefault.appendChild(moduleDiv)
+    var moduleHeader = document.createElement('div');
+    moduleHeader.innerHTML = `<h3 class="valign-wrapper"><i class="material-icons">widgets</i><span> 1.3 ${obj.activityHeaderText}</span></h3>`
+    moduleDiv.appendChild(moduleHeader)
     
-    moduleTitle.innerHTML = `<h6 class="activityHeader valign-wrapper"><i class="material-icons small">forward</i>1.1 ${obj.activityHeaderText}</h6>`;
-    moduleDiv.appendChild(moduleTitle);
+    
 
 
 

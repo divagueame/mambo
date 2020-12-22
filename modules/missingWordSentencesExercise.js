@@ -1,3 +1,4 @@
+import moduleHeader from './moduleHeader.js'
 export default function missingWordSentencesExercise(obj, targetDom) {
 
   let targetDomDefault = document.querySelector('.lessonContainer');
@@ -7,13 +8,14 @@ export default function missingWordSentencesExercise(obj, targetDom) {
   var moduleDiv = document.createElement('div');
   moduleDiv.classList.add("moduleDiv");
   moduleDiv.classList.add('section')
-//   moduleDiv.classList.add('center')
-//   moduleDiv.classList.add('grey')
-
-  targetDomDefault.appendChild(moduleDiv)
-  var moduleHeader = document.createElement('div');
-  moduleHeader.innerHTML = `<h3 class="valign-wrapper"><i class="material-icons">widgets</i><span> 1.2 Completa el siguiente ejercicio con el/la</span></h3>`
-  moduleDiv.appendChild(moduleHeader)
+  targetDomDefault.appendChild(moduleDiv);
+  
+let moduleHeaders = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon']);
+moduleDiv.appendChild(moduleHeaders)
+var exerciseContainer = document.createElement("div");
+exerciseContainer.classList.add("missingWordSentencesExerciseContainer");
+exerciseContainer.classList.add('z-depth-1');
+moduleDiv.appendChild(exerciseContainer);
 
 //USE ONLY ONCE PER LESSON
 let activeSentence = 0;
@@ -34,14 +36,11 @@ function findPosText(sentenceObj){
     posText = posText[0].replace(sentenceObj.hiddenWord,"")
     return posText
 }
-var exerciseContainer = document.createElement("div");
 
-exerciseContainer.classList.add("missingWordSentencesExerciseContainer");
-//   exerciseContainer.classList.add("col")
-//   exerciseContainer.classList.add("s12")
-exerciseContainer.classList.add('z-depth-1')
-
+// moduleDiv.appendChild(exerciseContainer)
 function displayExerciseCard(sentenceObj){
+
+
     let preText = findPreText(sentenceObj);
     let postText = findPosText(sentenceObj);
     let hiddenText = sentenceObj.hiddenWord;
@@ -51,49 +50,51 @@ function displayExerciseCard(sentenceObj){
     let widthPerLetter = .802;
     let thisWidth = hiddenText.length * widthPerLetter;
     
-    if(obj.showTranslation){
-        helperText = sentenceObj.helperText;
-    }
+    // if(obj.showTranslation){
+    //     helperText = sentenceObj.helperText;
+    // }
 
     let activeCounter = 1 + activeSentence ;
-    let counterDisplay = `${activeCounter}/${obj.exerciseSentences.length}`
-    console.log(counterDisplay)
-    exerciseContainer.innerHTML = `
-                    <form id="wordForm" autocomplete="off" class="">
+    let counterDisplay = `${activeCounter}/${obj.exerciseSentences.length}`;
+
+let formDiv = document.createElement('form');
+formDiv.id = "wordForm";
+formDiv.setAttribute('autocomplete','off');
+
+formDiv.innerHTML = `
                         <div class="row">
-                     
-                            <div class="col s12 firstLine center">
+                            <div class="col s12 center">
                                 <p>
                                 ${preText}
                                 <input id="missingWordInput" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: ${thisWidth}rem">
                                 ${postText}
                                 </p>
                             </div>
-                            <div class="col s12 SecondLine grey-text text-lighten-1 center">
+                            <div class="col s12 grey-text text-lighten-1 center">
                                 ${helperText}
                             </div>
-                            <div class="thirdLine right">
-                            <button class="btn waves-effect waves-light blue lighten-4" type="submit" name="submitAnswer">
-                            <i class="material-icons" id="submitButton">thumb_up</i>
-                            </button><div class="center grey-text text-lighten-1 tinyText">${counterDisplay}</div>
+                            <div class="right">
+                                <button class="btn waves-effect waves-light blue lighten-4" type="submit" name="action" id="submitButtonMissingWordSentencesExercise">
+                                <i class="material-icons" id="submitButtonLogo">thumb_up</i>
+                                </button><div class="center grey-text text-lighten-1 tinyText">${counterDisplay}</div>
                             </div>
-                           
-                        </div>`;
+                        </div>
+                        `;
     
 
-            moduleDiv.appendChild(exerciseContainer);
-            const submitButton = document.querySelector("#submitButton");
-            document.querySelector("#missingWordInput").focus();
+                        exerciseContainer.appendChild(formDiv);
 
+            const submitButton = document.querySelector("#submitButtonMissingWordSentencesExercise");
+            document.querySelector("#missingWordInput").focus();
             const wordForm = document.querySelector("#wordForm");
-            wordForm.addEventListener('submit', function(e){
+   
+            submitButton.addEventListener('submit', function(e){
             e.preventDefault();
+
             let userAnswer = document.querySelector("#missingWordInput").value;
+            
             if(userAnswer!=""){
-                // let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
-                // userAnswers.push(userAnswerWithSentence);
                 userAnswers.push(`${userAnswer}`);
-                    // userAnswers.push(userAnswer);
                 if(isCorrectAnswer(hiddenText,userAnswer)){
                     userAnswer = "";
                     userRightAnswers.push(true)
@@ -124,6 +125,8 @@ function isCorrectAnswer(hiddenText,userAnswer){
 
 function answerIsCorrect(){
     activeSentence++;
+    
+    const submitButton = document.querySelector("#submitButtonMissingWordSentencesExercise");
     submitButton.innerHTML = "check";
     const wordForm = document.querySelector('#wordForm')
     setTimeout(function(){
@@ -142,7 +145,7 @@ function answerIsCorrect(){
 
 function answerIsWrong(){
     activeSentence++;
-    const submitButton = document.querySelector("#submitButton");
+    const submitButton = document.querySelector("#submitButtonMissingWordSentencesExercise");
     submitButton.innerHTML = "error";
     submitButton.parentElement.classList.add("red");
 
@@ -202,7 +205,7 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
 
             sentences +=
             `<p class="col s12">
-                    <i class="tiny material-icons ${iconColor}" id="">${icon}</i>
+                    <i class="tiny material-icons ${iconColor}" id="${index}itemId">${icon}</i>
                     ${pre}<span class="${thisKeyWordClass}"  ${tooltipData}>${thisKeyWord}</span>${pos}
                 </p>`;
             
