@@ -8,8 +8,6 @@ export default function renderLessonTitle(obj, targetDom) {
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
 
-// moduleDiv.classList.add("row");
-
 
 let html = `
 <div class="row">

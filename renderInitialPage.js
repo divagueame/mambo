@@ -32,11 +32,17 @@ function showLastUpdates(){
 
     let updatesDb = [
         {
-            'avatarUrl': 'img/icons/updates/010-Watercolor.png',
-            'title': 'New color palette',
-            'text': "I changed the looks of the site and improved usability. Soon I'll start adding real content... Hopefully",
-            'date': "12/18/2020"
+            'avatarUrl': 'img/icons/updates/031-folder.png',
+            'title': 'Corrected margins',
+            'text': "The margins are working properly. Debugged the modules and now they're working better.",
+            'date': "12/22/2020"
             },
+            {
+                'avatarUrl': 'img/icons/updates/010-Watercolor.png',
+                'title': 'New color palette',
+                'text': "I changed the looks of the site and improved usability. Soon I'll start adding real content... Hopefully",
+                'date': "12/18/2020"
+                },
             {
                 'avatarUrl': 'img/icons/updates/029-website.png',
                 'title': 'Developped the paragraph exercise module',

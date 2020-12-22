@@ -179,7 +179,9 @@ footer.page-footer {
     /* line-height: 2 !important; */
     /* font-size: 1.15em; */
 }
-
+.tinyText{
+    font-size: .65rem;
+}
 .guessWordRight, .guessWordWrong{
     border: solid white 0px !important
 }

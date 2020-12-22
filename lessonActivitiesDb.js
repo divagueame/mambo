@@ -21,6 +21,7 @@ let lessonsArray = [
             {
                 'activityModuleType': 'missingWordSentencesExercise',
                 'activityOrder': 3,
+                'showTranslation': true,
                 'exerciseSentences': 
                 [
                     {
