@@ -19,6 +19,9 @@ setTimeout(lessonActivitiesDb,800)
  
 //Materializa init
 document.addEventListener('DOMContentLoaded', function() {
+
+    
+      
     var modals = document.querySelectorAll('.modal');
     M.Modal.init(modals, {
         inDuration: 100,

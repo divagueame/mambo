@@ -58,103 +58,43 @@ let lessonsArray = [
                     }
                 ]
                 
+            }, 
+        
+            {
+                'activityModuleType': 'exampleCards',
+                'activityOrder': 4,
+                'moduleHeaderText': "Let's have  a look at some examples...",
+                'moduleHeaderIcon': 'create',
+                'moduleBasicText': 'Try to remember these words',
+                'autoShowTranslate': false,
+                'examplesArray': [
+                    {
+                        'imgSrc': './img/lesson1.1/boy-icon.png',
+                        'text': 'El niñ<span class="heavy-text">o</span>',
+                        'translatedText': 'The boy',
+                        'audioSrc': ''
+                    },
+                    {
+                        'imgSrc': './img/lesson1.1/girl-icon.png',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': ''
+                    },
+                ] 
             },
             {
-                'activityModuleType': 'blankSentences',
-                'activityOrder': 4,
-                'moduleHeaderText' : '3 Blank el siguiente ejercicio con el/la',
-                'moduleHeaderIcon': 'airplay',
+                'activityModuleType': 'missingWordsParagraph',
+                'activityOrder': 5,
+                'moduleHeaderText' : 'casdas sdaf sdfs con el/la',
+                'moduleHeaderIcon': 'link',
                 'moduleBasicText': '',
-                'showTranslation': true,
-                'exerciseSentences': 
-                [
-                    {
-                        'text': "El gato de mi madre es muy bonito.",
-                        'hiddenWord': "es",
-                        'labelText': "verbo ser",
-                        'helperText': "My mother's cat is very beautiful."
-                    },
-                    {
-                        'text': "El padre come muchas galletas.",
-                        'hiddenWord': "come",
-                        'labelText': "verbo comer",
-                        'helperText': "The father eats many cookies."
-                    },
-                    {
-                        'text': "El profesor canta muy bien.",
-                        'hiddenWord': "canta",
-                        'labelText': "verbo cantar",
-                        'helperText': "The teacher sings very well."
-                    },
-                    {
-                        'text': "El perro corre muy rapido.",
-                        'hiddenWord': "corre",
-                        'labelText': "verbo correr",
-                        'helperText': "The dog runs very fast."
-                    }
-                ]
-                
+                'paragraphText': '¿Tienes la suerte de tener un <span class="guessWord">amigo</span> fiel que permanece a tu lado pase lo que pase? Ese amigo que realmente es un <span class="guessWord">tesoro</span>, que está a las duras y a las maduras, que sabe cuándo estás bien o cuándo estás mal, que sabe cómo animarte sin que tengas que decirle u ofrecerle nada a cambio. <span class="guessWord">Probablemente</span>, pocos podáis decir que tenéis a alguien que os muestre ese amor tan <span class="guessWord">incondicional</span>, pero los que lo tenéis, probablemente ese amigo tendrá forma de perro, gato o canario. A lo mejor deberíamos de cambiar el dicho por ”quien tiene una mascota, tiene un tesoro”, porque solo aquellos que cuentan con una saben del tipo de <span class="guessWord">amor</span> que estamos hablando.', 
+                'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
+                'helptags': true,
+                'autoShowHelptags': false,
+                'sideImgLocation': 'img/lesson1.1/kitty.jpg'
             }
-            // , 
-            // {
-            //     'activityModuleType': '1blankSentences',
-            //     'activityOrder': 4,
-            //     'moduleHeaderText' : '4 Blank el siguiente ejercicio con el/la',
-            //     'moduleHeaderIcon': 'menu',
-            //     'moduleBasicText': '',
-            //     'showTranslation': true,
-            //     'exerciseSentences': 
-            //     [
-            //         {
-            //             'text': "El gato de mi madre es muy bonito.",
-            //             'hiddenWord': "es",
-            //             'labelText': "verbo ser",
-            //             'helperText': "My mother's cat is very beautiful."
-            //         },
-            //         {
-            //             'text': "El padre come muchas galletas.",
-            //             'hiddenWord': "come",
-            //             'labelText': "verbo comer",
-            //             'helperText': "The father eats many cookies."
-            //         },
-            //         {
-            //             'text': "El profesor canta muy bien.",
-            //             'hiddenWord': "canta",
-            //             'labelText': "verbo cantar",
-            //             'helperText': "The teacher sings very well."
-            //         },
-            //         {
-            //             'text': "El perro corre muy rapido.",
-            //             'hiddenWord': "corre",
-            //             'labelText': "verbo correr",
-            //             'helperText': "The dog runs very fast."
-            //         }
-            //     ]
-                
-            // }, 
-            // {
-            //     'activityModuleType': 'exampleCards',
-            //     'activityOrder': 4,
-            //     'moduleHeaderText': "Let's have  a look at some examples...",
-            //     'moduleHeaderIcon': 'create',
-            //     'moduleBasicText': 'Try to remember these words',
-            //     'autoShowTranslate': false,
-            //     'examplesArray': [
-            //         {
-            //             'imgSrc': './img/lesson1.1/boy-icon.png',
-            //             'text': 'El niñ<span class="heavy-text">o</span>',
-            //             'translatedText': 'The boy',
-            //             'audioSrc': ''
-            //         },
-            //         {
-            //             'imgSrc': './img/lesson1.1/girl-icon.png',
-            //             'text': 'La niñ<span class="heavy-text">a</span>',
-            //             'translatedText': 'The girl',
-            //             'audioSrc': ''
-            //         },
-            //     ] 
-            // }
-
+            
         ]
     },
     {
@@ -176,7 +116,7 @@ let lessonsArray = [
             
             {
                 'activityModuleType': 'missingWordsParagraph',
-                'activityOrder': 3,
+                'activityOrder': 4,
                 'moduleHeaderText' : 'casdas sdaf sdfs con el/la',
                 'moduleHeaderIcon': 'link',
                 'moduleBasicText': '',
@@ -188,8 +128,8 @@ let lessonsArray = [
             },
             
             {
-                'activityModuleType': '2missingWordSentencesExercise',
-                'activityOrder': 4,
+                'activityModuleType': 'missingWordSentencesExercise',
+                'activityOrder': 3,
                 'moduleHeaderText' : 'Completa el siguiente ejercicio con el/la',
                 'moduleHeaderIcon': 'menu',
                 'moduleBasicText': '',
