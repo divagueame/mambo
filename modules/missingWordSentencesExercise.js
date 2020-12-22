@@ -51,10 +51,13 @@ function displayExerciseCard(sentenceObj){
     exerciseContainer.innerHTML = `
                     <form id="wordForm" autocomplete="off" class="">
                         <div class="row">
+                     
                             <div class="col s12 firstLine center">
+                                <p>
                                 ${preText}
                                 <input id="missingWordInput" type="text" required class="input-field-corrected-wrong inputTextinParagraph" style="width: 2rem">
                                 ${postText}
+                                </p>
                             </div>
                             <div class="col s12 SecondLine grey-text text-lighten-1 center">
                                 ${helperText}
@@ -64,25 +67,8 @@ function displayExerciseCard(sentenceObj){
                             <i class="material-icons" id="submitButton">thumb_up</i>
                             </button>
                             </div>
-                        </div>`
-
-                        
-                //     let a = `<span class="blue">${preText}
-                //     <div class="input-field inline red">
-                //     <input id="missingWordInput" name="missingWordInput" type="text" class="" style="width:4rem">
-                //     <label for="missingWordInput" class="">${labelText}</label>
-                //     </div>
-                //     ${postText}
-                //     </span>
-                    
-                //    <p><span class="helper-text" data-error="wrong" data-success="right">${helperText}</span></p>
-                   
-                //     <button class="btn waves-effect waves-light blue lighten-4" type="submit" name="submitAnswer">
-                //     <i class="material-icons" id="submitButton">thumb_up</i>
-                //     </button>
-                // </form>
-
-                // `
+                           
+                        </div>`;
     
 
             moduleDiv.appendChild(exerciseContainer);
@@ -97,7 +83,7 @@ function displayExerciseCard(sentenceObj){
             if(userAnswer!=""){
                 // let userAnswerWithSentence = `${preText}<div class="red" style="text-decoration:underline">&nbsp;${userAnswer}&nbsp;</div>${postText}`;
                 // userAnswers.push(userAnswerWithSentence);
-                userAnswers.push(`${preText}${userAnswer}${postText}`);
+                userAnswers.push(`${userAnswer}`);
                     // userAnswers.push(userAnswer);
                 if(isCorrectAnswer(hiddenText,userAnswer)){
                     userAnswer = "";
@@ -159,9 +145,7 @@ function answerIsWrong(){
     },300); 
 
     setTimeout(function(){
-
         if(activeSentence<obj.exerciseSentences.length){
-            
             exerciseContainer.removeChild(exerciseContainer.childNodes[0]);
             displayExerciseCard(obj.exerciseSentences[activeSentence]);
 
@@ -174,8 +158,7 @@ function answerIsWrong(){
 
 function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     var answersContainerDiv = document.createElement('div');
-    let sentences= '';
-    // console.log("DIsplay Answers card")
+    let sentences= '';;
     function howManyTrue(array){
         let num = 0;
         array.forEach((x)=>{
@@ -190,46 +173,45 @@ function displayAnswersCard(sentencesObj,userAnswer, userRightAnswers){
     M.toast({html: 'Ejercicio completado!'});
     M.toast({html: `Respuestas correctas: ${toastText}`});
 
-
-    var exerciseContainer = document.createElement("div");
-    // exerciseContainer.classList.add("missingWordSentencesExerciseContainer")
-    // exerciseContainer.classList.add("row")
-
-
-
     sentencesObj.forEach(
-        function answerList(item, index, arr) {
+        function (item, index, arr) {
             // let rightAnswer = true;
+            console.log("POLLAs",userAnswer)
             let icon = 'done';
             let iconColor = "green-text lighten-3 ";
-            console.log("POLLAS", item)
+            let thisKeyWordClass = "guessWordRight";
+            let tooltipData = "";
+            let thisUserAnswer = userAnswer[index];
+            // console.log(findPreText(item),item.hiddenWord, findPosText(item))
             if(userRightAnswers[index]==false){
-                // rightAnswer = false;
                 icon = 'priority_high';
                 iconColor = "red-text lighten-3";
-                // bgcolor = 'accent-2'
+                thisKeyWordClass = 'guessWordWrong tooltipped';
+                tooltipData = `data-position = "top" data-tooltip="${thisUserAnswer}"`
             };
-            let thisUserAnswer = userAnswer[index];
             
-            if(userRightAnswers[index]==false){
-
+                let pre = findPreText(item);
+                let thisKeyWord = item.hiddenWord;
+                let pos = findPosText(item)
             sentences +=
             `
+            <p>
             <div class="row"><div class="col s12">
-                <i class="tiny material-icons ${iconColor}" id="submitButton">${icon}</i>
-                ${sentencesObj[index].text}
-                </div></div>
+                 <i class="tiny material-icons ${iconColor}"id="submitButton">${icon}</i>${pre}<span class="${thisKeyWordClass}"  ${tooltipData}>${thisKeyWord}</span>${pos}
+                   
+                </div></div> </p>
+               
             `;
-
-            }
+            
         }
     );
 
   
     answersContainerDiv.innerHTML = `${sentences}`;
-        wordForm.parentElement.appendChild(answersContainerDiv)
-        wordForm.parentElement.removeChild(wordForm);
-
+    wordForm.parentElement.appendChild(answersContainerDiv)
+    wordForm.parentElement.removeChild(wordForm);
+    var elems = document.querySelectorAll('.tooltipped');
+    M.Tooltip.init(elems, {});  
 };
 
 displayExerciseCard(obj.exerciseSentences[0]);
