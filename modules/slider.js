@@ -21,7 +21,6 @@ moduleContainer.innerHTML = `
     <div class="carousel-fixed-item">
       <div class="container">
         <h1 class="white-text">Materialize Carousel</h1>
-        <a class="btn waves-effect white grey-text darken-text-2" href="https://codepen.io/collection/nbBqgY/" target="_blank">button</a>
       </div>
     </div>
     <div class="carousel-item red lighten-2 white-text" href="#one!">
@@ -63,11 +62,8 @@ targetDomDefault.appendChild(moduleDiv);
 var carousels = document.querySelectorAll('.carousel');
 M.Carousel.init(  carousels,  
     {
-        dist: 0,
-        padding: 0,
         fullWidth: true,
-        indicators: true,
-        duration: 100,
+        indicators: true
       });
 
 

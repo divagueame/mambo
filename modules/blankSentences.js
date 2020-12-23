@@ -62,8 +62,8 @@ function displayExerciseCard(sentenceObj){
   
   const blankSentencesSubmitButton = document.querySelector(`#submitButton${randomId}`);
   const blankSentencesSubmitButtonIcon = document.querySelector(`#submitButtonIcon${randomId}`);
-  let missingWordInput = `#missingWordInput${randomId}`
-  document.querySelector(missingWordInput).focus();
+  // let missingWordInput = `#missingWordInput${randomId}`
+  // document.querySelector(missingWordInput).focus();
   formDiv.addEventListener('submit', function(e){
     e.preventDefault();
     
