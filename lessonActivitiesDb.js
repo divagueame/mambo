@@ -70,17 +70,24 @@ let lessonsArray = [
                 'examplesArray': [
                     {
                         'imgSrc': './img/lesson1.1/boy-icon.png',
-                        'text': 'El niñ<span class="heavy-text">o</span>',
-                        'translatedText': 'The boy',
+                        'text': 'El niñ<span class="heavy-text">o</span> sdfasdf asds  sd fsd ds d',
+                        'translatedText': 'The boy sdf sd',
                         'audioSrc': './audio/lesson1.1/1.mp3'
                     }
-                    // ,
-                    // {
-                    //     'imgSrc': './img/lesson1.1/girl-icon.png',
-                    //     'text': 'La niñ<span class="heavy-text">a</span>',
-                    //     'translatedText': 'The girl',
-                    //     'audioSrc': './audio/lesson1.1/2.mp3'
-                    // },
+                    ,
+                    {
+                        'imgSrc': './img/lesson1.1/girl-icon.png',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    },
+                                        // ,
+                    {
+                        'imgSrc': './img/lesson1.1/piano.jpg',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    }
                 ] 
             },
             {

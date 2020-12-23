@@ -74,12 +74,20 @@ footer.page-footer {
 .activator {
     background-size: cover !important;
 }
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: top;
+  }
+
 .padding2212{
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 2rem;
     padding-bottom: .1rem; 
 }
+
 /* .missingWordSentencesExerciseContainer {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -326,6 +334,7 @@ input {
     background-color: rgb(21, 136, 121);
     transform: translateY(-2px);
 }
+
 .addRightMargin {
     margin-right: 1rem;
 }
