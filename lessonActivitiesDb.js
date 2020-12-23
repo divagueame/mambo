@@ -14,30 +14,37 @@ let lessonsArray = [
                 'title': "Masculino o femenino",
                 'lessonTopImageSrc': './img/lesson1.1/malefemale.png'
             },
+            
+            
             {
-                'activityModuleType': 'slider',
+                'activityModuleType': 'wordsTable',
                 'activityOrder': 2,
-                'moduleHeaderText' : "Let's have a look at some examples",
-                'moduleHeaderIcon': '',
+                'moduleHeaderText' : 'Words table',
+                'moduleHeaderIcon': 'reorder',
                 'moduleBasicText': '',
-                'slidesArray': [
+                'wordsArray': 
+                [
                     {
-                        'imgSrc': './img/lesson1.1/book.jpg',
-                        'slideTxt': 'Slide 1',
+                        'text': 'La chica es muy graciosa.',
+                        'translatedText': 'The girl is very funny',
                         'audioSrc': ''
                     },
                     {
-                        'imgSrc': './img/lesson1.1/door.jpg',
-                        'slideTxt': 'Slide 2',
+                        'text': 'La casa es muy pequena.',
+                        'translatedText': 'The house is very small',
                         'audioSrc': ''
                     },
                     {
-                        'imgSrc': './img/lesson1.1/boy.jpg',
-                        'slideTxt': 'Slide 3',
+                        'text': 'La cara es grande.',
+                        'translatedText': 'The face is big',
                         'audioSrc': ''
-                    }
+                    },
+                 
+                    
                 ]
-            },
+                
+            }, 
+           
             
             {
                 'activityModuleType': 'blankSentences',
@@ -301,11 +308,30 @@ let lessonsArray = [
                 'activityOrder': 1,
                 'title': "2Masculino o femenino"
             },
+
             {
-                'activityModuleType': 'introConcept',
-                'activitx`yOrder': 2,
-                'cardTitle': '2This is cardtitle',
-                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+                'activityModuleType': 'slider',
+                'activityOrder': 2,
+                'moduleHeaderText' : "Let's have a look at some examples",
+                'moduleHeaderIcon': '',
+                'moduleBasicText': '',
+                'slidesArray': [
+                    {
+                        'imgSrc': './img/lesson1.1/book.jpg',
+                        'slideTxt': 'Slide 1',
+                        'audioSrc': ''
+                    },
+                    {
+                        'imgSrc': './img/lesson1.1/door.jpg',
+                        'slideTxt': 'Slide 2',
+                        'audioSrc': ''
+                    },
+                    {
+                        'imgSrc': './img/lesson1.1/boy.jpg',
+                        'slideTxt': 'Slide 3',
+                        'audioSrc': ''
+                    }
+                ]
             }
         ]
     },

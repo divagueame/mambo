@@ -10,7 +10,7 @@ import missingWordSentencesExercise from './missingWordSentencesExercise.js';
 import tutorWritingActivity from './tutorWritingActivity.js';
 import generateBasicText from './generateBasicText.js';
 import slider from './slider.js';
-
+import wordsTable from './wordsTable.js';
 import blankSentences from './blankSentences.js';
 
 const activitiesModule = (() => {
@@ -28,7 +28,8 @@ const activitiesModule = (() => {
       blankSentences,
       tutorWritingActivity,
       generateBasicText,
-      slider
+      slider,
+      wordsTable
     };
   })();
 

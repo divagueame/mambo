@@ -69,6 +69,31 @@ body {
     padding: 1rem;
     margin: 1rem;
   }
+
+  
+
+  
+table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+  border-collapse: separate;
+    /* border-width: 15px; */
+    /* border-color: #ffcc00; */
+    /* border-style: solid; */
+    /* color: #000000; */
+  }
+  
+  table.GeneratedTable td, table.GeneratedTable th {
+    border-width: .2rem;
+    border-color: #ffffff;
+    background-color: #f1f1f0;
+    border-style: solid;
+    padding: 1rem;
+    border-radius: .475rem !important;
+  }
+
+
+  
   span.heavyText{
     font-weight: 700;
     text-decoration: underline;

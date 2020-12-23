@@ -30,10 +30,7 @@ moduleContainer.innerHTML = `
       </div>  
     </div>
     <div class="carousel-item amber darken-2 white-text" href="#two!">
-      <div class="container">
-        <h2>Second Slide</h2>
-        <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
-      </div>  
+      <img src="./img/lesson1.1/door.jpg" class="img-responsive">
     </div>
     <div class="carousel-item green white-text" href="#three!">
       <div class="container">
