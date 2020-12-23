@@ -66,7 +66,7 @@ function displayExerciseCard(sentenceObj){
   document.querySelector(missingWordInput).focus();
   formDiv.addEventListener('submit', function(e){
     e.preventDefault();
-    console.log()
+    
     let userAnswer = document.querySelector(`#missingWordInput${randomId}`).value;
     if(userAnswer!=""){
       activeSentence++;
@@ -100,7 +100,9 @@ function displayExerciseCard(sentenceObj){
           },300); 
           ///Show the right anwer to the user
           setTimeout(function(){ 
-              document.querySelector(`#missingWordInput${randomId}`).value = (hiddenText);
+            
+              // document.querySelector(`#missingWordInput${randomId}`).value = (hiddenText);
+              
           },750);
 
           //Checks if it's the last question

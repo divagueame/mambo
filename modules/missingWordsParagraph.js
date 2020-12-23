@@ -10,8 +10,9 @@ function missingWordsParagraph(obj, targetDom) {
     let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon']);
     let moduleContainer = document.createElement('div');
 //     //Initial opening tags and activity header
-    let html = `<div id="helptags" class="row removeBottomMargin"></div>
-            <form id="missingwordsform" autocomplete="off">   
+let randomId = Math.floor(Math.random()*100000);
+    let html = `<div id="helptags${randomId}" class="row removeBottomMargin"></div>
+            <form id="missingwordsform${randomId}" autocomplete="off">   
             <div class="row ">
             <div class="col s12 m4 removeLeftPadding">
             <img class="responsive-img" src="${obj.sideImgLocation}">
@@ -27,12 +28,12 @@ function missingWordsParagraph(obj, targetDom) {
        </p>
     <div class="row">
     <div class="col s12 removeRightPadding">
-        <button id='submitButtonMissingWordsParagraph' class="btn waves-effect waves-light right blue-grey darken-2" type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
+        <button id='submitButtonMissingWordsParagraph${randomId}' class="btn waves-effect waves-light right blue-grey darken-2" type="submit" name="answersSubmit">Corregir<i class="material-icons right">school</i>
         </button>
-         <div class="right addRightMargin btn" id="helptagsTriggerContainer"><span id='helptagsTrigger'>Ayuda</span></div>        
+         <div class="right addRightMargin btn" id="helptagsTriggerContainer${randomId}"><span id='helptagsTrigger${randomId}'>Ayuda</span></div>        
         </div>
     </div> 
-        <div class="row" id="answersContainer"></div></form>`;
+        <div class="row" id="answersContainer${randomId}"></div></form>`;
         moduleContainer.innerHTML = html
 
 moduleDiv.appendChild(moduleHeaderDiv);
@@ -42,7 +43,7 @@ targetDomDefault.appendChild(moduleDiv);
 
 
 // //     //Subtitute answers for input forms and get the right answers in an array
-    let selectAll = document.querySelectorAll(".guessWord")
+    let selectAll = moduleContainer.querySelectorAll(".guessWord")
     let correctAnswersArray = [];
 
     selectAll.forEach(function(e,i,a){
@@ -76,8 +77,8 @@ e.innerHTML = ``
     });
 
 /// Set word crosser helper
-      if(obj['helptags']==true){
-        let triggerDom = document.getElementById('helptagsTrigger');
+      if(obj.helptags==true){
+        let triggerDom = document.getElementById(`helptagsTrigger${randomId}`);
         triggerDom.addEventListener('click', function(){
           deployHelpTags()
         })
@@ -118,11 +119,10 @@ e.innerHTML = ``
             divTag.innerHTML = `${answer}`;
             centerDiv.appendChild(divTag)
         });
-        
-        let helptagsContainer = document.getElementById("helptags");
+        let helptagsContainer = document.getElementById(`helptags${randomId}`);
         helptagsContainer.appendChild(theseHelptags)
 
-        let triggercontainer = document.getElementById('helptagsTriggerContainer');
+        let triggercontainer = document.getElementById(`helptagsTriggerContainer${randomId}`);
         triggercontainer.classList.add('disabled');
 
         // //Add eventlisteners for the chips to toggle class .chipCrossedOut
@@ -136,20 +136,22 @@ e.innerHTML = ``
 }
 
 //     //When submit, check the correct answers
-    const thisForm = document.getElementById('missingwordsform');
+    const thisForm = document.getElementById(`missingwordsform${randomId}`);
     let userIsRight = [];
     let userAnswersText = [];
-    const submitButtonMissingWordsParagraph = document.getElementById('submitButtonMissingWordsParagraph');
+    const submitButtonMissingWordsParagraph = document.getElementById(`submitButtonMissingWordsParagraph${randomId}`);
     // const buttonSelector = document.getElementById('submitButtonMissingWordsParagraph')
     thisForm.addEventListener('submit', function(e){
         e.preventDefault();
+
+        let innerRandomId = Math.floor(Math.random()*100000);
         submitButtonMissingWordsParagraph.classList.add('disabled');
-        let helptagsTriggerContainer = document.querySelector('#helptagsTriggerContainer')
+        let helptagsTriggerContainer = moduleContainer.querySelector(`#helptagsTriggerContainer${randomId}`)
         helptagsTriggerContainer.classList.add('disabled');
         
         let counterRight = 0;
         let counterWrong = 0;
-        console.log("YES    ")
+        
         for (let i = 0; i < (thisForm.length-1); i++) {
         if((thisForm.elements[i].value).toLowerCase()==correctAnswersArray[i].toLowerCase()){
             // console.log("RIGHT ANSWER")
@@ -162,10 +164,10 @@ e.innerHTML = ``
         }
         }
 
-        let inputTextinParagraphSelectors = document.querySelectorAll(".inputTextinParagraph");
-
+        let inputTextinParagraphSelectors = moduleContainer.querySelectorAll(".inputTextinParagraph");
+        
         inputTextinParagraphSelectors.forEach((hiddenWord,i,a)=>{
-        // console.log("USER ", spanSelectors[i])
+        console.log("USER ", inputTextinParagraphSelectors[i].value)
             if(userIsRight[i]==true){
                 hiddenWord.classList.add("guessWordRight");
                 selectAll[i].classList.add("guessWordRight");
@@ -173,6 +175,7 @@ e.innerHTML = ``
             // console.log("YESSSS")
             } else {
                 hiddenWord.classList.add("guessWordWrong");
+                // console.log(selectAll[i],"sd")
                 selectAll[i].classList.add("guessWordWrong");
                 counterWrong++
                 // console.log("NOOOO")
@@ -182,11 +185,11 @@ e.innerHTML = ``
     let correctionMessage = `Has acertado: ${result}`
     M.toast({html: correctionMessage, displayLength: 5000 ,classes: 'rounded'});
 
-        
+
         //////////Restore the values of inputo to the right answer
     correctAnswersArray.forEach(function(e,i,a){
         let selectInput = `correctAnswer${e}${i}`
-        selectInput = document.querySelector(`#${selectInput}`);
+        selectInput = moduleContainer.querySelector(`#${selectInput}`);
         selectInput.innerHTML =  e;
         selectInput.classList.add("hide");
         selectAll[i].innerHTML = e;
@@ -195,12 +198,10 @@ e.innerHTML = ``
             selectAll[i].setAttribute('data-position', 'top');
             selectAll[i].setAttribute('data-tooltip', `${userAnswersText[i]}`);
         }
-
-        
-        
     })
 
-    var elems = document.querySelectorAll('.tooltipped');
+    var elems = document.querySelectorAll(`.tooltipped`);
+    console.log(elems)
     M.Tooltip.init(elems, {});
 
     })

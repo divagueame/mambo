@@ -52,6 +52,9 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="blankSentences"){
                 activitiesModule.blankSentences(activityObj)
             }
+            if(activityObj.activityModuleType=="slider"){
+                activitiesModule.slider(activityObj)
+            }
 
         });
         activitiesModule.generateFooter();

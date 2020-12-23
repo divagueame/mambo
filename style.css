@@ -62,6 +62,13 @@ body {
       background-color: #f5cb5c;
       padding: 1rem;
   }
+  .exampleCards{
+    /* border: white 6px dotted; */
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
   span.heavyText{
     font-weight: 700;
     text-decoration: underline;

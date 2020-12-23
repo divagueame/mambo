@@ -15,12 +15,28 @@ let lessonsArray = [
                 'lessonTopImageSrc': './img/lesson1.1/malefemale.png'
             },
             {
-                'activityModuleType': 'generateBasicText',
+                'activityModuleType': 'slider',
                 'activityOrder': 2,
-                'title': "Masculino o femenino",
-                'moduleHeaderText':  '1.1 Male and female nouns. El vs. La',
-                'moduleHeaderIcon': 'widgets',
-                'moduleBasicText': ''
+                'moduleHeaderText' : "Let's have a look at some examples",
+                'moduleHeaderIcon': '',
+                'moduleBasicText': '',
+                'slidesArray': [
+                    {
+                        'imgSrc': './img/lesson1.1/book.jpg',
+                        'slideTxt': 'Slide 1',
+                        'audioSrc': ''
+                    },
+                    {
+                        'imgSrc': './img/lesson1.1/door.jpg',
+                        'slideTxt': 'Slide 2',
+                        'audioSrc': ''
+                    },
+                    {
+                        'imgSrc': './img/lesson1.1/boy.jpg',
+                        'slideTxt': 'Slide 3',
+                        'audioSrc': ''
+                    }
+                ]
             },
             
             {
@@ -63,7 +79,74 @@ let lessonsArray = [
             {
                 'activityModuleType': 'exampleCards',
                 'activityOrder': 4,
-                'moduleHeaderText': "Let's have  a look at some examples...",
+                'moduleHeaderText': "3 Let's have  a look at some examples...",
+                'moduleHeaderIcon': 'create',
+                'moduleBasicText': 'Try to remember these words',
+                'autoShowTranslate': false,
+                'examplesArray': [
+                    {
+                        'imgSrc': './img/lesson1.1/book.jpg',
+                        'text': 'El niñ<span class="heavy-text">o</span> sdfasdf asds  sd fsd ds d',
+                        'translatedText': 'The boy sdf sd',
+                        'audioSrc': ''
+                    }
+                    ,
+                    {
+                        'imgSrc': './img/lesson1.1/boy.jpg',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    },
+
+                    {
+                        'imgSrc': './img/lesson1.1/door.jpg',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    }
+                ] 
+            },
+            {
+                'activityModuleType': 'exampleCards',
+                'activityOrder': 5,
+                'moduleHeaderText': "4 Let's have  a look at some examples...",
+                'moduleHeaderIcon': 'create',
+                'moduleBasicText': 'Try to remember these words',
+                'autoShowTranslate': false,
+                'examplesArray': [
+                    {
+                        'imgSrc': './img/lesson1.1/chair.jpg',
+                        'text': 'El niñ<span class="heavy-text">o</span> sdfasdf asds  sd fsd ds d',
+                        'translatedText': 'The boy sdf sd',
+                        'audioSrc': './audio/lesson1.1/1.mp3'
+                    }
+                    ,
+                    {
+                        'imgSrc': './img/lesson1.1/kitty.jpg',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    },
+
+                    {
+                        'imgSrc': './img/lesson1.1/head.jpg',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    },
+                    
+                    {
+                        'imgSrc': './img/lesson1.1/door.jpg',
+                        'text': 'La niñ<span class="heavy-text">a</span>',
+                        'translatedText': 'The girl',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    }
+                ] 
+            },
+            {
+                'activityModuleType': 'exampleCards',
+                'activityOrder': 6,
+                'moduleHeaderText': "2 Let's have  a look at some examples...",
                 'moduleHeaderIcon': 'create',
                 'moduleBasicText': 'Try to remember these words',
                 'autoShowTranslate': false,
@@ -80,28 +163,45 @@ let lessonsArray = [
                         'text': 'La niñ<span class="heavy-text">a</span>',
                         'translatedText': 'The girl',
                         'audioSrc': './audio/lesson1.1/2.mp3'
-                    },
-                                        // ,
+                    }
+                ] 
+            }, {
+                'activityModuleType': 'exampleCards',
+                'activityOrder': 7,
+                'moduleHeaderText': "1 Let's have  a look at some examples...",
+                'moduleHeaderIcon': 'create',
+                'moduleBasicText': 'Try to remember these words',
+                'autoShowTranslate': false,
+                'examplesArray': [
                     {
-                        'imgSrc': './img/lesson1.1/piano.jpg',
-                        'text': 'La niñ<span class="heavy-text">a</span>',
-                        'translatedText': 'The girl',
-                        'audioSrc': './audio/lesson1.1/2.mp3'
+                        'imgSrc': './img/lesson1.1/boy-icon.png',
+                        'text': 'El niñ<span class="heavy-text">o</span> sdfasdf asds  sd fsd ds d',
+                        'translatedText': 'The boy sdf sd',
+                        'audioSrc': './audio/lesson1.1/1.mp3'
                     }
                 ] 
             },
+
+            {
+                'activityModuleType': 'generateBasicText',
+                'activityOrder': 8,
+                'title': "Masculino o femenino",
+                'moduleHeaderText':  '1.1 Male and female nouns. El vs. La',
+                'moduleHeaderIcon': 'widgets',
+                'moduleBasicText': ''
+            },
             {
                 'activityModuleType': 'missingWordsParagraph',
-                'activityOrder': 5,
+                'activityOrder': 9,
                 'moduleHeaderText' : 'casdas sdaf sdfs con el/la',
                 'moduleHeaderIcon': 'link',
                 'moduleBasicText': '',
-                'paragraphText': '¿Tienes la suerte de tener un <span class="guessWord">amigo</span> fiel que permanece a tu lado pase lo que pase? Ese amigo que realmente es un <span class="guessWord">tesoro</span>, que está a las duras y a las maduras, que sabe cuándo estás bien o cuándo estás mal, que sabe cómo animarte sin que tengas que decirle u ofrecerle nada a cambio. <span class="guessWord">Probablemente</span>, pocos podáis decir que tenéis a alguien que os muestre ese amor tan <span class="guessWord">incondicional</span>, pero los que lo tenéis, probablemente ese amigo tendrá forma de perro, gato o canario. A lo mejor deberíamos de cambiar el dicho por ”quien tiene una mascota, tiene un tesoro”, porque solo aquellos que cuentan con una saben del tipo de <span class="guessWord">amor</span> que estamos hablando.', 
+                'paragraphText': '¿Tienesada a cambio. <span class="guessWord">P</span>robablemente, pocos podáissstre ese amor tan <span class="guessWord">incondicional</span>, pershablando.', 
                 'activityHeaderText': 'Completa los huecos con "el" si es masculino o "la" si es femenino. (El chico/La chica)',
                 'helptags': true,
                 'autoShowHelptags': false,
                 'sideImgLocation': 'img/lesson1.1/kitty.jpg'
-            }
+            },
             
         ]
     },
