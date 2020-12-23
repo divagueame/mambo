@@ -73,13 +73,14 @@ let lessonsArray = [
                         'text': 'El niñ<span class="heavy-text">o</span>',
                         'translatedText': 'The boy',
                         'audioSrc': './audio/lesson1.1/1.mp3'
-                    },
-                    {
-                        'imgSrc': './img/lesson1.1/girl-icon.png',
-                        'text': 'La niñ<span class="heavy-text">a</span>',
-                        'translatedText': 'The girl',
-                        'audioSrc': './audio/lesson1.1/2.mp3'
-                    },
+                    }
+                    // ,
+                    // {
+                    //     'imgSrc': './img/lesson1.1/girl-icon.png',
+                    //     'text': 'La niñ<span class="heavy-text">a</span>',
+                    //     'translatedText': 'The girl',
+                    //     'audioSrc': './audio/lesson1.1/2.mp3'
+                    // },
                 ] 
             },
             {
