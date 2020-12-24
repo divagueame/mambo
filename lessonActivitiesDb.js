@@ -28,16 +28,26 @@ let lessonsArray = [
                         'type': 'multiple',
                         'question': 'What is the girls name?',
                         'answersArray': [
-                            'CorrectA Lucy',
-                            'wrong pesassssssssssssssasa sds dds3 3 3 cacay',
-                            'genios sin coco cac',
-                            'me digas que no',
+                            'Correct1',
+                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            '1genios sin coco cac',
+                            '1me digas que no',
                         ]
                     },
                     {
                         'type': 'openQuestion',
                         'question': 'What is the man  name?',
                         'answer': 'Michael'
+                    },
+                    {
+                        'type': 'multiple',
+                        'question': 'What is the baby name?',
+                        'answersArray': [
+                            'Correct2',
+                            'chingon2',
+                            'pepe2',
+                            'paco2',
+                        ]
                     }
                     
                 ]
