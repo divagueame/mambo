@@ -20,14 +20,14 @@ moduleDiv.appendChild(moduleContainer);
 
 targetDomDefault.appendChild(moduleDiv);
 
-let questionsTable = document.createElement('div');
+let questionsTable = document.createElement('form');
 
 let questionsArray = (Object.values(obj.questions))
 questionsArray.forEach(function (questionAnswerItem,i) {
   let questionAnswerContainer = document.createElement('div');
   let questionContainer = document.createElement('div');
   questionContainer.classList.add("row");
-  questionContainer.innerHTML = `<div class="col s12">${questionAnswerItem.question}</div>`;
+  questionContainer.innerHTML = `<div class="col s12">${1+i}. ${questionAnswerItem.question}</div>`;
   let answerContainer = document.createElement('div');
 
   if(questionAnswerItem.type=='multiple'){
@@ -36,8 +36,8 @@ questionsArray.forEach(function (questionAnswerItem,i) {
     questionAnswerItem.answersArray.forEach(function(option){
       answersDivs += `<div class="col  s12">
       <label>
-      <input name="group1" type="radio" checked />
-      <span> ${option}</span>
+      <input name="group1" type="radio" />
+      <span>${option}</span>
     </label>
    
         </div>`
@@ -48,11 +48,24 @@ questionsArray.forEach(function (questionAnswerItem,i) {
   if(questionAnswerItem.type=='openQuestion'){
     console.log(questionAnswerItem.question, 'openQuestion')
   }
+  
+  
+  
   questionAnswerContainer.appendChild(questionContainer)
   questionAnswerContainer.appendChild(answerContainer)
+  
   questionsTable.appendChild(questionAnswerContainer)
 });
 
+
+let submitBtn = document.createElement("button");
+submitBtn.classList.add("btn");
+submitBtn.classList.add("waves-effect");
+submitBtn.classList.add("waves-light");
+submitBtn.classList.add("red");
+
+submitBtn.innerHTML = "Check my answers"
+questionsTable.appendChild(submitBtn)
 moduleContainer.appendChild(questionsTable)
 
 //* <div id="audioContainer1" class="col s4 grey"></div> */
