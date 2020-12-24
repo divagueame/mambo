@@ -70,20 +70,27 @@ body {
     margin: 1rem;
   }
 
-  
+  .wordsTable {
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+  border-width: .2rem;
+  border-color: #ffffff;
+  background-color: #f1f1f0;
+  border-style: solid;
+  padding: 1rem;
+  border-radius: .475rem !important;
+  }
 
   
-table.GeneratedTable {
+/* table.GeneratedTable {
     width: 100%;
     background-color: #ffffff;
   border-collapse: separate;
-    /* border-width: 15px; */
-    /* border-color: #ffcc00; */
-    /* border-style: solid; */
-    /* color: #000000; */
   }
   
   table.GeneratedTable td, table.GeneratedTable th {
+      font-size: 1.1rem;
+      line-height: 1.9rem;
     border-width: .2rem;
     border-color: #ffffff;
     background-color: #f1f1f0;
@@ -92,11 +99,13 @@ table.GeneratedTable {
     border-radius: .475rem !important;
   }
 
-
-  
-  span.heavyText{
+  table.GeneratedTable td.heavyText{
     font-weight: 700;
-    text-decoration: underline;
+  } */
+  
+  div.heavyText, span.heavyText{
+    font-weight: 700;
+    /* text-decoration: underline; */
   }
 footer.page-footer {
     color:  var(--white1);
@@ -119,13 +128,6 @@ footer.page-footer {
     padding-top: 2rem;
     padding-bottom: .1rem; 
 }
-
-/* .missingWordSentencesExerciseContainer {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: .1rem;
-} */
 
 .lessonHeaderText {
     font-size: 2rem !important;
@@ -156,19 +158,13 @@ footer.page-footer {
     transition: ease-in-out all .1231s;
     background-color: rgba(117, 172, 96, 0.9) !important;
     transform:rotate(360deg) scale(1.4)  !important;
-    
     border: rgb(0, 0, 0) 2px solid;
 
 }
 
-
 .fixed-widthImg{
-    /* width: 2.4rem; */
     height: 100%;
     padding: .7rem
-    /* margin-top: .641em; */
-    /* height: auto; */
-    /* object-fit: cover; */
 
 }
 .icon {
@@ -219,10 +215,6 @@ footer.page-footer {
 .input-field-corrected-wrong{
     background-color: crimson;
     color: crimson;
-}
-.paragraphExerciseTextP {
-    /* line-height: 2 !important; */
-    /* font-size: 1.15em; */
 }
 .tinyText{
     font-size: .65rem;
@@ -304,13 +296,6 @@ footer.page-footer {
 }
 .activityHeader {
     padding: 2rem;
-    /* font-size: 1.3rem; */
-    /* background-color:  #616161 !important; */
-    /* color: white; */
-    /* border-bottom: rgb(187, 89, 89) 2px solid;
-    border-left: rgb(187, 89, 89) 2px solid; */
-    /* border: #607d8b 2px solid; */
-    /* background-color: rgb(166, 237, 240); */
 }
 
 
@@ -370,6 +355,9 @@ input {
 .addRightMargin {
     margin-right: 1rem;
 }
+.removePadding{
+    padding: 0 !important
+}
 .removeRightPadding{
     padding-right: 0 !important
 }
@@ -385,10 +373,14 @@ input {
 .removeTopMargin{
     margin-top: 0 !important;
 }
-
+.removeMargin{
+    margin: 0 !important;
+}
+.margin1{
+    margin: 1rem !important;
+}
 .lessonLinkNavbar {
     padding-left: 5rem;
-    
 }
 
 header, main, footer {

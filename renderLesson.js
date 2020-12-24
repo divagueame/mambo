@@ -8,7 +8,6 @@ import generateBlockquote from './modules/generateBlockquote.js';
 import introConcept from './modules/introConcept.js';
 import generateSidenav from './modules/generateSidenav.js';
 import generateDivider from './modules/generateDivider.js';
-import missingWordSentencesExercise from './modules/missingWordSentencesExercise.js';
 import blankSentences from './modules/blankSentences.js';
 import generateFooter from './modules/generateFooter.js';
 import readLessonsFromDb from './readLessonsFromDb.js';
@@ -35,9 +34,6 @@ export default function renderLesson(level, lesson) {
             }
             if(activityObj.activityModuleType=="missingWordsParagraph"){
                 activitiesModule.missingWordsParagraph(activityObj)
-            }
-            if(activityObj.activityModuleType=="missingWordSentencesExercise"){
-                activitiesModule.missingWordSentencesExercise(activityObj)
             }
             
             if(activityObj.activityModuleType=="tutorWritingActivity"){
@@ -68,18 +64,6 @@ export default function renderLesson(level, lesson) {
         activeLessonId[1]= lesson
     }
 
-// activitiesModule.displayHeader("INSIDE");
-// activitiesModule.examplesCard("sd");
-// activitiesModule.generateBlockquote("block!")
-
-// renderUserNavBarButtons()
-// activitiesModule.generateSidenav()
-// activitiesModule.introConcept("Tgs ib")
-// renderLessonTitle("sdfa");
-// generateDivider()
-// videoActivity("obj");
-// missingWordSentencesExercise(exerciseSentences);
-    
 
 
     

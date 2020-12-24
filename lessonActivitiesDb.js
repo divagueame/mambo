@@ -30,8 +30,8 @@ let lessonsArray = [
                         'audioSrc': ''
                     },
                     {
-                        'text': 'La casa es muy pequena.',
-                        'translatedText': 'The house is very small',
+                        'text': 'La casa es muy pequena  df  sd fsfsdf sdf sdf sd fd s.',
+                        'translatedText': 'The house is very small sdf sdfdssdf dsss d dsd s',
                         'audioSrc': ''
                     },
                     {
@@ -243,7 +243,7 @@ let lessonsArray = [
             },
             
             {
-                'activityModuleType': 'missingWordSentencesExercise',
+                'activityModuleType': 'blankSentences',
                 'activityOrder': 3,
                 'moduleHeaderText' : 'Completa el siguiente ejercicio con el/la',
                 'moduleHeaderIcon': 'menu',
