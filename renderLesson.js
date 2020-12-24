@@ -54,6 +54,9 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="wordsTable"){
                 activitiesModule.wordsTable(activityObj)
             }
+            if(activityObj.activityModuleType=="multipleChoicePlusAnswers"){
+                activitiesModule.multipleChoicePlusAnswers(activityObj)
+            }
 
         });
         activitiesModule.generateFooter();

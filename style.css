@@ -81,6 +81,20 @@ body {
   border-radius: .475rem !important;
   }
 
+  [type="radio"]:checked + span:after,
+  [type="radio"].with-gap:checked + span:before,
+  [type="radio"].with-gap:checked + span:after {
+      border: 2px solid black
+  }
+  [type="radio"]:checked + span:after,
+  [type="radio"].with-gap:checked + span:after {
+    background-color: rgb(119, 175, 142)
+  }
+  /* input.multipleChoicePlusAnswersRadio:checked{ */
+      /* filter: hue-rotate(222deg); */
+      /* background-color: rgb(163, 88, 88); */
+      /* border: peru 2px solid; */
+    /* } */
   
 /* table.GeneratedTable {
     width: 100%;

@@ -11,6 +11,8 @@ import generateBasicText from './generateBasicText.js';
 import slider from './slider.js';
 import wordsTable from './wordsTable.js';
 import blankSentences from './blankSentences.js';
+import multipleChoicePlusAnswers from './multipleChoicePlusAnswers.js';
+
 
 const activitiesModule = (() => {
 
@@ -27,7 +29,8 @@ const activitiesModule = (() => {
       tutorWritingActivity,
       generateBasicText,
       slider,
-      wordsTable
+      wordsTable,
+      multipleChoicePlusAnswers
     };
   })();
 

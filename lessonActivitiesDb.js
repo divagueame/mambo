@@ -17,29 +17,28 @@ let lessonsArray = [
             
             
             {
-                'activityModuleType': 'wordsTable',
+                'activityModuleType': 'multipleChoicePlusAnswers',
                 'activityOrder': 2,
-                'moduleHeaderText' : 'Words table',
-                'moduleHeaderIcon': 'reorder',
+                'moduleHeaderText' : 'Multiple choice',
+                'moduleHeaderIcon': 'dashboard',
                 'moduleBasicText': '',
-                'wordsArray': 
+                'questions': 
                 [
                     {
-                        'text': 'La chica es muy graciosa.',
-                        'translatedText': 'The girl is very funny',
-                        'audioSrc': ''
+                        'type': 'multiple',
+                        'question': 'What is the girls name?',
+                        'answersArray': [
+                            'CorrectA Lucy',
+                            'wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            'genios sin coco cac',
+                            'me digas que no',
+                        ]
                     },
                     {
-                        'text': 'La casa es muy pequena  df  sd fsfsdf sdf sdf sd fd s.',
-                        'translatedText': 'The house is very small sdf sdfdssdf dsss d dsd s',
-                        'audioSrc': ''
-                    },
-                    {
-                        'text': 'La cara es grande.',
-                        'translatedText': 'The face is big',
-                        'audioSrc': ''
-                    },
-                 
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Michael'
+                    }
                     
                 ]
                 
@@ -172,7 +171,8 @@ let lessonsArray = [
                         'audioSrc': './audio/lesson1.1/2.mp3'
                     }
                 ] 
-            }, {
+            },
+            {
                 'activityModuleType': 'exampleCards',
                 'activityOrder': 7,
                 'moduleHeaderText': "1 Let's have  a look at some examples...",
@@ -209,6 +209,34 @@ let lessonsArray = [
                 'autoShowHelptags': false,
                 'sideImgLocation': 'img/lesson1.1/kitty.jpg'
             },
+            {
+                'activityModuleType': 'wordsTable',
+                'activityOrder': 10,
+                'moduleHeaderText' : 'Words table',
+                'moduleHeaderIcon': 'reorder',
+                'moduleBasicText': '',
+                'wordsArray': 
+                [
+                    {
+                        'text': 'La chica es muy graciosa.',
+                        'translatedText': 'The girl is very funny',
+                        'audioSrc': ''
+                    },
+                    {
+                        'text': 'La casa es muy pequena  df  sd fsfsdf sdf sdf sd fd s.',
+                        'translatedText': 'The house is very small sdf sdfdssdf dsss d dsd s',
+                        'audioSrc': ''
+                    },
+                    {
+                        'text': 'La cara es grande.',
+                        'translatedText': 'The face is big',
+                        'audioSrc': ''
+                    },
+                 
+                    
+                ]
+                
+            }, 
             
         ]
     },
