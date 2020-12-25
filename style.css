@@ -334,6 +334,10 @@ input {
     transform: rotateZ(12deg);
 }
 
+.videoActivityModule.video-container{
+    margin: 2px red solid;
+    padding: 1rem;
+}
 .no-shadows {
     box-shadow: none!important;
 }

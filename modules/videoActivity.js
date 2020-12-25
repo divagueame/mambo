@@ -10,6 +10,7 @@ export default function videoActivity(obj, targetDom) {
   var moduleDiv = document.createElement('div');
   moduleDiv.classList.add("moduleDiv");
   moduleDiv.classList.add("section");
+  moduleDiv.classList.add("videoActivityModule");
   
   let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
   
@@ -21,7 +22,7 @@ export default function videoActivity(obj, targetDom) {
       ${obj.youtubeIframe}
     </div>
   </div>
-  <div class="col s4 red">
+  <div class="col s12 red">
     <p>Video activity</p>
   </div>
 </div>
