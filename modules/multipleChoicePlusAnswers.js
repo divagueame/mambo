@@ -17,11 +17,13 @@ moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
 
 let questionsForm = document.createElement('form');
+questionsForm.classList.add("multipleChoicePlusAnswers")
 let correctAnswers = []
 
 let questionsArray = (Object.values(obj.questions))
 questionsArray.forEach(function (questionAnswerItem,i) {
   let questionAnswerContainer = document.createElement('div');
+  questionAnswerContainer.classList.add("questionAnswerContainer");
   let questionContainer = document.createElement('div');
   questionContainer.classList.add("row");
   questionContainer.innerHTML = `<div class="col s12">${1+i}. ${questionAnswerItem.question}</div>`;
@@ -30,16 +32,19 @@ questionsArray.forEach(function (questionAnswerItem,i) {
 
   if(questionAnswerItem.type=='multiple'){
     correctAnswers.push(questionAnswerItem.answersArray[0])
-    
+    let randomId = Math.floor(Math.random()*100000)
     // console.log(questionAnswerItem.question, 'multiple');
     let answersDivs = document.createElement('div');
     answersDivs.classList.add('row');
-    let singleAnswerDiv = []
-    questionAnswerItem.answersArray.forEach(function(option){
+    let singleAnswerDiv = [];
+    
+    questionAnswerItem.answersArray.forEach(function(option,j){
       singleAnswerDiv.push(`<div class="col s12">
-      <label>
-      <input name="userAnswer[${i}][first_name]" type="radio" value="${option}">
-      <span>${option}</span>
+      
+      <label class="valign-wrapper">
+        <i class="material-icons tiny white-text" id="radioIconId${randomId}-${j}">fiber_manual_record</i>
+        <input id="radioInputId${randomId}-${j}" required name="userAnswer${i}[group]" type="radio" value="${option}">
+        <span>${option}</span>
     </label>
         </div>`)
     });
@@ -53,19 +58,11 @@ questionsArray.forEach(function (questionAnswerItem,i) {
               array[i] = array[j];
               array[j] = temp;
           }
-      
-          // answerContainer.innerHTML = `<div class="col s12">${answersDivs}</div>`
-          // console.log("QUE ES", answersDivs);
-          // answersDivs.forEach((singleDiv)=>{
-            // console.log("A",singleDiv)
-          // })
-          // answerContainer.appendChild(answersDivs)
-          // answerContainer.innerHTML = `<div class="col s12">POLLAS</div>`
+
   }
 shuffleArray(singleAnswerDiv);
 let finalAnswers = ''
   singleAnswerDiv.forEach((e)=>{
-        console.log("as",typeof e)
         finalAnswers +=e
   })
 
@@ -74,23 +71,22 @@ answersDivs.innerHTML = finalAnswers
   answerContainer.appendChild(answersDivs)
 }
   if(questionAnswerItem.type=='openQuestion'){
+    answerContainer.classList.add("row")
+    let randomId = Math.floor(Math.random()*100000)
     correctAnswers.push(questionAnswerItem.answer)
-    let answersDivs = `<div class="row">`
-    //questionAnswerItem.question Right answer
-      answersDivs += `
-      <div class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">edit</i>
-            <input id="icon_prefix" autocomplete="off" type="text" class="validate"  name="userAnswer[${i}][first_name]">
-            <label for="icon_prefix">First Name</label>
-          </div>
-        </div>
-      </form>
-    `
-   
-    answersDivs += `</div>`
-    answerContainer.innerHTML = `<div class="col s12">${answersDivs}</div>`
+
+    let answersDivs =` <div class="row">
+    <div class="col s12">
+    <div class="valign-wrapper">
+      <i class="material-icons tiny" id="inputTextId${randomId}">edit</i>
+      <div class="input-field inline">
+      <input id="textInputAnwserId${randomId}" autocomplete="off" required type="text" class="validate"  name="userAnswer[${i}][group]">     
+      </div>
+      </div>
+      </div>
+  </div>
+  <div class="col s12" id="correctAnwserDisplayId${randomId}"></div>`;
+    answerContainer.innerHTML = `${answersDivs}`
   }
   
   questionAnswerContainer.appendChild(questionContainer)
@@ -114,36 +110,67 @@ moduleContainer.appendChild(questionsForm)
 
 questionsForm.addEventListener('submit', function(e){
   e.preventDefault();
-  // console.log(correctAnswers)
-  // console.log(questionsForm.elements[`userAnswer[0][first_name]`].value)
+  
   let  inputs = questionsForm.elements;
-
+let userAnswers = []
+let userAnwersId = []
   for(let i=0; i<inputs.length; i++){
-    
     if((inputs[i].type=='radio')&&(inputs[i].checked)){
+      userAnswers.push(inputs[i].value)
+      userAnwersId.push(inputs[i].previousElementSibling.id)
       //USER CHOICE IS
-      // console.log(inputs[i].value);
     }
     if(inputs[i].type=='text'){
       //USER input text IS
-      // console.log(inputs[i].value);
+      userAnswers.push(inputs[i].value);
+      userAnwersId.push(inputs[i].parentElement.parentElement.children[0].id)
     }
-
   }
-  // console.log(questionsForm.elements.length)
+
+  // console.log("radio",correctAnswers, userAnswers)
+  let counterRightAnswers = 0
+  for(let i=0; i<correctAnswers.length; i++){
+    if(correctAnswers[i]==userAnswers[i]){
+      console.log("User is right");
+      counterRightAnswers++;
+      let radioBtn = document.querySelector(`#${userAnwersId[i]}`);
+      radioBtn.innerHTML = "check";
+      radioBtn.classList.remove("white-text")
+      radioBtn.classList.add("green-text")
+      // inputs[`userAnswer[${i}]`][0].previousElementSibling.innerHTML = "check"
+
+    } else {
+      console.log("User is wrong");
+      let radioBtnIcon = document.querySelector(`#${userAnwersId[i]}`);
+      radioBtnIcon.innerHTML = "close";
+      radioBtnIcon.classList.remove("white-text")
+      radioBtnIcon.classList.add("red-text");
+      
+      if(userAnwersId[i].substring(0,11)=="radioIconId"){
+        let correctRadioId = (userAnwersId[i].substr(0,userAnwersId[i].length-1))+"0"
+        // console.log("radio correct id: ",correctRadioId)
+        let correctRadioBtn = document.querySelector(`#${correctRadioId}`);
+        correctRadioBtn.innerHTML = "check";
+        correctRadioBtn.classList.remove("white-text")
+        correctRadioBtn.classList.add("green-text")
+        correctRadioBtn.nextElementSibling.checked = true;
+      }
+      // console.log("POS",userAnwersId[i])
+      if(userAnwersId[i].substring(0,11)=="inputTextId"){
+        
+        let thisId = userAnwersId[i].substring(11)
+        console.log("POS",userAnwersId[i],thisId)
+        document.querySelector(`#textInputAnwserId${thisId}`).classList.add("red-text")
+        document.querySelector(`#correctAnwserDisplayId${thisId}`).innerHTML = `<div class="valign-wrapper"><i class="material-icons tiny green-text">check</i>${correctAnswers[i]}</div>`
+      }
+    }
+  }
+
   
-
-  // questionsForm.elements.forEach(function(e,i,a){
-  //   if(e.checked){
-  //     console.log("User checked: ", e)
-  //   }
-    
-  // })
-
-  // console.log(questionsForm.elements[0].checked)
-  // console.log(questionsForm.elements[1].checked)
-  // console.log(questionsForm.elements[2].checked)
-  // console.log(questionsForm.elements[3].checked)
+  
+  let toastText = `${counterRightAnswers}/${correctAnswers.length}`
+  M.toast({html: 'Ejercicio completado!','displayLength':6800});
+  M.toast({html: `Respuestas correctas: ${toastText}`,'displayLength':9000});
 
   
 })
