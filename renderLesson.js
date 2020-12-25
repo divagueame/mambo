@@ -57,6 +57,9 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="multipleChoicePlusAnswers"){
                 activitiesModule.multipleChoicePlusAnswers(activityObj)
             }
+            if(activityObj.activityModuleType=="videoActivity"){
+                activitiesModule.videoActivity(activityObj)
+            }
 
         });
         activitiesModule.generateFooter();

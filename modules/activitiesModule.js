@@ -12,6 +12,9 @@ import slider from './slider.js';
 import wordsTable from './wordsTable.js';
 import blankSentences from './blankSentences.js';
 import multipleChoicePlusAnswers from './multipleChoicePlusAnswers.js';
+import videoActivity from './videoActivity.js';
+
+
 
 
 const activitiesModule = (() => {
@@ -30,7 +33,8 @@ const activitiesModule = (() => {
       generateBasicText,
       slider,
       wordsTable,
-      multipleChoicePlusAnswers
+      multipleChoicePlusAnswers,
+      videoActivity
     };
   })();
 

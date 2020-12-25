@@ -84,7 +84,7 @@ answersDivs.innerHTML = finalAnswers
       </div>
       </div>
   </div>
-  <div class="col s12" id="correctAnwserDisplayId${randomId}"></div>`;
+  <div class="col s12 marginLeft" id="correctAnwserDisplayId${randomId}"></div>`;
     answerContainer.innerHTML = `${answersDivs}`
   }
   

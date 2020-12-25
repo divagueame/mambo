@@ -40,16 +40,10 @@ let lessonsArray = [
                         'answer': 'Michael'
                     },
                     {
-                        'type': 'multiple',
-                        'question': 'What is the baby name?',
-                        'answersArray': [
-                            'Correct2',
-                            'chingon2',
-                            'pepe2',
-                            'paco2',
-                        ]
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Jhonny'
                     }
-                    
                 ]
                 
             }, 
@@ -122,43 +116,20 @@ let lessonsArray = [
                     }
                 ] 
             },
+            
             {
-                'activityModuleType': 'exampleCards',
+                'activityModuleType': 'videoActivity',
                 'activityOrder': 5,
-                'moduleHeaderText': "4 Let's have  a look at some examples...",
-                'moduleHeaderIcon': 'create',
-                'moduleBasicText': 'Try to remember these words',
-                'autoShowTranslate': false,
-                'examplesArray': [
-                    {
-                        'imgSrc': './img/lesson1.1/chair.jpg',
-                        'text': 'El niñ<span class="heavy-text">o</span> sdfasdf asds  sd fsd ds d',
-                        'translatedText': 'The boy sdf sd',
-                        'audioSrc': './audio/lesson1.1/1.mp3'
-                    }
-                    ,
-                    {
-                        'imgSrc': './img/lesson1.1/kitty.jpg',
-                        'text': 'La niñ<span class="heavy-text">a</span>',
-                        'translatedText': 'The girl',
-                        'audioSrc': './audio/lesson1.1/2.mp3'
-                    },
+                'moduleHeaderText' : '5 Actividad de video',
+                'moduleHeaderIcon': 'ondemand_video',
+                'moduleBasicText': '',
+                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8kbXfAuvdxA?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            }, 
 
-                    {
-                        'imgSrc': './img/lesson1.1/head.jpg',
-                        'text': 'La niñ<span class="heavy-text">a</span>',
-                        'translatedText': 'The girl',
-                        'audioSrc': './audio/lesson1.1/2.mp3'
-                    },
-                    
-                    {
-                        'imgSrc': './img/lesson1.1/door.jpg',
-                        'text': 'La niñ<span class="heavy-text">a</span>',
-                        'translatedText': 'The girl',
-                        'audioSrc': './audio/lesson1.1/2.mp3'
-                    }
-                ] 
-            },
+
+
+
+
             {
                 'activityModuleType': 'exampleCards',
                 'activityOrder': 6,
