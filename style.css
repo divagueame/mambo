@@ -96,6 +96,7 @@ body {
 
   .multipleChoicePlusAnswers div.row{
       margin-bottom: 0;
+      margin-top: .21rem;
   }
   .multipleChoicePlusAnswers div.input-field{
     margin: 0 !important;
@@ -103,46 +104,28 @@ body {
 }
 .multipleChoicePlusAnswers div.input-field input{
     /* background-color: skyblue; */
-    padding: 0;
+
+    padding: .2rem;
     height: auto;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-family: inherit;
 }
 .multipleChoicePlusAnswers input{
     margin: 0 !important;
     background-color: rgb(83, 139, 19);
-    /* font-size: 2.1rem !important; */
+    font-size: 1rem;
     /* border: 2px solid black !important; */
 }
+
   input.multipleChoicePlusAnswersRadio{ 
       filter: hue-rotate(222deg);
       background-color: rgb(163, 88, 88);
       border: peru 2px solid;
     }
   
-/* table.GeneratedTable {
-    width: 100%;
-    background-color: #ffffff;
-  border-collapse: separate;
-  }
-  
-  table.GeneratedTable td, table.GeneratedTable th {
-      font-size: 1.1rem;
-      line-height: 1.9rem;
-    border-width: .2rem;
-    border-color: #ffffff;
-    background-color: #f1f1f0;
-    border-style: solid;
-    padding: 1rem;
-    border-radius: .475rem !important;
-  }
-
-  table.GeneratedTable td.heavyText{
-    font-weight: 700;
-  } */
   
   div.heavyText, span.heavyText{
     font-weight: 700;
-    /* text-decoration: underline; */
   }
 footer.page-footer {
     color:  var(--white1);
@@ -215,20 +198,14 @@ footer.page-footer {
     text-align: justify;
     text-justify: inter-word;
   }
-.bosdy {
-    background-color: seagreen;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('./img/bg.jpg');
-}
-/* label color */
+  
 .input-field label {
     color: rgb(179, 179, 179);
 }
 
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: rgb(187, 255, 0);
+    color: rgb(18, 128, 136);
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
@@ -338,16 +315,10 @@ footer.page-footer {
 
 
 input {
-    /* color: chartreuse; */
-    /* width: 100%; */
-    /* height: 100%; */
     padding-top: 13px;
     background: none;
     border: none;
-    
 }
-
-
 
 #missingWordInput{
     padding-top: 12px;
@@ -363,9 +334,6 @@ input {
     transform: rotateZ(12deg);
 }
 
-.moduleDiv {
-    /* margin-bottom: .81rem; */
-}
 .no-shadows {
     box-shadow: none!important;
 }
@@ -416,13 +384,12 @@ input {
 .margin1{
     margin: 1rem !important;
 }
+.marginLeft{
+    margin-left: 1rem !important;
+}
 .lessonLinkNavbar {
     padding-left: 5rem;
 }
-
-header, main, footer {
-    /* padding-left: 240px; */
-  }
 
   @media only screen and (max-width : 992px) {
     html{

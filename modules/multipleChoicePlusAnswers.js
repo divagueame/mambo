@@ -26,7 +26,7 @@ questionsArray.forEach(function (questionAnswerItem,i) {
   questionAnswerContainer.classList.add("questionAnswerContainer");
   let questionContainer = document.createElement('div');
   questionContainer.classList.add("row");
-  questionContainer.innerHTML = `<div class="col s12">${1+i}. ${questionAnswerItem.question}</div>`;
+  questionContainer.innerHTML = `<div class="col s12 heavyText">${1+i}. ${questionAnswerItem.question}</div>`;
   let answerContainer = document.createElement('div');
 
 
@@ -40,12 +40,11 @@ questionsArray.forEach(function (questionAnswerItem,i) {
     
     questionAnswerItem.answersArray.forEach(function(option,j){
       singleAnswerDiv.push(`<div class="col s12">
-      
       <label class="valign-wrapper">
         <i class="material-icons tiny white-text" id="radioIconId${randomId}-${j}">fiber_manual_record</i>
         <input id="radioInputId${randomId}-${j}" required name="userAnswer${i}[group]" type="radio" value="${option}">
         <span>${option}</span>
-    </label>
+      </label>
         </div>`)
     });
     
@@ -76,7 +75,7 @@ answersDivs.innerHTML = finalAnswers
     correctAnswers.push(questionAnswerItem.answer)
 
     let answersDivs =` <div class="row">
-    <div class="col s12">
+    <div class="col s12 marginLeft">
     <div class="valign-wrapper">
       <i class="material-icons tiny" id="inputTextId${randomId}">edit</i>
       <div class="input-field inline">
