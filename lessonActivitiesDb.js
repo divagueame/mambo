@@ -14,39 +14,36 @@ let lessonsArray = [
                 'title': "Masculino o femenino",
                 'lessonTopImageSrc': './img/lesson1.1/malefemale.png'
             },
-            
-            
             {
-                'activityModuleType': 'multipleChoicePlusAnswers',
+                'activityModuleType': 'wordsTable',
                 'activityOrder': 2,
-                'moduleHeaderText' : 'Multiple choice',
-                'moduleHeaderIcon': 'dashboard',
+                'section': false,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': 'reorder',
                 'moduleBasicText': '',
-                'questions': 
+                'wordsArray': 
                 [
                     {
-                        'type': 'multiple',
-                        'question': 'What is the girls name?',
-                        'answersArray': [
-                            'Correct1',
-                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
-                            '1genios sin coco cac',
-                            '1me digas que no',
-                        ]
+                        'text': 'La chica es muy graciosa.',
+                        'translatedText': 'The girl is very funny',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
                     },
                     {
-                        'type': 'openQuestion',
-                        'question': 'What is the man  name?',
-                        'answer': 'Michael'
+                        'text': 'La casa es muy pequena  df  sd fsfsdf sdf sdf sd fd s.',
+                        'translatedText': 'The house is very small sdf sdfdssdf dsss d dsd s',
+                        'audioSrc': './audio/lesson1.1/1.mp3'
                     },
                     {
-                        'type': 'openQuestion',
-                        'question': 'What is the man  name?',
-                        'answer': 'Jhonny'
-                    }
+                        'text': 'La cara es grande.',
+                        'translatedText': 'The face is big',
+                        'audioSrc': './audio/lesson1.1/2.mp3'
+                    },
+                 
+                    
                 ]
                 
-            }, 
+            },
+           
            
             
             {
@@ -122,37 +119,80 @@ let lessonsArray = [
                 'activityOrder': 5,
                 'moduleHeaderText' : '5 Actividad de video',
                 'moduleHeaderIcon': 'ondemand_video',
+                'onlyAddVideo': true,
+                'section': false,
+                'margin': true,
                 'moduleBasicText': '',
-                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8kbXfAuvdxA?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8kbXfAuvdxA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             }, 
 
-
-
-
-
             {
-                'activityModuleType': 'exampleCards',
+                'activityModuleType': 'multipleChoicePlusAnswers',
                 'activityOrder': 6,
-                'moduleHeaderText': "2 Let's have  a look at some examples...",
-                'moduleHeaderIcon': 'create',
-                'moduleBasicText': 'Try to remember these words',
-                'autoShowTranslate': false,
-                'examplesArray': [
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': 'dashboard',
+                'moduleBasicText': '',
+                'questions': 
+                [
                     {
-                        'imgSrc': './img/lesson1.1/boy-icon.png',
-                        'text': 'El niñ<span class="heavy-text">o</span> sdfasdf asds  sd fsd ds d',
-                        'translatedText': 'The boy sdf sd',
-                        'audioSrc': './audio/lesson1.1/1.mp3'
-                    }
-                    ,
+                        'type': 'multiple',
+                        'question': 'What is the girls name?',
+                        'answersArray': [
+                            'Correct1',
+                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            '1genios sin coco cac',
+                            '1me digas que no',
+                        ]
+                    },
                     {
-                        'imgSrc': './img/lesson1.1/girl-icon.png',
-                        'text': 'La niñ<span class="heavy-text">a</span>',
-                        'translatedText': 'The girl',
-                        'audioSrc': './audio/lesson1.1/2.mp3'
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Michael'
+                    },
+                    {
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Jhonny'
                     }
-                ] 
+                ]
+                
+            }, 
+
+            
+            {
+                'activityModuleType': 'multipleChoicePlusAnswers',
+                'activityOrder': 10,
+                'moduleHeaderText' : 'Multiple choice',
+                'moduleHeaderIcon': 'dashboard',
+                'moduleBasicText': '',
+                'questions': 
+                [
+                    {
+                        'type': 'multiple',
+                        'question': 'What is the girls name?',
+                        'answersArray': [
+                            'Correct1',
+                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            '1genios sin coco cac',
+                            '1me digas que no',
+                        ]
+                    },
+                    {
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Michael'
+                    },
+                    {
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Jhonny'
+                    }
+                ]
+                
             },
+
+          
+            
             {
                 'activityModuleType': 'exampleCards',
                 'activityOrder': 7,
@@ -190,34 +230,7 @@ let lessonsArray = [
                 'autoShowHelptags': false,
                 'sideImgLocation': 'img/lesson1.1/kitty.jpg'
             },
-            {
-                'activityModuleType': 'wordsTable',
-                'activityOrder': 10,
-                'moduleHeaderText' : 'Words table',
-                'moduleHeaderIcon': 'reorder',
-                'moduleBasicText': '',
-                'wordsArray': 
-                [
-                    {
-                        'text': 'La chica es muy graciosa.',
-                        'translatedText': 'The girl is very funny',
-                        'audioSrc': ''
-                    },
-                    {
-                        'text': 'La casa es muy pequena  df  sd fsfsdf sdf sdf sd fd s.',
-                        'translatedText': 'The house is very small sdf sdfdssdf dsss d dsd s',
-                        'audioSrc': ''
-                    },
-                    {
-                        'text': 'La cara es grande.',
-                        'translatedText': 'The face is big',
-                        'audioSrc': ''
-                    },
-                 
-                    
-                ]
-                
-            }, 
+            
             
         ]
     },

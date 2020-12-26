@@ -9,10 +9,19 @@ export default function multipleChoicePlusAnswers(obj, targetDom) {
   // Create the new element
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
-moduleDiv.classList.add("section");
-let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
+if(obj.section==true){
+  moduleDiv.classList.add("section");
+}
+
+
+
+if (obj['moduleHeaderText']!=""){
+  let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon']);
+  moduleDiv.appendChild(moduleHeaderDiv);
+}
+
+
 let moduleContainer = document.createElement('div');
-moduleDiv.appendChild(moduleHeaderDiv);
 moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
 

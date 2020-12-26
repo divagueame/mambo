@@ -65,7 +65,7 @@ body {
   .exampleCards{
     /* border: white 6px dotted; */
     color: white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 1rem;
     margin: 1rem;
   }
@@ -73,14 +73,14 @@ body {
   .wordsTable {
     font-size: 1.1rem;
     line-height: 1.9rem;
-  border-width: .2rem;
-  border-color: #ffffff;
-  background-color: #f1f1f0;
-  border-style: solid;
-  padding: 1rem;
-  border-radius: .475rem !important;
+    border-width: .2rem;
+    border-color: #ffffff;
+    background-color: #f1f1f0;
+    border-style: solid;
+    padding: 1rem;
+    border-radius: .475rem !important;
+    
   }
-
   [type="radio"]:checked + span:after,
   [type="radio"].with-gap:checked + span:before,
   [type="radio"].with-gap:checked + span:after {
@@ -96,7 +96,7 @@ body {
 
   .multipleChoicePlusAnswers div.row{
       margin-bottom: 0;
-      margin-top: .21rem;
+      /* margin-top: .21rem; */
   }
   .multipleChoicePlusAnswers div.input-field{
     margin: 0 !important;
@@ -107,13 +107,13 @@ body {
 
     padding: .2rem;
     height: auto;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: inherit;
 }
 .multipleChoicePlusAnswers input{
     margin: 0 !important;
     background-color: rgb(83, 139, 19);
-    font-size: 1rem;
+    font-size: 1.1rem;
     /* border: 2px solid black !important; */
 }
 
@@ -257,7 +257,7 @@ footer.page-footer {
 .inputTextinParagraph {
     color: rgb(12, 27, 14);
     height: auto !important;
-    font-size:1.15em  !important;
+    font-size:1.10em  !important;
     padding:0em;
 
     margin-bottom: 0 !important;
@@ -295,7 +295,7 @@ footer.page-footer {
     border: 2px black solid
 }
 #textarea2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .toastie-container{
@@ -334,6 +334,15 @@ input {
     transform: rotateZ(12deg);
 }
 
+.moduleDiv .removeTopMargin > div {
+    background-color: khaki;
+    border: 23px solid red;
+    margin-top: 222px;
+}
+.moduleDiv .moduleMargin div{
+    box-sizing: border-box;
+    margin: 22px red solid;
+}
 .videoActivityModule.video-container{
     margin: 2px red solid;
     padding: 1rem;
