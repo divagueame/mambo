@@ -19,33 +19,87 @@ moduleContainer.classList.add('row')
 
 const personas = ['yo', 'tú','el/ella/usted','nosotros/nosotras','vosotros/vosotras','ellos/ellas/ustedes']
 let verbCounter = Object.values(obj['verbos']).length;
-let personasDiv = document.createElement('div')
-let personasUl = document.createElement('ul')
-personas.forEach(function(persona){
-  let newLi = document.createElement('li')
-  newLi.innerHTML = persona
-  personasUl.appendChild(newLi)
-})
-personasDiv.classList.add('col','s2', 'brown', 'lighten-4');
-personasDiv.appendChild(personasUl)
-moduleContainer.appendChild(personasDiv)
+let table = document.createElement('table')
+let tableHead = document.createElement('thead')
+let newTr =  document.createElement('tr');
+let newTh =  document.createElement('th');
+table.appendChild(tableHead)
+tableHead.appendChild(newTr)
+newTh.innerHTML = '<br>'
+newTr.appendChild (newTh)
+for(let i =0;i<verbCounter;i++){
+  let verbNameTh =  document.createElement('th');
+  newTr.appendChild(verbNameTh)
+  verbNameTh.innerHTML = Object.keys(obj['verbos'])[i]
+}
 
-moduleContainer.innerHTML = `
-<p class="justified">Verbcharrt</p>
-<div class="divider"></div>
-<div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>
-</div>
+let tableBody = document.createElement('tbody');
+table.appendChild(tableBody)
+for(let i=0;i<6;i++){
+  let newTr = document.createElement('tr');
+  let personaTd = document.createElement('td');
+  personaTd.innerHTML = personas[i]
+  newTr.appendChild(personaTd)
+  for(let j =0;j<verbCounter;j++){
+    let verbFormTd =  document.createElement('td');
+    newTr.appendChild(verbFormTd)
+    verbFormTd.innerHTML = Object.values(obj['verbos'])[j][i]
+  }
+  tableBody.appendChild(newTr)
+}
+// personasDiv.classList.add('col','s2', 'brown', 'lighten-4');
 
-`; 
+moduleContainer.appendChild(table)
+
+// table.innerHTML = `
+// 	<caption>Table 1</caption>
+// 	<thead>
+// 	<tr>
+// 		<th><br></th>
+// 		<th>Comer</th>
+// 		<th>Vivir3</th>
+// 		<th>Header 4</th>
+// 	</tr>
+// 	</thead>
+// 	<tbody>
+// 	<tr>
+// 		<td>Yo</td>
+// 		<td>&nbsp;1</td>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 	</tr>
+// 	<tr>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;2</td>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 	</tr>
+// 	<tr>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;3</td>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 	</tr>
+// 	<tr>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;5</td>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 	</tr>
+// 	<tr>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 	</tr>
+// 	<tr>
+// 		<td>&nbsp;</td>
+// 		<td>&nbsp;</td>
+// 		<td>&sd;</td>
+// 		<td>sd</td>
+// 	</tr>
+// 	<tbody>
+// `; 
 
 moduleDiv.appendChild(moduleHeaderDiv);
 moduleDiv.appendChild(moduleContainer);

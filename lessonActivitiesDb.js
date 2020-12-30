@@ -452,7 +452,7 @@ let lessonsArray = [
             {
                 'activityModuleType': 'verbChart',
                 'activityOrder': 2,
-                'moduleHeaderText' : 'Presente de subjuntivo',
+                'moduleHeaderText' : 'Verbos regulares',
                 'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
                 'showPersonas': true,            
@@ -466,8 +466,8 @@ let lessonsArray = [
             {
                 'activityModuleType': 'verbChart',
                 'activityOrder': 3,
-                'moduleHeaderText' : 'Presente de subjuntivo',
-                'moduleHeaderIcon': '', 
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': 'send', 
                 'moduleBasicText': '',
                 'showPersonas': true,            
                 'verbos': {
@@ -479,7 +479,7 @@ let lessonsArray = [
                 'activityModuleType': 'verbChart',
                 'activityOrder': 4,
                 'moduleHeaderText' : 'Presente de subjuntivo',
-                'moduleHeaderIcon': '', 
+                'moduleHeaderIcon': 'add', 
                 'moduleBasicText': '',
                 'showPersonas': true,            
                 'verbos': {
