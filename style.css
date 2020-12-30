@@ -28,9 +28,9 @@ body {
     flex: 1 0 auto;
   }
   h1 {
-    font-size: 1.8rem !important;
-    text-decoration: underline;
-    font-weight: 700 !important;
+    font-size: 1.8rem;
+    /* text-decoration: underline; */
+    font-weight: 700;
     /* color: var(--black2); */
   }
   h2 {
@@ -69,7 +69,42 @@ body {
     padding: 1rem;
     margin: 1rem;
   }
+  
+.sangria-img-init {
+    transform: rotateZ(12deg);
+    width: 4rem;
+    height: auto;
+}
+  #loggedOutLeftPannel{
+    /* border: 1px dashed rgb(0, 0, 0); */
+    border-radius: .1rem;
+    text-align: left;
+}
 
+
+#loggedOutLeftPannel h1{
+    /* background-color: beige; */
+    font-size: 2.6rem;
+    /* line-height: 2.5rem; */
+    font-weight: 800;
+    /* text-align: left; */
+}
+#loggedOutLeftPannel h6 {
+    margin: 1rem;
+    text-align: center;
+}
+
+#loggedOutRightPannel{
+    /* border: 1px dashed grey; */    
+    /* border: 1px dashed grey; */
+    border-radius: 1rem;
+    padding: 3rem;
+    /* margin: 1rem; */
+}
+#signup-form button.btn{
+    /* background-color: rgb(243, 239, 10); */
+    font-family: 'Comfortaa', cursive !important;
+}
   .wordsTable {
     font-size: 1.1rem;
     line-height: 1.9rem;

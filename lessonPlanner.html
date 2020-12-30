@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -24,7 +24,7 @@
       <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-    <nav class="z-depth-0 hide" id="navBar">
+    <nav class="z-depth-0">
       <div class="nav-wrapper blue-grey white z-depth-0">
           <div class="">
           <div class="brand-logo valign-wrapper">
@@ -53,58 +53,10 @@
 
 <!-- LOGGED OUT STUFF -->
 <div class="loggedOut container"  style="display: none">
-  <br>
-  <br>
-  <br>
-  <br>
   <!-- If logged out, show divs with loggedOut Class -->
-      <div class="row">
-        <!-- ///LEFT -->
-        <div class="col s6" id="loggedOutLeftPannel">
-
-               <div class="row valign-wrapper">
-                <div class="col s2"><img class="sangria-img-init center" src="./img/icons/singles/sangria-color.png"></div>
-                <div class="col s10"><h1>Mambo Spanish</h1></div>
-               </div>
-               <div class="divider"></div>
-               <h6 class="text-flow">A culture-based approach to Spanish learning</h6>    
-        </div>
-      
-
-
-        <!-- Right --> 
-        <div class="col s6 center dotted-border" id="loggedOutRightPannel">
-          <div class="">
-            <div class="row">
-              <div class="col s12">
-                <div class="btn-large" id="enterAsGuestBtn">Enter as guest</div>
-                </div>
-              </div>
-              <br>
-              <div class="divider"></div>
-            <div class="row">
-              <div class="col s6 center offset-s3">
-                <form id="signup-form">
-                  <div class="input-field">
-                    <input type="text" placeholder="Email" id="login-email"  autocomplete="off">
-                  </div>
-                  <div class="input-field">
-                    <input type="password" placeholder="Password" id="login-password" autocomplete="off">    
-                  </div>
-                  <div class="center">
-                    <button type="submit" class="btn waves-effect waves-light btn-large">Sign up / Log in</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-  <!-- <div class="row">
+  <div class="row ">
     <div class="col s6 offset-s3">
-       <form id="signup-form">
+      <form id="signup-form">
         <div class="input-field">
           <input type="text" placeholder="email" id="login-email">
         </div>
@@ -112,36 +64,82 @@
           <input type="password" placeholder="" id="login-password" autocomplete="">    
         </div>
         <div  class="center">
-          <button type="submit" value="Log in" class="btn waves-effect waves-light">Log in</button>
+          <button type="submit" value="Log in" class=" btn waves-effect waves-light">Log in</button>
         </div>
-      </form> -->
-      <!-- </div>
-  </div> --> 
-<!-- </div>      -->
+
+      </form>
+      </div>
+  </div>
+</div>     
 </div>
 
 <!-- LOGGED IN STUFF -->
- 
-<div class="loggedIn white">
+
+
+<div class="loggedIn row">
+  <div class="col s5">
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <form id="level-lesson-form">
+            <div class="col s3">
+              <select form="level-lesson-form" id="level-lesson-formLevel">
+              <option value="1">Level 1</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              </select>
+            </div>
+            <div class="col s3">
+              <select form="level-lesson-form" id="level-lesson-formLesson">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              </select>
+            </div>
+            <div class="col s3">
+              <button class="btn waves-effect waves-light" type="submit" name="">Ver
+            <i class="material-icons right">send</i>
+            </button>
+          </form>
+      </div>
+        <div class="col s3">
+          <form id="renderSampleLessonForm">
+            <button class="btn waves-effect waves-light" type="submit" name="">Render sample lesson
+              <i class="material-icons right">send</i>
+            </button>
+          </form></div>
+        </div>   
+        <ul class="brown lighten-5 collapsible">
+          <li>
+            <div class="collapsible-header">Add new lesson</div>
+            <div class="collapsible-body">
+              <form id="addNewLessonForm">
+                <input type="text" placeholder="level" name="level">
+                <input type="text" placeholder="lessonNumber" name="lessonNumber">
+                <input type="text" placeholder="lessonTitle" name="lessonTitle">
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col s12 lighten-5 purple">Activities in the unit: </div>
+      <div class="col s12 lighten-5">
+        <div  id="leftPanelActivities" class="collapsiblea"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col s7">
+    <div class="row">
+      <div class="col s12 pink">LESSON SAMPLE</div>
+      <div class="col s12">
+        <div class="lessonContainer"></div> 
+      </div>
+    </div>
+  </div>
+  
 
   <!-- Lesson container -->
-  <div class="lessonContainer">
-
-    <!-- <div class="lessonContainerBottom"></div> -->
-    <!-- <div class="lessonContainerTop"></div> -->
-  </div>
-
-<!-- Intro Card -->
-<!-- <div class="row">
-  <div class="col s12 center-align">
-    <h2>Aprende español con Martin</h2>
-  </div>
-  <br>
-  <div class="col s12 center-align">
-  <i class="material-icons tiny brown-text">fiber_manual_record</i>
-  Conoce, experimenta y vive la lengua y cultura española conmigo
-  </div>
-</div> -->
+  
 
 <div class="row left" id="bottom-limit">
 <!-- AVATAR MODAL -->
@@ -210,7 +208,7 @@
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
 
-      <script src="java.js" type="module"></script>
+      <script src="lessonPlanner.js" type="module"></script>
 
 
       

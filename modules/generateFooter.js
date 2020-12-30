@@ -3,7 +3,7 @@ import renderLesson from '../renderLesson.js';
 
 import generateSidenav from './generateSidenav.js';
 export default function generateFooter() {
-    console.log("GENERATE FOOTER")
+    // console.log("GENERATE FOOTER")
     //THIS MODULE TAKES NO ARGUMENTS
     let targetDomDefault = document.querySelector('.lessonContainer');
     // if(targetDom){

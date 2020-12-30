@@ -13,7 +13,7 @@ import generateFrecuencyList from './generateFrecuencyList.js';
 let activeLessonId = [1,1];
 const lessonContainer = document.querySelector(".lessonContainer")
  
-setTimeout(lessonActivitiesDb,800)
+// setTimeout(lessonActivitiesDb,  800)
 
 
 
@@ -48,6 +48,22 @@ document.addEventListener('DOMContentLoaded', function() {
 const auth = firebase.auth();
 const db = firebase.firestore();
  
+
+// Enter as guest
+let enterAsGuestBtn = document.getElementById('enterAsGuestBtn');
+enterAsGuestBtn.addEventListener('click', function(){
+    firebase.auth().signInAnonymously()
+  .then(() => {
+  console.log("You have logged in as guest! ")
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+    
+
+})
 // Sign up form
 const signUpForm = document.querySelector("#signup-form");
 signUpForm.addEventListener('submit', function(e){
@@ -75,12 +91,12 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     firebase.auth().onAuthStateChanged((user)=> {
         if (user) {
         // User is signed in.
-        
+        document.getElementById('navBar').classList.remove('hide')
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            renderLesson(activeLessonId[0],activeLessonId[1]);
-            // renderInitialPage()
+            // renderLesson(activeLessonId[0],activeLessonId[1]);
+            renderInitialPage()
             // generateFrecuencyList()
             
             renderUserNavBarButtons();
@@ -108,6 +124,8 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         } else {
             console.log("You're NOT logged in");
             document.querySelector('#navBarbuttons').innerHTML = ``;
+            document.getElementById('navBar').classList.add('hide')
+
             document.querySelector('#slide-out').innerHTML = ``;
 
             

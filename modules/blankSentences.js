@@ -1,6 +1,6 @@
 import moduleHeader from './moduleHeader.js'
 export default function blankSentences(obj, targetDom) {
-  console.log("BLANK SENTENCEs")
+  // console.log("BLANK SENTENCEs")
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
       targetDomDefault = document.querySelector(targetDom);

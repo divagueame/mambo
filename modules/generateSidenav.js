@@ -90,20 +90,28 @@ function getUserCompletedLessons(){
         return "sideBarLink" + "" + e 
     })
     // console.log("AS ",returnedArray);
-    returnedArray.forEach((e)=>{
-        let selector = `.${e}`
-        let selectThis = document.querySelector(selector).getElementsByTagName("i");
-        selectThis = Array.from(selectThis);
-        selectThis.forEach((e)=>{
-            if(e.classList.contains("lessonCompletedMark")){
-                // e.innerHTML = "assignment_turned_in";
-                e.innerHTML = "check"
-            } else {
-                e.innerHTML = ""
-            }
+    // if(returnedArray.length>0){
+        returnedArray.forEach((e)=>{
+            let selector = `.${e}`
             
+                let selectThis = document.querySelector(selector)
+                if(selectThis!=null){    
+                selectThis.getElementsByTagName("i");
+                selectThis = Array.from(selectThis);
+                selectThis.forEach((e)=>{
+                    if(e.classList.contains("lessonCompletedMark")){
+                        // e.innerHTML = "assignment_turned_in";
+                        e.innerHTML = "check"
+                    } else {
+                        e.innerHTML = ""
+                    }
+                    
+                })
+            }
+
         })
-    })
+    // }
+
 
     })
 

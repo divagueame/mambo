@@ -167,7 +167,7 @@ e.innerHTML = ``
         let inputTextinParagraphSelectors = moduleContainer.querySelectorAll(".inputTextinParagraph");
         
         inputTextinParagraphSelectors.forEach((hiddenWord,i,a)=>{
-        console.log("USER ", inputTextinParagraphSelectors[i].value)
+        // console.log("USER ", inputTextinParagraphSelectors[i].value)
             if(userIsRight[i]==true){
                 hiddenWord.classList.add("guessWordRight");
                 selectAll[i].classList.add("guessWordRight");
@@ -201,7 +201,7 @@ e.innerHTML = ``
     })
 
     var elems = document.querySelectorAll(`.tooltipped`);
-    console.log(elems)
+    // console.log(elems)
     M.Tooltip.init(elems, {});
 
     })

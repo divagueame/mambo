@@ -25,7 +25,7 @@ export default function renderLesson(level, lesson) {
     getActivitiesFromDb.then((lessons)=>{
         
         lessons.activitiesArray.forEach(activityObj => {
-            console.log("Es", activityObj.activityModuleType);    
+            // console.log("Es", activityObj.activityModuleType);    
             if(activityObj.activityModuleType=="renderLessonTitle"){
                 activitiesModule.renderLessonTitle(activityObj)
             }

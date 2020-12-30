@@ -32,11 +32,17 @@ function showLastUpdates(){
 
     let updatesDb = [
         {
-            'avatarUrl': 'img/icons/updates/031-folder.png',
-            'title': 'Corrected margins',
-            'text': "The margins are working properly. Debugged the modules and now they're working better.",
-            'date': "12/22/2020"
+            'avatarUrl': 'img/icons/updates/022-schedule.png',
+            'title': 'Many changes!',
+            'text': "I have worked on some tools to update the lessons from the websites instead of hard-coding them. It will take some time until it works well but we'll get there... Today I also added the guest login option and improved the look of the frontpage.",
+            'date': "12/30/2020"
             },
+            {
+                'avatarUrl': 'img/icons/updates/031-folder.png',
+                'title': 'Corrected margins',
+                'text': "The margins are working properly. Debugged the modules and now they're working better.",
+                'date': "12/22/2020"
+                },
             {
                 'avatarUrl': 'img/icons/updates/010-Watercolor.png',
                 'title': 'New color palette',

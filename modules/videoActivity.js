@@ -1,7 +1,7 @@
 import moduleHeader from './moduleHeader.js'
 
 export default function videoActivity(obj, targetDom) {
-    console.log("Video activity initiating...");
+    // console.log("Video activity initiating...");
     let targetDomDefault = document.querySelector('.lessonContainer');
     if(targetDom){
         targetDomDefault = document.querySelector(targetDom);

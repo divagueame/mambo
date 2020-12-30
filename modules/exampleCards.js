@@ -23,7 +23,7 @@ export default function examplesCard(obj, targetDom) {
   moduleDiv.appendChild(moduleContainer);
   
   targetDomDefault.appendChild(moduleDiv);
-
+if (obj.examplesArray){
   obj.examplesArray.forEach(function(example,i,a){
     let exampleDiv = document.createElement('div');
     exampleDiv.classList.add("col")
@@ -58,6 +58,9 @@ export default function examplesCard(obj, targetDom) {
 }
 
   })
+  
+}
+  
 
 
 
