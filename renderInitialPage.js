@@ -3,7 +3,32 @@ export default function renderInitialPage(){
     const lessonContainer = document.querySelector('.lessonContainer'); 
     
     lessonContainer.innerHTML = '';
-    let html = `
+
+    let dashboardDiv = document.createElement('div');
+    dashboardDiv.classList.add('container')
+    dashboardDiv.classList.add('row')
+    dashboardDiv.classList.add('yellow','lighten-5')
+    let topSpacer = document.createElement('div')
+    topSpacer.classList.add("col", 's12', 'white')
+    topSpacer.innerHTML = '<br>'
+    lessonContainer.appendChild(dashboardDiv)
+    let leftDiv =document.createElement('div');
+    leftDiv.classList.add('col', 's4','blue')
+    let rightDiv =document.createElement('div');
+    rightDiv.classList.add('col', 's8','purple');
+    dashboardDiv.appendChild(topSpacer)
+    dashboardDiv.appendChild(leftDiv)
+    dashboardDiv.appendChild(rightDiv)
+    leftDiv.innerHTML = `
+    <ul>
+    <li>User</li>
+    <li>sdf</li>
+    <li>sdf</li>
+    <li>ads</li>
+    </ul>`
+
+    let html = ``;
+    let html1 = `
         <h1 class="center">Mambo!</h1>
         
         <div class="row center">
@@ -25,8 +50,12 @@ export default function renderInitialPage(){
             </div>
         </div>
     `
-    lessonContainer.innerHTML = html;
-    showLastUpdates()
+    // lessonContainer.innerHTML = html;
+
+
+
+
+    // showLastUpdates()
 
 function showLastUpdates(){
 

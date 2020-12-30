@@ -1,4 +1,5 @@
 import {activeLessonId, db, auth} from './java.js';
+import renderInitialPage from './renderInitialPage.js'
 
 export default function renderUserNavBarButtons() {
     // console.log('renderUserNavBarButtons initiated')
@@ -9,17 +10,8 @@ export default function renderUserNavBarButtons() {
 
             const navBarbuttons = document.querySelector("#navBarbuttons");
             let html = `
-
-<div id="modalUserProgressInfo" class="modal bottom-sheet black-text">
-  <div class="modal-content">
-    <h4>User info</h4>
-    <p>A bunch of text</p>
-  </div>
-
-</div>
-
             <li>
-                <a href="#modalUserProgressInfo" class="modal-trigger">
+                <a href="#" id="userAvatarNavBarBtn">
                     <i class="material-icons tiny white-text">
                         <img class="fixed-widthImg" src="./img/avatars/${userAvatarId}.png">
                     </i>
@@ -36,7 +28,10 @@ export default function renderUserNavBarButtons() {
             navBarbuttons.innerHTML = html
 
 
-            
+            const userAvatarNavBarBtn = document.getElementById("userAvatarNavBarBtn");
+            userAvatarNavBarBtn.addEventListener('click',function(){
+              renderInitialPage()
+            })
 
 // Log out
 const signOutButton = document.querySelector("#signOutButton");
@@ -46,14 +41,6 @@ signOutButton.addEventListener('click', function(){
     lessonContainer.innerHTML =``
 });
 
-
-
-            const elem = document.getElementById('modalUserProgressInfo');
-            const instance = M.Modal.init(elem, {
-              startingTop: '21%',
-              inDuration: 20
-
-            });
             
         })
 

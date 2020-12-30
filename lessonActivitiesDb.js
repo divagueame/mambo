@@ -436,6 +436,66 @@ let lessonsArray = [
             },
         ]
     },
+    {
+        'level': 3,
+        'lessonNumber': 1,
+        'lessonTitle': 'Presente de subjuntivo',
+        // 
+        'activitiesArray': [
+            {
+                'activityModuleType': 'renderLessonTitle',
+                'activityOrder': 1,
+                'title': "Presente de subjuntivo",
+                'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
+            },
+            
+            {
+                'activityModuleType': 'verbChart',
+                'activityOrder': 2,
+                'moduleHeaderText' : 'Presente de subjuntivo',
+                'moduleHeaderIcon': '', 
+                'moduleBasicText': '',
+                'showPersonas': true,            
+                'verbos': {
+                    'estudiar': ['estud<span class="heavy-text">ie</span>','estudies','estudie', 'estudiemos','estudiéis', 'estudien'],
+                    'comer': ['coma','comas','coma', 'comamos','comáis', 'coman'],
+                    'escribir': ['escriba','escribas','escriba', 'escribamos','escribáis', 'escriban']
+               }
+                
+            },
+            {
+                'activityModuleType': 'verbChart',
+                'activityOrder': 3,
+                'moduleHeaderText' : 'Presente de subjuntivo',
+                'moduleHeaderIcon': '', 
+                'moduleBasicText': '',
+                'showPersonas': true,            
+                'verbos': {
+                    'estudiar': ['estud<span class="heavy-text">ie</span>','estudies','estudie', 'estudiemos','estudiéis', 'estudien']
+               }
+                
+            },
+            {
+                'activityModuleType': 'verbChart',
+                'activityOrder': 4,
+                'moduleHeaderText' : 'Presente de subjuntivo',
+                'moduleHeaderIcon': '', 
+                'moduleBasicText': '',
+                'showPersonas': true,            
+                'verbos': {
+                    'estudiar': ['estud<span class="heavy-text">ie</span>','estudies','estudie', 'estudiemos','estudiéis', 'estudien'],
+                    'comer': ['coma','comas','coma', 'comamos','comáis', 'coman']
+               }
+                
+            },
+            {
+                'activityModuleType': 'introConcept',
+                'activityOrder': 5,
+                'cardTitle': 'This is cardtitle',
+                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+            },
+        ]
+    },
     
 ]
 // Update database from array of activities 

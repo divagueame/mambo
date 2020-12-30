@@ -13,6 +13,7 @@ import wordsTable from './wordsTable.js';
 import blankSentences from './blankSentences.js';
 import multipleChoicePlusAnswers from './multipleChoicePlusAnswers.js';
 import videoActivity from './videoActivity.js';
+import verbChart from './verbChart.js';
 
 
 
@@ -34,7 +35,8 @@ const activitiesModule = (() => {
       slider,
       wordsTable,
       multipleChoicePlusAnswers,
-      videoActivity
+      videoActivity,
+      verbChart
     };
   })();
 

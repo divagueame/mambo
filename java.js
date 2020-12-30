@@ -10,10 +10,10 @@ import activitiesModule from './modules/activitiesModule.js';
 import generateFrecuencyList from './generateFrecuencyList.js';
 
 
-let activeLessonId = [1,1];
+let activeLessonId = [3,1];
 const lessonContainer = document.querySelector(".lessonContainer")
  
-// setTimeout(lessonActivitiesDb,  800)
+setTimeout(lessonActivitiesDb,  800)
 
 
 
@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            // renderLesson(activeLessonId[0],activeLessonId[1]);
-            renderInitialPage()
+            renderLesson(activeLessonId[0],activeLessonId[1]);
+            // renderInitialPage()
             // generateFrecuencyList()
             
             renderUserNavBarButtons();

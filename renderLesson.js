@@ -13,6 +13,8 @@ import generateFooter from './modules/generateFooter.js';
 import readLessonsFromDb from './readLessonsFromDb.js';
 import activitiesModule from './modules/activitiesModule.js'
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
+import verbChart from './modules/verbChart.js'
+
 
 
 export default function renderLesson(level, lesson) {
@@ -39,6 +41,7 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="tutorWritingActivity"){
                 activitiesModule.tutorWritingActivity(activityObj)
             }
+
             if(activityObj.activityModuleType=="exampleCards"){
                 activitiesModule.exampleCards(activityObj)
             }
@@ -59,6 +62,9 @@ export default function renderLesson(level, lesson) {
             }
             if(activityObj.activityModuleType=="videoActivity"){
                 activitiesModule.videoActivity(activityObj)
+            }
+            if(activityObj.activityModuleType=="verbChart"){
+                activitiesModule.verbChart(activityObj)
             }
 
         });
