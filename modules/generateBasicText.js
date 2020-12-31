@@ -22,6 +22,11 @@ moduleContainer.innerHTML = `
 <p class="">It's important to remember the gender of the words as other elements related to them will agree accordingly.</p>
 <div class="divider"></div>
 `; 
+moduleContainer.innerHTML = `
+<p class="text-flow">${obj.p1}</p>
+<p class="text-flow">${obj.p2}</p>
+<p class="">${obj.p3}</p>
+  `;
 
 moduleDiv.appendChild(moduleHeaderDiv);
 moduleDiv.appendChild(moduleContainer);

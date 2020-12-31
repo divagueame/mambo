@@ -1,5 +1,4 @@
 import moduleHeader from './moduleHeader.js'
-import displayAudio from './displayAudio.js';
 
 export default function verbChart(obj, targetDom) {
 
@@ -11,15 +10,38 @@ export default function verbChart(obj, targetDom) {
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
 moduleDiv.classList.add("section");
-// moduleDiv.classList.add("container");
+
 let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
 
 let moduleContainer = document.createElement('div')
 moduleContainer.classList.add('row')
+let collapsibleUl = document.createElement("ul")
+collapsibleUl.classList.add('collapsible','popout')
+moduleContainer.appendChild(collapsibleUl)
+let collapsibleLi = document.createElement("li")
+if(obj['openOnInit']==true){
+  collapsibleLi.classList.add('active')
+}
 
-const personas = ['yo', 'tú','el/ella/usted','nosotros/nosotras','vosotros/vosotras','ellos/ellas/ustedes']
+let collapsibleHeaderColor = 'white'
+if(obj['collapsibleHeaderColor']!=""){
+  collapsibleHeaderColor = obj['collapsibleHeaderColor']
+}
+let collapsibleHeaderColorChange = 'lighten-1';
+if(obj['collapsibleHeaderColorChange']!=""){
+  collapsibleHeaderColorChange = obj['collapsibleHeaderColorChange']
+}
+const personas = ['yo', 'tú','el/ella/usted','nosotros/nosotras','vosotros/vosotras','ellos/ellas/ustédes']
 let verbCounter = Object.values(obj['verbos']).length;
+let collapsibleHeader = document.createElement('div')
+collapsibleHeader.classList.add("collapsible-header",collapsibleHeaderColor,collapsibleHeaderColorChange)
+collapsibleHeader.innerHTML = `<i class="material-icons">${obj['tableTriggerIcon']}</i>`
+collapsibleHeader.innerHTML += obj['tableTriggerText']
+let collapsibleBody = document.createElement('div')
+collapsibleBody.classList.add("collapsible-body")
+
 let table = document.createElement('table')
+table.classList.add('striped')
 let tableHead = document.createElement('thead')
 let newTr =  document.createElement('tr');
 let newTh =  document.createElement('th');
@@ -47,62 +69,44 @@ for(let i=0;i<6;i++){
   }
   tableBody.appendChild(newTr)
 }
-// personasDiv.classList.add('col','s2', 'brown', 'lighten-4');
+collapsibleBody.appendChild(table)
+collapsibleLi.appendChild(collapsibleHeader)
+collapsibleLi.appendChild(collapsibleBody)
+collapsibleUl.appendChild(collapsibleLi)
+moduleContainer.appendChild(collapsibleUl)
 
-moduleContainer.appendChild(table)
 
-// table.innerHTML = `
-// 	<caption>Table 1</caption>
-// 	<thead>
-// 	<tr>
-// 		<th><br></th>
-// 		<th>Comer</th>
-// 		<th>Vivir3</th>
-// 		<th>Header 4</th>
-// 	</tr>
-// 	</thead>
-// 	<tbody>
-// 	<tr>
-// 		<td>Yo</td>
-// 		<td>&nbsp;1</td>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 	</tr>
-// 	<tr>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;2</td>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 	</tr>
-// 	<tr>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;3</td>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 	</tr>
-// 	<tr>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;5</td>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 	</tr>
-// 	<tr>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 	</tr>
-// 	<tr>
-// 		<td>&nbsp;</td>
-// 		<td>&nbsp;</td>
-// 		<td>&sd;</td>
-// 		<td>sd</td>
-// 	</tr>
-// 	<tbody>
-// `; 
+
 
 moduleDiv.appendChild(moduleHeaderDiv);
 moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
-
+var elems = document.querySelectorAll('.collapsible');
+M.Collapsible.init(elems, {});
 }
+
+
+
+
+
+
+
+
+
+
+/////SAMPLE OBJ
+// {
+//   'activityModuleType': 'verbChart',
+//   'activityOrder': 2,
+//   'moduleHeaderText' : '',
+//   'moduleHeaderIcon': '', 
+//   'moduleBasicText': '',
+//   'showPersonas': true,
+//   'openOnInit': false,    
+//   'tableTriggerText': 'Verbos regulares',
+//   'verbos': {
+//       'estudiar': ['estud<span class="heavy-text">ie</span>','estud<span class="heavy-text">ies</span>','estud<span class="heavy-text">ie</span>', 'estud<span class="heavy-text">iemos</span>','estud<span class="heavy-text">iéis</span>', 'estud<span class="heavy-text">ien</span>'],
+//       'comer': ['com<span class="heavy-text">a</span>','com<span class="heavy-text">as</span>','com<span class="heavy-text">a</span>', 'com<span class="heavy-text">amos</span>','com<span class="heavy-text">áis</span>', 'co<span class="heavy-text">man</span>'],
+//       'escribir': ['escrib<span class="heavy-text">a','escrib<span class="heavy-text">as</span>','escrib<span class="heavy-text">a</span>', 'escrib<span class="heavy-text">amos</span>','escrib<span class="heavy-text">áis</span>', 'escrib<span class="heavy-text">an</span>']
+//  }
+// },

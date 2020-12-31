@@ -57,7 +57,9 @@ body {
     font-size: 1.1rem !important;
     line-height: 1.9rem !important;
   }
-
+  .heavy-text {
+      font-weight: 700;
+  }
   .examples{
       background-color: #f5cb5c;
       padding: 1rem;

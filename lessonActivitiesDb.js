@@ -440,7 +440,7 @@ let lessonsArray = [
         'level': 3,
         'lessonNumber': 1,
         'lessonTitle': 'Presente de subjuntivo',
-        // 
+        
         'activitiesArray': [
             {
                 'activityModuleType': 'renderLessonTitle',
@@ -448,46 +448,38 @@ let lessonsArray = [
                 'title': "Presente de subjuntivo",
                 'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
             },
-            
-            {
-                'activityModuleType': 'verbChart',
+                        {
+                'activityModuleType': 'generateBasicText',
                 'activityOrder': 2,
-                'moduleHeaderText' : 'Verbos regulares',
-                'moduleHeaderIcon': '', 
-                'moduleBasicText': '',
-                'showPersonas': true,            
-                'verbos': {
-                    'estudiar': ['estud<span class="heavy-text">ie</span>','estudies','estudie', 'estudiemos','estudiéis', 'estudien'],
-                    'comer': ['coma','comas','coma', 'comamos','comáis', 'coman'],
-                    'escribir': ['escriba','escribas','escriba', 'escribamos','escribáis', 'escriban']
-               }
-                
+                'title': "Masculino o femenino",
+                'moduleHeaderText':  '1.1 Male and female nouns. El vs. La',
+                'moduleHeaderIcon': 'widgets',
+                'p1': 'asdfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asdf sda',
+                'p2': 'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds',
+                'p3':'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds',
             },
             {
                 'activityModuleType': 'verbChart',
                 'activityOrder': 3,
                 'moduleHeaderText' : '',
-                'moduleHeaderIcon': 'send', 
+                'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
-                'showPersonas': true,            
+                'showPersonas': true,
+                'openOnInit': true,    
+                'tableTriggerText': 'Verbos regulares', 
+                'collapsibleHeaderColor': '',
+                'collapsibleHeaderColorChange': 'lighten-2',
+                'tableTriggerIcon': 'add',   
                 'verbos': {
-                    'estudiar': ['estud<span class="heavy-text">ie</span>','estudies','estudie', 'estudiemos','estudiéis', 'estudien']
+                    'estudiar': ['estud<span class="heavy-text">ie</span>','estud<span class="heavy-text">ies</span>','estud<span class="heavy-text">ie</span>', 'estud<span class="heavy-text">iemos</span>','estud<span class="heavy-text">iéis</span>', 'estud<span class="heavy-text">ien</span>'],
+                    'comer': ['com<span class="heavy-text">a</span>','com<span class="heavy-text">as</span>','com<span class="heavy-text">a</span>', 'com<span class="heavy-text">amos</span>','com<span class="heavy-text">áis</span>', 'co<span class="heavy-text">man</span>'],
+                    'escribir': ['escrib<span class="heavy-text">a','escrib<span class="heavy-text">as</span>','escrib<span class="heavy-text">a</span>', 'escrib<span class="heavy-text">amos</span>','escrib<span class="heavy-text">áis</span>', 'escrib<span class="heavy-text">an</span>']
                }
-                
             },
-            {
-                'activityModuleType': 'verbChart',
-                'activityOrder': 4,
-                'moduleHeaderText' : 'Presente de subjuntivo',
-                'moduleHeaderIcon': 'add', 
-                'moduleBasicText': '',
-                'showPersonas': true,            
-                'verbos': {
-                    'estudiar': ['estud<span class="heavy-text">ie</span>','estudies','estudie', 'estudiemos','estudiéis', 'estudien'],
-                    'comer': ['coma','comas','coma', 'comamos','comáis', 'coman']
-               }
-                
-            },
+            
+            
+
+
             {
                 'activityModuleType': 'introConcept',
                 'activityOrder': 5,
