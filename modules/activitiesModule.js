@@ -14,6 +14,8 @@ import blankSentences from './blankSentences.js';
 import multipleChoicePlusAnswers from './multipleChoicePlusAnswers.js';
 import videoActivity from './videoActivity.js';
 import verbChart from './verbChart.js';
+import wildCard from './wildCard.js';
+
 
 
 
@@ -36,7 +38,8 @@ const activitiesModule = (() => {
       wordsTable,
       multipleChoicePlusAnswers,
       videoActivity,
-      verbChart
+      verbChart,
+      wildCard
     };
   })();
 

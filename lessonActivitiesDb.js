@@ -451,12 +451,15 @@ let lessonsArray = [
                         {
                 'activityModuleType': 'generateBasicText',
                 'activityOrder': 2,
-                'title': "Masculino o femenino",
-                'moduleHeaderText':  '1.1 Male and female nouns. El vs. La',
-                'moduleHeaderIcon': 'widgets',
-                'p1': 'asdfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asfasdf asdf sda',
-                'p2': 'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds',
-                'p3':'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds',
+                'moduleHeaderText':  '',
+                'moduleHeaderIcon': '',
+                'paragraphs': 
+                    [
+                        'Spanish verbs can be a pain in the ass sometimes until you start figuring it out and go ahhhhh... Have a look at the following text and notice the verb forms used in it.',
+                        'loremia  <span class="heavy-text">loremia</span> loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds',
+                        'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds'
+                    ],
+                'highlightedParagraphs': [false,true,false]
             },
             {
                 'activityModuleType': 'verbChart',
@@ -475,6 +478,14 @@ let lessonsArray = [
                     'comer': ['com<span class="heavy-text">a</span>','com<span class="heavy-text">as</span>','com<span class="heavy-text">a</span>', 'com<span class="heavy-text">amos</span>','com<span class="heavy-text">áis</span>', 'co<span class="heavy-text">man</span>'],
                     'escribir': ['escrib<span class="heavy-text">a','escrib<span class="heavy-text">as</span>','escrib<span class="heavy-text">a</span>', 'escrib<span class="heavy-text">amos</span>','escrib<span class="heavy-text">áis</span>', 'escrib<span class="heavy-text">an</span>']
                }
+            },
+            {
+                'activityModuleType': 'wildCard',
+                'activityOrder': 4,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '', 
+                'moduleBasicText': '',
+                'html': `<div class="center"><a href="http://www.elpais.com"><button class="btn-large">WILDCARD BITCH</button></a></div>`
             },
             
             

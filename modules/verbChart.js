@@ -9,7 +9,7 @@ export default function verbChart(obj, targetDom) {
   // Create the new element
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
-moduleDiv.classList.add("section");
+
 
 let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
 

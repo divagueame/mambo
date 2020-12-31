@@ -66,6 +66,9 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="verbChart"){
                 activitiesModule.verbChart(activityObj)
             }
+            if(activityObj.activityModuleType=="wildCard"){
+                activitiesModule.wildCard(activityObj)
+            }
 
         });
         activitiesModule.generateFooter();

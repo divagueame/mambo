@@ -2,33 +2,38 @@ import moduleHeader from './moduleHeader.js'
 import displayAudio from './displayAudio.js';
 
 export default function generateBasicText(obj, targetDom) {
-
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
       targetDomDefault = document.querySelector(targetDom);
   }
-  // Create the new element
+  
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
-moduleDiv.classList.add("section");
-// moduleDiv.classList.add("container");
-let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
+if(obj['moduleHeaderText']!=""){
+  let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
+  moduleDiv.appendChild(moduleHeaderDiv);
+}
 
 let moduleContainer = document.createElement('div')
-moduleContainer.innerHTML = `
-<p class="justified">As a general rule, male nouns end by -o and female nouns end by -a.
-<p class="examples"><span class="heavyText">Male nouns:</span>  el edificio, el boligrafo, el dinero, el vaso...</p>
-<p  class="examples"><span class="heavyText">Female nouns: </span>la casa, la mesa, la taza, la ventana... </p>
-<p class="">It's important to remember the gender of the words as other elements related to them will agree accordingly.</p>
-<div class="divider"></div>
-`; 
-moduleContainer.innerHTML = `
-<p class="text-flow">${obj.p1}</p>
-<p class="text-flow">${obj.p2}</p>
-<p class="">${obj.p3}</p>
-  `;
+// moduleContainer.innerHTML = `
+// <p class="justified">As a general rule, male nouns end by -o and female nouns end by -a.
+// <p class="examples"><span class="heavyText">Male nouns:</span>  el edificio, el boligrafo, el dinero, el vaso...</p>
+// <p  class="examples"><span class="heavyText">Female nouns: </span>la casa, la mesa, la taza, la ventana... </p>
+// <p class="">It's important to remember the gender of the words as other elements related to them will agree accordingly.</p>
+// <div class="divider"></div>
+// `; 
+moduleContainer.innerHTML = ``
+obj['paragraphs'].forEach((p,i) => {
+  let highlightClass = ""
+  if(obj['highlightedParagraphs'][i]){
+    highlightClass = "highlightP"
+  }
+  moduleContainer.innerHTML += `<p class="justified text-flow ${highlightClass}">${p}</p>`
+});
 
-moduleDiv.appendChild(moduleHeaderDiv);
+
+
+
 moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
 //* <div id="audioContainer1" class="col s4 grey"></div> */
