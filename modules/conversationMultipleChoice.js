@@ -81,11 +81,17 @@ function renderCurrentSentence(){
 if(Object.values(thisConversationObj).length>currentSentence){
   if(typeof Object.values(thisConversationObj)[currentSentence]['sentence']=="string"){// console.log("String. Hold and continue to next")
     sentenceDiv.innerHTML = Object.values(thisConversationObj)[currentSentence]['sentence']
+    sentenceDiv.classList.add("shadow")
+    if(Object.values(thisConversationObj)[currentSentence]['speaker']==1){
+      sentenceDiv.classList.add("speaker1")
+    }else{
+      sentenceDiv.classList.add("speaker2")
+    }
     conversationDiv.appendChild(sentenceDiv)
     setTimeout(() => {
       currentSentence++;
       renderCurrentSentence()
-    }, 200);
+    }, 2000);
   }else{ // console.log("Array. Stop! QUestion time")
     let options = Object.values(thisConversationObj)[currentSentence]['sentence']
     let rightAnswer = options[0];
@@ -99,7 +105,7 @@ if(Object.values(thisConversationObj).length>currentSentence){
 
     // console.log(rightAnswer,rightAnswerPosition,options)
     showQuestion(options,rightAnswerPosition)
-
+    currentSentence++;
     // conversationDiv.appendChild(sentenceDiv)
   } 
 }else{///FInished all sentences. Show toast with total answers
@@ -108,51 +114,37 @@ if(Object.values(thisConversationObj).length>currentSentence){
 }
   
 function showQuestion(options,rightAnswerPosition){
-  // console.log(options)
-  let optionsForm = document.createElement('ul');
-  optionsForm.classList.add("conversationMultipleChoiceForm","center")
+  let optionsUl = document.createElement('ul');
+  optionsUl.classList.add("conversationMultipleChoiceForm","center")
   options.forEach(function(option,i){
     let li = document.createElement("li") 
-    li.classList.add("userChoiceBtn")
-    li.innerHTML = option;
+    li.classList.add("userChoiceBtn","valign-wrapper")
+    li.innerHTML = `<i class="material-icons tiny">chevron_right</i>${option}`;
     
-    optionsForm.appendChild(li)
+    optionsUl.appendChild(li)
     li.addEventListener('click',function(){
-      console.log("Yesss",i )
-      checkAnswer(i,rightAnswerPosition)}
+      // checkAnswer(i,rightAnswerPosition)
+      if(i==rightAnswerPosition){
+        //Show feedback
+        let feedback = `<i class="material-icons tiny green-text">check</i>Correcto`
+        M.toast({html: feedback})
+        optionsUl.innerHTML = ``;
+        optionsUl.appendChild(li);
+        setTimeout(() => {
+          optionsUl.innerHTML = ``;
+          renderCurrentSentence()
+        }, 1000);
+      }else{
+        let feedback = `<i class="material-icons tiny red-text">close</i>Incorrecto`
+        M.toast({html: feedback})
+      }
+    }
       )
   })
   
-  userAnswerDiv.appendChild(optionsForm)
+  userAnswerDiv.appendChild(optionsUl)
 
 }
-// function showQuestion(options,rightAnswerPosition){
-//   // console.log(options)
-//   let optionsForm = document.createElement('form');
-//   optionsForm.setAttribute("action","#")
-//   optionsForm.classList.add("conversationMultipleChoiceForm","center")
-//   options.forEach(function(option,i){
-//     let labelEl = document.createElement("label") 
-//     let input = document.createElement("input")
-//     labelEl.classList.add("userChoiceBtn","center")
-//     input.setAttribute("type","radio")
-//     input.setAttribute("name","conversationMultipleChoiceFormOptions")
-    
-//     let textOption = document.createElement("span")
-//         textOption.innerHTML = option;
-//         labelEl.appendChild(input)
-//         labelEl.appendChild(textOption)
-//     optionsForm.appendChild(labelEl)
-//     labelEl.addEventListener('click',function(){
-//       console.log("Yesss",i )
-//       checkAnswer(i,rightAnswerPosition)}
-//       )
-//   })
-  
-//   userAnswerDiv.appendChild(optionsForm)
-
-// }
-
 moduleContainer.appendChild(userAnswerDiv)
 moduleContainer.appendChild(conversationDiv)
 moduleDiv.appendChild(moduleContainer);
@@ -168,7 +160,6 @@ function shuffleArray(array) {
       array[i] = array[j];
       array[j] = temp;
   }
-
 }
 
 function checkAnswer(i,rightAnswerPosition){
