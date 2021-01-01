@@ -15,6 +15,7 @@ import multipleChoicePlusAnswers from './multipleChoicePlusAnswers.js';
 import videoActivity from './videoActivity.js';
 import verbChart from './verbChart.js';
 import wildCard from './wildCard.js';
+import conversationMultipleChoice from './conversationMultipleChoice.js';
 
 
 
@@ -39,7 +40,8 @@ const activitiesModule = (() => {
       multipleChoicePlusAnswers,
       videoActivity,
       verbChart,
-      wildCard
+      wildCard,
+      conversationMultipleChoice
     };
   })();
 

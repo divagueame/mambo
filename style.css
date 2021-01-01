@@ -63,7 +63,59 @@ body {
   .highlightP{
       background-color: #f5cb5c;
       padding: 1rem;
+      white-space: pre-line
   }
+  .underline{
+      text-decoration: underline;
+  }
+  .biggerText{
+      font-size: 2rem;
+  }
+
+  /* Conversation Multiple Choice */
+  form.conversationMultipleChoiceForm{
+    
+  }
+  form.conversationMultipleChoiceForm [type="radio"]:checked+span:before {
+      /* background-color:none !important; */
+  }
+  form.conversationMultipleChoiceForm [type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after{
+      /* border: 0px solid white !important; */
+      display:none !important
+  }
+  form.conversationMultipleChoiceForm[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after{
+      /* display: none !important; */
+  }
+
+  form.conversationMultipleChoiceForm[type="radio"]:checked+span:before{
+    /* border: 0px solid white !important; */
+  }
+  form.conversationMultipleChoiceForm[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
+      /* background-color: none !important; */
+  }
+  form.conversationMultipleChoiceForm[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after{
+    /* background-color: none; */
+    /* border: 0px solid white !important; */
+  }
+  
+form.conversationMultipleChoiceForm [type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after{
+    background-color: transparent;
+}
+form.conversationMultipleChoiceForm [type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after {
+    border: 0px solid white !important;
+}
+
+form.conversationMultipleChoiceForm {
+    border: 2px black dotted;
+    /* margin: 22rem; */
+}
+form.conversationMultipleChoiceForm .userChoiceBtn{
+    /* background-color: red; */
+    /* padding: 1rem; */
+    /* margin:1rem */
+}
+
+
   .exampleCards{
     /* border: white 6px dotted; */
     color: white;

@@ -448,22 +448,102 @@ let lessonsArray = [
                 'title': "Presente de subjuntivo",
                 'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
             },
-                        {
-                'activityModuleType': 'generateBasicText',
+            {
+                'activityModuleType': 'conversationMultipleChoice',
                 'activityOrder': 2,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '',
+                'section': false,
+                'margin': false,
+                'moduleBasicText': '',
+                'speaker1image': ``,
+                'speaker2image': ``,
+                'speaker1Name': 'Pepe',
+                'speaker2Name': 'Michael',
+                'conversation':                                    
+                `                   
+– Buenos días. ¿Tienen habitaciones libres?
+2– ¿Para cuándo? ¿Para esta noche?   
+– No, es para la noche del 28. 
+2 – ¿Cuántas noches se van a quedar?
+– Tres noches.%Cuatro coches.%Dos pelotas.
+2– ¿Cuántas personas son? 
+2¿Qué habitaciones quieren?
+– Mire, somos una pareja con un niño.
+2– ¿Cuántos años tiene el niño?
+– Diez.%Veinte.%Joder.%nueve.
+`
+
+                
+
+            }, 
+            {
+                'activityModuleType': 'videoActivity',
+                'activityOrder': 3,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': 'ondemand_video',
+                'onlyAddVideo': true,
+                'section': false,
+                'margin': false,
+                'moduleBasicText': '',
+                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube.com/embed/nrUL1m2aDmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            }, 
+            
+            {
+                'activityModuleType': 'generateBasicText',
+                'activityOrder': 4,
                 'moduleHeaderText':  '',
                 'moduleHeaderIcon': '',
                 'paragraphs': 
-                    [
-                        'Spanish verbs can be a pain in the ass sometimes until you start figuring it out and go ahhhhh... Have a look at the following text and notice the verb forms used in it.',
-                        'loremia  <span class="heavy-text">loremia</span> loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds',
-                        'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds'
-                    ],
-                'highlightedParagraphs': [false,true,false]
+        [
+            'Spanish verbs can be a pain in the ass sometimes until you start figuring it out and go ahhhhh... Have a look at the following text and notice the verb forms used in it.',
+            `<span class="heavy-text underline biggerText center">Esperaré</span>
+
+            A que <span class="heavy-text underline">sientas</span> lo mismo que yo
+            A que la luna la <span class="heavy-text underline">mires</span> del mismo color
+            Esperaré
+            
+            Que <span class="heavy-text">adivines</span> mis versos de amor
+            A que en mis brazos <span class="heavy-text underline">encuentres</span> calor
+            Esperaré
+            A que <span class="heavy-text underline">vayas</span> por donde yo voy
+            A que tu alma me <span class="heavy-text underline">des</span> como yo te la doy
+            Esperaré
+            A que <span class="heavy-text">aprendas</span> de noche a soñar
+            A que de pronto me <span class="heavy-text underline">quieras</span> besar
+            
+            Esperaré
+            Que la manos me <span class="heavy-text underline">quieras</span> tomar
+            Que en tu recuerdo
+            Me <span class="heavy-text underline">quieras</span> por siempre llevar
+            Que mi presencia sea
+            El mundo que <span class="heavy-text underline">quieras</span> sentir
+            Que un día no <span class="heavy-text underline">puedas</span> sin mi amor vivir
+            
+            Esperaré a que <span class="heavy-text underline">sientas</span> nostalgia por mi
+            A que me <span class="heavy-text underline">pidas</span> que no me separe de ti
+            Tal ves jamás <span class="heavy-text underline">seas</span> tú de mi
+            Más yo mi amor te esperaré
+            
+            Que mi presencia <span class="heavy-text underline">sea</span>
+            El mundo que <span class="heavy-text underline">quieras</span> sentir
+            Que un día no <span class="heavy-text underline">puedas</span> sin mi amor vivir
+            
+            Esperaré a que <span class="heavy-text underline">sientas</span> nostalgia por mi
+            A que me <span class="heavy-text underline">pidas</span> que no me <span class="heavy-text underline">separe</span> de ti
+            Tal ves jamás <span class="heavy-text underline">seas</span> tú de mi
+            Más yo mi amor te esperaré
+            
+            Más yo mi amor esperaré
+            Esperaré
+            `,
+            'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds'
+        ],
+        'highlightedParagraphs': [false,true,false]
             },
             {
                 'activityModuleType': 'verbChart',
-                'activityOrder': 3,
+                'activityOrder': 5,
                 'moduleHeaderText' : '',
                 'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
@@ -481,7 +561,7 @@ let lessonsArray = [
             },
             {
                 'activityModuleType': 'wildCard',
-                'activityOrder': 4,
+                'activityOrder': 6,
                 'moduleHeaderText' : '',
                 'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
@@ -493,7 +573,7 @@ let lessonsArray = [
 
             {
                 'activityModuleType': 'introConcept',
-                'activityOrder': 5,
+                'activityOrder': 7,
                 'cardTitle': 'This is cardtitle',
                 'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
             },

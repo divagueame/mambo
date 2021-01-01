@@ -69,6 +69,9 @@ export default function renderLesson(level, lesson) {
             if(activityObj.activityModuleType=="wildCard"){
                 activitiesModule.wildCard(activityObj)
             }
+            if(activityObj.activityModuleType=="conversationMultipleChoice"){
+                activitiesModule.conversationMultipleChoice(activityObj)
+            }
 
         });
         activitiesModule.generateFooter();
