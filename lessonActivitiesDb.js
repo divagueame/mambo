@@ -456,8 +456,8 @@ let lessonsArray = [
                 'section': false,
                 'margin': false,
                 'moduleBasicText': '',
-                'speaker1image': ``,
-                'speaker2image': ``,
+                'speaker1image': `./lessons/3.1/img/man.jpg`,
+                'speaker2image': `./lessons/3.1/img/woman.jpg`,
                 'speaker1Name': 'Pepe',
                 'speaker2Name': 'Michael',
                 'conversation':                                    
@@ -478,16 +478,13 @@ let lessonsArray = [
 
             }, 
             {
-                'activityModuleType': 'videoActivity',
+                'activityModuleType': 'wildCard',
                 'activityOrder': 3,
                 'moduleHeaderText' : '',
-                'moduleHeaderIcon': 'ondemand_video',
-                'onlyAddVideo': true,
-                'section': false,
-                'margin': false,
+                'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
-                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube.com/embed/nrUL1m2aDmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-            }, 
+                'html': `<div class="center"><a href="http://www.elpais.com"><button class="btn-large">WILDCARD BITCH</button></a></div>`
+            },
             
             {
                 'activityModuleType': 'generateBasicText',
@@ -560,13 +557,17 @@ let lessonsArray = [
                }
             },
             {
-                'activityModuleType': 'wildCard',
+                'activityModuleType': 'videoActivity',
                 'activityOrder': 6,
                 'moduleHeaderText' : '',
-                'moduleHeaderIcon': '', 
+                'moduleHeaderIcon': 'ondemand_video',
+                'onlyAddVideo': true,
+                'section': false,
+                'margin': false,
                 'moduleBasicText': '',
-                'html': `<div class="center"><a href="http://www.elpais.com"><button class="btn-large">WILDCARD BITCH</button></a></div>`
-            },
+                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube.com/embed/nrUL1m2aDmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            }, 
+
             
             
 

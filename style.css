@@ -73,59 +73,106 @@ body {
   }
 
   /* Conversation Multiple Choice */
-  .speaker1{
-    /* background-color: hotpink; */
-    /* margin: 1rem; */
-}
-.speaker2{
-    /* background-color: hotpink; */
-}
 
-
-.speaker1, .speaker2 {
-	/* // layout */
-	position: relative;
-	/* max-width: 30em; */
-	
-	/* // looks */
-	/* background-color: #fff; */
-	padding: 1.125em 1.5em;
-	/* font-size: 1.25em; */
-	border-radius: 1rem;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+  .caption div {
+    box-shadow: 0 0 5px #C8C8C8;
+    transition: all 0.3s ease 0s;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.img-circle {
+    border-radius: 0;
 }
 
-.speaker1::before, .speaker2::before {
-	/* // layout */
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 0;
-	bottom: 100%;
-    left: 1.5em;
-     /* // offset should move with padding of parent */
-	border: .75rem solid transparent;
-	border-top: none;
-
-	/* // looks */
-	border-bottom-color: #fff;
-	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
 }
-.speaker2::before {
-    left: 21.5em;
+.img-circle {
+    border-radius: 50%;
 }
-
-
-form.conversationMultipleChoiceForm {
-    border: 2px black dotted;
-    /* margin: 22rem; */
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
 }
-.conversationMultipleChoiceForm .userChoiceBtn{
+.sideBorders{
+    margin-left: 3px black solid !important;
+}
+.conversationMultipleChoiceUl{
+    border-left: 1px black solid
+}
+.answerBubble1 {
+    /* margin: .31rem; */
     cursor: pointer;
+    background:  rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 10px;
+    -webkit-filter: drop-shadow(1px 2px 10px rgb(221, 221, 221));
+    filter        : drop-shadow(1px 2px 3px rgb(206, 206, 206));
 }
-.conversationMultipleChoiceForm .userChoiceBtn:hover{
-    background-color: rgb(192, 192, 192);
+.answerBubble{
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 10px;
+    background:  rgb(255, 255, 255);
+    -webkit-filter: drop-shadow(1px 2px 10px rgb(221, 221, 221));
+    filter        : drop-shadow(1px 2px 3px rgb(206, 206, 206));
 }
+
+.answerBubble:hover{
+    background:  rgb(245, 255, 228);
+}
+.answerBubbleCorrect {
+    background:  rgb(225, 255, 176);
+}
+.speaker1, .speaker2 {
+    padding: 1rem;
+/* width: 120px; */
+/* height: 80px; */
+background:  rgb(255, 255, 255);;
+position: relative;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+-webkit-filter: drop-shadow(1px 2px 10px rgb(221, 221, 221));
+  filter        : drop-shadow(1px 2px 3px rgb(206, 206, 206));
+  
+
+}
+
+.speaker1::before {
+content: "";
+position: absolute;
+right: 100%;
+top: 26px;
+width: 0;
+height: 0;
+border-top: 13px solid transparent;
+border-right: 26px solid rgb(255, 255, 255);
+border-bottom: 13px solid transparent;
+
+}
+.speaker2::after {
+    content: "";
+    position: absolute;
+    /* right: 100%; */
+    left:100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-left: 26px solid rgb(255, 255, 255);
+    border-bottom: 13px solid transparent;
+    
+}
+
 
   .exampleCards{
     /* border: white 6px dotted; */
