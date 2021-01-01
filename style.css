@@ -109,12 +109,15 @@ form.conversationMultipleChoiceForm {
     border: 2px black dotted;
     /* margin: 22rem; */
 }
-form.conversationMultipleChoiceForm .userChoiceBtn{
-    /* background-color: red; */
+.conversationMultipleChoiceForm .userChoiceBtn{
+    cursor: pointer;
+    background-color: red;
     /* padding: 1rem; */
     /* margin:1rem */
 }
-
+.conversationMultipleChoiceForm .userChoiceBtn:hover{
+    border: 2px black solid;
+}
 
   .exampleCards{
     /* border: white 6px dotted; */
