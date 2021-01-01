@@ -73,37 +73,48 @@ body {
   }
 
   /* Conversation Multiple Choice */
-  form.conversationMultipleChoiceForm{
-    
-  }
-  form.conversationMultipleChoiceForm [type="radio"]:checked+span:before {
-      /* background-color:none !important; */
-  }
-  form.conversationMultipleChoiceForm [type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after{
-      /* border: 0px solid white !important; */
-      display:none !important
-  }
-  form.conversationMultipleChoiceForm[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after{
-      /* display: none !important; */
-  }
+  .speaker1{
+    /* background-color: hotpink; */
+    /* margin: 1rem; */
+}
+.speaker2{
+    /* background-color: hotpink; */
+}
 
-  form.conversationMultipleChoiceForm[type="radio"]:checked+span:before{
-    /* border: 0px solid white !important; */
-  }
-  form.conversationMultipleChoiceForm[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
-      /* background-color: none !important; */
-  }
-  form.conversationMultipleChoiceForm[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after{
-    /* background-color: none; */
-    /* border: 0px solid white !important; */
-  }
-  
-form.conversationMultipleChoiceForm [type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after{
-    background-color: transparent;
+
+.speaker1, .speaker2 {
+	/* // layout */
+	position: relative;
+	/* max-width: 30em; */
+	
+	/* // looks */
+	/* background-color: #fff; */
+	padding: 1.125em 1.5em;
+	/* font-size: 1.25em; */
+	border-radius: 1rem;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
 }
-form.conversationMultipleChoiceForm [type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after {
-    border: 0px solid white !important;
+
+.speaker1::before, .speaker2::before {
+	/* // layout */
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 100%;
+    left: 1.5em;
+     /* // offset should move with padding of parent */
+	border: .75rem solid transparent;
+	border-top: none;
+
+	/* // looks */
+	border-bottom-color: #fff;
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }
+.speaker2::before {
+    left: 21.5em;
+}
+
 
 form.conversationMultipleChoiceForm {
     border: 2px black dotted;
@@ -111,12 +122,9 @@ form.conversationMultipleChoiceForm {
 }
 .conversationMultipleChoiceForm .userChoiceBtn{
     cursor: pointer;
-    background-color: red;
-    /* padding: 1rem; */
-    /* margin:1rem */
 }
 .conversationMultipleChoiceForm .userChoiceBtn:hover{
-    border: 2px black solid;
+    background-color: rgb(192, 192, 192);
 }
 
   .exampleCards{
