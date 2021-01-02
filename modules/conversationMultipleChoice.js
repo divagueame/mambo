@@ -2,6 +2,8 @@ import moduleHeader from './moduleHeader.js'
 import displayAudio from './displayAudio.js';
 
 let currentSentence = 0;
+let mistakesCounter  = 0;
+let questionCounter = 0;
 export default function conversationMultipleChoice(obj, targetDom) {
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
@@ -91,6 +93,10 @@ nextBtn.addEventListener('click',function(){
 renderCurrentSentence()
 
 function renderCurrentSentence(){
+  console.log("Current is",currentSentence, Object.values(thisConversationObj).length)
+  
+///Check if there are more questions left. If there are, check which type. If not, show toast with total correct answers
+if(Object.values(thisConversationObj).length>currentSentence){
   let sentenceWrapper = document.createElement('div');
   sentenceWrapper.classList.add("row",'valign-wrapper')  
 
@@ -111,11 +117,7 @@ function renderCurrentSentence(){
     imageDiv2.classList.add('col','s3','l1')
     imageDiv2.appendChild(img2)
   }
-  if(currentSentence==4){
-    // console.log(imageDiv1,imageDiv2);
-    console.log("Sentence Wrapper", sentenceWrapper)
-    console.log('Currente', currentSentence)
-  }
+
   //Append image and text
   let sentenceDiv = document.createElement('div');
   sentenceDiv.classList.add('col','s9','l11')
@@ -132,8 +134,6 @@ function renderCurrentSentence(){
     sentenceWrapper.appendChild(imageDiv2) 
   }
 
-///Check if there are more questions left. If there are, check which type. If not, show toast with total correct answers
-if(Object.values(thisConversationObj).length>currentSentence){
   
   if(typeof Object.values(thisConversationObj)[currentSentence]['sentence']=="string"){// console.log("String. Hold and continue to next")
   textDiv.innerHTML = Object.values(thisConversationObj)[currentSentence]['sentence'];
@@ -145,7 +145,7 @@ if(Object.values(thisConversationObj).length>currentSentence){
       // renderCurrentSentence()
     }, sentenceTime);
   }else{ // console.log("Array. Stop! QUestion time")
-  
+  questionCounter++
     let options = Object.values(thisConversationObj)[currentSentence]['sentence']
     let rightAnswer = options[0];
     let rightAnswerPosition
@@ -206,8 +206,9 @@ function showQuestion(options,rightAnswerPosition){
       li.classList.add("scale-in")
     }, scaleInTimer);
     
-    
+    let mistakeFlag = false;
     li.addEventListener('click',function(){
+
       // checkAnswer(i,rightAnswerPosition)
       if(i==rightAnswerPosition){
         let feedback = `<i class="material-icons tiny green-text">check</i>Correcto`
@@ -224,18 +225,18 @@ function showQuestion(options,rightAnswerPosition){
         conversationDiv.appendChild(sentenceWrapper); 
         speakerImgDiv.classList.add("scale-out")
         optionsUl.classList.add("scale-out")
-                userAnswerDiv.removeChild(speakerImgDiv)
+        userAnswerDiv.removeChild(speakerImgDiv)
         userAnswerDiv.removeChild(optionsUl)
-        
-        setTimeout(() => {
 
-          // currentSentence++;
-          // renderCurrentSentence();
-
-        }, 2200);
       }else{
         let feedback = `<i class="material-icons tiny red-text">close</i>Incorrecto`
         M.toast({html: feedback})
+        
+        if (mistakeFlag==false){
+          mistakesCounter++;
+          mistakeFlag=true
+        }
+        
       }
     }
       )
@@ -247,6 +248,9 @@ function showQuestion(options,rightAnswerPosition){
 }
   } 
 }else{///FInished all sentences. Show toast with total answers
+  let correctAnswers =questionCounter- mistakesCounter;
+  let conversationOverfeedback = `<i class="material-icons tiny red-text">close</i> Se ha acabado la conversación. ${correctAnswers}/${questionCounter}`
+  M.toast({html: conversationOverfeedback})
   nextBtn.innerHTML=`<i class="material-icons black-text">loop</i>`
 }
 }

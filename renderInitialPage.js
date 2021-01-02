@@ -1,4 +1,7 @@
 
+
+import generateSidenav from './modules/generateSidenav.js';
+
 export default function renderInitialPage(){
     const lessonContainer = document.querySelector('.lessonContainer'); 
     
@@ -19,18 +22,18 @@ export default function renderInitialPage(){
     dashboardDiv.appendChild(topSpacer)
     dashboardDiv.appendChild(leftDiv)
     dashboardDiv.appendChild(rightDiv)
-    leftDiv.innerHTML = `
-    <ul>
-    <li>User</li>
-    <li>sdf</li>
-    <li>sdf</li>
-    <li>ads</li>
-    </ul>`
+    // let showlessons = document.createElement("div")
+    // showlessons.innerHTML= `<a href="#"  class="btn-floating white waves-effect waves-light sidenav-trigger btn" data-target="slide-out" ><i class="material-icons black-text">library_books</i></a>`
+    // leftDiv.innerHTML = `
+    // <ul>
+    // <li>User</li>
+    // <li>sdf</li>
+    // <li>sdf</li>
+    // <li>ads</li>
+    // </ul>`
 
-    let html = ``;
-    let html1 = `
-        <h1 class="center">Mambo!</h1>
-        
+    // let html = ``;
+    let html = `        
         <div class="row center">
             <div class="col s4 initButton scale-transition scale-out">
 
@@ -39,33 +42,38 @@ export default function renderInitialPage(){
                 </div>
                 <div>Lessons</div>
             </div>
-            <div class="col s4 initButton scale-transition scale-out">
+            <div class="col s4 initButton scale-transition scale-out yellow">
                 <div class=" scale-transition  scale-out btn-floating btn-large white">POS</div>
                 <div></div>
             </div>
-            <div class="col s4 initButton scale-transition scale-out">
-                
+            <div class="col s4 initButton scale-transition scale-out brown">
                 <div class="btn-floating btn-large white"><i class="material-icons black-text">videogame_asset</i></div>    
                 <div>Drills</div>
             </div>
         </div>
     `
-    // lessonContainer.innerHTML = html;
+    lessonContainer.innerHTML = html;
 
 
 
 
-    // showLastUpdates()
+    showLastUpdates()
 
 function showLastUpdates(){
 
     let updatesDb = [
         {
-            'avatarUrl': 'img/icons/updates/022-schedule.png',
-            'title': 'Many changes!',
-            'text': "I have worked on some tools to update the lessons from the websites instead of hard-coding them. It will take some time until it works well but we'll get there... Today I also added the guest login option and improved the look of the frontpage.",
-            'date': "12/30/2020"
+            'avatarUrl': 'img/icons/updates/017-best employee.png',
+            'title': 'Happy New year!!',
+            'text': "I've been coding the conversations module with multiple choice answers. It's not polished yet but it looks alright.",
+            'date': "2/1/2021"
             },
+            {
+                'avatarUrl': 'img/icons/updates/022-schedule.png',
+                'title': 'Many changes!',
+                'text': "I have worked on some tools to update the lessons from the websites instead of hard-coding them. It will take some time until it works well but we'll get there... Today I also added the guest login option and improved the look of the frontpage.",
+                'date': "12/30/2020"
+                },
             {
                 'avatarUrl': 'img/icons/updates/031-folder.png',
                 'title': 'Corrected margins',
