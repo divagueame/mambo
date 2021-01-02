@@ -78,7 +78,7 @@ renderCurrentSentence()
 
 function renderCurrentSentence(){
   let sentenceWrapper = document.createElement('div');
-  sentenceWrapper.classList.add("row",'valign-wrapper')  
+  sentenceWrapper.classList.add("row",'valign-wrapper','purple')  
 
   //Prepare images
   let imgSrc1 = obj['speaker1image']
@@ -92,9 +92,9 @@ function renderCurrentSentence(){
     img2.classList.add('ratio', 'img-responsive', 'img-circle');
     img1.style.backgroundImage = `url(${imgSrc1})`;
     img2.style.backgroundImage = `url(${imgSrc2})`;
-    imageDiv1.classList.add('col','s4','l1')
+    imageDiv1.classList.add('col','s3','l1')
     imageDiv1.appendChild(img1)
-    imageDiv2.classList.add('col','s4','l1')
+    imageDiv2.classList.add('col','s3','l1')
     imageDiv2.appendChild(img2)
   }
   if(currentSentence==4){
@@ -104,7 +104,7 @@ function renderCurrentSentence(){
   }
   //Append image and text
   let sentenceDiv = document.createElement('div');
-  sentenceDiv.classList.add('col','s8','l11')
+  sentenceDiv.classList.add('col','s9','l11')
   let textDiv = document.createElement('div')
   sentenceDiv.appendChild(textDiv)
   if(Object.values(thisConversationObj)[currentSentence]['speaker']==1){
@@ -124,7 +124,7 @@ if(Object.values(thisConversationObj).length>currentSentence){
   if(typeof Object.values(thisConversationObj)[currentSentence]['sentence']=="string"){// console.log("String. Hold and continue to next")
   textDiv.innerHTML = Object.values(thisConversationObj)[currentSentence]['sentence'];
   let sentenceLength = (textDiv.innerHTML.length)
-  let sentenceTime = 200 + (sentenceLength * 90)
+  let sentenceTime = 200 + (sentenceLength * 9)
   conversationDiv.appendChild(sentenceWrapper);
     setTimeout(() => {
       currentSentence++;
