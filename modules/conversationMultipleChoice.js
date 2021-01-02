@@ -74,6 +74,12 @@ function conversationObj(text){
   return conversationArray
 }
 
+let controllerDiv = document.createElement('div');
+controllerDiv.classList.add("row","brown")
+let controllerCol = document.createElement("div")
+controllerCol.classList.add("col",)
+let nextBtn = document.createElement("button")
+controllerDiv.innerHTML="432"
 renderCurrentSentence()
 
 function renderCurrentSentence(){
@@ -231,8 +237,10 @@ function showQuestion(options,rightAnswerPosition){
 }
   
 conversationDiv.classList.add("white","lighten-4","sideBorders")
+
 moduleContainer.appendChild(conversationDiv)
 moduleContainer.appendChild(userAnswerDiv)
+moduleContainer.appendChild(controllerDiv)
 moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
 
