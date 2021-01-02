@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         db.collection('users').doc(firebase.auth().currentUser.uid)
         .collection('userSettings').doc('settingsObj').get()
         .then((doc)=>{
-            // renderLesson(activeLessonId[0],activeLessonId[1]);
-            renderInitialPage()
+            renderLesson(activeLessonId[0],activeLessonId[1]);
+            // renderInitialPage()
             // generateFrecuencyList()
             
             renderUserNavBarButtons();

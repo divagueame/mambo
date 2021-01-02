@@ -14,6 +14,7 @@ import readLessonsFromDb from './readLessonsFromDb.js';
 import activitiesModule from './modules/activitiesModule.js'
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 import verbChart from './modules/verbChart.js'
+import timedWritingActivity from './modules/timedWritingActivity.js'
 
 
 
@@ -71,6 +72,9 @@ export default function renderLesson(level, lesson) {
             }
             if(activityObj.activityModuleType=="conversationMultipleChoice"){
                 activitiesModule.conversationMultipleChoice(activityObj)
+            }
+            if(activityObj.activityModuleType=="timedWritingActivity"){
+                activitiesModule.timedWritingActivity(activityObj)
             }
 
         });

@@ -1,61 +1,52 @@
 
 
-// import generateSidenav from './modules/generateSidenav.js';
+import generateSidenav from './modules/generateSidenav.js';
 
 export default function renderInitialPage(){
     const lessonContainer = document.querySelector('.lessonContainer'); 
-    
     lessonContainer.innerHTML = '';
 
     let dashboardDiv = document.createElement('div');
     lessonContainer.appendChild(dashboardDiv)
-    dashboardDiv.classList.add('container','row','yellow','lighten-5');
-    // let topSpacer = document.createElement('div')
-    // topSpacer.classList.add("col", 's12', 'white')
-    // topSpacer.innerHTML = '<br>'
-    
-    let leftDiv =document.createElement('div');
-    leftDiv.classList.add('col', 's4','blue')
-    let rightDiv =document.createElement('div');
-    rightDiv.classList.add('col', 's8','purple');
-    // dashboardDiv.appendChild(topSpacer)
-    dashboardDiv.appendChild(leftDiv)
-    dashboardDiv.appendChild(rightDiv)
-    
-    // let left = document.createElement("div")
-    // leftDiv.appendChild(left)
-    // left.classList.add("btn-floating btn-large white")
-    // left.innerHTML=`<i class="material-icons black-text">library_books</i>`
+    dashboardDiv.classList.add('container');
+    let mainButtons = document.createElement("div")
+    dashboardDiv.appendChild(mainButtons)
 
+     let activitiesDiv = document.createElement('div')   
+    mainButtons.appendChild(activitiesDiv)
+    mainButtons.classList.add("row")
+    activitiesDiv.classList.add("col","s4","sidenav-trigger")
+    activitiesDiv.setAttribute("data-target","slide-out")
     
-    // let showlessons = document.createElement("div")
-    // showlessons.innerHTML= `<a href="#"  class="btn-floating white waves-effect waves-light sidenav-trigger btn" data-target="slide-out" ><i class="material-icons black-text">library_books</i></a>`
-
+    let aWrapper = document.createElement('div')
+    aWrapper.classList.add("sidenav-trigger","btn-flsoating","s", "s",'lighten-2')
+    let aDiv = document.createElement('div')
+    let circleDiv = document.createElement("div")
+    circleDiv.classList.add("circale","rsed")
+    aDiv.innerHTML = "Lessons"
+    activitiesDiv.appendChild(circleDiv)
+    activitiesDiv.appendChild(aDiv)
+    circleDiv.appendChild(aWrapper)
     
-    // let html = `        
-    //     <div class="row center">
-    //         <div class="col s4 initButton scale-transition scale-out">
-    //             <div class="btn-floating btn-large white">
-    //             <i class="material-icons black-text">library_books</i>
-    //             </div>
-    //             <div>Lessons</div>
-    //         </div>
-    //         <div class="col s4 initButton scale-transition scale-out yellow">
-    //             <div class=" scale-transition  scale-out btn-floating btn-large white">POS</div>
-    //             <div></div>
-    //         </div>
-    //         <div class="col s4 initButton scale-transition scale-out brown">
-    //             <div class="btn-floating btn-large white"><i class="material-icons black-text">videogame_asset</i></div>    
-    //             <div>Drills</div>
-    //         </div>
-    //     </div>
-    // `
+    let aIcon = document.createElement("i")
+    aIcon.classList.add("material-icons","large","black-text")
+    aIcon.innerHTML= `library_books`
+    aWrapper.appendChild(aIcon)
+    
+    
+    // left.innerHTML =
+    // `<a href="#" data-target="slide-out" class="sidenav-trigger">
+    //     <i class="material-icons large black-text">library_books</i>
+    // </a>`
 
     
+    
+    
+     
 
 
 
-    showLastUpdates()
+    // showLastUpdates()
 
 function showLastUpdates(){
 
@@ -136,8 +127,7 @@ function showLastUpdates(){
 
   `
 
-  lessonContainer.innerHTML += html
-
+  
 }
 
 

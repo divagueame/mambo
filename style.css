@@ -60,6 +60,16 @@ body {
   .heavy-text {
       font-weight: 700;
   }
+  .text-accent{
+      background-color: rgb(255, 201, 102);
+      border-radius: .31rem;
+      padding: .12rem;
+  }
+
+  .italics{
+      text-decoration: wavy;
+      background-color: aquamarine;
+  }
   .highlightP{
       background-color: #f5cb5c;
       padding: 1rem;

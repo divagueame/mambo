@@ -16,6 +16,7 @@ import videoActivity from './videoActivity.js';
 import verbChart from './verbChart.js';
 import wildCard from './wildCard.js';
 import conversationMultipleChoice from './conversationMultipleChoice.js';
+import timedWritingActivity from './timedWritingActivity.js';
 
 
 
@@ -41,7 +42,8 @@ const activitiesModule = (() => {
       videoActivity,
       verbChart,
       wildCard,
-      conversationMultipleChoice
+      conversationMultipleChoice,
+      timedWritingActivity
     };
   })();
 

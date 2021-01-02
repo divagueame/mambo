@@ -395,62 +395,27 @@ let lessonsArray = [
                 'title': "Adjetivos2Title"
             },
             {
-                'activityModuleType': 'introConcept',
+
+                'activityModuleType': 'timedWritingActivity',
                 'activityOrder': 2,
-                'cardTitle': 'This is cardtitle',
-                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '',
+                'moduleBasicText': '',
+                'activityId': '21timedWritingActivity',
+                'activityHeaderText': '',
+                'timeOptions': []
             },
+          
+
             {
                 'activityModuleType': 'introConcept',
                 'activityOrder': 3,
                 'cardTitle': 'This is cardtitle',
                 'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
             },
-            ///////////////////////
-
-            {
-                'activityModuleType': 'tutorWritingActivity',
-                'activityOrder': 4,
-                'activityId': 'anIdToRecognizeInTheDbas',
-                'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
-                'promptsArray': [
-                    {
-                        'word': 'gato',
-                        'imgSrc': ''
-                    },
-                    {
-                        'word': 'perro',
-                        'imgSrc': ''
-                    },
-                    
-                    {
-                        'word': 'guitarra',
-                        'imgSrc': './img/lesson1.1/guitar.jpg'
-                    },
-                    
-                    {
-                        'word': 'piano',
-                        'imgSrc': './img/lesson1.1/piano.jpg'
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        'level': 3,
-        'lessonNumber': 1,
-        'lessonTitle': 'Presente de subjuntivo',
-        
-        'activitiesArray': [
-            {
-                'activityModuleType': 'renderLessonTitle',
-                'activityOrder': 1,
-                'title': "Presente de subjuntivo",
-                'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
-            },
             {
                 'activityModuleType': 'conversationMultipleChoice',
-                'activityOrder': 2,
+                'activityOrder': 4,
                 'moduleHeaderText' : '',
                 'moduleHeaderIcon': '',
                 'section': false,
@@ -476,14 +441,33 @@ let lessonsArray = [
 
                 
 
-            }, 
+            }
+
+            ///////////////////////
+
+
+        ]
+    },
+    {
+        'level': 3,
+        'lessonNumber': 1,
+        'lessonTitle': 'Presente de subjuntivo',
+        
+        'activitiesArray': [
+            {
+                'activityModuleType': 'renderLessonTitle',
+                'activityOrder': 1,
+                'title': "Presente de subjuntivo",
+                'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
+            },
+           
             {
                 'activityModuleType': 'wildCard',
                 'activityOrder': 3,
                 'moduleHeaderText' : '',
                 'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
-                'html': `<div class="center"><a href="http://www.elpais.com"><button class="btn-large">WILDCARD BITCH</button></a></div>`
+                'html': `<div class="center"><a href="https://es.wikipedia.org/wiki/Celia_Cruz"><button class="btn-large">Celia Cruz en Wikipedia</button></a></div>`
             },
             
             {
@@ -534,9 +518,10 @@ let lessonsArray = [
             Más yo mi amor esperaré
             Esperaré
             `,
-            'loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd loremia  loremia loremialoremialoremia loremialoremias  asdkjasd asdf asdf sd ds'
+            'As you may have noticed, these verbs are not formed as in the present tense. You have probably come across them by now not knowing it is called <span class="heavy-text">subjuntivo</span>... You will learn how to form the <span class="heavy-text text-accent">presente de subjuntivo</span> and even more important... when to use it!',
+            'oter'
         ],
-        'highlightedParagraphs': [false,true,false]
+        'highlightedParagraphs': [false,true,false,false]
             },
             {
                 'activityModuleType': 'verbChart',
@@ -565,16 +550,41 @@ let lessonsArray = [
                 'section': false,
                 'margin': false,
                 'moduleBasicText': '',
-                'youtubeIframe': `<iframe width="560" height="315" src="https://www.youtube.com/embed/nrUL1m2aDmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                'youtubeIframe': '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W9-1camf7N4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
             }, 
 
-            
+            {
+                'activityModuleType': 'tutorWritingActivity',
+                'activityOrder': 7,
+                'activityId': 'anIdToRecognizeInTheDbas',
+                'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
+                'promptsArray': [
+                    {
+                        'word': 'gato',
+                        'imgSrc': ''
+                    },
+                    {
+                        'word': 'perro',
+                        'imgSrc': ''
+                    },
+                    
+                    {
+                        'word': 'guitarra',
+                        'imgSrc': './img/lesson1.1/guitar.jpg'
+                    },
+                    
+                    {
+                        'word': 'piano',
+                        'imgSrc': './img/lesson1.1/piano.jpg'
+                    }
+                ]
+            },
             
 
 
             {
                 'activityModuleType': 'introConcept',
-                'activityOrder': 7,
+                'activityOrder': 8,
                 'cardTitle': 'This is cardtitle',
                 'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
             },
