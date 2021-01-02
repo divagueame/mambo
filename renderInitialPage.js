@@ -1,6 +1,6 @@
 
 
-import generateSidenav from './modules/generateSidenav.js';
+// import generateSidenav from './modules/generateSidenav.js';
 
 export default function renderInitialPage(){
     const lessonContainer = document.querySelector('.lessonContainer'); 
@@ -8,52 +8,50 @@ export default function renderInitialPage(){
     lessonContainer.innerHTML = '';
 
     let dashboardDiv = document.createElement('div');
-    dashboardDiv.classList.add('container')
-    dashboardDiv.classList.add('row')
-    dashboardDiv.classList.add('yellow','lighten-5')
-    let topSpacer = document.createElement('div')
-    topSpacer.classList.add("col", 's12', 'white')
-    topSpacer.innerHTML = '<br>'
     lessonContainer.appendChild(dashboardDiv)
+    dashboardDiv.classList.add('container','row','yellow','lighten-5');
+    // let topSpacer = document.createElement('div')
+    // topSpacer.classList.add("col", 's12', 'white')
+    // topSpacer.innerHTML = '<br>'
+    
     let leftDiv =document.createElement('div');
     leftDiv.classList.add('col', 's4','blue')
     let rightDiv =document.createElement('div');
     rightDiv.classList.add('col', 's8','purple');
-    dashboardDiv.appendChild(topSpacer)
+    // dashboardDiv.appendChild(topSpacer)
     dashboardDiv.appendChild(leftDiv)
     dashboardDiv.appendChild(rightDiv)
+    
+    // let left = document.createElement("div")
+    // leftDiv.appendChild(left)
+    // left.classList.add("btn-floating btn-large white")
+    // left.innerHTML=`<i class="material-icons black-text">library_books</i>`
+
+    
     // let showlessons = document.createElement("div")
     // showlessons.innerHTML= `<a href="#"  class="btn-floating white waves-effect waves-light sidenav-trigger btn" data-target="slide-out" ><i class="material-icons black-text">library_books</i></a>`
-    // leftDiv.innerHTML = `
-    // <ul>
-    // <li>User</li>
-    // <li>sdf</li>
-    // <li>sdf</li>
-    // <li>ads</li>
-    // </ul>`
 
-    // let html = ``;
-    let html = `        
-        <div class="row center">
-            <div class="col s4 initButton scale-transition scale-out">
+    
+    // let html = `        
+    //     <div class="row center">
+    //         <div class="col s4 initButton scale-transition scale-out">
+    //             <div class="btn-floating btn-large white">
+    //             <i class="material-icons black-text">library_books</i>
+    //             </div>
+    //             <div>Lessons</div>
+    //         </div>
+    //         <div class="col s4 initButton scale-transition scale-out yellow">
+    //             <div class=" scale-transition  scale-out btn-floating btn-large white">POS</div>
+    //             <div></div>
+    //         </div>
+    //         <div class="col s4 initButton scale-transition scale-out brown">
+    //             <div class="btn-floating btn-large white"><i class="material-icons black-text">videogame_asset</i></div>    
+    //             <div>Drills</div>
+    //         </div>
+    //     </div>
+    // `
 
-                <div class="btn-floating btn-large white">
-                <i class="material-icons black-text">library_books</i>
-                </div>
-                <div>Lessons</div>
-            </div>
-            <div class="col s4 initButton scale-transition scale-out yellow">
-                <div class=" scale-transition  scale-out btn-floating btn-large white">POS</div>
-                <div></div>
-            </div>
-            <div class="col s4 initButton scale-transition scale-out brown">
-                <div class="btn-floating btn-large white"><i class="material-icons black-text">videogame_asset</i></div>    
-                <div>Drills</div>
-            </div>
-        </div>
-    `
-    lessonContainer.innerHTML = html;
-
+    
 
 
 
@@ -109,28 +107,29 @@ function showLastUpdates(){
     ]
     let liTags = '';
     updatesDb.forEach((e)=>{
-        console.log();
         let thisAvatarUrl = e['avatarUrl'];
         let titleUpdate = e['title'];
         let textUpdate = e['text'];
         let dateUpdate = e['date']
         let thisLi = `
         <li class="collection-item avatar">
-            <img src="${thisAvatarUrl}" alt="" class="circle">
-        <span class="title">${titleUpdate}</span>
+        <div class="valign-wrapper">
+        <img src="${thisAvatarUrl}" alt="" class="circle">
+        <h4 class="heavy-text">${titleUpdate}</h4></div>
+
         <p>${textUpdate}</p>
-        <span class="grey-text  text-lighten-2">${dateUpdate}</span>
+        <span class="grey-text text-flow text-lighten-2">${dateUpdate}</span>
         
       </li>
       `
         liTags += thisLi;
     })
     let html = `
-    <div class="row">
-        <div class="col s8 offset-s2 grey">
+    <div class="row container">
+        <div class="col s12 grey">
             <h4>Lastest updates</h4>
         </div>
-        <div class="col s8 offset-s2">
+        <div class="col s12">
             <ul class="collection">${liTags}</ul>
         </div>
     </div>
