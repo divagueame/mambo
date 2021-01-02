@@ -75,16 +75,24 @@ function conversationObj(text){
 }
 
 let controllerDiv = document.createElement('div');
-controllerDiv.classList.add("row","brown")
+controllerDiv.classList.add("row")
 let controllerCol = document.createElement("div")
-controllerCol.classList.add("col",)
 let nextBtn = document.createElement("button")
-controllerDiv.innerHTML="432"
+controllerCol.classList.add("col",'s12')
+nextBtn.classList.add("white","btn-floating","right")
+nextBtn.innerHTML=`<i class="material-icons black-text">skip_next</i>`
+controllerCol.appendChild(nextBtn)
+controllerDiv.appendChild(controllerCol)
+nextBtn.addEventListener('click',function(){
+  currentSentence++;
+  renderCurrentSentence()
+})
+
 renderCurrentSentence()
 
 function renderCurrentSentence(){
   let sentenceWrapper = document.createElement('div');
-  sentenceWrapper.classList.add("row",'valign-wrapper','purple')  
+  sentenceWrapper.classList.add("row",'valign-wrapper')  
 
   //Prepare images
   let imgSrc1 = obj['speaker1image']
@@ -114,7 +122,7 @@ function renderCurrentSentence(){
   let textDiv = document.createElement('div')
   sentenceDiv.appendChild(textDiv)
   if(Object.values(thisConversationObj)[currentSentence]['speaker']==1){
-    textDiv.classList.add("speaker1","left")
+  textDiv.classList.add("speaker1","left")
   sentenceWrapper.appendChild(imageDiv1)  
   sentenceWrapper.appendChild(sentenceDiv)
   }else{
@@ -133,10 +141,11 @@ if(Object.values(thisConversationObj).length>currentSentence){
   let sentenceTime = 200 + (sentenceLength * 9)
   conversationDiv.appendChild(sentenceWrapper);
     setTimeout(() => {
-      currentSentence++;
-      renderCurrentSentence()
+      // currentSentence++;
+      // renderCurrentSentence()
     }, sentenceTime);
   }else{ // console.log("Array. Stop! QUestion time")
+  
     let options = Object.values(thisConversationObj)[currentSentence]['sentence']
     let rightAnswer = options[0];
     let rightAnswerPosition
@@ -156,6 +165,7 @@ if(Object.values(thisConversationObj).length>currentSentence){
 function showQuestion(options,rightAnswerPosition){
   let scaleInTimer =120
   let optionsUl = document.createElement('div');
+  optionsUl.classList.add("scale-transition")
   let divider = document.createElement('div');
   divider.classList.add("divider")
   let speakerImgDiv = document.createElement("div")
@@ -174,8 +184,10 @@ function showQuestion(options,rightAnswerPosition){
     thisImg = imageDiv2
     isSpeaker1=false
   }
+  speakerImgDiv.classList.add("scale-transition")
   speakerImgDiv.appendChild(iconSpeakerImg)
   userAnswerDiv.classList.add("conversationMultipleChoiceUl")
+  
   options.forEach(function(option,i){
     scaleInTimer+=120;
     let li = document.createElement("div") 
@@ -209,15 +221,18 @@ function showQuestion(options,rightAnswerPosition){
           sentenceWrapper.insertAdjacentElement('beforeend', thisImg)
         }
         
-        setTimeout(() => {
-          
-        userAnswerDiv.removeChild(speakerImgDiv)
+        conversationDiv.appendChild(sentenceWrapper); 
+        speakerImgDiv.classList.add("scale-out")
+        optionsUl.classList.add("scale-out")
+                userAnswerDiv.removeChild(speakerImgDiv)
         userAnswerDiv.removeChild(optionsUl)
-          conversationDiv.appendChild(sentenceWrapper);
-          currentSentence++;
-          renderCurrentSentence();
+        
+        setTimeout(() => {
 
-        }, 700);
+          // currentSentence++;
+          // renderCurrentSentence();
+
+        }, 2200);
       }else{
         let feedback = `<i class="material-icons tiny red-text">close</i>Incorrecto`
         M.toast({html: feedback})
@@ -232,7 +247,7 @@ function showQuestion(options,rightAnswerPosition){
 }
   } 
 }else{///FInished all sentences. Show toast with total answers
-
+  nextBtn.innerHTML=`<i class="material-icons black-text">loop</i>`
 }
 }
   
