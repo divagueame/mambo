@@ -92,9 +92,9 @@ function renderCurrentSentence(){
     img2.classList.add('ratio', 'img-responsive', 'img-circle');
     img1.style.backgroundImage = `url(${imgSrc1})`;
     img2.style.backgroundImage = `url(${imgSrc2})`;
-    imageDiv1.classList.add('col','s1')
+    imageDiv1.classList.add('col','s4','l1')
     imageDiv1.appendChild(img1)
-    imageDiv2.classList.add('col','s1')
+    imageDiv2.classList.add('col','s4','l1')
     imageDiv2.appendChild(img2)
   }
   if(currentSentence==4){
@@ -104,7 +104,7 @@ function renderCurrentSentence(){
   }
   //Append image and text
   let sentenceDiv = document.createElement('div');
-  sentenceDiv.classList.add('col','s11')
+  sentenceDiv.classList.add('col','s8','l11')
   let textDiv = document.createElement('div')
   sentenceDiv.appendChild(textDiv)
   if(Object.values(thisConversationObj)[currentSentence]['speaker']==1){
