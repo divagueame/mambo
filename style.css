@@ -81,7 +81,14 @@ body {
   .biggerText{
       font-size: 2rem;
   }
-
+  /* ///Styles for modules */
+  .moduleHeader-icon{
+      margin-right: 1rem;
+  }
+  .generateBasicTextPwrapper{
+      background-color: blue;
+      
+  }
   /* Conversation Multiple Choice */
 
   .caption div {

@@ -22,13 +22,47 @@ let moduleContainer = document.createElement('div')
 // <p class="">It's important to remember the gender of the words as other elements related to them will agree accordingly.</p>
 // <div class="divider"></div>
 // `; 
+let imagesArray = obj['images'];
+let imagesPosition = obj['imagesPosition'];
+console.log("Ye", (imagesArray),imagesPosition)
 moduleContainer.innerHTML = ``
 obj['paragraphs'].forEach((p,i) => {
   let highlightClass = ""
   if(obj['highlightedParagraphs'][i]){
     highlightClass = "highlightP"
   }
-  moduleContainer.innerHTML += `<p class="justified text-flow ${highlightClass}">${p}</p>`
+  
+  
+  if(imagesArray[i]!=""){
+    //Paragraph with image
+    let thisImgSrc = imagesArray[i];
+    let positionClassImg = "push-s8 push-l9"
+    let positionClassP = "pull-s4 pull-l3";
+    console.log()
+    if(imagesPosition[i]=="left"){
+      positionClassImg ="";
+      positionClassP = ""
+    }
+  
+    moduleContainer.innerHTML += `
+    <div class="row">
+    <div class="col s4 l3 ${positionClassImg}">
+    <img src="${thisImgSrc}" class="img-responsive">
+    </div>
+      <div class="col s8 l9 ${positionClassP}">
+        <p class="justified text-flow ${highlightClass}">${p}</p>
+      </div>
+    </div>`
+  }
+  else{//Paragraph with no image
+  moduleContainer.innerHTML += `
+  <div class="row">
+    <div class="col s12">
+      <p class="justified text-flow ${highlightClass}">${p}</p>
+    </div>
+  </div>`
+  }
+ 
 });
 
 
@@ -52,3 +86,28 @@ let audioContainer2 = document.querySelector("#audioContainer2")
 
 
 }
+
+
+
+
+
+
+
+
+
+/////SAMPLE OBJ
+// {
+//   'activityModuleType': 'generateBasicText',
+//   'activityOrder': 2,
+//   'moduleHeaderText':  '1. La Reina de la Salsa - Celia Cruz',
+//   'moduleHeaderIcon': 'account_box',
+//   'paragraphs': 
+// [
+// 'Paragraph 1.',
+// 'Paragraph 2',
+// 'Paragraph 3',
+// ],
+// 'highlightedParagraphs': [false,false,false],
+// 'images': ['','./lessons/3.1/img/man.jpg','./lessons/3.1/img/woman.jpg'],
+// 'imagesPosition': ['','','left']
+// },

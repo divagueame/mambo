@@ -460,7 +460,32 @@ let lessonsArray = [
                 'title': "Presente de subjuntivo",
                 'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
             },
-           
+            {
+                'activityModuleType': 'generateBasicText',
+                'activityOrder': 2,
+                'moduleHeaderText':  '1. La Reina de la Salsa - Celia Cruz',
+                'moduleHeaderIcon': 'account_box',
+                'paragraphs': 
+        [
+            'Paragraph 1.',
+            'Paragraph 2',
+            'Paragraph 3',
+        ],
+        'highlightedParagraphs': [false,false,false],
+        'images': ['','./lessons/3.1/img/man.jpg','./lessons/3.1/img/woman.jpg'],
+        'imagesPosition': ['','','left']
+            },
+            {
+                'activityModuleType': 'videoActivity',
+                'activityOrder': 3,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': 'ondemand_video',
+                'onlyAddVideo': true,
+                'section': false,
+                'margin': false,
+                'moduleBasicText': '',
+                'youtubeIframe': '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W9-1camf7N4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+            }, 
             {
                 'activityModuleType': 'wildCard',
                 'activityOrder': 3,
@@ -469,10 +494,64 @@ let lessonsArray = [
                 'moduleBasicText': '',
                 'html': `<div class="center"><a href="https://es.wikipedia.org/wiki/Celia_Cruz"><button class="btn-large">Celia Cruz en Wikipedia</button></a></div>`
             },
+
+            {
+                'activityModuleType': 'multipleChoicePlusAnswers',
+                'activityOrder': 4,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': 'dashboard',
+                'moduleBasicText': '',
+                'section': true,
+                'questions': 
+                [
+                    {
+                        'type': 'multiple',
+                        'question': 'What is the girls name?',
+                        'answersArray': [
+                            'Correct1',
+                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            '1genios sin coco cac',
+                            '1me digas que no',
+                        ]
+                    },
+                    {
+                        'type': 'multiple',
+                        'question': 'What is the girls name?',
+                        'answersArray': [
+                            'Correct1',
+                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            '1genios sin coco cac',
+                            '1me digas que no',
+                        ]
+                    },
+                    {
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Jhonny'
+                    },
+                    {
+                        'type': 'multiple',
+                        'question': 'What is the girls name?',
+                        'answersArray': [
+                            'Correct1',
+                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
+                            '1genios sin coco cac',
+                            '1me digas que no',
+                        ]
+                    },
+                    {
+                        'type': 'openQuestion',
+                        'question': 'What is the man  name?',
+                        'answer': 'Michael'
+                    }
+                ]
+                
+            }, 
+            
             
             {
                 'activityModuleType': 'generateBasicText',
-                'activityOrder': 4,
+                'activityOrder': 5,
                 'moduleHeaderText':  '',
                 'moduleHeaderIcon': '',
                 'paragraphs': 
@@ -541,17 +620,7 @@ let lessonsArray = [
                     'escribir': ['escrib<span class="heavy-text">a','escrib<span class="heavy-text">as</span>','escrib<span class="heavy-text">a</span>', 'escrib<span class="heavy-text">amos</span>','escrib<span class="heavy-text">áis</span>', 'escrib<span class="heavy-text">an</span>']
                }
             },
-            {
-                'activityModuleType': 'videoActivity',
-                'activityOrder': 6,
-                'moduleHeaderText' : '',
-                'moduleHeaderIcon': 'ondemand_video',
-                'onlyAddVideo': true,
-                'section': false,
-                'margin': false,
-                'moduleBasicText': '',
-                'youtubeIframe': '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W9-1camf7N4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-            }, 
+
 
             {
                 'activityModuleType': 'tutorWritingActivity',
