@@ -108,6 +108,6 @@ let audioContainer2 = document.querySelector("#audioContainer2")
 // 'Paragraph 3',
 // ],
 // 'highlightedParagraphs': [false,false,false],
-// 'images': ['','./lessons/3.1/img/man.jpg','./lessons/3.1/img/woman.jpg'],
+// 'images': ['','./lessons/3.1/img/celia.jpg','./lessons/3.1/img/woman.jpg'],
 // 'imagesPosition': ['','','left']
 // },

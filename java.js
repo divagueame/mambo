@@ -10,7 +10,7 @@ import activitiesModule from './modules/activitiesModule.js';
 import generateFrecuencyList from './generateFrecuencyList.js';
 
 
-let activeLessonId = [3,1];
+let activeLessonId = [2,1];
 const lessonContainer = document.querySelector(".lessonContainer")
  
 setTimeout(lessonActivitiesDb,  800)

@@ -130,7 +130,12 @@ let userAnwersId = []
     }
     if(inputs[i].type=='text'){
       //USER input text IS
-      userAnswers.push(inputs[i].value);
+      let userAnswer = (inputs[i].value).trim()
+      if(userAnswer.substring(userAnswer.length-1,userAnswer.length)!="."){
+        userAnswer += "."
+      }
+      userAnswers.push(userAnswer);
+      // userAnswers.push(inputs[i].value);
       userAnwersId.push(inputs[i].parentElement.parentElement.children[0].id)
     }
   }
@@ -138,8 +143,8 @@ let userAnwersId = []
   // console.log("radio",correctAnswers, userAnswers)
   let counterRightAnswers = 0
   for(let i=0; i<correctAnswers.length; i++){
-    if(correctAnswers[i]==userAnswers[i]){
-      console.log("User is right");
+    if((correctAnswers[i]).toLowerCase()==(userAnswers[i]).toLowerCase()){
+      console.log("Enseñame",correctAnswers[i],userAnswers[i]);
       counterRightAnswers++;
       let radioBtn = document.querySelector(`#${userAnwersId[i]}`);
       radioBtn.innerHTML = "check";

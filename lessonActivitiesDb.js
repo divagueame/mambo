@@ -395,27 +395,8 @@ let lessonsArray = [
                 'title': "Adjetivos2Title"
             },
             {
-
-                'activityModuleType': 'timedWritingActivity',
-                'activityOrder': 2,
-                'moduleHeaderText' : '',
-                'moduleHeaderIcon': '',
-                'moduleBasicText': '',
-                'activityId': '21timedWritingActivity',
-                'activityHeaderText': '',
-                'timeOptions': []
-            },
-          
-
-            {
-                'activityModuleType': 'introConcept',
-                'activityOrder': 3,
-                'cardTitle': 'This is cardtitle',
-                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-            },
-            {
                 'activityModuleType': 'conversationMultipleChoice',
-                'activityOrder': 4,
+                'activityOrder': 2,
                 'moduleHeaderText' : '',
                 'moduleHeaderIcon': '',
                 'section': false,
@@ -441,7 +422,27 @@ let lessonsArray = [
 
                 
 
-            }
+            },
+          
+
+            {
+                'activityModuleType': 'introConcept',
+                'activityOrder': 3,
+                'cardTitle': 'This is cardtitle',
+                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+            },
+            
+            {
+
+                'activityModuleType': 'timedWritingActivity',
+                'activityOrder': 4,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '',
+                'moduleBasicText': '',
+                'activityId': '21timedWritingActivity',
+                'activityHeaderText': '',
+                'timeOptions': []
+            },
 
             ///////////////////////
 
@@ -460,98 +461,11 @@ let lessonsArray = [
                 'title': "Presente de subjuntivo",
                 'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
             },
-            {
-                'activityModuleType': 'generateBasicText',
-                'activityOrder': 2,
-                'moduleHeaderText':  '1. La Reina de la Salsa - Celia Cruz',
-                'moduleHeaderIcon': 'account_box',
-                'paragraphs': 
-        [
-            'Paragraph 1.',
-            'Paragraph 2',
-            'Paragraph 3',
-        ],
-        'highlightedParagraphs': [false,false,false],
-        'images': ['','./lessons/3.1/img/man.jpg','./lessons/3.1/img/woman.jpg'],
-        'imagesPosition': ['','','left']
-            },
-            {
-                'activityModuleType': 'videoActivity',
-                'activityOrder': 3,
-                'moduleHeaderText' : '',
-                'moduleHeaderIcon': 'ondemand_video',
-                'onlyAddVideo': true,
-                'section': false,
-                'margin': false,
-                'moduleBasicText': '',
-                'youtubeIframe': '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W9-1camf7N4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-            }, 
-            {
-                'activityModuleType': 'wildCard',
-                'activityOrder': 3,
-                'moduleHeaderText' : '',
-                'moduleHeaderIcon': '', 
-                'moduleBasicText': '',
-                'html': `<div class="center"><a href="https://es.wikipedia.org/wiki/Celia_Cruz"><button class="btn-large">Celia Cruz en Wikipedia</button></a></div>`
-            },
-
-            {
-                'activityModuleType': 'multipleChoicePlusAnswers',
-                'activityOrder': 4,
-                'moduleHeaderText' : '',
-                'moduleHeaderIcon': 'dashboard',
-                'moduleBasicText': '',
-                'section': true,
-                'questions': 
-                [
-                    {
-                        'type': 'multiple',
-                        'question': 'What is the girls name?',
-                        'answersArray': [
-                            'Correct1',
-                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
-                            '1genios sin coco cac',
-                            '1me digas que no',
-                        ]
-                    },
-                    {
-                        'type': 'multiple',
-                        'question': 'What is the girls name?',
-                        'answersArray': [
-                            'Correct1',
-                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
-                            '1genios sin coco cac',
-                            '1me digas que no',
-                        ]
-                    },
-                    {
-                        'type': 'openQuestion',
-                        'question': 'What is the man  name?',
-                        'answer': 'Jhonny'
-                    },
-                    {
-                        'type': 'multiple',
-                        'question': 'What is the girls name?',
-                        'answersArray': [
-                            'Correct1',
-                            '1wrong pesassssssssssssssasa sds dds3 3 3 cacay',
-                            '1genios sin coco cac',
-                            '1me digas que no',
-                        ]
-                    },
-                    {
-                        'type': 'openQuestion',
-                        'question': 'What is the man  name?',
-                        'answer': 'Michael'
-                    }
-                ]
-                
-            }, 
             
             
             {
                 'activityModuleType': 'generateBasicText',
-                'activityOrder': 5,
+                'activityOrder': 3,
                 'moduleHeaderText':  '',
                 'moduleHeaderIcon': '',
                 'paragraphs': 
@@ -600,11 +514,98 @@ let lessonsArray = [
             'As you may have noticed, these verbs are not formed as in the present tense. You have probably come across them by now not knowing it is called <span class="heavy-text">subjuntivo</span>... You will learn how to form the <span class="heavy-text text-accent">presente de subjuntivo</span> and even more important... when to use it!',
             'oter'
         ],
-        'highlightedParagraphs': [false,true,false,false]
+        'highlightedParagraphs': [false,true,false,false],
+        'images': ['','',''],
+        'imagesPosition': ['','','']
             },
+            
+            {
+                'activityModuleType': 'wildCard',
+                'activityOrder': 3,
+                'moduleHeaderText' : '"Esperaré" por Celia Cruz',
+                'moduleHeaderIcon': 'directions', 
+                'moduleBasicText': '',
+                'html': `<div class="center"><a target="_blank"  href="https://www.youtube.com/watch?v=nrUL1m2aDmM"><button class="btn-large">Escucha la canción en Youtube.</button></a></div>`
+            },
+            // {
+            //     'activityModuleType': 'wildCard',
+            //     'activityOrder': 2,
+            //     'moduleHeaderText' : '',
+            //     'moduleHeaderIcon': '', 
+            //     'moduleBasicText': '', 
+            //     'html': `<img src="./lessons/3.1/img/celia.jpg" class="img-responsive">`
+            // },
+
+                        // {
+            //     'activityModuleType': 'wildCard',
+            //     'activityOrder': 3,
+            //     'moduleHeaderText' : 'Wikipedia: Celia Cruz',
+            //     'moduleHeaderIcon': 'directions', 
+            //     'moduleBasicText': '',
+            //     'html': `<div class="center"><a href="https://es.wikipedia.org/wiki/Celia_Cruz"><button class="btn-large">Celia Cruz en Wikipedia</button></a></div>`
+            // },
+
+            // {
+            //     'activityModuleType': 'multipleChoicePlusAnswers',
+            //     'activityOrder': 4,
+            //     'moduleHeaderText' : '',
+            //     'moduleHeaderIcon': 'dashboard',
+            //     'moduleBasicText': '',
+            //     'section': true,
+            //     'questions': 
+            //     [
+            //         {
+            //             'type': 'multiple',
+            //             'question': '¿Dónde murió Celia Cruz?',
+            //             'answersArray': [
+            //                 'En los Estados Unidos.',
+            //                 'En Cuba.',
+            //                 'En México.',
+            //                 'En Puerto Rico.',
+            //             ]
+            //         },
+            //         {
+            //             'type': 'multiple',
+            //             'question': '¿Qué estilo musical caracterizaba a Celia Cruz?',
+            //             'answersArray': [
+            //                 'La Salsa',
+            //                 'El Rock',
+            //                 'La ópera',
+            //                 'El azúcar',
+            //             ]
+            //         },
+            //         {
+            //             'type': 'openQuestion',
+            //             'question': '¿En qué país empezó la carrera de Celia Cruz?',
+            //             'answer': 'En Cuba.'
+            //         },
+            //         {
+            //             'type': 'multiple',
+            //             'question': 'Celia Cruz hizo popular la expresión ¡azúcar!. Celia la usaba para...',
+            //             'answersArray': [
+            //                 'animar a la gente e invitar a la diversión.',
+            //                 'preparar su voz para cantar mejor.',
+            //                 'dar la entrada a los demás músicos de la banda.',
+            //                 'recordar su canción más famosa.',
+            //             ]
+            //         },
+            //         {
+            //             'type': 'multiple',
+            //             'question': '¿Cuánto duró la carrera profesional de Celia Cruz?',
+            //             'answersArray': [
+            //                 'Practicamente toda su vida',
+            //                 'Hasta los 40 años.',
+            //                 'Hasta los 25 años',
+            //                 'Desde niña hasta el momento en que se marchó de Cuba',
+            //             ]
+            //         },
+            //     ]
+                
+            // }, 
+            
             {
                 'activityModuleType': 'verbChart',
-                'activityOrder': 5,
+                'activityOrder': 3,
                 'moduleHeaderText' : '',
                 'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
@@ -624,7 +625,7 @@ let lessonsArray = [
 
             {
                 'activityModuleType': 'tutorWritingActivity',
-                'activityOrder': 7,
+                'activityOrder': 4,
                 'activityId': 'anIdToRecognizeInTheDbas',
                 'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
                 'promptsArray': [
@@ -653,7 +654,7 @@ let lessonsArray = [
 
             {
                 'activityModuleType': 'introConcept',
-                'activityOrder': 8,
+                'activityOrder': 5,
                 'cardTitle': 'This is cardtitle',
                 'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
             },

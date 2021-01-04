@@ -4,6 +4,7 @@ import displayAudio from './displayAudio.js';
 let currentSentence = 0;
 let mistakesCounter  = 0;
 let questionCounter = 0;
+let nextBtnStopped = false
 export default function conversationMultipleChoice(obj, targetDom) {
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
@@ -86,8 +87,11 @@ nextBtn.innerHTML=`<i class="material-icons black-text">skip_next</i>`
 controllerCol.appendChild(nextBtn)
 controllerDiv.appendChild(controllerCol)
 nextBtn.addEventListener('click',function(){
-  currentSentence++;
-  renderCurrentSentence()
+  if(nextBtnStopped == false){
+    currentSentence++;
+    renderCurrentSentence()
+  }
+
 })
 
 renderCurrentSentence()
@@ -137,15 +141,11 @@ if(Object.values(thisConversationObj).length>currentSentence){
   
   if(typeof Object.values(thisConversationObj)[currentSentence]['sentence']=="string"){// console.log("String. Hold and continue to next")
   textDiv.innerHTML = Object.values(thisConversationObj)[currentSentence]['sentence'];
-  let sentenceLength = (textDiv.innerHTML.length)
-  let sentenceTime = 200 + (sentenceLength * 9)
-  conversationDiv.appendChild(sentenceWrapper);
-    setTimeout(() => {
-      // currentSentence++;
-      // renderCurrentSentence()
-    }, sentenceTime);
+      conversationDiv.appendChild(sentenceWrapper);
+
+  
   }else{ // console.log("Array. Stop! QUestion time")
-  questionCounter++
+
     let options = Object.values(thisConversationObj)[currentSentence]['sentence']
     let rightAnswer = options[0];
     let rightAnswerPosition
@@ -155,12 +155,16 @@ if(Object.values(thisConversationObj).length>currentSentence){
         rightAnswerPosition = i
       }
     })
-    
     // console.log(rightAnswer,rightAnswerPosition,options)
+    
+  
+  if(nextBtnStopped ==false){
+    questionCounter++
     showQuestion(options,rightAnswerPosition)
+  }
+   nextBtnStopped = true 
     
     
-
     
 function showQuestion(options,rightAnswerPosition){
   let scaleInTimer =120
@@ -221,7 +225,7 @@ function showQuestion(options,rightAnswerPosition){
         }else {
           sentenceWrapper.insertAdjacentElement('beforeend', thisImg)
         }
-        
+        nextBtnStopped = false
         conversationDiv.appendChild(sentenceWrapper); 
         speakerImgDiv.classList.add("scale-out")
         optionsUl.classList.add("scale-out")
