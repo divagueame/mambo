@@ -418,6 +418,7 @@ let lessonsArray = [
 – Mire, somos una pareja con un niño.
 2– ¿Cuántos años tiene el niño?
 – Diez.%Veinte.%Joder.%nueve.
+-
 `
 
                 
@@ -461,81 +462,162 @@ let lessonsArray = [
                 'title': "Presente de subjuntivo",
                 'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
             },
-            
-            
+            {
+                'activityModuleType': 'generateBasicText',
+                'activityOrder': 2,
+                'moduleHeaderText':  '',
+                'moduleHeaderIcon': '',
+                'dividerOnEnd': true,
+                'paragraphs': 
+            [
+                'Spanish verbs can be a pain in the ass sometimes until you start figuring it out and go ahhhh... Believe me, it all will make sense when you understand the main points! Listen to the song "Esperaré" by Celia Cruz and pay attention to the verb forms used in it.',
+                '<div class="center"><a target="_blank"  href="https://www.youtube.com/watch?v=nrUL1m2aDmM"><button class="btn-large">Escucha la canción aquí.</button></a></div>',
+                `<span class="heavy-text underline biggerText center">Esperaré</span>
+
+                A que <span class="heavy-text underline">sientas</span> lo mismo que yo
+                A que la luna la <span class="heavy-text underline">mires</span> del mismo color
+                Esperaré
+                
+                Que <span class="heavy-text  underline">adivines</span> mis versos de amor
+                A que en mis brazos <span class="heavy-text underline">encuentres</span> calor
+                Esperaré
+                A que <span class="heavy-text underline">vayas</span> por donde yo voy
+                A que tu alma me <span class="heavy-text underline">des</span> como yo te la doy
+                Esperaré
+                A que <span class="heavy-text underline">aprendas</span> de noche a soñar
+                A que de pronto me <span class="heavy-text underline">quieras</span> besar
+                
+                Esperaré
+                Que la manos me <span class="heavy-text underline">quieras</span> tomar
+                Que en tu recuerdo
+                Me <span class="heavy-text underline">quieras</span> por siempre llevar
+                Que mi presencia sea
+                El mundo que <span class="heavy-text underline">quieras</span> sentir
+                Que un día no <span class="heavy-text underline">puedas</span> sin mi amor vivir
+                
+                Esperaré a que <span class="heavy-text underline">sientas</span> nostalgia por mi
+                A que me <span class="heavy-text underline">pidas</span> que no me separe de ti
+                Tal vez jamás <span class="heavy-text underline">seas</span> tú de mi
+                Más yo mi amor te esperaré
+                
+                Que mi presencia <span class="heavy-text underline">sea</span>
+                El mundo que <span class="heavy-text underline">quieras</span> sentir
+                Que un día no <span class="heavy-text underline">puedas</span> sin mi amor vivir
+                
+                Esperaré a que <span class="heavy-text underline">sientas</span> nostalgia por mi
+                A que me <span class="heavy-text underline">pidas</span> que no me <span class="heavy-text underline">separe</span> de ti
+                Tal vez jamás <span class="heavy-text underline">seas</span> tú de mi
+                Más yo mi amor te esperaré
+                
+                Más yo mi amor esperaré
+                Esperaré
+                `,
+                'As you may have noticed, these verbs are not formed as in the present tense. You have probably come across them not knowing it is called <span class="heavy-text">subjuntivo</span>... You will learn now how to form the <span class="heavy-text text-accent">presente de subjuntivo</span> and even more important... when to use it!'
+            ],
+        'highlightedParagraphs': [false,false,true,false],
+        'images': ['','','',''],
+        'imagesPosition': ['','','','']
+            },
             {
                 'activityModuleType': 'generateBasicText',
                 'activityOrder': 3,
-                'moduleHeaderText':  '',
-                'moduleHeaderIcon': '',
-                'paragraphs': 
-        [
-            'Spanish verbs can be a pain in the ass sometimes until you start figuring it out and go ahhhhh... Have a look at the following text and notice the verb forms used in it.',
-            `<span class="heavy-text underline biggerText center">Esperaré</span>
-
-            A que <span class="heavy-text underline">sientas</span> lo mismo que yo
-            A que la luna la <span class="heavy-text underline">mires</span> del mismo color
-            Esperaré
+                'moduleHeaderText':  '¿Cómo hacemos el subjuntivo?',
+                'moduleHeaderIcon': 'gesture',
+                'paragraphs': [
+                    'In order to form the <span class="heavy-text text-accent">presente de subjuntivo</span> you need to know two things: <span class="heavy-text">(1)</span> The present form of the verb, which you already know by now and <span class="heavy-text">(2)</span> the right verb ending. <br><br><i class="material-icons">chevron_right</i>For <span class="heavy-text text-accent">-ar verbs</span>, the endings are:<br><span class="heavy-text">-e, -es, -e, -emos, -éis, -en</span> <br><br><i class="material-icons tiny">chevron_right</i>For both <span class="heavy-text text-accent">-er and -ir verbs</span>, the endings are:<br><span class="heavy-text">-a, -as, -a, -amos, -áis, -an</span>',
+                    'In the following chart you can see how it all works out.'
+                ],
+                'highlightedParagraphs': [false,false],
+                'images': ['',''],
+                'imagesPosition': ['','']
+                    },
             
-            Que <span class="heavy-text">adivines</span> mis versos de amor
-            A que en mis brazos <span class="heavy-text underline">encuentres</span> calor
-            Esperaré
-            A que <span class="heavy-text underline">vayas</span> por donde yo voy
-            A que tu alma me <span class="heavy-text underline">des</span> como yo te la doy
-            Esperaré
-            A que <span class="heavy-text">aprendas</span> de noche a soñar
-            A que de pronto me <span class="heavy-text underline">quieras</span> besar
-            
-            Esperaré
-            Que la manos me <span class="heavy-text underline">quieras</span> tomar
-            Que en tu recuerdo
-            Me <span class="heavy-text underline">quieras</span> por siempre llevar
-            Que mi presencia sea
-            El mundo que <span class="heavy-text underline">quieras</span> sentir
-            Que un día no <span class="heavy-text underline">puedas</span> sin mi amor vivir
-            
-            Esperaré a que <span class="heavy-text underline">sientas</span> nostalgia por mi
-            A que me <span class="heavy-text underline">pidas</span> que no me separe de ti
-            Tal ves jamás <span class="heavy-text underline">seas</span> tú de mi
-            Más yo mi amor te esperaré
-            
-            Que mi presencia <span class="heavy-text underline">sea</span>
-            El mundo que <span class="heavy-text underline">quieras</span> sentir
-            Que un día no <span class="heavy-text underline">puedas</span> sin mi amor vivir
-            
-            Esperaré a que <span class="heavy-text underline">sientas</span> nostalgia por mi
-            A que me <span class="heavy-text underline">pidas</span> que no me <span class="heavy-text underline">separe</span> de ti
-            Tal ves jamás <span class="heavy-text underline">seas</span> tú de mi
-            Más yo mi amor te esperaré
-            
-            Más yo mi amor esperaré
-            Esperaré
-            `,
-            'As you may have noticed, these verbs are not formed as in the present tense. You have probably come across them by now not knowing it is called <span class="heavy-text">subjuntivo</span>... You will learn how to form the <span class="heavy-text text-accent">presente de subjuntivo</span> and even more important... when to use it!',
-            'oter'
-        ],
-        'highlightedParagraphs': [false,true,false,false],
-        'images': ['','',''],
-        'imagesPosition': ['','','']
+            {
+                'activityModuleType': 'verbChart',
+                'activityOrder': 4,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '', 
+                'moduleBasicText': '',
+                'showPersonas': true,
+                'openOnInit': true,    
+                'tableTriggerText': 'Verbos regulares', 
+                'collapsibleHeaderColor': '',
+                'collapsibleHeaderColorChange': 'lighten-2',
+                'tableTriggerIcon': 'add',   
+                'verbos': {
+                    '-ar': ['estudi<span class="heavy-text">e</span>','estudi<span class="heavy-text">es</span>','estudi<span class="heavy-text">e</span>', 'estudi<span class="heavy-text">emos</span>','estudi<span class="heavy-text">éis</span>', 'estudi<span class="heavy-text">en</span>'],
+                    '-er/-ir': ['com<span class="heavy-text">a</span>','com<span class="heavy-text">as</span>','com<span class="heavy-text">a</span>', 'com<span class="heavy-text">amos</span>','com<span class="heavy-text">áis</span>', 'co<span class="heavy-text">man</span>'],
+                    
+               }
             },
             
             {
-                'activityModuleType': 'wildCard',
-                'activityOrder': 3,
-                'moduleHeaderText' : '"Esperaré" por Celia Cruz',
-                'moduleHeaderIcon': 'directions', 
+                'activityModuleType': 'verbChart',
+                'activityOrder': 6,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '', 
                 'moduleBasicText': '',
-                'html': `<div class="center"><a target="_blank"  href="https://www.youtube.com/watch?v=nrUL1m2aDmM"><button class="btn-large">Escucha la canción en Youtube.</button></a></div>`
+                'showPersonas': true,
+                'openOnInit': true,    
+                'tableTriggerText': 'Algunas formas irregulares...', 
+                'collapsibleHeaderColor': '',
+                'collapsibleHeaderColorChange': 'lighten-2',
+                'tableTriggerIcon': 'add',   
+                'verbos': {
+                    'poner': ['pong<span class="heavy-text">a</span>','pong<span class="heavy-text">as</span>','pong<span class="heavy-text">a</span>', 'pong<span class="heavy-text">amos</span>','pong<span class="heavy-text">áis</span>', 'pong<span class="heavy-text">an</span>'],
+                    'conocer': ['conozc<span class="heavy-text">a</span>','conozc<span class="heavy-text">as</span>','conozc<span class="heavy-text">a</span>', 'conozc<span class="heavy-text">amos</span>','conozc<span class="heavy-text">áis</span>', 'conozc<span class="heavy-text">an</span>'],
+               }
             },
-            // {
-            //     'activityModuleType': 'wildCard',
-            //     'activityOrder': 2,
-            //     'moduleHeaderText' : '',
-            //     'moduleHeaderIcon': '', 
-            //     'moduleBasicText': '', 
-            //     'html': `<img src="./lessons/3.1/img/celia.jpg" class="img-responsive">`
-            // },
 
+            // 'For example: <div class="container valign-wrapper"><span class="italics">"Yo <span class="heavy-text">cant</span>o"</span><i class="material-icons">fast_forward</i><span class="italics">"Yo <span class="heavy-text">cant</span>e"</span> </div>',
+            {
+                'activityModuleType': 'tutorWritingActivity',
+                'activityOrder': 7,
+                'activityId': 'anIdToRecognizeInTheDbas',
+                'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
+                'promptsArray': [
+                    {
+                        'word': 'gato',
+                        'imgSrc': ''
+                    },
+                    {
+                        'word': 'perro',
+                        'imgSrc': ''
+                    },
+                    
+                    {
+                        'word': 'guitarra',
+                        'imgSrc': './img/lesson1.1/guitar.jpg'
+                    },
+                    
+                    {
+                        'word': 'piano',
+                        'imgSrc': './img/lesson1.1/piano.jpg'
+                    }
+                ]
+            },
+            
+            
+
+            {
+                'activityModuleType': 'wildCard',
+                'activityOrder': 4,
+                'moduleHeaderText' : '',
+                'moduleHeaderIcon': '', 
+                'moduleBasicText': '', 
+                'html': `For example: <div class="container valign-wrapper"><span class="italics">"Yo <span class="heavy-text">cant</span>o"</span><i class="material-icons">fast_forward</i><span class="italics">"Yo <span class="heavy-text">cant</span>e"</span> </div>`
+            },
+
+
+
+
+            {
+                'activityModuleType': 'introConcept',
+                'activityOrder': 5,
+                'cardTitle': 'This is cardtitle',
+                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
+            }
+            
                         // {
             //     'activityModuleType': 'wildCard',
             //     'activityOrder': 3,
@@ -602,62 +684,6 @@ let lessonsArray = [
             //     ]
                 
             // }, 
-            
-            {
-                'activityModuleType': 'verbChart',
-                'activityOrder': 3,
-                'moduleHeaderText' : '',
-                'moduleHeaderIcon': '', 
-                'moduleBasicText': '',
-                'showPersonas': true,
-                'openOnInit': true,    
-                'tableTriggerText': 'Verbos regulares', 
-                'collapsibleHeaderColor': '',
-                'collapsibleHeaderColorChange': 'lighten-2',
-                'tableTriggerIcon': 'add',   
-                'verbos': {
-                    'estudiar': ['estud<span class="heavy-text">ie</span>','estud<span class="heavy-text">ies</span>','estud<span class="heavy-text">ie</span>', 'estud<span class="heavy-text">iemos</span>','estud<span class="heavy-text">iéis</span>', 'estud<span class="heavy-text">ien</span>'],
-                    'comer': ['com<span class="heavy-text">a</span>','com<span class="heavy-text">as</span>','com<span class="heavy-text">a</span>', 'com<span class="heavy-text">amos</span>','com<span class="heavy-text">áis</span>', 'co<span class="heavy-text">man</span>'],
-                    'escribir': ['escrib<span class="heavy-text">a','escrib<span class="heavy-text">as</span>','escrib<span class="heavy-text">a</span>', 'escrib<span class="heavy-text">amos</span>','escrib<span class="heavy-text">áis</span>', 'escrib<span class="heavy-text">an</span>']
-               }
-            },
-
-
-            {
-                'activityModuleType': 'tutorWritingActivity',
-                'activityOrder': 4,
-                'activityId': 'anIdToRecognizeInTheDbas',
-                'activityHeaderText': 'Ahora que sabes como funciona las. Acuerdate de usar las expresiones aprendidas.',
-                'promptsArray': [
-                    {
-                        'word': 'gato',
-                        'imgSrc': ''
-                    },
-                    {
-                        'word': 'perro',
-                        'imgSrc': ''
-                    },
-                    
-                    {
-                        'word': 'guitarra',
-                        'imgSrc': './img/lesson1.1/guitar.jpg'
-                    },
-                    
-                    {
-                        'word': 'piano',
-                        'imgSrc': './img/lesson1.1/piano.jpg'
-                    }
-                ]
-            },
-            
-
-
-            {
-                'activityModuleType': 'introConcept',
-                'activityOrder': 5,
-                'cardTitle': 'This is cardtitle',
-                'cardContent': "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively."
-            },
         ]
     },
     

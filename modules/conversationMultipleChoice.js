@@ -100,7 +100,7 @@ function renderCurrentSentence(){
   console.log("Current is",currentSentence, Object.values(thisConversationObj).length)
   
 ///Check if there are more questions left. If there are, check which type. If not, show toast with total correct answers
-if(Object.values(thisConversationObj).length>currentSentence){
+if(Object.values(thisConversationObj).length-1>currentSentence){
   let sentenceWrapper = document.createElement('div');
   sentenceWrapper.classList.add("row",'valign-wrapper')  
 

@@ -65,10 +65,12 @@ body {
       border-radius: .31rem;
       padding: .12rem;
   }
-
+  .text-indent {
+    text-indent: 3rem
+  }
   .italics{
-      text-decoration: wavy;
-      background-color: aquamarine;
+    text-decoration: wavy;
+      font-style: italic;
   }
   .highlightP{
       background-color: #f5cb5c;

@@ -6,7 +6,8 @@ export default function generateBasicText(obj, targetDom) {
   if(targetDom){
       targetDomDefault = document.querySelector(targetDom);
   }
-  
+
+
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
 if(obj['moduleHeaderText']!=""){
@@ -66,7 +67,11 @@ obj['paragraphs'].forEach((p,i) => {
 });
 
 
-
+if(obj['dividerOnEnd'] == true){
+  let divider = document.createElement('div');
+  divider.classList.add('divider','container')
+  moduleContainer.appendChild(divider)
+}
 
 moduleDiv.appendChild(moduleContainer);
 targetDomDefault.appendChild(moduleDiv);
