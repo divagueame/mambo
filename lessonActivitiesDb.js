@@ -16,7 +16,7 @@ let lessonsArray = [
     {
         'level': 1,
         'lessonNumber': 1,
-        'lessonTitle': '1Sustantivo1s',
+        'lessonTitle': 'Nous',
         'activitiesArray': [
             {
                 'activityModuleType': 'renderLessonTitle',
@@ -272,6 +272,7 @@ let lessonsArray = [
             
         ]
     },
+            //LESSON 1.2
     {
         'level': 1,
         'lessonNumber': 2,
