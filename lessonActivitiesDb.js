@@ -1,6 +1,6 @@
 import {db} from './java.js';
 // import {lessons} from './lessonPlanner.js';
-// console.log("Lessons are:               / / / //  = =>>>> ",lessons) 
+console.log("Lessons are:               / WAY/ / //  = =>>>> ") 
 // let lessonsArray = [
 //     {
 //         'level': 1,
@@ -16,7 +16,7 @@ let lessonsArray = [
     {
         'level': 1,
         'lessonNumber': 1,
-        'lessonTitle': 'Nous',
+        'lessonTitle': 'Nouns',
         'activitiesArray': [
             {
                 'activityModuleType': 'renderLessonTitle',
@@ -66,10 +66,7 @@ let lessonsArray = [
                         'audioSrc': './audio/lesson1.1/2.mp3'
                     }
                 ] 
-            },
-          
-
-                        
+            },    
             {
                 'activityModuleType': 'exampleCards',
                 'activityOrder': 4,
@@ -119,35 +116,84 @@ let lessonsArray = [
             {
                 'activityModuleType': 'blankSentences',
                 'activityOrder': 6,
-                'moduleHeaderText' : '3 Blank el siguiente ejercicio con el/la',
+                'moduleHeaderText' : 'MODULE HEADER IS THIS',
                 'moduleHeaderIcon': 'airplay',
-                'moduleBasicText': '',
+                'moduleBasicText': 'Let´s use some of the words we have learnt so far. Complete the following sentences with the correct missing word and article. Beware that not all the words will follow the common rule as I put some exceptions in the mix.',
                 'showTranslation': true,
                 'exerciseSentences': 
                 [
                     {
-                        'text': "El gato de mi madre es muy bonito.",
-                        'hiddenWord': "es",
-                        'labelText': "verbo ser",
-                        'helperText': "My mother's cat is very beautiful."
+                        'text': "La foto es vieja.",
+                        'hiddenWord': "La",
+                        'labelText': "Female",
+                        'helperText': "The photograph is old."
                     },
                     {
-                        'text': "El padre come muchas galletas.",
-                        'hiddenWord': "come",
-                        'labelText': "verbo comer",
-                        'helperText': "The father eats many cookies."
+                        'text': "El niño es grande.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The boy is big."
                     },
                     {
-                        'text': "El profesor canta muy bien.",
-                        'hiddenWord': "canta",
-                        'labelText': "verbo cantar",
-                        'helperText': "The teacher sings very well."
+                        'text': "El problema es dificil.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The proble is difficult."
                     },
                     {
-                        'text': "El perro corre muy rapido.",
-                        'hiddenWord': "corre",
-                        'labelText': "verbo correr",
-                        'helperText': "The dog runs very fast."
+                        'text': "El gato es muy bonito.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The cat is very beautiful."
+                    },
+                    {
+                        'text': "La pelicula es genial.",
+                        'hiddenWord': "La",
+                        'labelText': "Female",
+                        'helperText': "The movie is great."
+                    },
+                    {
+                        'text': "El planeta es pequeño.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The planet is small."
+                    },
+                    {
+                        'text': "El idioma es fácil.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The language is easy."
+                    },
+                    {
+                        'text': "La chica es estúpida.",
+                        'hiddenWord': "La",
+                        'labelText': "Female",
+                        'helperText': "The girl is stupid."
+                    },
+
+                    {
+                        'text': "El caballo es pequeño.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The horse is small"
+                    },
+                    {
+                        'text': "La mano es negra.",
+                        'hiddenWord': "La",
+                        'labelText': "Female",
+                        'helperText': "The hand is black."
+                    },
+                    {
+                        'text': "El libro es fantástico.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The book is awesome."
+                    },
+                    {
+                        'text': "El mundo es bonito.",
+                        'hiddenWord': "El",
+                        'labelText': "Male",
+                        'helperText': "The world is beautiful."
                     }
                 ]
                 
@@ -272,7 +318,7 @@ let lessonsArray = [
             
         ]
     },
-            //LESSON 1.2
+        //LESSON 1.2
     {
         'level': 1,
         'lessonNumber': 2,
@@ -329,6 +375,7 @@ let lessonsArray = [
             },
         ]
     },
+        //LESSON 1.3
     {
         'level': 1,
         'lessonNumber': 3,
@@ -347,6 +394,7 @@ let lessonsArray = [
             }
         ]
     },
+        //LESSON 1.4
     {
         'level': 1,
         'lessonNumber': 4,
@@ -385,6 +433,7 @@ let lessonsArray = [
         ]
     },
     //LEVEL 2
+        //LESSON 2.1
     {
         'level': 2,
         'lessonNumber': 1,
@@ -451,6 +500,8 @@ let lessonsArray = [
 
         ]
     },
+    //LEVEL 3
+        //LESSON 3.1
     {
         'level': 3,
         'lessonNumber': 1,

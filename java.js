@@ -1,4 +1,3 @@
-
 // import activitiesModule from './modules/activitiesModule.js'
 import renderLesson from './renderLesson.js';
 import renderInitialPage from './renderInitialPage.js'
@@ -8,7 +7,6 @@ import lessonActivitiesDb from './lessonActivitiesDb.js';
 import generateSideNav from './modules/generateSidenav.js';
 import activitiesModule from './modules/activitiesModule.js';
 import generateFrecuencyList from './generateFrecuencyList.js';
-
 
 let activeLessonId = [3,1];
 const lessonContainer = document.querySelector(".lessonContainer")

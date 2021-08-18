@@ -1,6 +1,6 @@
 import moduleHeader from './moduleHeader.js'
 export default function blankSentences(obj, targetDom) {
-  // console.log("BLANK SENTENCEs")
+  // console.log("BLANK SENTENCEs YES")
   let targetDomDefault = document.querySelector('.lessonContainer');
   if(targetDom){
       targetDomDefault = document.querySelector(targetDom);
@@ -9,7 +9,7 @@ export default function blankSentences(obj, targetDom) {
 var moduleDiv = document.createElement('div');
 moduleDiv.classList.add("moduleDiv");
 moduleDiv.classList.add("section");
-let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'])
+let moduleHeaderDiv = moduleHeader(obj['moduleHeaderText'],obj['moduleHeaderIcon'],obj['moduleBasicText'])
 let moduleContainer = document.createElement('div')
 moduleContainer.classList.add("z-depth-1");
 
