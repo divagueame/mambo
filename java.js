@@ -8,7 +8,7 @@ import generateSideNav from './modules/generateSidenav.js';
 import activitiesModule from './modules/activitiesModule.js';
 import generateFrecuencyList from './generateFrecuencyList.js';
 
-let activeLessonId = [3,1];
+let activeLessonId = [1,1];
 const lessonContainer = document.querySelector(".lessonContainer")
  
 setTimeout(lessonActivitiesDb,  800)
