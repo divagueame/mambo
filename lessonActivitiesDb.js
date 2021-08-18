@@ -511,7 +511,7 @@ let lessonsArray = [
             {
                 'activityModuleType': 'renderLessonTitle',
                 'activityOrder': 1,
-                'title': "Presente de subjuntivo",
+                'title': "Presente de subjuntivos",
                 'lessonTopImageSrc': './lessons/3.1/img/014-railway.png'
             },
             {
