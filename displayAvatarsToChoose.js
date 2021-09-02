@@ -2,9 +2,6 @@ import {activeLessonId, db} from './java.js';
 
 import renderUserNavBarButtons from './renderUserNavBarButtons.js';
 export default function displayAvatarsToChoose() {
-
-
-
     let chosenAvatar = 0;
     let userId = firebase.auth().currentUser.uid;
     let avatars = ''

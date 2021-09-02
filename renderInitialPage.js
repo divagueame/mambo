@@ -46,7 +46,7 @@ export default function renderInitialPage(){
 
 
 
-    // showLastUpdates()
+    showLastUpdates() 
 
 function showLastUpdates(){
 
